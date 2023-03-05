@@ -1,0 +1,169 @@
+\hypertarget{classHitbox}{}\doxysection{Hitbox Class Reference}
+\label{classHitbox}\index{Hitbox@{Hitbox}}
+
+
+An implementation of the hitbox system that draws the hitbox of the entity.  
+
+
+
+
+{\ttfamily \#include $<$hitbox.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHitbox_a999b0be8486978b3dd7bcd001c7c3c03}{Hitbox}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classHitbox}{Hitbox} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHitbox_aafd01dbe871f6f7f464217345bd4ca01}{$\sim$\+Hitbox}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classHitbox}{Hitbox} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHitbox_a3bb52375a965c849377efcc53d5c9c10}{update}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)
+\begin{DoxyCompactList}\small\item\em Update the hitbox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHitbox_ad57a14a4b268414b5b7e16f684251065}{draw}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the hitbox. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An implementation of the hitbox system that draws the hitbox of the entity. 
+
+
+
+Definition at line \mbox{\hyperlink{hitbox_8hpp_source_l00011}{11}} of file \mbox{\hyperlink{hitbox_8hpp_source}{hitbox.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHitbox_a999b0be8486978b3dd7bcd001c7c3c03}\label{classHitbox_a999b0be8486978b3dd7bcd001c7c3c03}} 
+\index{Hitbox@{Hitbox}!Hitbox@{Hitbox}}
+\index{Hitbox@{Hitbox}!Hitbox@{Hitbox}}
+\doxysubsubsection{\texorpdfstring{Hitbox()}{Hitbox()}}
+{\footnotesize\ttfamily Hitbox\+::\+Hitbox (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{classHitbox}{Hitbox} object. 
+
+
+
+Definition at line \mbox{\hyperlink{hitbox_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{hitbox_8hpp_source}{hitbox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHitbox_aafd01dbe871f6f7f464217345bd4ca01}\label{classHitbox_aafd01dbe871f6f7f464217345bd4ca01}} 
+\index{Hitbox@{Hitbox}!````~Hitbox@{$\sim$Hitbox}}
+\index{````~Hitbox@{$\sim$Hitbox}!Hitbox@{Hitbox}}
+\doxysubsubsection{\texorpdfstring{$\sim$Hitbox()}{~Hitbox()}}
+{\footnotesize\ttfamily Hitbox\+::$\sim$\+Hitbox (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \doxylink{classHitbox}{Hitbox} object. 
+
+
+
+Definition at line \mbox{\hyperlink{hitbox_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{hitbox_8hpp_source}{hitbox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHitbox_ad57a14a4b268414b5b7e16f684251065}\label{classHitbox_ad57a14a4b268414b5b7e16f684251065}} 
+\index{Hitbox@{Hitbox}!draw@{draw}}
+\index{draw@{draw}!Hitbox@{Hitbox}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Hitbox\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxylink{classDraw}{Draw} the hitbox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{hitbox_8hpp_source_l00074}{74}} of file \mbox{\hyperlink{hitbox_8hpp_source}{hitbox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&hitbox\ :\ \_hitbox)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ window.draw(hitbox.second);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classHitbox_a3bb52375a965c849377efcc53d5c9c10}\label{classHitbox_a3bb52375a965c849377efcc53d5c9c10}} 
+\index{Hitbox@{Hitbox}!update@{update}}
+\index{update@{update}!Hitbox@{Hitbox}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Hitbox\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update the hitbox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{hitbox_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{hitbox_8hpp_source}{hitbox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<EntityID>\ entities\ =\ ecs.\mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{getEntitiesWithComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ entity\ :\ entities)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ New\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structCollider}{Collider}}\ \&collider\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(entity);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTransform}{Transform}}\ \&transform\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(entity);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sf::RectangleShape\ rect;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.setPosition(sf::Vector2f(transform.x,\ transform.y));}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.setSize(sf::Vector2f(collider.x,\ collider.y));}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.setFillColor(sf::Color::Transparent);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.setOutlineColor(sf::Color::Red);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.setOutlineThickness(2);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&hitbox\ :\ \_hitbox)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hitbox.first\ ==\ entity)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hitbox.second\ =\ rect;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ New\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (New)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_hitbox.push\_back(std::make\_pair(entity,\ rect));}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \_hitbox.begin();\ it\ !=\ \_hitbox.end();)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ entity\ :\ entities)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>first\ ==\ entity)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ found\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!found)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ =\ \_hitbox.erase(it);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++it;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/hitbox.\+hpp\end{DoxyCompactItemize}

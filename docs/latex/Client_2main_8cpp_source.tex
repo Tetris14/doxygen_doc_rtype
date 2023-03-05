@@ -1,0 +1,107 @@
+\hypertarget{Client_2main_8cpp_source}{}\doxysection{main.\+cpp}
+\label{Client_2main_8cpp_source}\index{Client/main.cpp@{Client/main.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00005}00005\ \textcolor{comment}{**\ main}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <csignal>}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}sceneManager.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}singlePlayerScene.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}connectScene.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}settingsScene.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}gameScene.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}menuScene.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}joinScene.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00021}00021\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classClient}{Client}}\ *\ client\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00023}00023\ \textcolor{keywordtype}{void}\ sigint\_handler(\textcolor{keywordtype}{int}\ signal)}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00024}00024\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00025}00025\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Caught\ SIGINT,\ deleting\ object..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{delete}\ client;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00027}00027\ \ \ \ \ std::exit(signal);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00030}00030\ \textcolor{keywordtype}{int}\ main(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ **argv)}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ !=\ 3)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Usage:\ ./client\ [ip]\ [port]"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ EXIT\_FAILURE;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ init}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{classSceneManager}{SceneManager}}\ scenemanager;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{classGame}{Game}}\ game;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{classClock}{Clock}}\ clock;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{classWindow}{Window}}\ window(game.\mbox{\hyperlink{classGame_a6459bfc7e7c7df8221a4a7dea0baffa1}{getScreenWidth}}(),\ game.\mbox{\hyperlink{classGame_adc51dfdb2488da1e94f62d54e40d9e8b}{getScreenHeight}}(),\ \textcolor{stringliteral}{"{}R-\/Type"{}},\ 144);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00041}00041\ \ \ \ \ ImGui::SFML::Init(window.getWindow());}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00042}00042\ \ \ \ \ asio::io\_context\ ioc;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00043}00043\ \ \ \ \ std::string\ response;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00044}00044\ \ \ \ \ std::signal(SIGINT,\ sigint\_handler);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ init\ scenes}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{auto}\ menuScene\ =\ std::make\_shared<MenuScene>(std::pair<float,\ float>(game.\mbox{\hyperlink{classGame_a6459bfc7e7c7df8221a4a7dea0baffa1}{getScreenWidth}}(),\ game.\mbox{\hyperlink{classGame_adc51dfdb2488da1e94f62d54e40d9e8b}{getScreenHeight}}()),\ \textcolor{stringliteral}{"{}maxisonquipetedeouf.wav"{}},\ window.getWindow());}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{auto}\ gameScene\ =\ std::make\_shared<GameScene>(std::pair<float,\ float>(game.\mbox{\hyperlink{classGame_a6459bfc7e7c7df8221a4a7dea0baffa1}{getScreenWidth}}(),\ game.\mbox{\hyperlink{classGame_adc51dfdb2488da1e94f62d54e40d9e8b}{getScreenHeight}}()),\ \textcolor{stringliteral}{"{}maxisonquipetedeouf.wav"{}});}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{auto}\ connectScene\ =\ std::make\_shared<ConnectScene>(std::pair<float,\ float>(game.\mbox{\hyperlink{classGame_a6459bfc7e7c7df8221a4a7dea0baffa1}{getScreenWidth}}(),\ game.\mbox{\hyperlink{classGame_adc51dfdb2488da1e94f62d54e40d9e8b}{getScreenHeight}}()),\ \textcolor{stringliteral}{"{}maxisonquipetedeouf.wav"{}},\ window.getWindow());}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{auto}\ settingScene\ =\ std::make\_shared<SettingsScene>(std::pair<float,\ float>(game.\mbox{\hyperlink{classGame_a6459bfc7e7c7df8221a4a7dea0baffa1}{getScreenWidth}}(),\ game.\mbox{\hyperlink{classGame_adc51dfdb2488da1e94f62d54e40d9e8b}{getScreenHeight}}()),\ \textcolor{stringliteral}{"{}maxisonquipetedeouf.wav"{}},\ window.getWindow());}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{auto}\ joinScene\ =\ std::make\_shared<JoinScene>(std::pair<float,\ float>(game.\mbox{\hyperlink{classGame_a6459bfc7e7c7df8221a4a7dea0baffa1}{getScreenWidth}}(),\ game.\mbox{\hyperlink{classGame_adc51dfdb2488da1e94f62d54e40d9e8b}{getScreenHeight}}()),\ \textcolor{stringliteral}{"{}maxisonquipetedeouf.wav"{}},\ window.getWindow());}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{auto}\ soloScene\ =\ std::make\_shared<SinglePlayerScene>(std::pair<float,\ float>(game.\mbox{\hyperlink{classGame_a6459bfc7e7c7df8221a4a7dea0baffa1}{getScreenWidth}}(),\ game.\mbox{\hyperlink{classGame_adc51dfdb2488da1e94f62d54e40d9e8b}{getScreenHeight}}()),\ \textcolor{stringliteral}{"{}maxisonquipetedeouf.wav"{}});}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00053}00053\ \ \ \ \ scenemanager.\mbox{\hyperlink{classSceneManager_a8331a1fbf1c673645a320345f2c538d7}{addScene}}(menuScene);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00054}00054\ \ \ \ \ scenemanager.\mbox{\hyperlink{classSceneManager_a8331a1fbf1c673645a320345f2c538d7}{addScene}}(gameScene);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00055}00055\ \ \ \ \ scenemanager.\mbox{\hyperlink{classSceneManager_a8331a1fbf1c673645a320345f2c538d7}{addScene}}(connectScene);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00056}00056\ \ \ \ \ scenemanager.\mbox{\hyperlink{classSceneManager_a8331a1fbf1c673645a320345f2c538d7}{addScene}}(soloScene);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00057}00057\ \ \ \ \ scenemanager.\mbox{\hyperlink{classSceneManager_a8331a1fbf1c673645a320345f2c538d7}{addScene}}(settingScene);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00058}00058\ \ \ \ \ scenemanager.\mbox{\hyperlink{classSceneManager_a8331a1fbf1c673645a320345f2c538d7}{addScene}}(joinScene);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00059}00059\ \ \ \ \ scenemanager.\mbox{\hyperlink{classSceneManager_a7db297e7071ad9d4a1339cfb8b53f186}{loadScene}}(0);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{int}\ hevent\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ game\ loop}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00063}00063\ \ \ \ \ sf::Clock\ deltaClock;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{while}\ (window.isOpen())\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (window.pollEvent())\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::SFML::ProcessEvent(window.getWindow(),\ window.getEvent());}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (window.getEvent().type\ ==\ sf::Event::Resized)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ window.resizeWindow(window.getEvent().size.width,\ window.getEvent().size.height);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (window.getEvent().type\ ==\ sf::Event::Closed)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ window.close();}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (scenemanager.\mbox{\hyperlink{classSceneManager_a9109b25c66b9b2ad6fe8a65311f0d06a}{handleEvent}}(window.getEvent(),\ window,\ *client)\ ==\ LOBBY)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (client\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ client\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classClient}{Client}}(ioc,\ argv[2],\ argv[1]);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gameScene-\/>\_client\ =\ client;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ joinScene-\/>\_client\ =\ client;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scenemanager.\mbox{\hyperlink{classSceneManager_a7db297e7071ad9d4a1339cfb8b53f186}{loadScene}}(2);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (std::exception\ \&e)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Exception:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (client\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ client-\/>isStarted\ ==\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ scenemanager.\mbox{\hyperlink{classSceneManager_a7db297e7071ad9d4a1339cfb8b53f186}{loadScene}}(1);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ client-\/>isStarted\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ window.clear();}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ ImGui::SFML::Update(window.getWindow(),\ deltaClock.restart());}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ scenemanager.\mbox{\hyperlink{classSceneManager_a11ddf46cf89f7b5a40adc4b00adfc6d6}{draw}}(window);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ ImGui::SFML::Render(window.getWindow());}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ scenemanager.\mbox{\hyperlink{classSceneManager_a3e427477de4599dc1437f2020ba6a244}{update}}(clock);}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ window.display();}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00098}00098\ \ \ \ \ ImGui::SFML::Shutdown();}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keyword}{delete}\ client;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{return}\ EXIT\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{Client_2main_8cpp_source_l00101}00101\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,65 @@
+\hypertarget{hitbox_8hpp_source}{}\doxysection{hitbox.\+hpp}
+\label{hitbox_8hpp_source}\index{Client/include/hitbox.hpp@{Client/include/hitbox.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}window.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}system.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00011}\mbox{\hyperlink{classHitbox}{00011}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHitbox}{Hitbox}}\ \{}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00017}\mbox{\hyperlink{classHitbox_a999b0be8486978b3dd7bcd001c7c3c03}{00017}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHitbox_a999b0be8486978b3dd7bcd001c7c3c03}{Hitbox}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00023}\mbox{\hyperlink{classHitbox_aafd01dbe871f6f7f464217345bd4ca01}{00023}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHitbox_aafd01dbe871f6f7f464217345bd4ca01}{\string~Hitbox}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00030}\mbox{\hyperlink{classHitbox_a3bb52375a965c849377efcc53d5c9c10}{00030}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHitbox_a3bb52375a965c849377efcc53d5c9c10}{update}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\ \{}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<EntityID>\ entities\ =\ ecs.\mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{getEntitiesWithComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>();}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ entity\ :\ entities)\ \{}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ New\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structCollider}{Collider}}\ \&collider\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(entity);}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTransform}{Transform}}\ \&transform\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(entity);}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sf::RectangleShape\ rect;}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.setPosition(sf::Vector2f(transform.x,\ transform.y));}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.setSize(sf::Vector2f(collider.x,\ collider.y));}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.setFillColor(sf::Color::Transparent);}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.setOutlineColor(sf::Color::Red);}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect.setOutlineThickness(2);}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&hitbox\ :\ \_hitbox)\ \{}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hitbox.first\ ==\ entity)\ \{}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hitbox.second\ =\ rect;}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ New\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (New)\ \{}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_hitbox.push\_back(std::make\_pair(entity,\ rect));}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \_hitbox.begin();\ it\ !=\ \_hitbox.end();)\ \{}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ entity\ :\ entities)\ \{}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>first\ ==\ entity)\ \{}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ found\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!found)\ \{}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ =\ \_hitbox.erase(it);}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++it;}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00074}\mbox{\hyperlink{classHitbox_ad57a14a4b268414b5b7e16f684251065}{00074}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHitbox_ad57a14a4b268414b5b7e16f684251065}{draw}}(sf::RenderWindow\&\ window)\ \{}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&hitbox\ :\ \_hitbox)\ \{}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ window.draw(hitbox.second);}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ std::vector<std::pair<EntityID,sf::RectangleShape>>\ \_hitbox;\ \textcolor{comment}{//\ hitbox}}
+\DoxyCodeLine{\Hypertarget{hitbox_8hpp_source_l00081}00081\ \};}
+
+\end{DoxyCode}

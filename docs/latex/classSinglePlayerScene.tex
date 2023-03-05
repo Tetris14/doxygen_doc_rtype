@@ -1,0 +1,417 @@
+\hypertarget{classSinglePlayerScene}{}\doxysection{Single\+Player\+Scene Class Reference}
+\label{classSinglePlayerScene}\index{SinglePlayerScene@{SinglePlayerScene}}
+
+
+Class that represents the single player scene.  
+
+
+
+
+{\ttfamily \#include $<$single\+Player\+Scene.\+hpp$>$}
+
+Inheritance diagram for Single\+Player\+Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSinglePlayerScene}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSinglePlayerScene_a288b1de38376f551b1e6dc1d75ed43d4}{Single\+Player\+Scene}} (const std\+::pair$<$ float, float $>$ \&dimensions, const std\+::string \&music)
+\begin{DoxyCompactList}\small\item\em Construct a new Single Player \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSinglePlayerScene_a39830a1e4fa08541e77696c76aad6c09}{$\sim$\+Single\+Player\+Scene}} ()=default
+\begin{DoxyCompactList}\small\item\em Destroy the Single Player \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSinglePlayerScene_a03c30329a48033dcedb6107d169c34d2}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em Load the Single Player \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSinglePlayerScene_a9fd2ef37db58b1750f87a7d4b7fcde5d}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em Unload the Single Player \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSinglePlayerScene_afec0b6d9f3b5a8ecc110e0b4cc39cdb8}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock) override
+\begin{DoxyCompactList}\small\item\em Update the Single Player \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+states \mbox{\hyperlink{classSinglePlayerScene_a51918c21b75a6ef31ee3d6c53f4e07c2}{handle\+Event}} (sf\+::\+Event event, \mbox{\hyperlink{classWindow}{Window}} \&window) override
+\begin{DoxyCompactList}\small\item\em Handle the event of the Single Player \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSinglePlayerScene_a9bc8e08313bf1b72bc4d9730c3d93cf5}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the Single Player \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classSinglePlayerScene_a8c37fe9fbbd79b93ba3b426612303783}{generate\+Random\+Float}} ()
+\begin{DoxyCompactList}\small\item\em Generate a random float. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSinglePlayerScene_a2db65a03f31dcd580fcf2bb7d6bee35f}{spawn\+Enemy}} (EType enemy\+Type)
+\begin{DoxyCompactList}\small\item\em Spawn an enemy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classScene}{Scene}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em loads a \doxylink{classScene}{Scene} \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em Unloads a \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+virtual states \mbox{\hyperlink{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}{handle\+Event}} (sf\+::\+Event event, \mbox{\hyperlink{classWindow}{Window}} \&window)=0
+\begin{DoxyCompactList}\small\item\em Handle events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock)=0
+\begin{DoxyCompactList}\small\item\em Update the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\item 
+\mbox{\Hypertarget{classScene_a6d44d0f4b3ceb248ed0b6d137e6bd37f}\label{classScene_a6d44d0f4b3ceb248ed0b6d137e6bd37f}} 
+virtual void {\bfseries handle\+Event} (sf\+::\+Event event)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that represents the single player scene. 
+
+
+
+Definition at line \mbox{\hyperlink{singlePlayerScene_8hpp_source_l00053}{53}} of file \mbox{\hyperlink{singlePlayerScene_8hpp_source}{single\+Player\+Scene.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSinglePlayerScene_a288b1de38376f551b1e6dc1d75ed43d4}\label{classSinglePlayerScene_a288b1de38376f551b1e6dc1d75ed43d4}} 
+\index{SinglePlayerScene@{SinglePlayerScene}!SinglePlayerScene@{SinglePlayerScene}}
+\index{SinglePlayerScene@{SinglePlayerScene}!SinglePlayerScene@{SinglePlayerScene}}
+\doxysubsubsection{\texorpdfstring{SinglePlayerScene()}{SinglePlayerScene()}}
+{\footnotesize\ttfamily Single\+Player\+Scene\+::\+Single\+Player\+Scene (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ float, float $>$ \&}]{dimensions,  }\item[{const std\+::string \&}]{music }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Single Player \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dimensions} & \\
+\hline
+{\em music} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{singlePlayerScene_8hpp_source_l00080}{80}} of file \mbox{\hyperlink{singlePlayerScene_8hpp_source}{single\+Player\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \_background(dimensions.first),\ \_music(findFile(music)),\ \_life(dimensions,\ 50)}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \_dimensions\ =\ dimensions;}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSinglePlayerScene_a39830a1e4fa08541e77696c76aad6c09}\label{classSinglePlayerScene_a39830a1e4fa08541e77696c76aad6c09}} 
+\index{SinglePlayerScene@{SinglePlayerScene}!````~SinglePlayerScene@{$\sim$SinglePlayerScene}}
+\index{````~SinglePlayerScene@{$\sim$SinglePlayerScene}!SinglePlayerScene@{SinglePlayerScene}}
+\doxysubsubsection{\texorpdfstring{$\sim$SinglePlayerScene()}{~SinglePlayerScene()}}
+{\footnotesize\ttfamily Single\+Player\+Scene\+::$\sim$\+Single\+Player\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destroy the Single Player \doxylink{classScene}{Scene} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSinglePlayerScene_a9bc8e08313bf1b72bc4d9730c3d93cf5}\label{classSinglePlayerScene_a9bc8e08313bf1b72bc4d9730c3d93cf5}} 
+\index{SinglePlayerScene@{SinglePlayerScene}!draw@{draw}}
+\index{draw@{draw}!SinglePlayerScene@{SinglePlayerScene}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Single\+Player\+Scene\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{classDraw}{Draw} the Single Player \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{singlePlayerScene_8hpp_source_l00175}{175}} of file \mbox{\hyperlink{singlePlayerScene_8hpp_source}{single\+Player\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00176\ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_showConsole)}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \_Console.\mbox{\hyperlink{classConsole_a3e89d786bdcadabf0344576a51ed8023}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ ecs);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \_background.\mbox{\hyperlink{classBackground_aee666bf38da5bcfddbf582818a15e116}{drawBackground}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \_draw.\mbox{\hyperlink{classDraw_aec1cef5bd67213c10ef17657fa172648}{displayEntities}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ ecs);}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \_life.\mbox{\hyperlink{classLife_af77c1f8988faa006d7a062223424c9a9}{drawLife}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_showHitbox)\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \_hitbox.\mbox{\hyperlink{classHitbox_ad57a14a4b268414b5b7e16f684251065}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSinglePlayerScene_a8c37fe9fbbd79b93ba3b426612303783}\label{classSinglePlayerScene_a8c37fe9fbbd79b93ba3b426612303783}} 
+\index{SinglePlayerScene@{SinglePlayerScene}!generateRandomFloat@{generateRandomFloat}}
+\index{generateRandomFloat@{generateRandomFloat}!SinglePlayerScene@{SinglePlayerScene}}
+\doxysubsubsection{\texorpdfstring{generateRandomFloat()}{generateRandomFloat()}}
+{\footnotesize\ttfamily float Single\+Player\+Scene\+::generate\+Random\+Float (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generate a random float. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{singlePlayerScene_8hpp_source_l00192}{192}} of file \mbox{\hyperlink{singlePlayerScene_8hpp_source}{single\+Player\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ seeded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!seeded)\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ srand(time(\textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ seeded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ max\_value\ =\ 1080.0f;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ scale\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(RAND\_MAX)\ +\ 1.0f;}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ random\_float\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(rand())\ /\ scale\ *\ max\_value;}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ random\_float;}
+\DoxyCodeLine{00204\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSinglePlayerScene_a51918c21b75a6ef31ee3d6c53f4e07c2}\label{classSinglePlayerScene_a51918c21b75a6ef31ee3d6c53f4e07c2}} 
+\index{SinglePlayerScene@{SinglePlayerScene}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!SinglePlayerScene@{SinglePlayerScene}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}}
+{\footnotesize\ttfamily states Single\+Player\+Scene\+::handle\+Event (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{event,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handle the event of the Single Player \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+states 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{singlePlayerScene_8hpp_source_l00158}{158}} of file \mbox{\hyperlink{singlePlayerScene_8hpp_source}{single\+Player\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00159\ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_input.\mbox{\hyperlink{classInput_aa430e51ec53ef420fbee13493d950bf4}{isKeyPressed}}(C))\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \_showConsole\ =\ !\_showConsole;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_input.\mbox{\hyperlink{classInput_aa430e51ec53ef420fbee13493d950bf4}{isKeyPressed}}(HITBOX))\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \_showHitbox\ =\ !\_showHitbox;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SINGLE;}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSinglePlayerScene_a03c30329a48033dcedb6107d169c34d2}\label{classSinglePlayerScene_a03c30329a48033dcedb6107d169c34d2}} 
+\index{SinglePlayerScene@{SinglePlayerScene}!load@{load}}
+\index{load@{load}!SinglePlayerScene@{SinglePlayerScene}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Single\+Player\+Scene\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Load the Single Player \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{singlePlayerScene_8hpp_source_l00096}{96}} of file \mbox{\hyperlink{singlePlayerScene_8hpp_source}{single\+Player\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ this-\/>ecs\ =\ \&ecs;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \_draw\ =\ \{\{\textcolor{stringliteral}{"{}player.png"{}},\ 3\},\ \{\textcolor{stringliteral}{"{}shoot.png"{}},\ 2\},\ \{\textcolor{stringliteral}{"{}enemy.png"{}},\ 5\},\ \{\textcolor{stringliteral}{"{}shoot2.png"{}},\ 2\},\ \{\textcolor{stringliteral}{"{}theboss.png"{}},\ 1\}\};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \_draw.\mbox{\hyperlink{classDraw_a3cf6b1b48a559e6cd5bc075da3dd10eb}{setTexture}}(ecs);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \_music.\mbox{\hyperlink{classMusic_a54b941f6f7634d7f99b473c78fe6e4da}{play}}();}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSinglePlayerScene_a2db65a03f31dcd580fcf2bb7d6bee35f}\label{classSinglePlayerScene_a2db65a03f31dcd580fcf2bb7d6bee35f}} 
+\index{SinglePlayerScene@{SinglePlayerScene}!spawnEnemy@{spawnEnemy}}
+\index{spawnEnemy@{spawnEnemy}!SinglePlayerScene@{SinglePlayerScene}}
+\doxysubsubsection{\texorpdfstring{spawnEnemy()}{spawnEnemy()}}
+{\footnotesize\ttfamily void Single\+Player\+Scene\+::spawn\+Enemy (\begin{DoxyParamCaption}\item[{EType}]{enemy\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Spawn an enemy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy\+Type} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{singlePlayerScene_8hpp_source_l00211}{211}} of file \mbox{\hyperlink{singlePlayerScene_8hpp_source}{single\+Player\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00212\ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (enemyType\ ==\ EType::Boss)\ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ EntityID\ entity\ =\ ecs-\/>\mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{createEntity}}();}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \_entity.push\_back(entity);}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>enemyEntities.push\_back(entity);}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structTransform}{Transform}}\{1920.0f,\ 500.0f,\ 180.0f\});}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structCollider}{Collider}}\{50.0f,\ 50.0f,\ \textcolor{stringliteral}{"{}theboss"{}}\});}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structHealth}{Health}}\{500\});}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structPhysics}{Physics}}\{2.0f\});}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structDamage}{Damage}}\{30\});}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structRender}{Render}}\{\textcolor{stringliteral}{"{}theboss.png"{}},\ 1\});}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structFireRate}{FireRate}}\{0.25f\});}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \_draw.\mbox{\hyperlink{classDraw_a3cf6b1b48a559e6cd5bc075da3dd10eb}{setTexture}}(*ecs);}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (enemyType\ ==\ EType::Basic)\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ EntityID\ entity\ =\ ecs-\/>\mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{createEntity}}();}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \_entity.push\_back(entity);}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>enemyEntities.push\_back(entity);}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structTransform}{Transform}}\{1919.0f,\ \mbox{\hyperlink{classSinglePlayerScene_a8c37fe9fbbd79b93ba3b426612303783}{generateRandomFloat}}(),\ 180.0f\});}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structCollider}{Collider}}\{50.0f,\ 50.0f,\ \textcolor{stringliteral}{"{}enemy"{}}\});}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structHealth}{Health}}\{100\});}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structPhysics}{Physics}}\{10.0f\});}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structDamage}{Damage}}\{10\});}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structRender}{Render}}\{\textcolor{stringliteral}{"{}enemy.png"{}},\ 5\});}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structFireRate}{FireRate}}\{0.5f\});}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \_draw.\mbox{\hyperlink{classDraw_a3cf6b1b48a559e6cd5bc075da3dd10eb}{setTexture}}(*ecs);}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (enemyType\ ==\ EType::Fast)\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ EntityID\ entity\ =\ ecs-\/>\mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{createEntity}}();}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \_entity.push\_back(entity);}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>enemyEntities.push\_back(entity);}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structTransform}{Transform}}\{1920.0f,\ \mbox{\hyperlink{classSinglePlayerScene_a8c37fe9fbbd79b93ba3b426612303783}{generateRandomFloat}}(),\ 180.0f\});}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structCollider}{Collider}}\{50.0f,\ 50.0f,\ \textcolor{stringliteral}{"{}enemy"{}}\});}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structHealth}{Health}}\{50\});}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structPhysics}{Physics}}\{15.0f\});}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structDamage}{Damage}}\{5\});}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structRender}{Render}}\{\textcolor{stringliteral}{"{}enemy.png"{}},\ 5\});}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structFireRate}{FireRate}}\{0.25f\});}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \_draw.\mbox{\hyperlink{classDraw_a3cf6b1b48a559e6cd5bc075da3dd10eb}{setTexture}}(*ecs);}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00250\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSinglePlayerScene_a9fd2ef37db58b1750f87a7d4b7fcde5d}\label{classSinglePlayerScene_a9fd2ef37db58b1750f87a7d4b7fcde5d}} 
+\index{SinglePlayerScene@{SinglePlayerScene}!unload@{unload}}
+\index{unload@{unload}!SinglePlayerScene@{SinglePlayerScene}}
+\doxysubsubsection{\texorpdfstring{unload()}{unload()}}
+{\footnotesize\ttfamily void Single\+Player\+Scene\+::unload (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Unload the Single Player \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{singlePlayerScene_8hpp_source_l00109}{109}} of file \mbox{\hyperlink{singlePlayerScene_8hpp_source}{single\+Player\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ (auto\ \&ent\ :\ \_entity)\ \{}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ ecs.removeComponent<Transform>(ent);}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ ecs.removeComponent<Physics>(ent);}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ ecs.removeComponent<Render>(ent);}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ ecs.removeComponent<Collider>(ent);}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSinglePlayerScene_afec0b6d9f3b5a8ecc110e0b4cc39cdb8}\label{classSinglePlayerScene_afec0b6d9f3b5a8ecc110e0b4cc39cdb8}} 
+\index{SinglePlayerScene@{SinglePlayerScene}!update@{update}}
+\index{update@{update}!SinglePlayerScene@{SinglePlayerScene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Single\+Player\+Scene\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClock}{Clock}} \&}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update the Single Player \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{singlePlayerScene_8hpp_source_l00124}{124}} of file \mbox{\hyperlink{singlePlayerScene_8hpp_source}{single\+Player\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00125\ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem}{System}}\ system(*ecs);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clock.\mbox{\hyperlink{classClock_a2f4de873dbe9b83b448e638372edb80e}{getBackgroundClock}}()\ >\ 1)}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \_background.\mbox{\hyperlink{classBackground_a78cb966afe30df3531dd4a731e6fe432}{setBackgroundPos}}();}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ clock.\mbox{\hyperlink{classClock_a9df36859a10b8aea20336f21261eeb41}{resetBackgroundClock}}();}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clock.\mbox{\hyperlink{classClock_a48b1dc793e34188913e3778368a9e808}{getAnimationClock}}()\ >\ 50)}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \_draw.\mbox{\hyperlink{classDraw_ad3da04d63bbf3ad7ba124113e844401d}{animateEntities}}();}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ clock.\mbox{\hyperlink{classClock_a6a187abd815ce215d8c9b0c0b3275a49}{resetAnimationClock}}();}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (enemiesSpawned\ <\ waves[wave].enemyCount\ \&\&\ clock.\mbox{\hyperlink{classClock_afad4629968120895853b5f213798da71}{getWaveClock}}()\ >\ waves[wave].spawnRate)}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSinglePlayerScene_a2db65a03f31dcd580fcf2bb7d6bee35f}{spawnEnemy}}(waves[wave].enemyType);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ enemiesSpawned++;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ clock.\mbox{\hyperlink{classClock_aa9236ffef2ebd25b09461bacf9395737}{resetWaveClock}}();}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (enemiesSpawned\ ==\ waves[wave].enemyCount\ \&\&\ wave\ <=\ 3)\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ wave++;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ enemiesSpawned\ =\ 0;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ system.handleCollision(1920);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ system.handleMovement();}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/single\+Player\+Scene.\+hpp\end{DoxyCompactItemize}

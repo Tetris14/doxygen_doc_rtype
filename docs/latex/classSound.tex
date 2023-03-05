@@ -1,0 +1,128 @@
+\hypertarget{classSound}{}\doxysection{Sound Class Reference}
+\label{classSound}\index{Sound@{Sound}}
+
+
+Represents a sound file.  
+
+
+
+
+{\ttfamily \#include $<$audio.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSound_a6dae6f8919e5d081934c49706b396d0b}{Sound}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSound_aa0dc117b3ed3ffc81febf25653de19e1}{$\sim$\+Sound}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSound_a3ce5b74dc968ccf49b06fe1bbb22b68f}{play\+Sound}} ()
+\begin{DoxyCompactList}\small\item\em Play the sound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSound_af817e5dac393bfbe28fc9aa2da6dd7c6}{stop\+Sound}} ()
+\begin{DoxyCompactList}\small\item\em Stop the sound. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a sound file. 
+
+This class is used to play sound effects in a game or application. The sound is represented by an {\ttfamily sf\+::\+Sound} object, and can be played once.
+
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classSound}{Sound}}\ sound(\textcolor{stringliteral}{"{}explosion.wav"{}});}
+\DoxyCodeLine{sound.playSound();}
+
+\end{DoxyCode}
+ 
+
+Definition at line \mbox{\hyperlink{audio_8hpp_source_l00089}{89}} of file \mbox{\hyperlink{audio_8hpp_source}{audio.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSound_a6dae6f8919e5d081934c49706b396d0b}\label{classSound_a6dae6f8919e5d081934c49706b396d0b}} 
+\index{Sound@{Sound}!Sound@{Sound}}
+\index{Sound@{Sound}!Sound@{Sound}}
+\doxysubsubsection{\texorpdfstring{Sound()}{Sound()}}
+{\footnotesize\ttfamily Sound\+::\+Sound (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+This constructor takes the filename of a sound file and loads it into an {\ttfamily sf\+::\+Sound\+Buffer} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the sound file to load. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{audio_8hpp_source_l00099}{99}} of file \mbox{\hyperlink{audio_8hpp_source}{audio.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \_buffer.loadFromFile(filename);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \_sound.setBuffer(\_buffer);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \_sound.setVolume(100);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSound_aa0dc117b3ed3ffc81febf25653de19e1}\label{classSound_aa0dc117b3ed3ffc81febf25653de19e1}} 
+\index{Sound@{Sound}!````~Sound@{$\sim$Sound}}
+\index{````~Sound@{$\sim$Sound}!Sound@{Sound}}
+\doxysubsubsection{\texorpdfstring{$\sim$Sound()}{~Sound()}}
+{\footnotesize\ttfamily Sound\+::$\sim$\+Sound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+The destructor is defaulted. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSound_a3ce5b74dc968ccf49b06fe1bbb22b68f}\label{classSound_a3ce5b74dc968ccf49b06fe1bbb22b68f}} 
+\index{Sound@{Sound}!playSound@{playSound}}
+\index{playSound@{playSound}!Sound@{Sound}}
+\doxysubsubsection{\texorpdfstring{playSound()}{playSound()}}
+{\footnotesize\ttfamily void Sound\+::play\+Sound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Play the sound. 
+
+This function starts playing the sound. 
+
+Definition at line \mbox{\hyperlink{audio_8hpp_source_l00117}{117}} of file \mbox{\hyperlink{audio_8hpp_source}{audio.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117\ \{\ \_sound.play();\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSound_af817e5dac393bfbe28fc9aa2da6dd7c6}\label{classSound_af817e5dac393bfbe28fc9aa2da6dd7c6}} 
+\index{Sound@{Sound}!stopSound@{stopSound}}
+\index{stopSound@{stopSound}!Sound@{Sound}}
+\doxysubsubsection{\texorpdfstring{stopSound()}{stopSound()}}
+{\footnotesize\ttfamily void Sound\+::stop\+Sound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stop the sound. 
+
+This function stops the sound. 
+
+Definition at line \mbox{\hyperlink{audio_8hpp_source_l00124}{124}} of file \mbox{\hyperlink{audio_8hpp_source}{audio.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00124\ \{\ \_sound.stop();\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/audio.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,345 @@
+\hypertarget{classSceneManager}{}\doxysection{Scene\+Manager Class Reference}
+\label{classSceneManager}\index{SceneManager@{SceneManager}}
+
+
+Class that handle the scenes.  
+
+
+
+
+{\ttfamily \#include $<$scene\+Manager.\+hpp$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSceneManager_1_1Event}{Event}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classSceneManager_1_1Event}{Event} class that handles events within the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSceneManager_a52085e6737c23b491c228e86781af808}{Scene\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classScene}{Scene} Manager object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSceneManager_a2bb376a85d29e85f47753e26c7539229}{$\sim$\+Scene\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classScene}{Scene} Manager object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_a8331a1fbf1c673645a320345f2c538d7}{add\+Scene}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classScene}{Scene}} $>$ scene)
+\begin{DoxyCompactList}\small\item\em Add a scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_a7db297e7071ad9d4a1339cfb8b53f186}{load\+Scene}} (int index)
+\begin{DoxyCompactList}\small\item\em Load a scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_a3e427477de4599dc1437f2020ba6a244}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock)
+\begin{DoxyCompactList}\small\item\em Unload a scene. \end{DoxyCompactList}\item 
+states \mbox{\hyperlink{classSceneManager_a9109b25c66b9b2ad6fe8a65311f0d06a}{handle\+Event}} (sf\+::\+Event event, \mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classClient}{Client}} \&client)
+\begin{DoxyCompactList}\small\item\em Handle events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_a11ddf46cf89f7b5a40adc4b00adfc6d6}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window)
+\begin{DoxyCompactList}\small\item\em Handle events. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSceneManager_a91c156c0d769cdcd25fbee4689cdbacd}{get\+History\+Index}} ()
+\begin{DoxyCompactList}\small\item\em Handle history index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_ab409fda341fc74885c0d769482f827f5}{set\+History\+Index}} ()
+\begin{DoxyCompactList}\small\item\em Set history index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSceneManager_a8331a1fbf1c673645a320345f2c538d7}\label{classSceneManager_a8331a1fbf1c673645a320345f2c538d7}} 
+void {\bfseries add\+Scene} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classScene}{Scene}} $>$ scene)
+\item 
+void \mbox{\hyperlink{classSceneManager_ae44b78ebbdc79ab6b2a07f43bdd06e8c}{load\+Scene}} (int index, \mbox{\hyperlink{classECS}{ECS}} \&ecs)
+\item 
+\mbox{\Hypertarget{classSceneManager_a3e427477de4599dc1437f2020ba6a244}\label{classSceneManager_a3e427477de4599dc1437f2020ba6a244}} 
+void {\bfseries update} (\mbox{\hyperlink{classClock}{Clock}} \&clock)
+\item 
+void \mbox{\hyperlink{classSceneManager_ae5f81786247794fa0c725bb9245348d0}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that handle the scenes. 
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSceneManager_a52085e6737c23b491c228e86781af808}\label{classSceneManager_a52085e6737c23b491c228e86781af808}} 
+\index{SceneManager@{SceneManager}!SceneManager@{SceneManager}}
+\index{SceneManager@{SceneManager}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{SceneManager()}{SceneManager()}}
+{\footnotesize\ttfamily Scene\+Manager\+::\+Scene\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{classScene}{Scene} Manager object. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source}{scene\+Manager.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ :\ \_activeSceneIndex(-\/1)\ \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_a2bb376a85d29e85f47753e26c7539229}\label{classSceneManager_a2bb376a85d29e85f47753e26c7539229}} 
+\index{SceneManager@{SceneManager}!````~SceneManager@{$\sim$SceneManager}}
+\index{````~SceneManager@{$\sim$SceneManager}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$SceneManager()}{~SceneManager()}}
+{\footnotesize\ttfamily Scene\+Manager\+::$\sim$\+Scene\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \doxylink{classScene}{Scene} Manager object. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source}{scene\+Manager.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSceneManager_a8331a1fbf1c673645a320345f2c538d7}\label{classSceneManager_a8331a1fbf1c673645a320345f2c538d7}} 
+\index{SceneManager@{SceneManager}!addScene@{addScene}}
+\index{addScene@{addScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{addScene()}{addScene()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::add\+Scene (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classScene}{Scene}} $>$}]{scene }\end{DoxyParamCaption})}
+
+
+
+Add a scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source}{scene\+Manager.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \_scenes.push\_back(scene);}
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_a11ddf46cf89f7b5a40adc4b00adfc6d6}\label{classSceneManager_a11ddf46cf89f7b5a40adc4b00adfc6d6}} 
+\index{SceneManager@{SceneManager}!draw@{draw}}
+\index{draw@{draw}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scene\+Manager\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Handle events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source}{scene\+Manager.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_activeSceneIndex\ >=\ 0)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \_scenes[\_activeSceneIndex]-\/>draw(window,\ \_ecs);}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_ae5f81786247794fa0c725bb9245348d0}\label{classSceneManager_ae5f81786247794fa0c725bb9245348d0}} 
+\index{SceneManager@{SceneManager}!draw@{draw}}
+\index{draw@{draw}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scene\+Manager\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{POC_2sources_2sceneManager_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{POC_2sources_2sceneManager_8cpp_source}{scene\+Manager.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_activeSceneIndex\ >=\ 0)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \_scenes[\_activeSceneIndex]-\/>draw(window,\ ecs);}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_a91c156c0d769cdcd25fbee4689cdbacd}\label{classSceneManager_a91c156c0d769cdcd25fbee4689cdbacd}} 
+\index{SceneManager@{SceneManager}!getHistoryIndex@{getHistoryIndex}}
+\index{getHistoryIndex@{getHistoryIndex}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{getHistoryIndex()}{getHistoryIndex()}}
+{\footnotesize\ttfamily int Scene\+Manager\+::get\+History\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handle history index. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source}{scene\+Manager.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ \_historySceneIndex.back();}
+\DoxyCodeLine{00058\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_a9109b25c66b9b2ad6fe8a65311f0d06a}\label{classSceneManager_a9109b25c66b9b2ad6fe8a65311f0d06a}} 
+\index{SceneManager@{SceneManager}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}}
+{\footnotesize\ttfamily states Scene\+Manager\+::handle\+Event (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{event,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classClient}{Client}} \&}]{client }\end{DoxyParamCaption})}
+
+
+
+Handle events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source}{scene\+Manager.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_activeSceneIndex\ >=\ 0)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ states\ state\ =\ \_scenes[\_activeSceneIndex]-\/>handleEvent(event,\ window);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (state\ ==\ LOBBY)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ state;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (state\ !=\ OK)}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ (\_event.*(\_event.\_functionPointer[state]))(*\textcolor{keyword}{this},\ window,\ client);}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ OK;}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_a7db297e7071ad9d4a1339cfb8b53f186}\label{classSceneManager_a7db297e7071ad9d4a1339cfb8b53f186}} 
+\index{SceneManager@{SceneManager}!loadScene@{loadScene}}
+\index{loadScene@{loadScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{loadScene()}{loadScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scene\+Manager\+::load\+Scene (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Load a scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source}{scene\+Manager.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0\ ||\ index\ >=\ \_scenes.size())\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_activeSceneIndex\ >=\ 0)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \_scenes[\_activeSceneIndex]-\/>unload(\_ecs);}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_activeSceneIndex\ !=\ -\/1)}
+\DoxyCodeLine{00028\ \ \ \ \ \_historySceneIndex.push\_back(\_activeSceneIndex);}
+\DoxyCodeLine{00029\ \ \ \ \ \_activeSceneIndex\ =\ index;}
+\DoxyCodeLine{00030\ \ \ \ \ \_scenes[\_activeSceneIndex]-\/>load(\_ecs);}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_ae44b78ebbdc79ab6b2a07f43bdd06e8c}\label{classSceneManager_ae44b78ebbdc79ab6b2a07f43bdd06e8c}} 
+\index{SceneManager@{SceneManager}!loadScene@{loadScene}}
+\index{loadScene@{loadScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{loadScene()}{loadScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scene\+Manager\+::load\+Scene (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{POC_2sources_2sceneManager_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{POC_2sources_2sceneManager_8cpp_source}{scene\+Manager.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0\ ||\ index\ >=\ \_scenes.size())\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_activeSceneIndex\ >=\ 0)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \_scenes[\_activeSceneIndex]-\/>unload(ecs);}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \_activeSceneIndex\ =\ index;}
+\DoxyCodeLine{00028\ \ \ \ \ \_scenes[\_activeSceneIndex]-\/>load(ecs);}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_ab409fda341fc74885c0d769482f827f5}\label{classSceneManager_ab409fda341fc74885c0d769482f827f5}} 
+\index{SceneManager@{SceneManager}!setHistoryIndex@{setHistoryIndex}}
+\index{setHistoryIndex@{setHistoryIndex}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{setHistoryIndex()}{setHistoryIndex()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::set\+History\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set history index. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source}{scene\+Manager.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \_historySceneIndex.pop\_back();}
+\DoxyCodeLine{00062\ \ \ \ \ \_historySceneIndex.pop\_back();}
+\DoxyCodeLine{00063\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_a3e427477de4599dc1437f2020ba6a244}\label{classSceneManager_a3e427477de4599dc1437f2020ba6a244}} 
+\index{SceneManager@{SceneManager}!update@{update}}
+\index{update@{update}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClock}{Clock}} \&}]{clock }\end{DoxyParamCaption})}
+
+
+
+Unload a scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{Client_2src_2sceneManager_8cpp_source}{scene\+Manager.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_activeSceneIndex\ >=\ 0)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \_scenes[\_activeSceneIndex]-\/>update(clock);}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/scene\+Manager.\+hpp\item 
+POC/includes/scene\+Manager.\+hpp\item 
+Client/src/scene\+Manager.\+cpp\item 
+POC/sources/scene\+Manager.\+cpp\end{DoxyCompactItemize}

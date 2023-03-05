@@ -1,0 +1,390 @@
+\hypertarget{classUDPServer}{}\doxysection{UDPServer Class Reference}
+\label{classUDPServer}\index{UDPServer@{UDPServer}}
+
+
+\doxylink{classUDPServer}{UDPServer} class.  
+
+
+
+
+{\ttfamily \#include $<$server\+\_\+udp.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUDPServer_aa4f0dd1d9862283edb8cf30e2068a9dc}{UDPServer}} (uint16\+\_\+t port, asio\+::io\+\_\+context \&io\+Service)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classUDPServer}{UDPServer} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUDPServer_a09b1a38f1a03d3832f85fe05e6370a11}{$\sim$\+UDPServer}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classUDPServer}{UDPServer} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUDPServer_adff289696d8b33e8cd2e25ba6cfde86d}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start the server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUDPServer_accca8d6667e3f7d27d1d9c90c9abaf12}{loop\+Read}} ()
+\begin{DoxyCompactList}\small\item\em read the loop \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUDPServer_af5508a5a0eaab045026fabb6ecdb4c1c}{parse\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Parse the data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUDPServer_a15f599783ce68afda59c3ee274b54e4f}{start\+Game}} ()
+\begin{DoxyCompactList}\small\item\em start the game \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUDPServer_accabe8f013ff6e8758fe9db98cc5b031}{start\+\_\+send\+\_\+timer}} ()
+\begin{DoxyCompactList}\small\item\em start the send timer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUDPServer_a4bf53cfe5bbf524309d317f8e87c621a}{send\+\_\+message}} (std\+::string message, asio\+::ip\+::udp\+::endpoint endpoint)
+\begin{DoxyCompactList}\small\item\em send the message \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUDPServer_a76b6aeeffa5765dbf290163eb3f8ffcf}{send\+To\+All}} (std\+::string message)
+\begin{DoxyCompactList}\small\item\em send the message to all clients \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUDPServer_a04bb244d870a1f1ff5b077d02b5ff8c0}{send\+\_\+queue}} ()
+\begin{DoxyCompactList}\small\item\em send the queue \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, void(UDPServer\+::$\ast$)()$>$ \mbox{\hyperlink{classUDPServer_a690e87d07772d86f214ad4d06b44c1ed}{\+\_\+parse\+Function}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classUDPServer}{UDPServer} class. 
+
+
+
+Definition at line \mbox{\hyperlink{server__udp_8hpp_source_l00014}{14}} of file \mbox{\hyperlink{server__udp_8hpp_source}{server\+\_\+udp.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUDPServer_aa4f0dd1d9862283edb8cf30e2068a9dc}\label{classUDPServer_aa4f0dd1d9862283edb8cf30e2068a9dc}} 
+\index{UDPServer@{UDPServer}!UDPServer@{UDPServer}}
+\index{UDPServer@{UDPServer}!UDPServer@{UDPServer}}
+\doxysubsubsection{\texorpdfstring{UDPServer()}{UDPServer()}}
+{\footnotesize\ttfamily UDPServer\+::\+UDPServer (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{port,  }\item[{asio\+::io\+\_\+context \&}]{io\+Service }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{classUDPServer}{UDPServer} object. 
+
+Construct a new \doxylink{classUDPServer_aa4f0dd1d9862283edb8cf30e2068a9dc}{UDPServer\+::\+UDPServer} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & \\
+\hline
+{\em io\+Service} & \\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & \\
+\hline
+{\em io\+Service} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{server__udp_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{server__udp_8cpp_source}{server\+\_\+udp.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ socket\_(ioService,\ asio::ip::udp::endpoint(asio::ip::udp::v4(),\ port)),\ \_ioService(ioService)}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Created\ udp\ server\ on\ port\ "{}}\ <<\ port\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00019\ \ \ \ \ \_gameEngine\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\_parseFunction\ =\ \{\{"{}Join"{},\ \&join\},\{"{}Start"{},\ \&startLobby\},\{"{}Type"{},\ \&chooseGame\},\{"{}Leave"{},\ \&leave\}\}}}
+\DoxyCodeLine{00021\ \ \ \ \ \_parseFunction[\textcolor{stringliteral}{"{}Join"{}}]\ =\ \&UDPServer::join;}
+\DoxyCodeLine{00022\ \ \ \ \ \_parseFunction[\textcolor{stringliteral}{"{}Start"{}}]\ =\ \&UDPServer::startLobby;}
+\DoxyCodeLine{00023\ \ \ \ \ \_parseFunction[\textcolor{stringliteral}{"{}Type"{}}]\ =\ \&UDPServer::chooseGame;}
+\DoxyCodeLine{00024\ \ \ \ \ \_parseFunction[\textcolor{stringliteral}{"{}Leave"{}}]\ =\ \&UDPServer::leave;}
+\DoxyCodeLine{00025\ \ \ \ \ \_parseFunction[\textcolor{stringliteral}{"{}Create"{}}]\ =\ \&UDPServer::CreateRoom;}
+\DoxyCodeLine{00026\ \ \ \ \ \_parseFunction[\textcolor{stringliteral}{"{}Chat"{}}]\ =\ \&UDPServer::chat;}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classUDPServer_adff289696d8b33e8cd2e25ba6cfde86d}{start}}();}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUDPServer_a09b1a38f1a03d3832f85fe05e6370a11}\label{classUDPServer_a09b1a38f1a03d3832f85fe05e6370a11}} 
+\index{UDPServer@{UDPServer}!````~UDPServer@{$\sim$UDPServer}}
+\index{````~UDPServer@{$\sim$UDPServer}!UDPServer@{UDPServer}}
+\doxysubsubsection{\texorpdfstring{$\sim$UDPServer()}{~UDPServer()}}
+{\footnotesize\ttfamily UDPServer\+::$\sim$\+UDPServer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \doxylink{classUDPServer}{UDPServer} object. 
+
+Destroy the \doxylink{classUDPServer_aa4f0dd1d9862283edb8cf30e2068a9dc}{UDPServer\+::\+UDPServer} object ~\newline
+
+
+Definition at line \mbox{\hyperlink{server__udp_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{server__udp_8cpp_source}{server\+\_\+udp.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUDPServer_accca8d6667e3f7d27d1d9c90c9abaf12}\label{classUDPServer_accca8d6667e3f7d27d1d9c90c9abaf12}} 
+\index{UDPServer@{UDPServer}!loopRead@{loopRead}}
+\index{loopRead@{loopRead}!UDPServer@{UDPServer}}
+\doxysubsubsection{\texorpdfstring{loopRead()}{loopRead()}}
+{\footnotesize\ttfamily void UDPServer\+::loop\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+read the loop 
+
+Loop\+Read function get the data from the client and parse it.
+
+Definition at line \mbox{\hyperlink{server__udp_8cpp_source_l00142}{142}} of file \mbox{\hyperlink{server__udp_8cpp_source}{server\+\_\+udp.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ socket\_.async\_receive\_from(asio::buffer(\_recvBuffer),\ \_endpoint,\ [\textcolor{keyword}{this}](std::error\_code\ ec,\ std::size\_t\ bytes)\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ec)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ while\ receiving\ data\ from\ client:\ "{}}\ <<\ ec.message()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_af5508a5a0eaab045026fabb6ecdb4c1c}{parseData}}();}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \_recvBuffer\ =\ \{\};}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_accca8d6667e3f7d27d1d9c90c9abaf12}{loopRead}}();}
+\DoxyCodeLine{00152\ \ \ \ \ \});}
+\DoxyCodeLine{00153\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUDPServer_af5508a5a0eaab045026fabb6ecdb4c1c}\label{classUDPServer_af5508a5a0eaab045026fabb6ecdb4c1c}} 
+\index{UDPServer@{UDPServer}!parseData@{parseData}}
+\index{parseData@{parseData}!UDPServer@{UDPServer}}
+\doxysubsubsection{\texorpdfstring{parseData()}{parseData()}}
+{\footnotesize\ttfamily void UDPServer\+::parse\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parse the data. 
+
+Function who parse the data.
+
+Definition at line \mbox{\hyperlink{server__udp_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{server__udp_8cpp_source}{server\+\_\+udp.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ std::string\ data\ =\ std::string(\_recvBuffer.data());}
+\DoxyCodeLine{00117\ \ \ \ \ std::vector<std::string>\ delimitors\ =\ \{\textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ \textcolor{stringliteral}{"{}\ "{}}\};}
+\DoxyCodeLine{00118\ \ \ \ \ std::string\ token;}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&delimitor\ :\ delimitors)\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.find(delimitor)\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ token\ =\ delimitor;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ std::string\ Ndata\ =\ data.substr(0,\ data.find(token));}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{if}\ (data.size()\ >\ 0\ \&\&\ \_parseFunction.find(Ndata)\ !=\ \_parseFunction.end())\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Received\ data\ from\ client:\ "{}}\ <<\ Ndata\ <<\ std::endl;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ (this-\/>*\_parseFunction[Ndata])();}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_gameEngine\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \_gameEngine-\/>\mbox{\hyperlink{classGameEngine_acd705e3e888c73dcf1fa7dd94e54585b}{update}}(\_recvBuffer.data(),\ std::find(\_endpoints.begin(),\ \_endpoints.end(),\ \_endpoint)\ -\/\ \_endpoints.begin());}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUDPServer_a4bf53cfe5bbf524309d317f8e87c621a}\label{classUDPServer_a4bf53cfe5bbf524309d317f8e87c621a}} 
+\index{UDPServer@{UDPServer}!send\_message@{send\_message}}
+\index{send\_message@{send\_message}!UDPServer@{UDPServer}}
+\doxysubsubsection{\texorpdfstring{send\_message()}{send\_message()}}
+{\footnotesize\ttfamily void UDPServer\+::send\+\_\+message (\begin{DoxyParamCaption}\item[{std\+::string}]{message,  }\item[{asio\+::ip\+::udp\+::endpoint}]{endpoint }\end{DoxyParamCaption})}
+
+
+
+send the message 
+
+Function who send the message to the client.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+{\em endpoint} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{server__udp_8cpp_source_l00192}{192}} of file \mbox{\hyperlink{server__udp_8cpp_source}{server\+\_\+udp.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00193\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Sending\ message\ to\ client:\ "{}\ <<\ message\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00195\ \ \ \ \ socket\_.async\_send\_to(asio::buffer(message),\ endpoint,\ [\textcolor{keyword}{this}](std::error\_code\ ec,\ std::size\_t\ bytes)\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ec)\ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ while\ sending\ data\ to\ client:\ "{}}\ <<\ ec.message()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00200\ \ \ \ \ \});}
+\DoxyCodeLine{00201\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUDPServer_a04bb244d870a1f1ff5b077d02b5ff8c0}\label{classUDPServer_a04bb244d870a1f1ff5b077d02b5ff8c0}} 
+\index{UDPServer@{UDPServer}!send\_queue@{send\_queue}}
+\index{send\_queue@{send\_queue}!UDPServer@{UDPServer}}
+\doxysubsubsection{\texorpdfstring{send\_queue()}{send\_queue()}}
+{\footnotesize\ttfamily void UDPServer\+::send\+\_\+queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+send the queue 
+
+Function who send the queue.
+
+Definition at line \mbox{\hyperlink{server__udp_8cpp_source_l00220}{220}} of file \mbox{\hyperlink{server__udp_8cpp_source}{server\+\_\+udp.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00221\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_gameEngine\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00224\ \ \ \ \ std::vector<std::string>\ \_commands\ =\ \_gameEngine-\/>\mbox{\hyperlink{classGameEngine_a124dfcfb25f1fe61576aa7c214b026f9}{getCommands}}();}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_commands.size()\ ==\ 0)}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Sending\ queue\ to\ client:\ "{}\ <<\ \_commands.size()\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{int}\ size\ =\ \_commands.size();}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordtype}{int}\ toDel\ =\ 0;}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_a76b6aeeffa5765dbf290163eb3f8ffcf}{sendToAll}}(\_commands[i]);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ toDel++;}
+\DoxyCodeLine{00233\ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \_commands.erase(\_commands.begin()\ +\ toDel);}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \_gameEngine-\/>\mbox{\hyperlink{classGameEngine_ad91a0358e9efd498706a7a74b6b8b44c}{eraseCommands}}();}
+\DoxyCodeLine{00237\ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUDPServer_a76b6aeeffa5765dbf290163eb3f8ffcf}\label{classUDPServer_a76b6aeeffa5765dbf290163eb3f8ffcf}} 
+\index{UDPServer@{UDPServer}!sendToAll@{sendToAll}}
+\index{sendToAll@{sendToAll}!UDPServer@{UDPServer}}
+\doxysubsubsection{\texorpdfstring{sendToAll()}{sendToAll()}}
+{\footnotesize\ttfamily void UDPServer\+::send\+To\+All (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+send the message to all clients 
+
+Function who send the message to all the clients.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{server__udp_8cpp_source_l00208}{208}} of file \mbox{\hyperlink{server__udp_8cpp_source}{server\+\_\+udp.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00209\ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ endpoint\ :\ \_endpoints)\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_a4bf53cfe5bbf524309d317f8e87c621a}{send\_message}}(message,\ endpoint);}
+\DoxyCodeLine{00212\ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUDPServer_adff289696d8b33e8cd2e25ba6cfde86d}\label{classUDPServer_adff289696d8b33e8cd2e25ba6cfde86d}} 
+\index{UDPServer@{UDPServer}!start@{start}}
+\index{start@{start}!UDPServer@{UDPServer}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void UDPServer\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the server. 
+
+Function who start the server.
+
+Definition at line \mbox{\hyperlink{server__udp_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{server__udp_8cpp_source}{server\+\_\+udp.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_accca8d6667e3f7d27d1d9c90c9abaf12}{loopRead}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_accabe8f013ff6e8758fe9db98cc5b031}{start\_send\_timer}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \_ioService.run();}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUDPServer_accabe8f013ff6e8758fe9db98cc5b031}\label{classUDPServer_accabe8f013ff6e8758fe9db98cc5b031}} 
+\index{UDPServer@{UDPServer}!start\_send\_timer@{start\_send\_timer}}
+\index{start\_send\_timer@{start\_send\_timer}!UDPServer@{UDPServer}}
+\doxysubsubsection{\texorpdfstring{start\_send\_timer()}{start\_send\_timer()}}
+{\footnotesize\ttfamily void UDPServer\+::start\+\_\+send\+\_\+timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+start the send timer 
+
+Function who start the timer.
+
+Definition at line \mbox{\hyperlink{server__udp_8cpp_source_l00174}{174}} of file \mbox{\hyperlink{server__udp_8cpp_source}{server\+\_\+udp.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00175\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ timer\_.expires\_after(std::chrono::milliseconds(100));}
+\DoxyCodeLine{00177\ \ \ \ \ timer\_.async\_wait([\textcolor{keyword}{this}](std::error\_code\ ec)\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ec)\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ while\ waiting\ for\ timer:\ "{}}\ <<\ ec.message()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_a04bb244d870a1f1ff5b077d02b5ff8c0}{send\_queue}}();}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_accabe8f013ff6e8758fe9db98cc5b031}{start\_send\_timer}}();}
+\DoxyCodeLine{00184\ \ \ \ \ \});}
+\DoxyCodeLine{00185\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUDPServer_a15f599783ce68afda59c3ee274b54e4f}\label{classUDPServer_a15f599783ce68afda59c3ee274b54e4f}} 
+\index{UDPServer@{UDPServer}!startGame@{startGame}}
+\index{startGame@{startGame}!UDPServer@{UDPServer}}
+\doxysubsubsection{\texorpdfstring{startGame()}{startGame()}}
+{\footnotesize\ttfamily void UDPServer\+::start\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+start the game 
+
+Function who start the game.
+
+Definition at line \mbox{\hyperlink{server__udp_8cpp_source_l00160}{160}} of file \mbox{\hyperlink{server__udp_8cpp_source}{server\+\_\+udp.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \_gameEngine\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classGameEngine}{GameEngine}}(nb\_players,\ \_gameType);}
+\DoxyCodeLine{00162\ \ \ \ \ \_gameThread\ =\ \textcolor{keyword}{new}\ std::thread([\textcolor{keyword}{this}]()\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Game\ started"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \_gameEngine-\/>\mbox{\hyperlink{classGameEngine_a425ec68e14b2def17e162cbe3c6cfb13}{start}}();}
+\DoxyCodeLine{00165\ \ \ \ \ \});}
+\DoxyCodeLine{00166\ \ \ \ \ \_gameThread-\/>detach();}
+\DoxyCodeLine{00167\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classUDPServer_a690e87d07772d86f214ad4d06b44c1ed}\label{classUDPServer_a690e87d07772d86f214ad4d06b44c1ed}} 
+\index{UDPServer@{UDPServer}!\_parseFunction@{\_parseFunction}}
+\index{\_parseFunction@{\_parseFunction}!UDPServer@{UDPServer}}
+\doxysubsubsection{\texorpdfstring{\_parseFunction}{\_parseFunction}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, void (UDPServer\+::$\ast$)()$>$ UDPServer\+::\+\_\+parse\+Function}
+
+
+
+Definition at line \mbox{\hyperlink{server__udp_8hpp_source_l00080}{80}} of file \mbox{\hyperlink{server__udp_8hpp_source}{server\+\_\+udp.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/includes/server\+\_\+udp.\+hpp\item 
+Server/sources/server\+\_\+udp.\+cpp\end{DoxyCompactItemize}

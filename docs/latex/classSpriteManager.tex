@@ -1,0 +1,162 @@
+\hypertarget{classSpriteManager}{}\doxysection{Sprite\+Manager Class Reference}
+\label{classSpriteManager}\index{SpriteManager@{SpriteManager}}
+
+
+Class that handle static sprites.  
+
+
+
+
+{\ttfamily \#include $<$Sprite\+Manager.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSpriteManager_a2c102a1fc7f688003c5b3c98d601e424}{Sprite\+Manager}} (const std\+::pair$<$ float, float $>$ \&dimensions)
+\begin{DoxyCompactList}\small\item\em Construct a new Sprite Manager object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSpriteManager_ae01a31b1c80f676604ba55c93b499e1f}{$\sim$\+Sprite\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Sprite Manager object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpriteManager_ae117be8da181d774ed3759a2abef646c}{add\+Sprite}} (const std\+::string \&filepath, float x, float y, float sizeX=1.\+0f, float sizeY=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Add a sprite to the vector as well as its position and size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}{draw\+Sprite}} (sf\+::\+Render\+Window \&window, const std\+::string \&filepath)
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} all the sprites. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that handle static sprites. 
+
+
+
+Definition at line \mbox{\hyperlink{SpriteManager_8hpp_source_l00011}{11}} of file \mbox{\hyperlink{SpriteManager_8hpp_source}{Sprite\+Manager.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSpriteManager_a2c102a1fc7f688003c5b3c98d601e424}\label{classSpriteManager_a2c102a1fc7f688003c5b3c98d601e424}} 
+\index{SpriteManager@{SpriteManager}!SpriteManager@{SpriteManager}}
+\index{SpriteManager@{SpriteManager}!SpriteManager@{SpriteManager}}
+\doxysubsubsection{\texorpdfstring{SpriteManager()}{SpriteManager()}}
+{\footnotesize\ttfamily Sprite\+Manager\+::\+Sprite\+Manager (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ float, float $>$ \&}]{dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Sprite Manager object. 
+
+
+
+Definition at line \mbox{\hyperlink{SpriteManager_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{SpriteManager_8hpp_source}{Sprite\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \_dimensions\ =\ dimensions;}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSpriteManager_ae01a31b1c80f676604ba55c93b499e1f}\label{classSpriteManager_ae01a31b1c80f676604ba55c93b499e1f}} 
+\index{SpriteManager@{SpriteManager}!````~SpriteManager@{$\sim$SpriteManager}}
+\index{````~SpriteManager@{$\sim$SpriteManager}!SpriteManager@{SpriteManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$SpriteManager()}{~SpriteManager()}}
+{\footnotesize\ttfamily Sprite\+Manager\+::$\sim$\+Sprite\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the Sprite Manager object. 
+
+
+
+Definition at line \mbox{\hyperlink{SpriteManager_8hpp_source_l00025}{25}} of file \mbox{\hyperlink{SpriteManager_8hpp_source}{Sprite\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSpriteManager_ae117be8da181d774ed3759a2abef646c}\label{classSpriteManager_ae117be8da181d774ed3759a2abef646c}} 
+\index{SpriteManager@{SpriteManager}!addSprite@{addSprite}}
+\index{addSprite@{addSprite}!SpriteManager@{SpriteManager}}
+\doxysubsubsection{\texorpdfstring{addSprite()}{addSprite()}}
+{\footnotesize\ttfamily void Sprite\+Manager\+::add\+Sprite (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{sizeX = {\ttfamily 1.0f},  }\item[{float}]{sizeY = {\ttfamily 1.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a sprite to the vector as well as its position and size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & \\
+\hline
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em sizeX} & \\
+\hline
+{\em sizeY} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SpriteManager_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{SpriteManager_8hpp_source}{Sprite\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ sf::Texture\ texture;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!texture.loadFromFile(findFile(filepath)))\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ error\ loading\ texture}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ sf::Sprite\ sprite;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ sf::Vector2f\ pos((\_dimensions.first\ /\ 100)\ *\ x,\ (\_dimensions.second\ /\ 100)\ *\ y);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ scaleX\ =\ sizeX\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\_dimensions.first)\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(texture.getSize().x);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ scaleY\ =\ sizeY\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\_dimensions.second)\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(texture.getSize().y);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ sf::Vector2f\ size(scaleX,\ scaleY);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ sprite.setPosition(pos);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ sprite.setScale(size);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ std::pair<sf::Texture,\ sf::Sprite>\ spritePair\ =\ std::make\_pair(texture,\ sprite);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \_sprites.insert(std::make\_pair(filepath,\ spritePair));}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}\label{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}} 
+\index{SpriteManager@{SpriteManager}!drawSprite@{drawSprite}}
+\index{drawSprite@{drawSprite}!SpriteManager@{SpriteManager}}
+\doxysubsubsection{\texorpdfstring{drawSprite()}{drawSprite()}}
+{\footnotesize\ttfamily void Sprite\+Manager\+::draw\+Sprite (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxylink{classDraw}{Draw} all the sprites. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SpriteManager_8hpp_source_l00058}{58}} of file \mbox{\hyperlink{SpriteManager_8hpp_source}{Sprite\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ spriteIter\ =\ \_sprites.find(filepath);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (spriteIter\ !=\ \_sprites.end())\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Texture\&\ texture\ =\ spriteIter-\/>second.first;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Sprite\&\ sprite\ =\ spriteIter-\/>second.second;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ sprite.setTexture(texture);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ window.draw(sprite);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/Sprite\+Manager.\+hpp\end{DoxyCompactItemize}

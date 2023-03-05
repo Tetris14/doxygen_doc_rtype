@@ -1,0 +1,333 @@
+\hypertarget{classConnectScene}{}\doxysection{Connect\+Scene Class Reference}
+\label{classConnectScene}\index{ConnectScene@{ConnectScene}}
+
+
+\doxylink{classConnectScene}{Connect\+Scene} class that inherits from \doxylink{classScene}{Scene}.  
+
+
+
+
+{\ttfamily \#include $<$connect\+Scene.\+hpp$>$}
+
+Inheritance diagram for Connect\+Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classConnectScene}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classConnectScene_a88233880b1e8e426f353ebef7e5c39e0}{Connect\+Scene}} (const std\+::pair$<$ float, float $>$ \&dimensions, const std\+::string \&music, sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Construct a new Connect \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classConnectScene_a0d62e87e967ca618fa0f077c46fc195d}{$\sim$\+Connect\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Connect \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConnectScene_a5b045535ebe3f18661f8bc4edf3f374e}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em Load the Connect \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConnectScene_a5c7e2180219b73556b6b326099db63f3}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em Unload the Connect \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConnectScene_a2f9cc5cb4f8d1b3eca89030f272d6184}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock) override
+\begin{DoxyCompactList}\small\item\em Update the Connect \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+states \mbox{\hyperlink{classConnectScene_a49b006389047c91959401ac244343998}{handle\+Event}} (sf\+::\+Event event, \mbox{\hyperlink{classWindow}{Window}} \&window) override
+\begin{DoxyCompactList}\small\item\em Handle the Connect \doxylink{classScene}{Scene} object events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConnectScene_ae45f3cf9b083eb46a76fd5b1e98171cc}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the Connect \doxylink{classScene}{Scene} object sprites. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classScene}{Scene}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em loads a \doxylink{classScene}{Scene} \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em Unloads a \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+virtual states \mbox{\hyperlink{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}{handle\+Event}} (sf\+::\+Event event, \mbox{\hyperlink{classWindow}{Window}} \&window)=0
+\begin{DoxyCompactList}\small\item\em Handle events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock)=0
+\begin{DoxyCompactList}\small\item\em Update the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\item 
+\mbox{\Hypertarget{classScene_a6d44d0f4b3ceb248ed0b6d137e6bd37f}\label{classScene_a6d44d0f4b3ceb248ed0b6d137e6bd37f}} 
+virtual void {\bfseries handle\+Event} (sf\+::\+Event event)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classConnectScene}{Connect\+Scene} class that inherits from \doxylink{classScene}{Scene}. 
+
+
+
+Definition at line \mbox{\hyperlink{connectScene_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{connectScene_8hpp_source}{connect\+Scene.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classConnectScene_a88233880b1e8e426f353ebef7e5c39e0}\label{classConnectScene_a88233880b1e8e426f353ebef7e5c39e0}} 
+\index{ConnectScene@{ConnectScene}!ConnectScene@{ConnectScene}}
+\index{ConnectScene@{ConnectScene}!ConnectScene@{ConnectScene}}
+\doxysubsubsection{\texorpdfstring{ConnectScene()}{ConnectScene()}}
+{\footnotesize\ttfamily Connect\+Scene\+::\+Connect\+Scene (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ float, float $>$ \&}]{dimensions,  }\item[{const std\+::string \&}]{music,  }\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Connect \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dimensions} & \\
+\hline
+{\em music} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{connectScene_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{connectScene_8hpp_source}{connect\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \_dimensions(dimensions),\ \_music(findFile(music)),\ \_spriteManager(dimensions)}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ae117be8da181d774ed3759a2abef646c}{addSprite}}(\textcolor{stringliteral}{"{}background.jpg"{}},\ 0.0f,\ 0.0f,\ 1.0f,\ 1.0f);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ae117be8da181d774ed3759a2abef646c}{addSprite}}(\textcolor{stringliteral}{"{}R-\/Type\_logo.png"{}},\ 35.0f,\ 15.0f,\ 0.3f,\ 0.15f);}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classConnectScene_a0d62e87e967ca618fa0f077c46fc195d}\label{classConnectScene_a0d62e87e967ca618fa0f077c46fc195d}} 
+\index{ConnectScene@{ConnectScene}!````~ConnectScene@{$\sim$ConnectScene}}
+\index{````~ConnectScene@{$\sim$ConnectScene}!ConnectScene@{ConnectScene}}
+\doxysubsubsection{\texorpdfstring{$\sim$ConnectScene()}{~ConnectScene()}}
+{\footnotesize\ttfamily Connect\+Scene\+::$\sim$\+Connect\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the Connect \doxylink{classScene}{Scene} object. 
+
+
+
+Definition at line \mbox{\hyperlink{connectScene_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{connectScene_8hpp_source}{connect\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConnectScene_ae45f3cf9b083eb46a76fd5b1e98171cc}\label{classConnectScene_ae45f3cf9b083eb46a76fd5b1e98171cc}} 
+\index{ConnectScene@{ConnectScene}!draw@{draw}}
+\index{draw@{draw}!ConnectScene@{ConnectScene}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Connect\+Scene\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{classDraw}{Draw} the Connect \doxylink{classScene}{Scene} object sprites. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{connectScene_8hpp_source_l00119}{119}} of file \mbox{\hyperlink{connectScene_8hpp_source}{connect\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}{drawSprite}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ \textcolor{stringliteral}{"{}background.jpg"{}});}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \_backgoundMenu.\mbox{\hyperlink{classRectangle_a985548fa4b2b54823af0c22e57936ef4}{setRectangle}}(findFile(\textcolor{stringliteral}{"{}menuRectangle.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \_backgoundMenu.\mbox{\hyperlink{classRectangle_a17972bcdb06e6e103d1bb404e3d562c7}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}{drawSprite}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ \textcolor{stringliteral}{"{}R-\/Type\_logo.png"{}});}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_showStart)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \_startGame.\mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{setButton}}(findFile(\textcolor{stringliteral}{"{}startButton.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \_backSecond.\mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{setButton}}(findFile(\textcolor{stringliteral}{"{}backButton.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \_type1.\mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{setButton}}(findFile(\textcolor{stringliteral}{"{}type1Button.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \_type2.\mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{setButton}}(findFile(\textcolor{stringliteral}{"{}type2Button.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \_create.\mbox{\hyperlink{classText_a72e169338b38fe278a1a68a72b42da9d}{setText}}(findFile(\textcolor{stringliteral}{"{}createText.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \_type1.\mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{isHover}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \_type2.\mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{isHover}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \_startGame.\mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{isHover}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \_startGame.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \_backSecond.\mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{isHover}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \_backSecond.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \_create.\mbox{\hyperlink{classText_a820f51d1ef58aa6ffadc10cc0e6ce479}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \_type1.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \_type2.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \_joinButton.\mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{setButton}}(findFile(\textcolor{stringliteral}{"{}joinButton.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \_createButton.\mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{setButton}}(findFile(\textcolor{stringliteral}{"{}createButton.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \_back.\mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{setButton}}(findFile(\textcolor{stringliteral}{"{}backButton.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \_joinButton.\mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{isHover}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \_createButton.\mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{isHover}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \_back.\mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{isHover}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \_back.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \_joinButton.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \_createButton.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classConnectScene_a49b006389047c91959401ac244343998}\label{classConnectScene_a49b006389047c91959401ac244343998}} 
+\index{ConnectScene@{ConnectScene}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!ConnectScene@{ConnectScene}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}}
+{\footnotesize\ttfamily states Connect\+Scene\+::handle\+Event (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{event,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handle the Connect \doxylink{classScene}{Scene} object events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+states 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{connectScene_8hpp_source_l00091}{91}} of file \mbox{\hyperlink{connectScene_8hpp_source}{connect\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ states\ ret\ =\ OK;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_joinButton.\mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{isClicked}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}()))}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ ret\ =\ \ JOIN;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_createButton.\mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{isClicked}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}())\ \&\&\ !\_showStart)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \_showStart\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ ret\ =\ CREATE;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_type1.\mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{isClicked}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}()))}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ ret\ =\ \ TYPE1;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_type2.\mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{isClicked}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}()))}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ ret\ =\ \ TYPE2;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_back.\mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{isClicked}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}()))}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ ret\ =\ \ BACK;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_backSecond.\mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{isClicked}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}()))}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \_showStart\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_startGame.\mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{isClicked}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}())\ \&\&\ \_showStart)}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ ret\ =\ MULTIPLAYER;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classConnectScene_a5b045535ebe3f18661f8bc4edf3f374e}\label{classConnectScene_a5b045535ebe3f18661f8bc4edf3f374e}} 
+\index{ConnectScene@{ConnectScene}!load@{load}}
+\index{load@{load}!ConnectScene@{ConnectScene}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Connect\+Scene\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Load the Connect \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{connectScene_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{connectScene_8hpp_source}{connect\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \_music.\mbox{\hyperlink{classMusic_a54b941f6f7634d7f99b473c78fe6e4da}{play}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classConnectScene_a5c7e2180219b73556b6b326099db63f3}\label{classConnectScene_a5c7e2180219b73556b6b326099db63f3}} 
+\index{ConnectScene@{ConnectScene}!unload@{unload}}
+\index{unload@{unload}!ConnectScene@{ConnectScene}}
+\doxysubsubsection{\texorpdfstring{unload()}{unload()}}
+{\footnotesize\ttfamily void Connect\+Scene\+::unload (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Unload the Connect \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{connectScene_8hpp_source_l00070}{70}} of file \mbox{\hyperlink{connectScene_8hpp_source}{connect\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \_music.\mbox{\hyperlink{classMusic_a008211b514c1c89c15399d3384d3fcea}{stop}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classConnectScene_a2f9cc5cb4f8d1b3eca89030f272d6184}\label{classConnectScene_a2f9cc5cb4f8d1b3eca89030f272d6184}} 
+\index{ConnectScene@{ConnectScene}!update@{update}}
+\index{update@{update}!ConnectScene@{ConnectScene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Connect\+Scene\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClock}{Clock}} \&}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update the Connect \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{connectScene_8hpp_source_l00080}{80}} of file \mbox{\hyperlink{connectScene_8hpp_source}{connect\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/connect\+Scene.\+hpp\end{DoxyCompactItemize}

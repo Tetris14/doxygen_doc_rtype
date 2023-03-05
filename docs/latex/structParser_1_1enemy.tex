@@ -1,0 +1,213 @@
+\hypertarget{structParser_1_1enemy}{}\doxysection{Parser\+::enemy Struct Reference}
+\label{structParser_1_1enemy}\index{Parser::enemy@{Parser::enemy}}
+
+
+struct enemy  
+
+
+
+
+{\ttfamily \#include $<$Parser.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structParser_1_1enemy_af54d6c66388686018de652c82ab50589}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em to string function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structParser_1_1enemy_a76cb68a2b3cff045a55a9aaf9a34608a}{\+\_\+id}}
+\item 
+int \mbox{\hyperlink{structParser_1_1enemy_a5ed250d6c3b503c9c72d2e608f6942a5}{x}}
+\item 
+int \mbox{\hyperlink{structParser_1_1enemy_ae53c98e1547ecfa3cb4a514a4453a614}{y}}
+\item 
+int \mbox{\hyperlink{structParser_1_1enemy_a75e34e37f67f0a29ecb310c897892bad}{sizeX}}
+\item 
+int \mbox{\hyperlink{structParser_1_1enemy_a00be774dd758a30d050b7bda6f0e8508}{sizeY}}
+\item 
+int \mbox{\hyperlink{structParser_1_1enemy_ac0828f5cd7437dee3427b04777abc049}{health}}
+\item 
+int \mbox{\hyperlink{structParser_1_1enemy_a6c7720d334e74a93c946f1bcf526dda7}{speed}}
+\item 
+int \mbox{\hyperlink{structParser_1_1enemy_a30d23e45ad9cf415412e865961bea04e}{damage}}
+\item 
+int \mbox{\hyperlink{structParser_1_1enemy_aa8531aeeca8efede624ebf8646f1091e}{is\+Boss}}
+\item 
+int \mbox{\hyperlink{structParser_1_1enemy_ad00a382e0312fa724c329bae93469b6d}{rotation}}
+\item 
+float \mbox{\hyperlink{structParser_1_1enemy_aad38537c2f55320a3c6ec170011b89f2}{fire\+Rate}}
+\item 
+std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \mbox{\hyperlink{structParser_1_1enemy_ab8d1381f6a2e3d97f3a91e425444c17e}{waypoints}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct enemy 
+
+
+
+Definition at line \mbox{\hyperlink{Parser_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{Parser_8hpp_source}{Parser.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structParser_1_1enemy_af54d6c66388686018de652c82ab50589}\label{structParser_1_1enemy_af54d6c66388686018de652c82ab50589}} 
+\index{Parser::enemy@{Parser::enemy}!toString@{toString}}
+\index{toString@{toString}!Parser::enemy@{Parser::enemy}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Parser\+::enemy\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+to string function 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Parser_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{Parser_8hpp_source}{Parser.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ ret\ =\ std::to\_string(\_id)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(x)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(y)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(sizeX)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(sizeY)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(health)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(speed)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(damage)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(isBoss)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(rotation)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(fireRate)\ +\ \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ waypoints.size();\ ++i)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret\ +=\ std::to\_string(waypoints[i].first)\ +\ \textcolor{stringliteral}{"{},"{}}\ +\ std::to\_string(waypoints[i].second);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ waypoints.size()\ -\/\ 1)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret\ +=\ \textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structParser_1_1enemy_a76cb68a2b3cff045a55a9aaf9a34608a}\label{structParser_1_1enemy_a76cb68a2b3cff045a55a9aaf9a34608a}} 
+\index{Parser::enemy@{Parser::enemy}!\_id@{\_id}}
+\index{\_id@{\_id}!Parser::enemy@{Parser::enemy}}
+\doxysubsubsection{\texorpdfstring{\_id}{\_id}}
+{\footnotesize\ttfamily int Parser\+::enemy\+::\+\_\+id}
+
+
+
+Definition at line \mbox{\hyperlink{Parser_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{Parser_8hpp_source}{Parser.\+hpp}}.
+
+\mbox{\Hypertarget{structParser_1_1enemy_a30d23e45ad9cf415412e865961bea04e}\label{structParser_1_1enemy_a30d23e45ad9cf415412e865961bea04e}} 
+\index{Parser::enemy@{Parser::enemy}!damage@{damage}}
+\index{damage@{damage}!Parser::enemy@{Parser::enemy}}
+\doxysubsubsection{\texorpdfstring{damage}{damage}}
+{\footnotesize\ttfamily int Parser\+::enemy\+::damage}
+
+
+
+Definition at line \mbox{\hyperlink{Parser_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{Parser_8hpp_source}{Parser.\+hpp}}.
+
+\mbox{\Hypertarget{structParser_1_1enemy_aad38537c2f55320a3c6ec170011b89f2}\label{structParser_1_1enemy_aad38537c2f55320a3c6ec170011b89f2}} 
+\index{Parser::enemy@{Parser::enemy}!fireRate@{fireRate}}
+\index{fireRate@{fireRate}!Parser::enemy@{Parser::enemy}}
+\doxysubsubsection{\texorpdfstring{fireRate}{fireRate}}
+{\footnotesize\ttfamily float Parser\+::enemy\+::fire\+Rate}
+
+
+
+Definition at line \mbox{\hyperlink{Parser_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{Parser_8hpp_source}{Parser.\+hpp}}.
+
+\mbox{\Hypertarget{structParser_1_1enemy_ac0828f5cd7437dee3427b04777abc049}\label{structParser_1_1enemy_ac0828f5cd7437dee3427b04777abc049}} 
+\index{Parser::enemy@{Parser::enemy}!health@{health}}
+\index{health@{health}!Parser::enemy@{Parser::enemy}}
+\doxysubsubsection{\texorpdfstring{health}{health}}
+{\footnotesize\ttfamily int Parser\+::enemy\+::health}
+
+
+
+Definition at line \mbox{\hyperlink{Parser_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{Parser_8hpp_source}{Parser.\+hpp}}.
+
+\mbox{\Hypertarget{structParser_1_1enemy_aa8531aeeca8efede624ebf8646f1091e}\label{structParser_1_1enemy_aa8531aeeca8efede624ebf8646f1091e}} 
+\index{Parser::enemy@{Parser::enemy}!isBoss@{isBoss}}
+\index{isBoss@{isBoss}!Parser::enemy@{Parser::enemy}}
+\doxysubsubsection{\texorpdfstring{isBoss}{isBoss}}
+{\footnotesize\ttfamily int Parser\+::enemy\+::is\+Boss}
+
+
+
+Definition at line \mbox{\hyperlink{Parser_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{Parser_8hpp_source}{Parser.\+hpp}}.
+
+\mbox{\Hypertarget{structParser_1_1enemy_ad00a382e0312fa724c329bae93469b6d}\label{structParser_1_1enemy_ad00a382e0312fa724c329bae93469b6d}} 
+\index{Parser::enemy@{Parser::enemy}!rotation@{rotation}}
+\index{rotation@{rotation}!Parser::enemy@{Parser::enemy}}
+\doxysubsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily int Parser\+::enemy\+::rotation}
+
+
+
+Definition at line \mbox{\hyperlink{Parser_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{Parser_8hpp_source}{Parser.\+hpp}}.
+
+\mbox{\Hypertarget{structParser_1_1enemy_a75e34e37f67f0a29ecb310c897892bad}\label{structParser_1_1enemy_a75e34e37f67f0a29ecb310c897892bad}} 
+\index{Parser::enemy@{Parser::enemy}!sizeX@{sizeX}}
+\index{sizeX@{sizeX}!Parser::enemy@{Parser::enemy}}
+\doxysubsubsection{\texorpdfstring{sizeX}{sizeX}}
+{\footnotesize\ttfamily int Parser\+::enemy\+::sizeX}
+
+
+
+Definition at line \mbox{\hyperlink{Parser_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{Parser_8hpp_source}{Parser.\+hpp}}.
+
+\mbox{\Hypertarget{structParser_1_1enemy_a00be774dd758a30d050b7bda6f0e8508}\label{structParser_1_1enemy_a00be774dd758a30d050b7bda6f0e8508}} 
+\index{Parser::enemy@{Parser::enemy}!sizeY@{sizeY}}
+\index{sizeY@{sizeY}!Parser::enemy@{Parser::enemy}}
+\doxysubsubsection{\texorpdfstring{sizeY}{sizeY}}
+{\footnotesize\ttfamily int Parser\+::enemy\+::sizeY}
+
+
+
+Definition at line \mbox{\hyperlink{Parser_8hpp_source_l00038}{38}} of file \mbox{\hyperlink{Parser_8hpp_source}{Parser.\+hpp}}.
+
+\mbox{\Hypertarget{structParser_1_1enemy_a6c7720d334e74a93c946f1bcf526dda7}\label{structParser_1_1enemy_a6c7720d334e74a93c946f1bcf526dda7}} 
+\index{Parser::enemy@{Parser::enemy}!speed@{speed}}
+\index{speed@{speed}!Parser::enemy@{Parser::enemy}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily int Parser\+::enemy\+::speed}
+
+
+
+Definition at line \mbox{\hyperlink{Parser_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{Parser_8hpp_source}{Parser.\+hpp}}.
+
+\mbox{\Hypertarget{structParser_1_1enemy_ab8d1381f6a2e3d97f3a91e425444c17e}\label{structParser_1_1enemy_ab8d1381f6a2e3d97f3a91e425444c17e}} 
+\index{Parser::enemy@{Parser::enemy}!waypoints@{waypoints}}
+\index{waypoints@{waypoints}!Parser::enemy@{Parser::enemy}}
+\doxysubsubsection{\texorpdfstring{waypoints}{waypoints}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::pair$<$int, int$>$ $>$ Parser\+::enemy\+::waypoints}
+
+
+
+Definition at line \mbox{\hyperlink{Parser_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{Parser_8hpp_source}{Parser.\+hpp}}.
+
+\mbox{\Hypertarget{structParser_1_1enemy_a5ed250d6c3b503c9c72d2e608f6942a5}\label{structParser_1_1enemy_a5ed250d6c3b503c9c72d2e608f6942a5}} 
+\index{Parser::enemy@{Parser::enemy}!x@{x}}
+\index{x@{x}!Parser::enemy@{Parser::enemy}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int Parser\+::enemy\+::x}
+
+
+
+Definition at line \mbox{\hyperlink{Parser_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{Parser_8hpp_source}{Parser.\+hpp}}.
+
+\mbox{\Hypertarget{structParser_1_1enemy_ae53c98e1547ecfa3cb4a514a4453a614}\label{structParser_1_1enemy_ae53c98e1547ecfa3cb4a514a4453a614}} 
+\index{Parser::enemy@{Parser::enemy}!y@{y}}
+\index{y@{y}!Parser::enemy@{Parser::enemy}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int Parser\+::enemy\+::y}
+
+
+
+Definition at line \mbox{\hyperlink{Parser_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{Parser_8hpp_source}{Parser.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Server/includes/Parser.\+hpp\end{DoxyCompactItemize}

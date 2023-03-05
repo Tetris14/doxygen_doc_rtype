@@ -1,0 +1,59 @@
+\hypertarget{server__udp_8hpp_source}{}\doxysection{server\+\_\+udp.\+hpp}
+\label{server__udp_8hpp_source}\index{Server/includes/server\_udp.hpp@{Server/includes/server\_udp.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <asio.hpp>}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}GameEngine.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00014}\mbox{\hyperlink{classUDPServer}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUDPServer}{UDPServer}}\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer}{UDPServer}}(uint16\_t\ port,\ asio::io\_context\ \&ioService);}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_a09b1a38f1a03d3832f85fe05e6370a11}{\string~UDPServer}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_adff289696d8b33e8cd2e25ba6cfde86d}{start}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_accca8d6667e3f7d27d1d9c90c9abaf12}{loopRead}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_af5508a5a0eaab045026fabb6ecdb4c1c}{parseData}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_a15f599783ce68afda59c3ee274b54e4f}{startGame}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_accabe8f013ff6e8758fe9db98cc5b031}{start\_send\_timer}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_a4bf53cfe5bbf524309d317f8e87c621a}{send\_message}}(std::string\ message,\ asio::ip::udp::endpoint\ endpoint);}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_a76b6aeeffa5765dbf290163eb3f8ffcf}{sendToAll}}(std::string\ message);}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_a04bb244d870a1f1ff5b077d02b5ff8c0}{send\_queue}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ std::map<std::string,\ void\ (\mbox{\hyperlink{classUDPServer}{UDPServer}}::*)()>\ \_parseFunction;\ \textcolor{comment}{//\ map\ of\ function\ pointers}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00082}00082\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ std::vector<asio::ip::udp::endpoint>\ \_listClient;\ \textcolor{comment}{//\ list\ of\ clients\ }}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ asio::ip::udp::socket\ socket\_;\ \textcolor{comment}{//\ socket}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00085}00085\ \ \ \ \ \ \ \ \ asio::ip::udp::endpoint\ \_endpoint;\ \textcolor{comment}{//\ endpoint}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ std::vector<asio::ip::udp::endpoint>\ \_endpoints;\ \textcolor{comment}{//\ endpoints}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00087}00087\ \ \ \ \ \ \ \ \ std::array<char,\ 1500>\ \_recvBuffer;\ \textcolor{comment}{//\ receive\ buffer}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00088}00088\ \ \ \ \ \ \ \ \ asio::io\_context\ \&\_ioService;\ \textcolor{comment}{//\ io\ service}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ max\_clients\ =\ 4;\ \textcolor{comment}{//\ max\ clients}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00090}00090\ \ \ \ \ \ \ \ \ std::vector<asio::ip::udp::socket>\ \_sockets;\ \textcolor{comment}{//\ sockets}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine}{GameEngine}}\ *\_gameEngine;\ \textcolor{comment}{//\ game\ engine}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00092}00092\ \ \ \ \ \ \ \ \ std::thread\ *\_gameThread;\ \textcolor{comment}{//\ game\ thread\ \ }}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ asio::steady\_timer\ timer\_\{\_ioService\};\ \textcolor{comment}{//\ timer}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nb\_players\ =\ 0;\ \textcolor{comment}{//\ number\ of\ players}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_gameType\ =\ 1;\ \textcolor{comment}{//\ game\ type}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ join();\ \textcolor{comment}{//\ join\ function\ }}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ startLobby();\ \textcolor{comment}{//\ start\ lobby\ function\ }}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ chooseGame();\ \textcolor{comment}{//\ choose\ game\ function}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ leave();\ \textcolor{comment}{//\ leave\ function}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ CreateRoom();\ \textcolor{comment}{//\ create\ room\ function}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ chat();\ \textcolor{comment}{//\ chat\ function}}
+\DoxyCodeLine{\Hypertarget{server__udp_8hpp_source_l00102}00102\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,61 @@
+\hypertarget{game_8cpp_source}{}\doxysection{game.\+cpp}
+\label{game_8cpp_source}\index{Client/src/game.cpp@{Client/src/game.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00005}00005\ \textcolor{comment}{**\ game}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}game.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00010}\mbox{\hyperlink{classGame_ad59df6562a58a614fda24622d3715b65}{00010}}\ \mbox{\hyperlink{classGame_ad59df6562a58a614fda24622d3715b65}{Game::Game}}()}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00012}00012\ \ \ \_fps\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00013}00013\ \ \ sf::VideoMode\ desktopMode\ =\ sf::VideoMode::getDesktopMode();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00014}00014\ \ \ \_screenWidth\ =\ desktopMode.width;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00015}00015\ \ \ \_screenHeight\ =\ desktopMode.height;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00016}00016\ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00018}\mbox{\hyperlink{classGame_ae3d112ca6e0e55150d2fdbc704474530}{00018}}\ \mbox{\hyperlink{classGame_ae3d112ca6e0e55150d2fdbc704474530}{Game::\string~Game}}()}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00022}\mbox{\hyperlink{classGame_a241315cc9124a765cb49580bb0b2568b}{00022}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGame_a241315cc9124a765cb49580bb0b2568b}{Game::getFps}}()}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00024}00024\ \ \ \textcolor{keywordflow}{return}\ \_fps;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00027}\mbox{\hyperlink{classGame_a6459bfc7e7c7df8221a4a7dea0baffa1}{00027}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classGame_a6459bfc7e7c7df8221a4a7dea0baffa1}{Game::getScreenWidth}}()}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00028}00028\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00029}00029\ \ \ \textcolor{keywordflow}{return}\ \_screenWidth;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00032}\mbox{\hyperlink{classGame_adc51dfdb2488da1e94f62d54e40d9e8b}{00032}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classGame_adc51dfdb2488da1e94f62d54e40d9e8b}{Game::getScreenHeight}}()}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00034}00034\ \ \ \textcolor{keywordflow}{return}\ \_screenHeight;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00037}\mbox{\hyperlink{classGame_a4b59886b169475a3a392b91238bd0e70}{00037}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGame_a4b59886b169475a3a392b91238bd0e70}{Game::increaseFpsCount}}()}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00039}00039\ \ \ \_fps++;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00042}\mbox{\hyperlink{classGame_a38eb3e96da823470b0b10debc9fb0f97}{00042}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGame_a38eb3e96da823470b0b10debc9fb0f97}{Game::setFps}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&fps)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00043}00043\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00044}00044\ \ \ \_fps\ =\ fps;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00047}\mbox{\hyperlink{classGame_a447de5ff5045fe00885e7b87f41999e6}{00047}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGame_a447de5ff5045fe00885e7b87f41999e6}{Game::setScreenWidth}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&width)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00048}00048\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00049}00049\ \ \ \_screenWidth\ =\ width;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00052}\mbox{\hyperlink{classGame_ace21b29515891dccdfa70ad32af3059a}{00052}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGame_ace21b29515891dccdfa70ad32af3059a}{Game::setScreenHeight}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&height)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00053}00053\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00054}00054\ \ \ \_screenHeight\ =\ height;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00055}00055\ \}}
+
+\end{DoxyCode}

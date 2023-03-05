@@ -1,0 +1,158 @@
+\hypertarget{classConsole}{}\doxysection{Console Class Reference}
+\label{classConsole}\index{Console@{Console}}
+
+
+class console  
+
+
+
+
+{\ttfamily \#include $<$user\+Interface.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classConsole_a7067c1d9cc99496e8e30b58bafb08e34}{Console}} (const std\+::string \&label, std\+::string \&text)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classConsole}{Console} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConsole_a3e89d786bdcadabf0344576a51ed8023}{draw}} (sf\+::\+Render\+Window \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class console 
+
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00155}{155}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classConsole_a7067c1d9cc99496e8e30b58bafb08e34}\label{classConsole_a7067c1d9cc99496e8e30b58bafb08e34}} 
+\index{Console@{Console}!Console@{Console}}
+\index{Console@{Console}!Console@{Console}}
+\doxysubsubsection{\texorpdfstring{Console()}{Console()}}
+{\footnotesize\ttfamily Console\+::\+Console (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{label,  }\item[{std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{classConsole}{Console} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & \\
+\hline
+{\em text} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00163}{163}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ :\ m\_label(label)}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ ,\ m\_text(text) }
+\DoxyCodeLine{00166\ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ initial\ text\ value}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ m\_buffer.resize(m\_text.size()\ +\ 1);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ std::copy(m\_text.begin(),\ m\_text.end(),\ m\_buffer.begin());}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConsole_a3e89d786bdcadabf0344576a51ed8023}\label{classConsole_a3e89d786bdcadabf0344576a51ed8023}} 
+\index{Console@{Console}!draw@{draw}}
+\index{draw@{draw}!Console@{Console}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Console\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxylink{classDraw}{Draw} the console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00178}{178}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00179\ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \_entities\ =\ ecs.\mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{getEntitiesWithComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>();}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ ImGui::Begin(m\_label.c\_str());}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ ImGui::Columns(2);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ entity\ :\ \_entities)}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(entity).tag\ !=\ \textcolor{stringliteral}{"{}shoot"{}}\ \&\&\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(entity).tag\ !=\ \textcolor{stringliteral}{"{}Enemyshoot"{}}\ )\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ str[64];\ \textcolor{comment}{//\ define\ a\ char\ buffer\ to\ hold\ the\ formatted\ string}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ snprintf(str,\ \textcolor{keyword}{sizeof}(str),\ \textcolor{stringliteral}{"{}Entity\ \%d:\ \%s"{}},\ entity,\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(entity).tag.c\_str());}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ buttonWidth\ =\ ImGui::GetWindowContentRegionWidth()\ /\ 2;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ImGui::Button(str,\ ImVec2(buttonWidth,\ 20)))}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entitySelected\ =\ !entitySelected;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ selectedEntity\ =\ entity;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ ImGui::SetColumnWidth(0,\ ImGui::GetWindowWidth()\ *\ 0.5f);}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ ImGui::SetColumnWidth(1,\ ImGui::GetWindowWidth()\ *\ 0.5f);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entitySelected\ \&\&\ std::find(ecs.enemyEntities.begin(),\ ecs.enemyEntities.end(),\ selectedEntity)\ !=\ ecs.enemyEntities.end()\ ||\ entitySelected\ \&\&\ std::find(ecs.playerEntities.begin(),\ ecs.playerEntities.end(),\ selectedEntity)\ !=\ ecs.playerEntities.end())\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::NextColumn();}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(selectedEntity).x;}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(selectedEntity).y;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ z\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(selectedEntity).z;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ velocity\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structPhysics}{Physics}}>(selectedEntity).velocity;}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ c\_x\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(selectedEntity).x;}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ c\_y\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(selectedEntity).y;}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ frame\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structRender}{Render}}>(selectedEntity).frame;}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tmp\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structRender}{Render}}>(selectedEntity).tmp;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ health\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structHealth}{Health}}>(selectedEntity).health;}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ damage\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structDamage}{Damage}}>(selectedEntity).damage;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_id\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structID}{ID}}>(selectedEntity).\textcolor{keywordtype}{id};}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fireRate\ =\ 0;}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(selectedEntity).tag\ ==\ \textcolor{stringliteral}{"{}enemy"{}})}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fireRate\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structFireRate}{FireRate}}>(selectedEntity).fireRate;}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::InputFloat(\textcolor{stringliteral}{"{}X"{}},\ \&x);}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::InputFloat(\textcolor{stringliteral}{"{}Y"{}},\ \&y);}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::InputFloat(\textcolor{stringliteral}{"{}Z"{}},\ \&z);}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::InputFloat(\textcolor{stringliteral}{"{}Velocity"{}},\ \&velocity);}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::InputFloat(\textcolor{stringliteral}{"{}Collider\ X"{}},\ \&c\_x);}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::InputFloat(\textcolor{stringliteral}{"{}Collider\ Y"{}},\ \&c\_y);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::InputInt(\textcolor{stringliteral}{"{}Frame"{}},\ \&frame);}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::InputInt(\textcolor{stringliteral}{"{}Tmp"{}},\ \&tmp);}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::InputInt(\textcolor{stringliteral}{"{}Health"{}},\ \&health);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::InputInt(\textcolor{stringliteral}{"{}Damage"{}},\ \&damage);}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::InputInt(\textcolor{stringliteral}{"{}ID"{}},\ \&\_id);}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::InputFloat(\textcolor{stringliteral}{"{}Fire\ Rate"{}},\ \&fireRate);}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(selectedEntity).x\ =\ x;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(selectedEntity).y\ =\ y;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(selectedEntity).z\ =\ z;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structPhysics}{Physics}}>(selectedEntity).velocity\ =\ velocity;}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(selectedEntity).x\ =\ c\_x;}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(selectedEntity).y\ =\ c\_y;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structRender}{Render}}>(selectedEntity).frame\ =\ frame;}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structRender}{Render}}>(selectedEntity).tmp\ =\ tmp;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structHealth}{Health}}>(selectedEntity).health\ =\ health;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structDamage}{Damage}}>(selectedEntity).damage\ =\ damage;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structID}{ID}}>(selectedEntity).\textcolor{keywordtype}{id}\ =\ \_id;}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(selectedEntity).tag\ ==\ \textcolor{stringliteral}{"{}enemy"{}})}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structFireRate}{FireRate}}>(selectedEntity).fireRate\ =\ fireRate;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ ImGui::End();}
+\DoxyCodeLine{00241\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/user\+Interface.\+hpp\end{DoxyCompactItemize}

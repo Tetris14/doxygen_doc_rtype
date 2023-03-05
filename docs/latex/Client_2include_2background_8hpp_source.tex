@@ -1,0 +1,48 @@
+\hypertarget{Client_2include_2background_8hpp_source}{}\doxysection{background.\+hpp}
+\label{Client_2include_2background_8hpp_source}\index{Client/include/background.hpp@{Client/include/background.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00005}00005\ \textcolor{comment}{**\ background}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#ifndef\ BACKGROUND\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#define\ BACKGROUND\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00021}\mbox{\hyperlink{classBackground}{00021}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBackground}{Background}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00023}00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00025}00025\ \ \ \textcolor{keywordtype}{float}\ \_screenWidth;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00027}00027\ \ \ \textcolor{keywordtype}{int}\ \_posXLayer01\_1;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00029}00029\ \ \ \textcolor{keywordtype}{int}\ \_posXLayer01\_2;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00031}00031\ \ \ \textcolor{keywordtype}{int}\ \_posXLayer02\_1;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00033}00033\ \ \ \textcolor{keywordtype}{int}\ \_posXLayer02\_2;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00035}00035\ \ \ \textcolor{keywordtype}{int}\ \_posXLayer03;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00037}00037\ \ \ sf::Texture\ \_textureLayer01;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00039}00039\ \ \ sf::Texture\ \_textureLayer02;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00041}00041\ \ \ sf::Texture\ \_textureLayer03;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00043}00043\ \ \ sf::Sprite\ \_spriteLayer01\_1;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00045}00045\ \ \ sf::Sprite\ \_spriteLayer01\_2;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00047}00047\ \ \ sf::Sprite\ \_spriteLayer02\_1;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00049}00049\ \ \ sf::Sprite\ \_spriteLayer02\_2;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00051}00051\ \ \ sf::Sprite\ \_spriteLayer03;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00053}00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00059}00059\ \ \ \mbox{\hyperlink{classBackground}{Background}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&screenWidth);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00062}00062\ \ \ \mbox{\hyperlink{classBackground_a36754df1deb720393217ade59da41557}{\string~Background}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00071}00071\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBackground_aee666bf38da5bcfddbf582818a15e116}{drawBackground}}(sf::RenderWindow\ \&window);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00078}00078\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBackground_a78cb966afe30df3531dd4a731e6fe432}{setBackgroundPos}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00079}00079\ \};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2background_8hpp_source_l00082}00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !BACKGROUND\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

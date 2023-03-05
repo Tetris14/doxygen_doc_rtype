@@ -1,0 +1,38 @@
+\hypertarget{Client_2include_2draw_8hpp_source}{}\doxysection{draw.\+hpp}
+\label{Client_2include_2draw_8hpp_source}\index{Client/include/draw.hpp@{Client/include/draw.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00005}00005\ \textcolor{comment}{**\ draw}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}system.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#ifndef\ DRAW\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#define\ DRAW\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00018}\mbox{\hyperlink{classDraw}{00018}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDraw}{Draw}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00020}00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00021}00021\ \ \ std::map<std::string,\ int>\ \_animRectNum;\ \textcolor{comment}{//\ number\ of\ animation\ rect}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00022}00022\ \ \ std::map<std::string,\ std::vector<sf::Texture>>\ \_textures;\ \textcolor{comment}{//\ textures}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00023}00023\ \ \ std::map<std::string,\ std::vector<sf::Sprite>>\ \_sprites;\ \textcolor{comment}{//\ sprites}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00024}00024\ \ \ std::map<std::string,\ std::vector<sf::IntRect>>\ \_intRect;\ \textcolor{comment}{//\ int\ rect}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00026}00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00027}00027\ \ \ \mbox{\hyperlink{classDraw}{Draw}}()\ \{\};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00032}00032\ \ \ \mbox{\hyperlink{classDraw}{Draw}}(std::initializer\_list<std::pair<std::string,\ int>>\ textures);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00039}00039\ \ \ \mbox{\hyperlink{classDraw}{Draw}}(std::vector<std::pair<std::string,\ int>>\ textures);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00043}00043\ \ \ \mbox{\hyperlink{classDraw_a206415ad169356614a4ab0cf51116215}{\string~Draw}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00049}00049\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDraw_a3cf6b1b48a559e6cd5bc075da3dd10eb}{setTexture}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00056}00056\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDraw_aec1cef5bd67213c10ef17657fa172648}{displayEntities}}(sf::RenderWindow\ \&window,\ \mbox{\hyperlink{classECS}{ECS}}\ \&ecs);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00060}00060\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDraw_ad3da04d63bbf3ad7ba124113e844401d}{animateEntities}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00061}00061\ \};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2draw_8hpp_source_l00063}00063\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !DRAW\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

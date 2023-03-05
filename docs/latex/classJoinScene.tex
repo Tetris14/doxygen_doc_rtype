@@ -1,0 +1,312 @@
+\hypertarget{classJoinScene}{}\doxysection{Join\+Scene Class Reference}
+\label{classJoinScene}\index{JoinScene@{JoinScene}}
+
+
+\doxylink{classJoinScene}{Join\+Scene} class.  
+
+
+
+
+{\ttfamily \#include $<$join\+Scene.\+hpp$>$}
+
+Inheritance diagram for Join\+Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classJoinScene}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJoinScene_a0b2f14a30e41e1f96ca70ef8493e31b8}{Join\+Scene}} (const std\+::pair$<$ float, float $>$ \&dimensions, const std\+::string \&music, sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Construct a new Join \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJoinScene_a0f9721f7740cf0a3cc6eda7af4449ee3}{$\sim$\+Join\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Join \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJoinScene_ace824d42e82dbf39aa2e46a62831b63d}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em Load the Join \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJoinScene_adcc206dd83b5404569696664a4c4b118}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em Unload the Join \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJoinScene_ab20e48f67b96e2699942e416ba45eff3}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock) override
+\begin{DoxyCompactList}\small\item\em Update the Join \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+states \mbox{\hyperlink{classJoinScene_a8731c684c74e31524e56a19b97e3e981}{handle\+Event}} (sf\+::\+Event event, \mbox{\hyperlink{classWindow}{Window}} \&window) override
+\begin{DoxyCompactList}\small\item\em Handle the event of the Join \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJoinScene_a4374640df1777804ad02898eeed3839d}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the Join \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classScene}{Scene}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em loads a \doxylink{classScene}{Scene} \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em Unloads a \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+virtual states \mbox{\hyperlink{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}{handle\+Event}} (sf\+::\+Event event, \mbox{\hyperlink{classWindow}{Window}} \&window)=0
+\begin{DoxyCompactList}\small\item\em Handle events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock)=0
+\begin{DoxyCompactList}\small\item\em Update the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\item 
+\mbox{\Hypertarget{classScene_a6d44d0f4b3ceb248ed0b6d137e6bd37f}\label{classScene_a6d44d0f4b3ceb248ed0b6d137e6bd37f}} 
+virtual void {\bfseries handle\+Event} (sf\+::\+Event event)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClient}{Client}} $\ast$ \mbox{\hyperlink{classJoinScene_a565e826113a55f77271523f372dfe608}{\+\_\+client}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classJoinScene}{Join\+Scene} class. 
+
+
+
+Definition at line \mbox{\hyperlink{joinScene_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{joinScene_8hpp_source}{join\+Scene.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJoinScene_a0b2f14a30e41e1f96ca70ef8493e31b8}\label{classJoinScene_a0b2f14a30e41e1f96ca70ef8493e31b8}} 
+\index{JoinScene@{JoinScene}!JoinScene@{JoinScene}}
+\index{JoinScene@{JoinScene}!JoinScene@{JoinScene}}
+\doxysubsubsection{\texorpdfstring{JoinScene()}{JoinScene()}}
+{\footnotesize\ttfamily Join\+Scene\+::\+Join\+Scene (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ float, float $>$ \&}]{dimensions,  }\item[{const std\+::string \&}]{music,  }\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Join \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dimensions} & \\
+\hline
+{\em music} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{joinScene_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{joinScene_8hpp_source}{join\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \_dimensions(dimensions),\ \_music(findFile(music)),\ \_spriteManager(dimensions)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ae117be8da181d774ed3759a2abef646c}{addSprite}}(\textcolor{stringliteral}{"{}background.jpg"{}},\ 0.0f,\ 0.0f,\ 1.0f,\ 1.0f);}
+\DoxyCodeLine{00037\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ae117be8da181d774ed3759a2abef646c}{addSprite}}(\textcolor{stringliteral}{"{}R-\/Type\_logo.png"{}},\ 35.0f,\ 15.0f,\ 0.3f,\ 0.15f);}
+\DoxyCodeLine{00038\ \ \ \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJoinScene_a0f9721f7740cf0a3cc6eda7af4449ee3}\label{classJoinScene_a0f9721f7740cf0a3cc6eda7af4449ee3}} 
+\index{JoinScene@{JoinScene}!````~JoinScene@{$\sim$JoinScene}}
+\index{````~JoinScene@{$\sim$JoinScene}!JoinScene@{JoinScene}}
+\doxysubsubsection{\texorpdfstring{$\sim$JoinScene()}{~JoinScene()}}
+{\footnotesize\ttfamily Join\+Scene\+::$\sim$\+Join\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the Join \doxylink{classScene}{Scene} object. 
+
+
+
+Definition at line \mbox{\hyperlink{joinScene_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{joinScene_8hpp_source}{join\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJoinScene_a4374640df1777804ad02898eeed3839d}\label{classJoinScene_a4374640df1777804ad02898eeed3839d}} 
+\index{JoinScene@{JoinScene}!draw@{draw}}
+\index{draw@{draw}!JoinScene@{JoinScene}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Join\+Scene\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{classDraw}{Draw} the Join \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{joinScene_8hpp_source_l00098}{98}} of file \mbox{\hyperlink{joinScene_8hpp_source}{join\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \_back.\mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{setButton}}(findFile(\textcolor{stringliteral}{"{}backButton.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00101\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}{drawSprite}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ \textcolor{stringliteral}{"{}background.jpg"{}});}
+\DoxyCodeLine{00102\ \ \ \ \ \_backgoundMenu.\mbox{\hyperlink{classRectangle_a985548fa4b2b54823af0c22e57936ef4}{setRectangle}}(findFile(\textcolor{stringliteral}{"{}menuRectangle.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00103\ \ \ \ \ \_backgoundMenu.\mbox{\hyperlink{classRectangle_a17972bcdb06e6e103d1bb404e3d562c7}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00104\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}{drawSprite}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ \textcolor{stringliteral}{"{}R-\/Type\_logo.png"{}});}
+\DoxyCodeLine{00105\ \ \ \ \ \_back.\mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{isHover}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00106\ \ \ \ \ \_back.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00107\ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJoinScene_a8731c684c74e31524e56a19b97e3e981}\label{classJoinScene_a8731c684c74e31524e56a19b97e3e981}} 
+\index{JoinScene@{JoinScene}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!JoinScene@{JoinScene}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}}
+{\footnotesize\ttfamily states Join\+Scene\+::handle\+Event (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{event,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handle the event of the Join \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+states 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{joinScene_8hpp_source_l00085}{85}} of file \mbox{\hyperlink{joinScene_8hpp_source}{join\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_back.\mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{isClicked}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}()))}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BACK;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{return}\ OK;}
+\DoxyCodeLine{00090\ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJoinScene_ace824d42e82dbf39aa2e46a62831b63d}\label{classJoinScene_ace824d42e82dbf39aa2e46a62831b63d}} 
+\index{JoinScene@{JoinScene}!load@{load}}
+\index{load@{load}!JoinScene@{JoinScene}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Join\+Scene\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Load the Join \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{joinScene_8hpp_source_l00053}{53}} of file \mbox{\hyperlink{joinScene_8hpp_source}{join\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \_music.\mbox{\hyperlink{classMusic_a54b941f6f7634d7f99b473c78fe6e4da}{play}}();}
+\DoxyCodeLine{00056\ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJoinScene_adcc206dd83b5404569696664a4c4b118}\label{classJoinScene_adcc206dd83b5404569696664a4c4b118}} 
+\index{JoinScene@{JoinScene}!unload@{unload}}
+\index{unload@{unload}!JoinScene@{JoinScene}}
+\doxysubsubsection{\texorpdfstring{unload()}{unload()}}
+{\footnotesize\ttfamily void Join\+Scene\+::unload (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Unload the Join \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{joinScene_8hpp_source_l00063}{63}} of file \mbox{\hyperlink{joinScene_8hpp_source}{join\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \_music.\mbox{\hyperlink{classMusic_a008211b514c1c89c15399d3384d3fcea}{stop}}();}
+\DoxyCodeLine{00066\ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJoinScene_ab20e48f67b96e2699942e416ba45eff3}\label{classJoinScene_ab20e48f67b96e2699942e416ba45eff3}} 
+\index{JoinScene@{JoinScene}!update@{update}}
+\index{update@{update}!JoinScene@{JoinScene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Join\+Scene\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClock}{Clock}} \&}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update the Join \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{joinScene_8hpp_source_l00073}{73}} of file \mbox{\hyperlink{joinScene_8hpp_source}{join\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ std::cout\ <<\ \_client-\/>listGames()\ <<\ std::endl;}
+\DoxyCodeLine{00076\ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classJoinScene_a565e826113a55f77271523f372dfe608}\label{classJoinScene_a565e826113a55f77271523f372dfe608}} 
+\index{JoinScene@{JoinScene}!\_client@{\_client}}
+\index{\_client@{\_client}!JoinScene@{JoinScene}}
+\doxysubsubsection{\texorpdfstring{\_client}{\_client}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classClient}{Client}}$\ast$ Join\+Scene\+::\+\_\+client}
+
+
+
+Definition at line \mbox{\hyperlink{joinScene_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{joinScene_8hpp_source}{join\+Scene.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/join\+Scene.\+hpp\end{DoxyCompactItemize}

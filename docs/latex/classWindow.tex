@@ -1,0 +1,301 @@
+\hypertarget{classWindow}{}\doxysection{Window Class Reference}
+\label{classWindow}\index{Window@{Window}}
+
+
+Class that handle the window.  
+
+
+
+
+{\ttfamily \#include $<$window.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWindow_a4ad9b1272910c91aff389e5b88631498}{Window}} (unsigned int width, unsigned int height, std\+::string title=\char`\"{}My Window\char`\"{}, int frame\+Rate=60)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classWindow}{Window} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWindow_adc361d2d83c3531576b0d7bc1589cdfb}{$\sim$\+Window}} ()=default
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWindow_a35055c04498121d39741bfcd5082705b}{close}} ()
+\begin{DoxyCompactList}\small\item\em Close the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWindow_a38bc43bdd1a97e5de7f346ba4c3957ef}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWindow_afadfafa5a0b9472554759004aafb327e}{display}} ()
+\begin{DoxyCompactList}\small\item\em Display the window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWindow_a52821b38ae5c3d23b0268f29d1837263}{poll\+Event}} ()
+\begin{DoxyCompactList}\small\item\em Poll the event. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWindow_a0530ead23b2c91ef90a5f98e4df41cb8}{is\+Open}} ()
+\begin{DoxyCompactList}\small\item\em Check if the window is open. \end{DoxyCompactList}\item 
+sf\+::\+Render\+Window \& \mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{get\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classWindow}{Window} object. \end{DoxyCompactList}\item 
+sf\+::\+Event \& \mbox{\hyperlink{classWindow_a9d7141d54f54707141eb4696e7cfd1b6}{get\+Event}} ()
+\begin{DoxyCompactList}\small\item\em Get the Event object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWindow_a54df736ab919017b1df6eeae60cb5754}{resize\+Window}} (unsigned int width, unsigned int height)
+\begin{DoxyCompactList}\small\item\em Resize the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWindow_a3f7c8330799d7c0804e7e152964c8fce}{draw\+Text}} (sf\+::\+Text \&text)
+\begin{DoxyCompactList}\small\item\em draw some text \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that handle the window. 
+
+
+
+Definition at line \mbox{\hyperlink{window_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{window_8hpp_source}{window.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWindow_a4ad9b1272910c91aff389e5b88631498}\label{classWindow_a4ad9b1272910c91aff389e5b88631498}} 
+\index{Window@{Window}!Window@{Window}}
+\index{Window@{Window}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}}
+{\footnotesize\ttfamily Window\+::\+Window (\begin{DoxyParamCaption}\item[{unsigned int}]{width,  }\item[{unsigned int}]{height,  }\item[{std\+::string}]{title = {\ttfamily \char`\"{}My~Window\char`\"{}},  }\item[{int}]{frame\+Rate = {\ttfamily 60} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{classWindow}{Window} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & \\
+\hline
+{\em height} & \\
+\hline
+{\em title} & \\
+\hline
+{\em frame\+Rate} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{window_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{window_8hpp_source}{window.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \_videoMode(width,\ height),\ \_title(title),\ \_isOpen(\textcolor{keyword}{true}),\ \_frameRate(frameRate)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \_window.create(\_videoMode,\ \_title);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \_window.setFramerateLimit(\_frameRate);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_adc361d2d83c3531576b0d7bc1589cdfb}\label{classWindow_adc361d2d83c3531576b0d7bc1589cdfb}} 
+\index{Window@{Window}!````~Window@{$\sim$Window}}
+\index{````~Window@{$\sim$Window}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{$\sim$Window()}{~Window()}}
+{\footnotesize\ttfamily Window\+::$\sim$\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+default destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWindow_a38bc43bdd1a97e5de7f346ba4c3957ef}\label{classWindow_a38bc43bdd1a97e5de7f346ba4c3957ef}} 
+\index{Window@{Window}!clear@{clear}}
+\index{clear@{clear}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Window\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clear the window. 
+
+
+
+Definition at line \mbox{\hyperlink{window_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{window_8hpp_source}{window.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \{\ \_window.clear();\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_a35055c04498121d39741bfcd5082705b}\label{classWindow_a35055c04498121d39741bfcd5082705b}} 
+\index{Window@{Window}!close@{close}}
+\index{close@{close}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void Window\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Close the window. 
+
+
+
+Definition at line \mbox{\hyperlink{window_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{window_8hpp_source}{window.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \{\ \_isOpen\ =\ \textcolor{keyword}{false};\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_afadfafa5a0b9472554759004aafb327e}\label{classWindow_afadfafa5a0b9472554759004aafb327e}} 
+\index{Window@{Window}!display@{display}}
+\index{display@{display}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Window\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Display the window. 
+
+
+
+Definition at line \mbox{\hyperlink{window_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{window_8hpp_source}{window.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \{\ \_window.display();\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_a3f7c8330799d7c0804e7e152964c8fce}\label{classWindow_a3f7c8330799d7c0804e7e152964c8fce}} 
+\index{Window@{Window}!drawText@{drawText}}
+\index{drawText@{drawText}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{drawText()}{drawText()}}
+{\footnotesize\ttfamily void Window\+::draw\+Text (\begin{DoxyParamCaption}\item[{sf\+::\+Text \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+draw some text 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{window_8hpp_source_l00093}{93}} of file \mbox{\hyperlink{window_8hpp_source}{window.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \{\ \_window.draw(text);\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_a9d7141d54f54707141eb4696e7cfd1b6}\label{classWindow_a9d7141d54f54707141eb4696e7cfd1b6}} 
+\index{Window@{Window}!getEvent@{getEvent}}
+\index{getEvent@{getEvent}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{getEvent()}{getEvent()}}
+{\footnotesize\ttfamily sf\+::\+Event \& Window\+::get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Event object. 
+
+\begin{DoxyReturn}{Returns}
+sf\+::\+Event\& 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{window_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{window_8hpp_source}{window.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \{\ \textcolor{keywordflow}{return}\ \_event;\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}\label{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}} 
+\index{Window@{Window}!getWindow@{getWindow}}
+\index{getWindow@{getWindow}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{getWindow()}{getWindow()}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window \& Window\+::get\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the \doxylink{classWindow}{Window} object. 
+
+\begin{DoxyReturn}{Returns}
+sf\+::\+Render\+Window\& 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{window_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{window_8hpp_source}{window.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \{\ \textcolor{keywordflow}{return}\ \_window;\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_a0530ead23b2c91ef90a5f98e4df41cb8}\label{classWindow_a0530ead23b2c91ef90a5f98e4df41cb8}} 
+\index{Window@{Window}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}}
+{\footnotesize\ttfamily bool Window\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the window is open. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{window_8hpp_source_l00065}{65}} of file \mbox{\hyperlink{window_8hpp_source}{window.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \{\ \textcolor{keywordflow}{return}\ \_isOpen;\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_a52821b38ae5c3d23b0268f29d1837263}\label{classWindow_a52821b38ae5c3d23b0268f29d1837263}} 
+\index{Window@{Window}!pollEvent@{pollEvent}}
+\index{pollEvent@{pollEvent}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{pollEvent()}{pollEvent()}}
+{\footnotesize\ttfamily bool Window\+::poll\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Poll the event. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{window_8hpp_source_l00058}{58}} of file \mbox{\hyperlink{window_8hpp_source}{window.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \{\ \textcolor{keywordflow}{return}\ \_window.pollEvent(\_event);\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWindow_a54df736ab919017b1df6eeae60cb5754}\label{classWindow_a54df736ab919017b1df6eeae60cb5754}} 
+\index{Window@{Window}!resizeWindow@{resizeWindow}}
+\index{resizeWindow@{resizeWindow}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{resizeWindow()}{resizeWindow()}}
+{\footnotesize\ttfamily void Window\+::resize\+Window (\begin{DoxyParamCaption}\item[{unsigned int}]{width,  }\item[{unsigned int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resize the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & \\
+\hline
+{\em height} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{window_8hpp_source_l00084}{84}} of file \mbox{\hyperlink{window_8hpp_source}{window.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ sf::FloatRect\ visibleArea(0,\ 0,\ width,\ height);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \_window.setView(sf::View(visibleArea));}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/window.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,35 @@
+\hypertarget{POC_2includes_2sceneManager_8hpp_source}{}\doxysection{scene\+Manager.\+hpp}
+\label{POC_2includes_2sceneManager_8hpp_source}\index{POC/includes/sceneManager.hpp@{POC/includes/sceneManager.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00005}00005\ \textcolor{comment}{**\ sceneManager}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ SCENEMANAGER\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#define\ SCENEMANAGER\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}scene.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00015}00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSceneManager}{SceneManager}}\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00016}00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{classSceneManager_a52085e6737c23b491c228e86781af808}{SceneManager}}();}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{classSceneManager_a2bb376a85d29e85f47753e26c7539229}{\string~SceneManager}}();}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneManager_a8331a1fbf1c673645a320345f2c538d7}{addScene}}(std::shared\_ptr<Scene>\ scene);}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneManager_a7db297e7071ad9d4a1339cfb8b53f186}{loadScene}}(\textcolor{keywordtype}{int}\ index,\ \mbox{\hyperlink{classECS}{ECS}}\ \&ecs);}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneManager_a3e427477de4599dc1437f2020ba6a244}{update}}(\mbox{\hyperlink{classClock}{Clock}}\ \&clock);}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSceneManager_a11ddf46cf89f7b5a40adc4b00adfc6d6}{draw}}(\mbox{\hyperlink{classWindow}{Window}}\ \&window,\ \mbox{\hyperlink{classECS}{ECS}}\ \&ecs);}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00023}00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \_activeSceneIndex;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00025}00025\ \ \ \ \ std::vector<std::shared\_ptr<Scene>>\ \_scenes;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00026}00026\ \};}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00028}00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !SCENEMANAGER\_HPP\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2sceneManager_8hpp_source_l00029}00029\ }
+
+\end{DoxyCode}

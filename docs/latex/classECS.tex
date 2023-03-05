@@ -1,0 +1,889 @@
+\hypertarget{classECS}{}\doxysection{ECS Class Reference}
+\label{classECS}\index{ECS@{ECS}}
+
+
+The \doxylink{classECS}{ECS} class that manages all entities and their components.  
+
+
+
+
+{\ttfamily \#include $<$ecs.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Entity\+ID \mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{create\+Entity}} (bool tmp=false)
+\begin{DoxyCompactList}\small\item\em Create a Entity object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Component $>$ }\\void \mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{add\+Component}} (Entity\+ID entity\+ID, const Component \&component)
+\begin{DoxyCompactList}\small\item\em adds a component to an entity and hashes the component type in order optimize the search in the map \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Component $>$ }\\void \mbox{\hyperlink{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}{remove\+Component}} (Entity\+ID entity\+ID)
+\begin{DoxyCompactList}\small\item\em removes a component from an entity \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Component $>$ }\\Component \& \mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{get\+Component}} (Entity\+ID entity\+ID)
+\begin{DoxyCompactList}\small\item\em Gets the Component object from a given entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Component $>$ }\\std\+::vector$<$ Entity\+ID $>$ \mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{get\+Entities\+With\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Gets all entities that have the given component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}{remove\+Entity}} (Entity\+ID entity\+ID)
+\begin{DoxyCompactList}\small\item\em Deletes an entity and all its components. \end{DoxyCompactList}\item 
+std\+::vector$<$ Entity\+ID $>$ \mbox{\hyperlink{classECS_a6ef89e35e416d74ff07bd1f598278508}{get\+Tmp\+Entities}} ()
+\begin{DoxyCompactList}\small\item\em Get the Tmp Entities object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classECS_a04c79fbbe1d876c067d945d14d388554}{delete\+This\+Tmp\+Entity}} (Entity\+ID entity\+ID)
+\begin{DoxyCompactList}\small\item\em Deletes a temporary entity and all its components. \end{DoxyCompactList}\item 
+Entity\+ID \mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{create\+Entity}} (bool tmp=false)
+\begin{DoxyCompactList}\small\item\em Create a Entity object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Component $>$ }\\void \mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{add\+Component}} (Entity\+ID entity\+ID, const Component \&component)
+\begin{DoxyCompactList}\small\item\em adds a component to an entity and hashes the component type in order optimize the search in the map \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Component $>$ }\\void \mbox{\hyperlink{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}{remove\+Component}} (Entity\+ID entity\+ID)
+\begin{DoxyCompactList}\small\item\em removes a component from an entity \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Component $>$ }\\Component \& \mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{get\+Component}} (Entity\+ID entity\+ID)
+\begin{DoxyCompactList}\small\item\em Gets the Component object from a given entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Component $>$ }\\std\+::vector$<$ Entity\+ID $>$ \mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{get\+Entities\+With\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Gets all entities that have the given component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}{remove\+Entity}} (Entity\+ID entity\+ID)
+\begin{DoxyCompactList}\small\item\em Deletes an entity and all its components. \end{DoxyCompactList}\item 
+std\+::vector$<$ Entity\+ID $>$ \mbox{\hyperlink{classECS_a6ef89e35e416d74ff07bd1f598278508}{get\+Tmp\+Entities}} ()
+\begin{DoxyCompactList}\small\item\em Get the Tmp Entities object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classECS_a04c79fbbe1d876c067d945d14d388554}{delete\+This\+Tmp\+Entity}} (Entity\+ID entity\+ID)
+\begin{DoxyCompactList}\small\item\em Deletes a temporary entity and all its components. \end{DoxyCompactList}\item 
+Entity\+ID \mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{create\+Entity}} (bool tmp=false)
+\begin{DoxyCompactList}\small\item\em Create a Entity object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Component $>$ }\\void \mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{add\+Component}} (Entity\+ID entity\+ID, const Component \&component)
+\begin{DoxyCompactList}\small\item\em adds a component to an entity and hashes the component type in order optimize the search in the map \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Component $>$ }\\void \mbox{\hyperlink{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}{remove\+Component}} (Entity\+ID entity\+ID)
+\begin{DoxyCompactList}\small\item\em removes a component from an entity \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Component $>$ }\\Component \& \mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{get\+Component}} (Entity\+ID entity\+ID)
+\begin{DoxyCompactList}\small\item\em Gets the Component object from a given entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Component $>$ }\\std\+::vector$<$ Entity\+ID $>$ \mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{get\+Entities\+With\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Gets all entities that have the given component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}{remove\+Entity}} (Entity\+ID entity\+ID)
+\begin{DoxyCompactList}\small\item\em Deletes an entity and all its components. \end{DoxyCompactList}\item 
+std\+::vector$<$ Entity\+ID $>$ \mbox{\hyperlink{classECS_a6ef89e35e416d74ff07bd1f598278508}{get\+Tmp\+Entities}} ()
+\begin{DoxyCompactList}\small\item\em Get the Tmp Entities object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classECS_a04c79fbbe1d876c067d945d14d388554}{delete\+This\+Tmp\+Entity}} (Entity\+ID entity\+ID)
+\begin{DoxyCompactList}\small\item\em Deletes a temporary entity and all its components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ Entity\+ID $>$ \mbox{\hyperlink{classECS_a8f15f4b546e9fa63499ad0db26023cbc}{tmp\+Entities}}
+\item 
+std\+::vector$<$ Entity\+ID $>$ \mbox{\hyperlink{classECS_a16b0383d176f017883705e26b1a82ab8}{enemy\+Entities}}
+\item 
+std\+::vector$<$ Entity\+ID $>$ \mbox{\hyperlink{classECS_a34e5bbac817b4bcde3a06606e945a985}{player\+Entities}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classECS}{ECS} class that manages all entities and their components. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2ecs_8hpp_source_l00126}{126}} of file \mbox{\hyperlink{Client_2include_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classECS_ab911dacb3696da6596da2758e75f57b5}\label{classECS_ab911dacb3696da6596da2758e75f57b5}} 
+\index{ECS@{ECS}!addComponent@{addComponent}}
+\index{addComponent@{addComponent}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Component $>$ \\
+void ECS\+::add\+Component (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID,  }\item[{const Component \&}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+adds a component to an entity and hashes the component type in order optimize the search in the map 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Component} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+{\em component} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2ecs_8hpp_source_l00150}{150}} of file \mbox{\hyperlink{Client_2include_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ componentStore[entityID][\textcolor{keyword}{typeid}(Component).hash\_code()]\ =\ component;}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_ab911dacb3696da6596da2758e75f57b5}\label{classECS_ab911dacb3696da6596da2758e75f57b5}} 
+\index{ECS@{ECS}!addComponent@{addComponent}}
+\index{addComponent@{addComponent}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Component $>$ \\
+void ECS\+::add\+Component (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID,  }\item[{const Component \&}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+adds a component to an entity and hashes the component type in order optimize the search in the map 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Component} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+{\em component} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ componentStore[entityID][\textcolor{keyword}{typeid}(Component).hash\_code()]\ =\ component;}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_ab911dacb3696da6596da2758e75f57b5}\label{classECS_ab911dacb3696da6596da2758e75f57b5}} 
+\index{ECS@{ECS}!addComponent@{addComponent}}
+\index{addComponent@{addComponent}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Component $>$ \\
+void ECS\+::add\+Component (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID,  }\item[{const Component \&}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+adds a component to an entity and hashes the component type in order optimize the search in the map 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Component} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+{\em component} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source_l00148}{148}} of file \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ componentStore[entityID][\textcolor{keyword}{typeid}(Component).hash\_code()]\ =\ component;}
+\DoxyCodeLine{00150\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}\label{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}} 
+\index{ECS@{ECS}!createEntity@{createEntity}}
+\index{createEntity@{createEntity}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{createEntity()}{createEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Entity\+ID ECS\+::create\+Entity (\begin{DoxyParamCaption}\item[{bool}]{tmp = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a Entity object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tmp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Entity\+ID 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2ecs_8hpp_source_l00134}{134}} of file \mbox{\hyperlink{Client_2include_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ EntityID\ \textcolor{keywordtype}{id}\ =\ nextEntityID;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tmp)}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ tmpEntities.push\_back(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ nextEntityID++;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ id;}
+\DoxyCodeLine{00140\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}\label{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}} 
+\index{ECS@{ECS}!createEntity@{createEntity}}
+\index{createEntity@{createEntity}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{createEntity()}{createEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Entity\+ID ECS\+::create\+Entity (\begin{DoxyParamCaption}\item[{bool}]{tmp = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a Entity object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tmp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Entity\+ID 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source_l00053}{53}} of file \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ EntityID\ \textcolor{keywordtype}{id}\ =\ nextEntityID;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tmp)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ tmpEntities.push\_back(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ nextEntityID++;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ id;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}\label{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}} 
+\index{ECS@{ECS}!createEntity@{createEntity}}
+\index{createEntity@{createEntity}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{createEntity()}{createEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Entity\+ID ECS\+::create\+Entity (\begin{DoxyParamCaption}\item[{bool}]{tmp = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a Entity object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tmp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Entity\+ID 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source_l00132}{132}} of file \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ EntityID\ \textcolor{keywordtype}{id}\ =\ nextEntityID;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tmp)}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ tmpEntities.push\_back(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ nextEntityID++;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ id;}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a04c79fbbe1d876c067d945d14d388554}\label{classECS_a04c79fbbe1d876c067d945d14d388554}} 
+\index{ECS@{ECS}!deleteThisTmpEntity@{deleteThisTmpEntity}}
+\index{deleteThisTmpEntity@{deleteThisTmpEntity}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{deleteThisTmpEntity()}{deleteThisTmpEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void ECS\+::delete\+This\+Tmp\+Entity (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deletes a temporary entity and all its components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2ecs_8hpp_source_l00220}{220}} of file \mbox{\hyperlink{Client_2include_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ tmpEntities.size();\ i++)\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tmpEntities[i]\ ==\ entityID)\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpEntities.erase(tmpEntities.begin()\ +\ i);}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}{removeEntity}}(entityID);}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00228\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a04c79fbbe1d876c067d945d14d388554}\label{classECS_a04c79fbbe1d876c067d945d14d388554}} 
+\index{ECS@{ECS}!deleteThisTmpEntity@{deleteThisTmpEntity}}
+\index{deleteThisTmpEntity@{deleteThisTmpEntity}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{deleteThisTmpEntity()}{deleteThisTmpEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void ECS\+::delete\+This\+Tmp\+Entity (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deletes a temporary entity and all its components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source_l00140}{140}} of file \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ tmpEntities.size();\ i++)\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tmpEntities[i]\ ==\ entityID)\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpEntities.erase(tmpEntities.begin()\ +\ i);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}{removeEntity}}(entityID);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a04c79fbbe1d876c067d945d14d388554}\label{classECS_a04c79fbbe1d876c067d945d14d388554}} 
+\index{ECS@{ECS}!deleteThisTmpEntity@{deleteThisTmpEntity}}
+\index{deleteThisTmpEntity@{deleteThisTmpEntity}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{deleteThisTmpEntity()}{deleteThisTmpEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void ECS\+::delete\+This\+Tmp\+Entity (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deletes a temporary entity and all its components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source_l00218}{218}} of file \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ tmpEntities.size();\ i++)\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tmpEntities[i]\ ==\ entityID)\ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpEntities.erase(tmpEntities.begin()\ +\ i);}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}{removeEntity}}(entityID);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a24b0bbc4a7bafb57c675620d28de7188}\label{classECS_a24b0bbc4a7bafb57c675620d28de7188}} 
+\index{ECS@{ECS}!getComponent@{getComponent}}
+\index{getComponent@{getComponent}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{getComponent()}{getComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Component $>$ \\
+Component \& ECS\+::get\+Component (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the Component object from a given entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Component} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const Component\& 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2ecs_8hpp_source_l00173}{173}} of file \mbox{\hyperlink{Client_2include_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (componentStore[entityID].find(\textcolor{keyword}{typeid}(Component).hash\_code())\ !=\ componentStore[entityID].end())}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<Component\&>(componentStore[entityID][\textcolor{keyword}{typeid}(Component).hash\_code()]);}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Component\ not\ found"{}});}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a24b0bbc4a7bafb57c675620d28de7188}\label{classECS_a24b0bbc4a7bafb57c675620d28de7188}} 
+\index{ECS@{ECS}!getComponent@{getComponent}}
+\index{getComponent@{getComponent}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{getComponent()}{getComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Component $>$ \\
+Component \& ECS\+::get\+Component (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the Component object from a given entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Component} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const Component\& 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source_l00093}{93}} of file \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (componentStore[entityID].find(\textcolor{keyword}{typeid}(Component).hash\_code())\ !=\ componentStore[entityID].end())}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<Component\&>(componentStore[entityID][\textcolor{keyword}{typeid}(Component).hash\_code()]);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Component\ not\ found"{}});}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a24b0bbc4a7bafb57c675620d28de7188}\label{classECS_a24b0bbc4a7bafb57c675620d28de7188}} 
+\index{ECS@{ECS}!getComponent@{getComponent}}
+\index{getComponent@{getComponent}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{getComponent()}{getComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Component $>$ \\
+Component \& ECS\+::get\+Component (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the Component object from a given entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Component} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const Component\& 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source_l00171}{171}} of file \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (componentStore[entityID].find(\textcolor{keyword}{typeid}(Component).hash\_code())\ !=\ componentStore[entityID].end())}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<Component\&>(componentStore[entityID][\textcolor{keyword}{typeid}(Component).hash\_code()]);}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Component\ not\ found"{}});}
+\DoxyCodeLine{00176\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}\label{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}} 
+\index{ECS@{ECS}!getEntitiesWithComponent@{getEntitiesWithComponent}}
+\index{getEntitiesWithComponent@{getEntitiesWithComponent}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{getEntitiesWithComponent()}{getEntitiesWithComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Component $>$ \\
+std\+::vector$<$ Entity\+ID $>$ ECS\+::get\+Entities\+With\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets all entities that have the given component. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Component} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Entity\+ID$>$ 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2ecs_8hpp_source_l00187}{187}} of file \mbox{\hyperlink{Client_2include_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ std::vector<EntityID>\ entitiesWithComponent;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [entityID,\ components]\ :\ componentStore)\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (components.find(\textcolor{keyword}{typeid}(Component).hash\_code())\ !=\ components.end())\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entitiesWithComponent.push\_back(entityID);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ entitiesWithComponent;}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}\label{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}} 
+\index{ECS@{ECS}!getEntitiesWithComponent@{getEntitiesWithComponent}}
+\index{getEntitiesWithComponent@{getEntitiesWithComponent}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{getEntitiesWithComponent()}{getEntitiesWithComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Component $>$ \\
+std\+::vector$<$ Entity\+ID $>$ ECS\+::get\+Entities\+With\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets all entities that have the given component. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Component} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Entity\+ID$>$ 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source_l00107}{107}} of file \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ std::vector<EntityID>\ entitiesWithComponent;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [entityID,\ components]\ :\ componentStore)\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (components.find(\textcolor{keyword}{typeid}(Component).hash\_code())\ !=\ components.end())\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entitiesWithComponent.push\_back(entityID);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ entitiesWithComponent;}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}\label{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}} 
+\index{ECS@{ECS}!getEntitiesWithComponent@{getEntitiesWithComponent}}
+\index{getEntitiesWithComponent@{getEntitiesWithComponent}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{getEntitiesWithComponent()}{getEntitiesWithComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Component $>$ \\
+std\+::vector$<$ Entity\+ID $>$ ECS\+::get\+Entities\+With\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets all entities that have the given component. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Component} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Entity\+ID$>$ 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source_l00185}{185}} of file \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ std::vector<EntityID>\ entitiesWithComponent;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [entityID,\ components]\ :\ componentStore)\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (components.find(\textcolor{keyword}{typeid}(Component).hash\_code())\ !=\ components.end())\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entitiesWithComponent.push\_back(entityID);}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ entitiesWithComponent;}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a6ef89e35e416d74ff07bd1f598278508}\label{classECS_a6ef89e35e416d74ff07bd1f598278508}} 
+\index{ECS@{ECS}!getTmpEntities@{getTmpEntities}}
+\index{getTmpEntities@{getTmpEntities}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{getTmpEntities()}{getTmpEntities()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ Entity\+ID $>$ ECS\+::get\+Tmp\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Tmp Entities object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Entity\+ID$>$\& 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2ecs_8hpp_source_l00211}{211}} of file \mbox{\hyperlink{Client_2include_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmpEntities;}
+\DoxyCodeLine{00213\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a6ef89e35e416d74ff07bd1f598278508}\label{classECS_a6ef89e35e416d74ff07bd1f598278508}} 
+\index{ECS@{ECS}!getTmpEntities@{getTmpEntities}}
+\index{getTmpEntities@{getTmpEntities}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{getTmpEntities()}{getTmpEntities()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ Entity\+ID $>$ ECS\+::get\+Tmp\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Tmp Entities object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Entity\+ID$>$\& 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source_l00131}{131}} of file \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmpEntities;}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a6ef89e35e416d74ff07bd1f598278508}\label{classECS_a6ef89e35e416d74ff07bd1f598278508}} 
+\index{ECS@{ECS}!getTmpEntities@{getTmpEntities}}
+\index{getTmpEntities@{getTmpEntities}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{getTmpEntities()}{getTmpEntities()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ Entity\+ID $>$ ECS\+::get\+Tmp\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Tmp Entities object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Entity\+ID$>$\& 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source_l00209}{209}} of file \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmpEntities;}
+\DoxyCodeLine{00211\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}\label{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}} 
+\index{ECS@{ECS}!removeComponent@{removeComponent}}
+\index{removeComponent@{removeComponent}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{removeComponent()}{removeComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Component $>$ \\
+void ECS\+::remove\+Component (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+removes a component from an entity 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Component} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2ecs_8hpp_source_l00161}{161}} of file \mbox{\hyperlink{Client_2include_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ componentStore[entityID].erase(\textcolor{keyword}{typeid}(Component).hash\_code());}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}\label{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}} 
+\index{ECS@{ECS}!removeComponent@{removeComponent}}
+\index{removeComponent@{removeComponent}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{removeComponent()}{removeComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Component $>$ \\
+void ECS\+::remove\+Component (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+removes a component from an entity 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Component} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source_l00080}{80}} of file \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}REMOVE\ ENTITY"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ componentStore[entityID].erase(\textcolor{keyword}{typeid}(Component).hash\_code());}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}\label{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}} 
+\index{ECS@{ECS}!removeComponent@{removeComponent}}
+\index{removeComponent@{removeComponent}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{removeComponent()}{removeComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Component $>$ \\
+void ECS\+::remove\+Component (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+removes a component from an entity 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Component} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source_l00159}{159}} of file \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ componentStore[entityID].erase(\textcolor{keyword}{typeid}(Component).hash\_code());}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}\label{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}} 
+\index{ECS@{ECS}!removeEntity@{removeEntity}}
+\index{removeEntity@{removeEntity}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{removeEntity()}{removeEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void ECS\+::remove\+Entity (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deletes an entity and all its components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2ecs_8hpp_source_l00202}{202}} of file \mbox{\hyperlink{Client_2include_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ componentStore.erase(entityID);}
+\DoxyCodeLine{00204\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}\label{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}} 
+\index{ECS@{ECS}!removeEntity@{removeEntity}}
+\index{removeEntity@{removeEntity}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{removeEntity()}{removeEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void ECS\+::remove\+Entity (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deletes an entity and all its components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source_l00122}{122}} of file \mbox{\hyperlink{POC_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ componentStore.erase(entityID);}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}\label{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}} 
+\index{ECS@{ECS}!removeEntity@{removeEntity}}
+\index{removeEntity@{removeEntity}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{removeEntity()}{removeEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void ECS\+::remove\+Entity (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deletes an entity and all its components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+ID} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source_l00200}{200}} of file \mbox{\hyperlink{Server_2includes_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ componentStore.erase(entityID);}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classECS_a16b0383d176f017883705e26b1a82ab8}\label{classECS_a16b0383d176f017883705e26b1a82ab8}} 
+\index{ECS@{ECS}!enemyEntities@{enemyEntities}}
+\index{enemyEntities@{enemyEntities}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{enemyEntities}{enemyEntities}}
+{\footnotesize\ttfamily std\+::vector$<$ Entity\+ID $>$ ECS\+::enemy\+Entities}
+
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2ecs_8hpp_source_l00230}{230}} of file \mbox{\hyperlink{Client_2include_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+\mbox{\Hypertarget{classECS_a34e5bbac817b4bcde3a06606e945a985}\label{classECS_a34e5bbac817b4bcde3a06606e945a985}} 
+\index{ECS@{ECS}!playerEntities@{playerEntities}}
+\index{playerEntities@{playerEntities}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{playerEntities}{playerEntities}}
+{\footnotesize\ttfamily std\+::vector$<$ Entity\+ID $>$ ECS\+::player\+Entities}
+
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2ecs_8hpp_source_l00231}{231}} of file \mbox{\hyperlink{Client_2include_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+\mbox{\Hypertarget{classECS_a8f15f4b546e9fa63499ad0db26023cbc}\label{classECS_a8f15f4b546e9fa63499ad0db26023cbc}} 
+\index{ECS@{ECS}!tmpEntities@{tmpEntities}}
+\index{tmpEntities@{tmpEntities}!ECS@{ECS}}
+\doxysubsubsection{\texorpdfstring{tmpEntities}{tmpEntities}}
+{\footnotesize\ttfamily std\+::vector$<$ Entity\+ID $>$ ECS\+::tmp\+Entities}
+
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2ecs_8hpp_source_l00229}{229}} of file \mbox{\hyperlink{Client_2include_2ecs_8hpp_source}{ecs.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/ecs.\+hpp\item 
+POC/includes/ecs.\+hpp\item 
+Server/includes/ecs.\+hpp\end{DoxyCompactItemize}

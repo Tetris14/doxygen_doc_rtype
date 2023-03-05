@@ -1,0 +1,90 @@
+\hypertarget{classSession}{}\doxysection{Session Class Reference}
+\label{classSession}\index{Session@{Session}}
+
+
+\doxylink{classSession}{Session} class inherited from std\+::enable\+\_\+shared\+\_\+from\+\_\+this$<$\+Session$>$  
+
+
+
+
+{\ttfamily \#include $<$server.\+hpp$>$}
+
+Inheritance diagram for Session\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSession}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSession_a936fb78d44e9593395f873e388cc1b85}{Session}} (tcp\+::socket socket)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classSession}{Session} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSession_a68020021e9d13c85b641d853646e8b7a}{Start}} ()
+\begin{DoxyCompactList}\small\item\em start the session \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classSession}{Session} class inherited from std\+::enable\+\_\+shared\+\_\+from\+\_\+this$<$\+Session$>$ 
+
+
+
+Definition at line \mbox{\hyperlink{server_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{server_8hpp_source}{server.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSession_a936fb78d44e9593395f873e388cc1b85}\label{classSession_a936fb78d44e9593395f873e388cc1b85}} 
+\index{Session@{Session}!Session@{Session}}
+\index{Session@{Session}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{Session()}{Session()}}
+{\footnotesize\ttfamily Session\+::\+Session (\begin{DoxyParamCaption}\item[{tcp\+::socket}]{socket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{classSession}{Session} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{server_8hpp_source_l00055}{55}} of file \mbox{\hyperlink{server_8hpp_source}{server.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ :\ socket\_(std::move(socket))\ \{\};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSession_a68020021e9d13c85b641d853646e8b7a}\label{classSession_a68020021e9d13c85b641d853646e8b7a}} 
+\index{Session@{Session}!Start@{Start}}
+\index{Start@{Start}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Session\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+start the session 
+
+Function who start the session.
+
+Definition at line \mbox{\hyperlink{server_8cpp_source_l00192}{192}} of file \mbox{\hyperlink{server_8cpp_source}{server.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ DoRead();}
+\DoxyCodeLine{00194\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/includes/server.\+hpp\item 
+Server/sources/server.\+cpp\end{DoxyCompactItemize}

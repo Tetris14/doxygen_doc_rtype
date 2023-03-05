@@ -1,0 +1,112 @@
+\hypertarget{Parser_8cpp_source}{}\doxysection{Parser.\+cpp}
+\label{Parser_8cpp_source}\index{Server/sources/Parser.cpp@{Server/sources/Parser.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}Parser.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00008}\mbox{\hyperlink{classParser_a44627ae8cefd5ebb65605b0726f735fe}{00008}}\ \mbox{\hyperlink{classParser_a44627ae8cefd5ebb65605b0726f735fe}{Parser::Parser}}(std::string\ folder)\ :\ \_folder(folder)}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00010}00010\ \ \ \ \ \_folder\ =\ folder;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{int}\ level\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&entry\ :\ std::filesystem::directory\_iterator(\_folder))\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ entry.path()\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ std::ifstream\ file(entry.path());}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ std::vector<std::pair<int,\ std::vector<enemy>>>\ waves;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ wave\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<enemy>\ enemies;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ line\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ array\ =\ \mbox{\hyperlink{classParser_a4baa4cbfcef335cea2b1c7a2a1998fc9}{stringToArray}}(line,\ \textcolor{charliteral}{'/'});}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ array.size()\ -\/\ 1;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ array[i]\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structParser_1_1enemy}{enemy}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ array2\ =\ \mbox{\hyperlink{classParser_a4baa4cbfcef335cea2b1c7a2a1998fc9}{stringToArray}}(array[i],\ \textcolor{charliteral}{':'});}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp.\_id\ =\ std::stoi(array2[0]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp.x\ =\ std::stoi(array2[1]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp.y\ =\ std::stoi(array2[2]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp.sizeX\ =\ std::stoi(array2[3]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp.sizeY\ =\ std::stoi(array2[4]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp.health\ =\ std::stoi(array2[5]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp.speed\ =\ std::stoi(array2[6]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp.damage\ =\ std::stoi(array2[7]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp.isBoss\ =\ std::stoi(array2[8]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp.rotation\ =\ std::stoi(array2[9]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp.fireRate\ =\ std::stof(array2[10]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (array2.size()\ >\ 11)\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ array2[11]\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ array3\ =\ \mbox{\hyperlink{classParser_a4baa4cbfcef335cea2b1c7a2a1998fc9}{stringToArray}}(array2[11],\ \textcolor{charliteral}{'.'});}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ array3.size();\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ array4\ =\ \mbox{\hyperlink{classParser_a4baa4cbfcef335cea2b1c7a2a1998fc9}{stringToArray}}(array3[j],\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp.waypoints.push\_back(std::make\_pair(std::stoi(array4[0]),\ std::stoi(array4[1])));}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemies.push\_back(tmp);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (std::exception\ \&e)\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}enemy\ error:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ waves.push\_back(std::make\_pair(std::stoi(array[array.size()\ -\/\ 1]),\ enemies));}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \_levels[level]\ =\ waves;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ level++;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//printLevels();}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00063}\mbox{\hyperlink{classParser_a3e658b5917a93a3ef648050d060e3a93}{00063}}\ \mbox{\hyperlink{classParser_a3e658b5917a93a3ef648050d060e3a93}{Parser::\string~Parser}}()}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00064}00064\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00067}\mbox{\hyperlink{classParser_a4baa4cbfcef335cea2b1c7a2a1998fc9}{00067}}\ std::vector<std::string>\ \mbox{\hyperlink{classParser_a4baa4cbfcef335cea2b1c7a2a1998fc9}{Parser::stringToArray}}(std::string\ str,\ \textcolor{keywordtype}{char}\ pars)}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00068}00068\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00069}00069\ \ \ \ \ std::vector<std::string>\ array;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00070}00070\ \ \ \ \ std::string\ tmp\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ str.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str[i]\ ==\ pars)\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ array.push\_back(tmp);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ tmp\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ tmp\ +=\ str[i];}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00079}00079\ \ \ \ \ array.push\_back(tmp);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{return}\ array;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00087}\mbox{\hyperlink{classParser_a39f57671ac46ed3ab9965fa45cc4cfe2}{00087}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParser_a39f57671ac46ed3ab9965fa45cc4cfe2}{Parser::printLevels}}()}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00088}00088\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00089}00089\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Levels-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&level\ :\ \_levels)\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Level:\ "{}}\ <<\ level.first\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&wave\ :\ level.second)\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Wave:\ "{}}\ <<\ wave.first\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\mbox{\hyperlink{structParser_1_1enemy}{enemy}}\ :\ wave.second)\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enemy:\ "{}}\ <<\ \mbox{\hyperlink{structParser_1_1enemy}{enemy}}.x\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structParser_1_1enemy}{enemy}}.y\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structParser_1_1enemy}{enemy}}.sizeX\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structParser_1_1enemy}{enemy}}.sizeY\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structParser_1_1enemy}{enemy}}.health\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structParser_1_1enemy}{enemy}}.speed\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structParser_1_1enemy}{enemy}}.damage\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00099}00099\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00100}00100\ \}}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00107}\mbox{\hyperlink{classParser_a72d5333cc3100b28568748136f201cdd}{00107}}\ \mbox{\hyperlink{structParser_1_1enemy}{Parser::enemy}}\ \mbox{\hyperlink{classParser_a72d5333cc3100b28568748136f201cdd}{Parser::stringToEnemy}}(std::string\ str)}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00108}00108\ \{}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00109}00109\ \ \ \ \ \mbox{\hyperlink{structParser_1_1enemy}{enemy}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00110}00110\ \ \ \ \ std::vector<std::string>\ array\ =\ \mbox{\hyperlink{classParser_a4baa4cbfcef335cea2b1c7a2a1998fc9}{stringToArray}}(str,\ \textcolor{charliteral}{':'});}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00111}00111\ \ \ \ \ tmp.\_id\ =\ std::stoi(array[0]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00112}00112\ \ \ \ \ tmp.x\ =\ std::stoi(array[1]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00113}00113\ \ \ \ \ tmp.y\ =\ std::stoi(array[2]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00114}00114\ \ \ \ \ tmp.sizeX\ =\ std::stoi(array[3]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00115}00115\ \ \ \ \ tmp.sizeY\ =\ std::stoi(array[4]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00116}00116\ \ \ \ \ tmp.health\ =\ std::stoi(array[5]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00117}00117\ \ \ \ \ tmp.speed\ =\ std::stoi(array[6]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00118}00118\ \ \ \ \ tmp.damage\ =\ std::stoi(array[7]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00119}00119\ \ \ \ \ tmp.isBoss\ =\ std::stoi(array[8]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00120}00120\ \ \ \ \ tmp.rotation\ =\ std::stoi(array[9]);}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{Parser_8cpp_source_l00122}00122\ \}}
+
+\end{DoxyCode}

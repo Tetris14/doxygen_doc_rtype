@@ -1,0 +1,212 @@
+\hypertarget{structMyData}{}\doxysection{My\+Data Struct Reference}
+\label{structMyData}\index{MyData@{MyData}}
+
+
+Struct for data.  
+
+
+
+
+{\ttfamily \#include $<$data.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ asio\+::const\+\_\+buffer, 5 $>$ \mbox{\hyperlink{structMyData_ad06e5d57a522f399f699cd4391bac7e8}{To\+Buffers}} () const
+\item 
+std\+::string \mbox{\hyperlink{structMyData_a13748ea22d0230cab6d9d24f7c258bf8}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em returns the data as a string \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMyData}{My\+Data}} \mbox{\hyperlink{structMyData_a3a662fbf28ba70507f0fda2bcd1f2d57}{to\+Data}} (std\+::string message)
+\begin{DoxyCompactList}\small\item\em converts a string to data \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structMyData_afd2f18b7e4f333214f4f96512112e3bf}{id}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structMyData_a24d0ce9716f4cfa148ea8437048e831a}{x}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structMyData_a3fd50ee15c1a84a794a4812e6b92360a}{y}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structMyData_ae83c19a45356f69ca20f30db1af5ab17}{alive}}
+\item 
+char \mbox{\hyperlink{structMyData_ad8e9906c500973ee81160bdb6e1f4905}{value}} \mbox{[}16\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct for data. 
+
+
+
+Definition at line \mbox{\hyperlink{POC_2include_2data_8hpp_source_l00007}{7}} of file \mbox{\hyperlink{POC_2include_2data_8hpp_source}{data.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structMyData_ad06e5d57a522f399f699cd4391bac7e8}\label{structMyData_ad06e5d57a522f399f699cd4391bac7e8}} 
+\index{MyData@{MyData}!ToBuffers@{ToBuffers}}
+\index{ToBuffers@{ToBuffers}!MyData@{MyData}}
+\doxysubsubsection{\texorpdfstring{ToBuffers()}{ToBuffers()}}
+{\footnotesize\ttfamily std\+::array$<$ asio\+::const\+\_\+buffer, 5 $>$ My\+Data\+::\+To\+Buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{POC_2include_2data_8hpp_source_l00012}{12}} of file \mbox{\hyperlink{POC_2include_2data_8hpp_source}{data.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ std::array<asio::const\_buffer,\ 5>\ buffers\ =\ \{\{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ asio::buffer(\&\textcolor{keywordtype}{id},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{id})),}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ asio::buffer(\&x,\ \textcolor{keyword}{sizeof}(x)),}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ asio::buffer(\&y,\ \textcolor{keyword}{sizeof}(y)),}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ asio::buffer(\&alive,\ \textcolor{keyword}{sizeof}(alive))}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}\};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ buffers;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structMyData_a3a662fbf28ba70507f0fda2bcd1f2d57}\label{structMyData_a3a662fbf28ba70507f0fda2bcd1f2d57}} 
+\index{MyData@{MyData}!toData@{toData}}
+\index{toData@{toData}!MyData@{MyData}}
+\doxysubsubsection{\texorpdfstring{toData()}{toData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMyData}{My\+Data}} My\+Data\+::to\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+converts a string to data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structMyData}{My\+Data} 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Server_2includes_2data_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{Server_2includes_2data_8hpp_source}{data.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structMyData}{MyData}}\ data;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::string\ str\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ c\ :\ message)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c\ ==\ \textcolor{charliteral}{'\ '})\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strcpy(data.value,\ str.c\_str());}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 1)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.id\ =\ std::stoi(str);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 2)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.x\ =\ std::stoi(str);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 3)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.y\ =\ std::stoi(str);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 4)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.alive\ =\ std::stoi(str);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ str\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ str\ +=\ c;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data;}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structMyData_a13748ea22d0230cab6d9d24f7c258bf8}\label{structMyData_a13748ea22d0230cab6d9d24f7c258bf8}} 
+\index{MyData@{MyData}!toString@{toString}}
+\index{toString@{toString}!MyData@{MyData}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string My\+Data\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns the data as a string 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Server_2includes_2data_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{Server_2includes_2data_8hpp_source}{data.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::string\ str\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ str\ +=\ value;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ str\ +=\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ str\ +=\ std::to\_string(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ str\ +=\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ str\ +=\ std::to\_string(x);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ str\ +=\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ str\ +=\ std::to\_string(y);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ str\ +=\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ str\ +=\ std::to\_string(alive);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structMyData_ae83c19a45356f69ca20f30db1af5ab17}\label{structMyData_ae83c19a45356f69ca20f30db1af5ab17}} 
+\index{MyData@{MyData}!alive@{alive}}
+\index{alive@{alive}!MyData@{MyData}}
+\doxysubsubsection{\texorpdfstring{alive}{alive}}
+{\footnotesize\ttfamily uint8\+\_\+t My\+Data\+::alive}
+
+
+
+Definition at line \mbox{\hyperlink{POC_2include_2data_8hpp_source_l00010}{10}} of file \mbox{\hyperlink{POC_2include_2data_8hpp_source}{data.\+hpp}}.
+
+\mbox{\Hypertarget{structMyData_afd2f18b7e4f333214f4f96512112e3bf}\label{structMyData_afd2f18b7e4f333214f4f96512112e3bf}} 
+\index{MyData@{MyData}!id@{id}}
+\index{id@{id}!MyData@{MyData}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily uint32\+\_\+t My\+Data\+::id}
+
+
+
+Definition at line \mbox{\hyperlink{POC_2include_2data_8hpp_source_l00008}{8}} of file \mbox{\hyperlink{POC_2include_2data_8hpp_source}{data.\+hpp}}.
+
+\mbox{\Hypertarget{structMyData_ad8e9906c500973ee81160bdb6e1f4905}\label{structMyData_ad8e9906c500973ee81160bdb6e1f4905}} 
+\index{MyData@{MyData}!value@{value}}
+\index{value@{value}!MyData@{MyData}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily char My\+Data\+::value\mbox{[}16\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{Server_2includes_2data_8hpp_source_l00013}{13}} of file \mbox{\hyperlink{Server_2includes_2data_8hpp_source}{data.\+hpp}}.
+
+\mbox{\Hypertarget{structMyData_a24d0ce9716f4cfa148ea8437048e831a}\label{structMyData_a24d0ce9716f4cfa148ea8437048e831a}} 
+\index{MyData@{MyData}!x@{x}}
+\index{x@{x}!MyData@{MyData}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily uint32\+\_\+t My\+Data\+::x}
+
+
+
+Definition at line \mbox{\hyperlink{POC_2include_2data_8hpp_source_l00009}{9}} of file \mbox{\hyperlink{POC_2include_2data_8hpp_source}{data.\+hpp}}.
+
+\mbox{\Hypertarget{structMyData_a3fd50ee15c1a84a794a4812e6b92360a}\label{structMyData_a3fd50ee15c1a84a794a4812e6b92360a}} 
+\index{MyData@{MyData}!y@{y}}
+\index{y@{y}!MyData@{MyData}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily uint32\+\_\+t My\+Data\+::y}
+
+
+
+Definition at line \mbox{\hyperlink{POC_2include_2data_8hpp_source_l00009}{9}} of file \mbox{\hyperlink{POC_2include_2data_8hpp_source}{data.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+POC/include/data.\+hpp\item 
+Server/includes/data.\+hpp\end{DoxyCompactItemize}

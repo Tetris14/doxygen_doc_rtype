@@ -1,0 +1,105 @@
+\hypertarget{POC_2includes_2ecs_8hpp_source}{}\doxysection{ecs.\+hpp}
+\label{POC_2includes_2ecs_8hpp_source}\index{POC/includes/ecs.hpp@{POC/includes/ecs.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <any>}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00006}00006\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structTransform}{Transform}}\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00007}00007\ \ \ \ \ \textcolor{keywordtype}{float}\ x,\ y,\ z;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00008}00008\ \};}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00010}00010\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPhysics}{Physics}}\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{float}\ velocity;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{float}\ gravity;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00013}00013\ \};}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00015}00015\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCollider}{Collider}}\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordtype}{float}\ x,\ y;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00017}00017\ \ \ \ \ std::string\ tag;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00018}00018\ \};}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00020}00020\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structRender}{Render}}\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00021}00021\ \ \ \ \ std::string\ assetPath;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{int}\ frame;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ tmp;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00024}00024\ \};}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00026}\mbox{\hyperlink{structDeletable}{00026}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDeletable}{Deletable}}\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ deletable;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00028}00028\ \};}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00030}\mbox{\hyperlink{structOutOfBounds}{00030}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structOutOfBounds}{OutOfBounds}}\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ outOfBounds;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00032}00032\ \};}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00038}00038\ \textcolor{keyword}{using\ }EntityID\ =\ \textcolor{keywordtype}{unsigned}\ int;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00044}00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classECS}{ECS}}\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00045}00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00053}\mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{00053}}\ \ \ \ \ EntityID\ \mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{createEntity}}(\textcolor{keywordtype}{bool}\ tmp=\textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ EntityID\ \textcolor{keywordtype}{id}\ =\ nextEntityID;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tmp)}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ tmpEntities.push\_back(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00057}00057\ \ \ \ \ \ \ \ \ nextEntityID++;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ id;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Component>}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00069}\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{00069}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(EntityID\ entityID,\ \textcolor{keyword}{const}\ Component\&\ component)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00070}00070\ \ \ \ \ \ \ \ \ componentStore[entityID][\textcolor{keyword}{typeid}(Component).hash\_code()]\ =\ component;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Component>}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00080}\mbox{\hyperlink{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}{00080}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}{removeComponent}}(EntityID\ entityID)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}REMOVE\ ENTITY"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ componentStore[entityID].erase(\textcolor{keyword}{typeid}(Component).hash\_code());}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00084}00084\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00092}00092\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Component>}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00093}\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{00093}}\ \ \ \ \ Component\&\ \mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}(EntityID\ entityID)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (componentStore[entityID].find(\textcolor{keyword}{typeid}(Component).hash\_code())\ !=\ componentStore[entityID].end())}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<Component\&>(componentStore[entityID][\textcolor{keyword}{typeid}(Component).hash\_code()]);}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Component\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00099}00099\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00106}00106\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Component>}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00107}\mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{00107}}\ \ \ \ \ std::vector<EntityID>\ \mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{getEntitiesWithComponent}}()\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ std::vector<EntityID>\ entitiesWithComponent;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [entityID,\ components]\ :\ componentStore)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (components.find(\textcolor{keyword}{typeid}(Component).hash\_code())\ !=\ components.end())\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entitiesWithComponent.push\_back(entityID);}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ entitiesWithComponent;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00122}\mbox{\hyperlink{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}{00122}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}{removeEntity}}(EntityID\ entityID)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00123}00123\ \ \ \ \ \ \ \ \ componentStore.erase(entityID);}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00131}\mbox{\hyperlink{classECS_a6ef89e35e416d74ff07bd1f598278508}{00131}}\ \ \ \ \ std::vector<EntityID>\ \mbox{\hyperlink{classECS_a6ef89e35e416d74ff07bd1f598278508}{getTmpEntities}}()\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tmpEntities;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00140}\mbox{\hyperlink{classECS_a04c79fbbe1d876c067d945d14d388554}{00140}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classECS_a04c79fbbe1d876c067d945d14d388554}{deleteThisTmpEntity}}(EntityID\ entityID)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ tmpEntities.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tmpEntities[i]\ ==\ entityID)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpEntities.erase(tmpEntities.begin()\ +\ i);}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}{removeEntity}}(entityID);}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00149}00149\ \ \ \ \ std::vector<EntityID>\ tmpEntities;\ \textcolor{comment}{//\ vector\ that\ store\ temporary\ entities\ such\ as\ projectiles}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00150}00150\ \ \ \ \ std::vector<EntityID>\ enemyEntities;\ \textcolor{comment}{//\ vector\ that\ store\ all\ player\ entities}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00151}00151\ \ \ \ \ std::vector<EntityID>\ playerEntities;\ \textcolor{comment}{//\ vector\ that\ store\ all\ enemy\ entities}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00152}00152\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00153}00153\ \ \ \ \ EntityID\ nextEntityID\ =\ 0;\ \textcolor{comment}{//\ The\ next\ entity\ ID\ to\ be\ assigned}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00154}00154\ \ \ \ \ std::unordered\_map<EntityID,\ std::unordered\_map<std::size\_t,\ std::any>>\ componentStore;\ \textcolor{comment}{//\ double\ array\ that\ store\ entites\ and\ their\ components}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2ecs_8hpp_source_l00155}00155\ \};}
+
+\end{DoxyCode}

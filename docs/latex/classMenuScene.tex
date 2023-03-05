@@ -1,0 +1,426 @@
+\hypertarget{classMenuScene}{}\doxysection{Menu\+Scene Class Reference}
+\label{classMenuScene}\index{MenuScene@{MenuScene}}
+
+
+Class that handle the menu scene.  
+
+
+
+
+{\ttfamily \#include $<$menu\+Scene.\+hpp$>$}
+
+Inheritance diagram for Menu\+Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMenuScene}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMenuScene_a9cbf4e27ace44539f6bd934156cdd81f}{Menu\+Scene}} (const std\+::pair$<$ float, float $>$ \&dimensions, const std\+::string \&music, sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Construct a new Menu \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMenuScene_a9b8d7fd2c641191231e9d352932be80d}{$\sim$\+Menu\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Menu \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenuScene_a2bd97ff77fcb7bf11af7cf2aef82eed6}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em Load the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenuScene_a3a218e9482bee0d11254ca9f3d20d1d5}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em Unload the scene. \end{DoxyCompactList}\item 
+states \mbox{\hyperlink{classMenuScene_aa621ddd7862a779962e7805c92a6da14}{handle\+Event}} (sf\+::\+Event event, \mbox{\hyperlink{classWindow}{Window}} \&window) override
+\begin{DoxyCompactList}\small\item\em Handle events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenuScene_adb1f8ad1eabcd12c23927517f4574022}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock) override
+\begin{DoxyCompactList}\small\item\em Update the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenuScene_a6448f4df0e4c11a43e8cc87b9ac909a4}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenuScene_a2bd97ff77fcb7bf11af7cf2aef82eed6}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em loads a \doxylink{classScene}{Scene} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenuScene_a3a218e9482bee0d11254ca9f3d20d1d5}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em Unloads a \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenuScene_ab7ecd5cc6d630ae3591ada6b3ba2265a}{handle\+Event}} (sf\+::\+Event event) override
+\item 
+void \mbox{\hyperlink{classMenuScene_adb1f8ad1eabcd12c23927517f4574022}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock) override
+\begin{DoxyCompactList}\small\item\em Update the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenuScene_a6448f4df0e4c11a43e8cc87b9ac909a4}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em loads a \doxylink{classScene}{Scene} \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em Unloads a \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+virtual states \mbox{\hyperlink{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}{handle\+Event}} (sf\+::\+Event event, \mbox{\hyperlink{classWindow}{Window}} \&window)=0
+\begin{DoxyCompactList}\small\item\em Handle events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock)=0
+\begin{DoxyCompactList}\small\item\em Update the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\item 
+\mbox{\Hypertarget{classScene_a6d44d0f4b3ceb248ed0b6d137e6bd37f}\label{classScene_a6d44d0f4b3ceb248ed0b6d137e6bd37f}} 
+virtual void {\bfseries handle\+Event} (sf\+::\+Event event)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that handle the menu scene. 
+
+Definition at line \mbox{\hyperlink{Client_2include_2menuScene_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{Client_2include_2menuScene_8hpp_source}{menu\+Scene.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMenuScene_a9cbf4e27ace44539f6bd934156cdd81f}\label{classMenuScene_a9cbf4e27ace44539f6bd934156cdd81f}} 
+\index{MenuScene@{MenuScene}!MenuScene@{MenuScene}}
+\index{MenuScene@{MenuScene}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{MenuScene()}{MenuScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Menu\+Scene\+::\+Menu\+Scene (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ float, float $>$ \&}]{dimensions,  }\item[{const std\+::string \&}]{music,  }\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Construct a new Menu \doxylink{classScene}{Scene} object. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2menuScene_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{Client_2src_2menuScene_8cpp_source}{menu\+Scene.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \_music(findFile(music)),\ \_spriteManager(dimensions)}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \_dimensions\ =\ dimensions;}
+\DoxyCodeLine{00013\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ae117be8da181d774ed3759a2abef646c}{addSprite}}(\textcolor{stringliteral}{"{}background.jpg"{}},\ 0.0f,\ 0.0f,\ 1.0f,\ 1.0f);}
+\DoxyCodeLine{00014\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ae117be8da181d774ed3759a2abef646c}{addSprite}}(\textcolor{stringliteral}{"{}R-\/Type\_logo.png"{}},\ 35.0f,\ 15.0f,\ 0.3f,\ 0.15f);}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMenuScene_a9b8d7fd2c641191231e9d352932be80d}\label{classMenuScene_a9b8d7fd2c641191231e9d352932be80d}} 
+\index{MenuScene@{MenuScene}!````~MenuScene@{$\sim$MenuScene}}
+\index{````~MenuScene@{$\sim$MenuScene}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{$\sim$MenuScene()}{~MenuScene()}}
+{\footnotesize\ttfamily Menu\+Scene\+::$\sim$\+Menu\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Menu \doxylink{classScene}{Scene} object. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2menuScene_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{Client_2src_2menuScene_8cpp_source}{menu\+Scene.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMenuScene_afcc0dcde491eac4e970d68e8896bf4cb}\label{classMenuScene_afcc0dcde491eac4e970d68e8896bf4cb}} 
+\index{MenuScene@{MenuScene}!MenuScene@{MenuScene}}
+\index{MenuScene@{MenuScene}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{MenuScene()}{MenuScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Menu\+Scene\+::\+Menu\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{POC_2sources_2menuScene_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{POC_2sources_2menuScene_8cpp_source}{menu\+Scene.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMenuScene_a6448f4df0e4c11a43e8cc87b9ac909a4}\label{classMenuScene_a6448f4df0e4c11a43e8cc87b9ac909a4}} 
+\index{MenuScene@{MenuScene}!draw@{draw}}
+\index{draw@{draw}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+Scene\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{classDraw}{Draw} the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2menuScene_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{Client_2src_2menuScene_8cpp_source}{menu\+Scene.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_showConsole)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \_Console.\mbox{\hyperlink{classConsole_a3e89d786bdcadabf0344576a51ed8023}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ ecs);}
+\DoxyCodeLine{00054\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}{drawSprite}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ \textcolor{stringliteral}{"{}background.jpg"{}});}
+\DoxyCodeLine{00055\ \ \ \ \ \_singleButton.\mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{setButton}}(findFile(\textcolor{stringliteral}{"{}singlePlayerButton.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00056\ \ \ \ \ \_multiButton.\mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{setButton}}(findFile(\textcolor{stringliteral}{"{}multiPlayerButton.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00057\ \ \ \ \ \_settingsButton.\mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{setButton}}(findFile(\textcolor{stringliteral}{"{}settingsButton.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00058\ \ \ \ \ \_quitButton.\mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{setButton}}(findFile(\textcolor{stringliteral}{"{}quitButton.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00059\ \ \ \ \ \_backgoundMenu.\mbox{\hyperlink{classRectangle_a985548fa4b2b54823af0c22e57936ef4}{setRectangle}}(findFile(\textcolor{stringliteral}{"{}menuRectangle.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00060\ \ \ \ \ \_backgoundMenu.\mbox{\hyperlink{classRectangle_a17972bcdb06e6e103d1bb404e3d562c7}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00061\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}{drawSprite}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ \textcolor{stringliteral}{"{}R-\/Type\_logo.png"{}});}
+\DoxyCodeLine{00062\ \ \ \ \ \_singleButton.\mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{isHover}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00063\ \ \ \ \ \_multiButton.\mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{isHover}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00064\ \ \ \ \ \_settingsButton.\mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{isHover}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00065\ \ \ \ \ \_quitButton.\mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{isHover}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00066\ \ \ \ \ \_singleButton.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00067\ \ \ \ \ \_multiButton.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00068\ \ \ \ \ \_settingsButton.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00069\ \ \ \ \ \_quitButton.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00070\ \ \ \ \ \_joinButton.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00071\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMenuScene_a6448f4df0e4c11a43e8cc87b9ac909a4}\label{classMenuScene_a6448f4df0e4c11a43e8cc87b9ac909a4}} 
+\index{MenuScene@{MenuScene}!draw@{draw}}
+\index{draw@{draw}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+Scene\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{classDraw}{Draw} the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{Scene}}.
+
+\mbox{\Hypertarget{classMenuScene_ab7ecd5cc6d630ae3591ada6b3ba2265a}\label{classMenuScene_ab7ecd5cc6d630ae3591ada6b3ba2265a}} 
+\index{MenuScene@{MenuScene}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+Scene\+::handle\+Event (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classScene}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{POC_2sources_2menuScene_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{POC_2sources_2menuScene_8cpp_source}{menu\+Scene.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMenuScene_aa621ddd7862a779962e7805c92a6da14}\label{classMenuScene_aa621ddd7862a779962e7805c92a6da14}} 
+\index{MenuScene@{MenuScene}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily states Menu\+Scene\+::handle\+Event (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{event,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handle events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2menuScene_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{Client_2src_2menuScene_8cpp_source}{menu\+Scene.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_input.\mbox{\hyperlink{classInput_aa430e51ec53ef420fbee13493d950bf4}{isKeyPressed}}(C))}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \_showConsole\ =\ !\_showConsole;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_settingsButton.\mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{isClicked}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}()))}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SETTINGS;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_singleButton.\mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{isClicked}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}()))}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SINGLE;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_multiButton.\mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{isClicked}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}()))}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LOBBY;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_quitButton.\mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{isClicked}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}()))}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QUIT;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ OK;}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMenuScene_a2bd97ff77fcb7bf11af7cf2aef82eed6}\label{classMenuScene_a2bd97ff77fcb7bf11af7cf2aef82eed6}} 
+\index{MenuScene@{MenuScene}!load@{load}}
+\index{load@{load}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+Scene\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Load the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2menuScene_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{Client_2src_2menuScene_8cpp_source}{menu\+Scene.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \_music.\mbox{\hyperlink{classMusic_a54b941f6f7634d7f99b473c78fe6e4da}{play}}();}
+\DoxyCodeLine{00024\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMenuScene_a2bd97ff77fcb7bf11af7cf2aef82eed6}\label{classMenuScene_a2bd97ff77fcb7bf11af7cf2aef82eed6}} 
+\index{MenuScene@{MenuScene}!load@{load}}
+\index{load@{load}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+Scene\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+loads a \doxylink{classScene}{Scene} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{Scene}}.
+
+\mbox{\Hypertarget{classMenuScene_a3a218e9482bee0d11254ca9f3d20d1d5}\label{classMenuScene_a3a218e9482bee0d11254ca9f3d20d1d5}} 
+\index{MenuScene@{MenuScene}!unload@{unload}}
+\index{unload@{unload}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{unload()}{unload()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+Scene\+::unload (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Unload the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2menuScene_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{Client_2src_2menuScene_8cpp_source}{menu\+Scene.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \_music.\mbox{\hyperlink{classMusic_a008211b514c1c89c15399d3384d3fcea}{stop}}();}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMenuScene_a3a218e9482bee0d11254ca9f3d20d1d5}\label{classMenuScene_a3a218e9482bee0d11254ca9f3d20d1d5}} 
+\index{MenuScene@{MenuScene}!unload@{unload}}
+\index{unload@{unload}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{unload()}{unload()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+Scene\+::unload (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Unloads a \doxylink{classScene}{Scene}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{Scene}}.
+
+\mbox{\Hypertarget{classMenuScene_adb1f8ad1eabcd12c23927517f4574022}\label{classMenuScene_adb1f8ad1eabcd12c23927517f4574022}} 
+\index{MenuScene@{MenuScene}!update@{update}}
+\index{update@{update}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Menu\+Scene\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClock}{Clock}} \&}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2menuScene_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{Client_2src_2menuScene_8cpp_source}{menu\+Scene.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMenuScene_adb1f8ad1eabcd12c23927517f4574022}\label{classMenuScene_adb1f8ad1eabcd12c23927517f4574022}} 
+\index{MenuScene@{MenuScene}!update@{update}}
+\index{update@{update}!MenuScene@{MenuScene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Menu\+Scene\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClock}{Clock}} \&}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{Scene}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/menu\+Scene.\+hpp\item 
+POC/includes/menu\+Scene.\+hpp\item 
+Client/src/menu\+Scene.\+cpp\item 
+POC/sources/menu\+Scene.\+cpp\end{DoxyCompactItemize}

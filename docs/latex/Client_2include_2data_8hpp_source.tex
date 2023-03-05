@@ -1,0 +1,83 @@
+\hypertarget{Client_2include_2data_8hpp_source}{}\doxysection{data.\+hpp}
+\label{Client_2include_2data_8hpp_source}\index{Client/include/data.hpp@{Client/include/data.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <asio.hpp>}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00007}00007\ \ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00008}00008\ \textcolor{comment}{//\ data\ to\ send\ to\ the\ server}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00010}00010\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00011}00011\ \textcolor{comment}{@brief\ \ Struct\ to\ send\ the\ player\ position\ to\ the\ server}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00012}00012\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00013}\mbox{\hyperlink{structPlayer__s}{00013}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPlayer__s}{Player\_s}}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00014}00014\ \ \ \ \ uint32\_t\ x,\ y;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00015}00015\ \};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00017}00017\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00018}00018\ \textcolor{comment}{@brief\ \ Struct\ to\ send\ the\ shooting\ position\ to\ the\ server}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00019}00019\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00020}\mbox{\hyperlink{structshooting__s}{00020}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structshooting__s}{shooting\_s}}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00021}00021\ \ \ \ \ uint32\_t\ x,\ y;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00022}00022\ \};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00024}00024\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00025}00025\ \textcolor{comment}{@brief\ \ package\ of\ player\ data\ to\ send\ to\ the\ server}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00026}00026\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00027}\mbox{\hyperlink{structPlayerUpdate}{00027}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPlayerUpdate}{PlayerUpdate}}\ \{\ \textcolor{comment}{//\ check\ if\ its\ not\ to\ big\ for\ the\ buffer}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{structPlayer__s}{Player\_s}}\ player;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00029}00029\ \ \ \ \ uint32\_t\ count;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00030}00030\ \ \ \ \ std::vector<shooting\_s>\ shoot;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00031}00031\ \};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00034}00034\ \textcolor{comment}{//data\ received\ from\ the\ server}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00036}00036\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00037}00037\ \textcolor{comment}{@brief\ \ Struct\ to\ receive\ the\ enemy\ posit}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00038}00038\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00039}\mbox{\hyperlink{structEnemy__r}{00039}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structEnemy__r}{Enemy\_r}}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00040}00040\ \ \ \ \ uint32\_t\ x,\ y;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00041}00041\ \ \ \ \ uint32\_t\ life;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00042}00042\ \ \ \ \ uint32\_t\ speed;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00043}00043\ \ \ \ \ uint32\_t\ dmg;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ boss;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00045}00045\ \};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00047}00047\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00048}00048\ \textcolor{comment}{@brief\ \ package\ to\ receive\ the\ player\ position\ from\ the\ server}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00049}00049\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00050}\mbox{\hyperlink{structEnemyUpdate}{00050}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structEnemyUpdate}{EnemyUpdate}}\ \{\ \textcolor{comment}{//\ check\ if\ its\ not\ to\ big\ for\ the\ buffer}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00051}00051\ \ \ \ \ uint32\_t\ count;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00052}00052\ \ \ \ \ std::vector<Enemy\_r>\ enemies;\ \ \ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00053}00053\ \};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00055}00055\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00056}00056\ \textcolor{comment}{@brief\ \ Struct\ to\ receive\ the\ player\ position\ from\ the\ server}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00057}00057\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00058}\mbox{\hyperlink{structPlayer__r}{00058}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPlayer__r}{Player\_r}}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00059}00059\ \ \ \ \ uint32\_t\ x,\ y;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00060}00060\ \ \ \ \ uint32\_t\ alive;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00061}00061\ \};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00063}00063\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00064}00064\ \textcolor{comment}{@brief\ Struct\ to\ receive\ the\ shooting\ position\ from\ the\ server}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00065}00065\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00066}\mbox{\hyperlink{structshooting__r}{00066}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structshooting__r}{shooting\_r}}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00067}00067\ \ \ \ \ uint32\_t\ x,\ y;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00068}00068\ \};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00070}00070\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00071}00071\ \textcolor{comment}{@brief\ \ package\ to\ receive\ the\ player\ position\ from\ the\ server}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00072}00072\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00073}\mbox{\hyperlink{structOtherPlayerUpdate}{00073}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structOtherPlayerUpdate}{OtherPlayerUpdate}}\ \{\ \textcolor{comment}{//\ check\ if\ its\ not\ to\ big\ for\ the\ buffer}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00074}00074\ \ \ \ \ uint32\_t\ count;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00075}00075\ \ \ \ \ std::vector<Player\_r>\ players;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00076}00076\ \ \ \ \ std::vector<shooting\_r>\ shoot;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2data_8hpp_source_l00077}00077\ \};}
+
+\end{DoxyCode}

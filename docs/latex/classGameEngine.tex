@@ -1,0 +1,714 @@
+\hypertarget{classGameEngine}{}\doxysection{Game\+Engine Class Reference}
+\label{classGameEngine}\index{GameEngine@{GameEngine}}
+
+
+\doxylink{classGameEngine}{Game\+Engine} class.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Engine.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGameEngine_aafdbc33c1117ce20f01f87929287c3df}{Game\+Engine}} (int nb\+Players, int type)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classGame}{Game} Engine object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGameEngine_a8e59d8341ef9d2dcc62eee1437e37f14}{$\sim$\+Game\+Engine}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classGame}{Game} Engine object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameEngine_a425ec68e14b2def17e162cbe3c6cfb13}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameEngine_acd705e3e888c73dcf1fa7dd94e54585b}{update}} (std\+::string command, int id)
+\begin{DoxyCompactList}\small\item\em Update the game. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \& \mbox{\hyperlink{classGameEngine_a124dfcfb25f1fe61576aa7c214b026f9}{get\+Commands}} ()
+\begin{DoxyCompactList}\small\item\em Get the Commands object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameEngine_ad91a0358e9efd498706a7a74b6b8b44c}{erase\+Commands}} ()
+\begin{DoxyCompactList}\small\item\em Erase the Commands object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameEngine_a4957f7dd443004991bdf732a24d89f69}{create\+Wave}} (std\+::vector$<$ \mbox{\hyperlink{structParser_1_1enemy}{Parser\+::enemy}} $>$ wave)
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{classWave}{Wave} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGameEngine_a116d0cf1d8d558ab337673e9042eec47}{level\+Mode}} (int level\+Size)
+\begin{DoxyCompactList}\small\item\em Create a Level object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGameEngine_a380fb5118fae59143aeca556592e3e42}{wave\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{classWave}{Wave} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameEngine_acd98178c006060beb73dcd1ea91fb94e}{Send\+Update}} ()
+\begin{DoxyCompactList}\small\item\em send the update \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGameEngine_a768501241c7566baec901654dfedb79a}{count\+Object}} (std\+::string tag)
+\begin{DoxyCompactList}\small\item\em returns the number of objects \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}{debug}} (std\+::string str)
+\begin{DoxyCompactList}\small\item\em debug the game \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameEngine_aa094e903d95cc6f592e0a09223a238f4}{destroy\+Enemie}} ()
+\begin{DoxyCompactList}\small\item\em destroy the enemies \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameEngine_a0d4c4ad55d1fc9e62f118d1159b498ef}{update\+Player}} (std\+::string command, int id)
+\begin{DoxyCompactList}\small\item\em update the players \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameEngine_a4a9ed9e9dfdfe675cba6e933a98a00fb}{stop}} ()
+\begin{DoxyCompactList}\small\item\em set stop boolean to true \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classGameEngine_a665dfc3b902ddf4fd8c2fd15bbabc504}{\+\_\+update}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classGameEngine}{Game\+Engine} class. 
+
+
+
+Definition at line \mbox{\hyperlink{GameEngine_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{GameEngine_8hpp_source}{Game\+Engine.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameEngine_aafdbc33c1117ce20f01f87929287c3df}\label{classGameEngine_aafdbc33c1117ce20f01f87929287c3df}} 
+\index{GameEngine@{GameEngine}!GameEngine@{GameEngine}}
+\index{GameEngine@{GameEngine}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{GameEngine()}{GameEngine()}}
+{\footnotesize\ttfamily Game\+Engine\+::\+Game\+Engine (\begin{DoxyParamCaption}\item[{int}]{nb\+Players,  }\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{classGame}{Game} Engine object. 
+
+Constructor for \doxylink{classGameEngine}{Game\+Engine} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nb\+Players} & \\
+\hline
+{\em type} & \\
+\hline
+{\em nb\+Players} & number of players \\
+\hline
+{\em type} & type of game \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GameEngine_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{GameEngine_8cpp_source}{Game\+Engine.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \_parser(\textcolor{stringliteral}{"{}./config/levels/"{}})}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ srand(time(NULL));}
+\DoxyCodeLine{00018\ \ \ \ \ \_nbPlayers\ =\ nbPlayers;}
+\DoxyCodeLine{00019\ \ \ \ \ \_globalSpeed\ =\ 0.20f;}
+\DoxyCodeLine{00020\ \ \ \ \ \_globalDifficulty\ =\ 1.0f;}
+\DoxyCodeLine{00021\ \ \ \ \ this-\/>type\ =\ type;}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameEngine_a8e59d8341ef9d2dcc62eee1437e37f14}\label{classGameEngine_a8e59d8341ef9d2dcc62eee1437e37f14}} 
+\index{GameEngine@{GameEngine}!````~GameEngine@{$\sim$GameEngine}}
+\index{````~GameEngine@{$\sim$GameEngine}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{$\sim$GameEngine()}{~GameEngine()}}
+{\footnotesize\ttfamily Game\+Engine\+::$\sim$\+Game\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \doxylink{classGame}{Game} Engine object. 
+
+Destructor for \doxylink{classGameEngine}{Game\+Engine} class.
+
+Definition at line \mbox{\hyperlink{GameEngine_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{GameEngine_8cpp_source}{Game\+Engine.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameEngine_a768501241c7566baec901654dfedb79a}\label{classGameEngine_a768501241c7566baec901654dfedb79a}} 
+\index{GameEngine@{GameEngine}!countObject@{countObject}}
+\index{countObject@{countObject}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{countObject()}{countObject()}}
+{\footnotesize\ttfamily int Game\+Engine\+::count\+Object (\begin{DoxyParamCaption}\item[{std\+::string}]{tag }\end{DoxyParamCaption})}
+
+
+
+returns the number of objects 
+
+Function that count the number of object with a specific tag.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & tag of the object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GameEngine_8cpp_source_l00250}{250}} of file \mbox{\hyperlink{GameEngine_8cpp_source}{Game\+Engine.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00251\ \{}
+\DoxyCodeLine{00252\ \ \ \ \ std::vector<EntityID>\ entities\ =\ \_ecs.\mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{getEntitiesWithComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>();}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ entities.size();\ i++)\ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structCollider}{Collider}}\ \&collider\ =\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(entities[i]);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collider.tag\ ==\ tag)}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00258\ \ \ \ \ \}}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00260\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameEngine_a4957f7dd443004991bdf732a24d89f69}\label{classGameEngine_a4957f7dd443004991bdf732a24d89f69}} 
+\index{GameEngine@{GameEngine}!createWave@{createWave}}
+\index{createWave@{createWave}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{createWave()}{createWave()}}
+{\footnotesize\ttfamily void Game\+Engine\+::create\+Wave (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structParser_1_1enemy}{Parser\+::enemy}} $>$}]{wave }\end{DoxyParamCaption})}
+
+
+
+Create a \doxylink{classWave}{Wave} object. 
+
+Function that create a wave of enemies.
+
+
+\begin{DoxyParams}{Parameters}
+{\em wave} & \\
+\hline
+{\em wave} & vector of enemies objects \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GameEngine_8cpp_source_l00145}{145}} of file \mbox{\hyperlink{GameEngine_8cpp_source}{Game\+Engine.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00146\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ wave.size();\ i++)\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ EntityID\ entity\ =\ \_ecs.\mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{createEntity}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}{debug}}(\textcolor{stringliteral}{"{}New\ Enemy\ "{}}\ +\ wave[i].toString());}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \_commands.push\_back(\textcolor{stringliteral}{"{}Enemy\ "{}}\ +\ wave[i].toString());}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structID}{ID}}\{wave[i].\_id\});}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structTransform}{Transform}}\{(float)wave[i].x,\ (\textcolor{keywordtype}{float})wave[i].y,\ (float)wave[i].rotation\});}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structCollider}{Collider}}\{(float)wave[i].sizeX,\ (\textcolor{keywordtype}{float})wave[i].sizeY,\ \textcolor{stringliteral}{"{}enemy"{}}\});}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structPhysics}{Physics}}\{(float)wave[i].speed\});}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structHealth}{Health}}\{wave[i].health\});}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structDamage}{Damage}}\{wave[i].damage\});}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structFireRate}{FireRate}}\{wave[i].fireRate\});}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structEnemyType}{EnemyType}}\{wave[i].isBoss\});}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (wave[i].waypoints.size()\ >\ 1)}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structWaypoints}{Waypoints}}\{wave[i].waypoints\});}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}\label{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}} 
+\index{GameEngine@{GameEngine}!debug@{debug}}
+\index{debug@{debug}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{debug()}{debug()}}
+{\footnotesize\ttfamily void Game\+Engine\+::debug (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})}
+
+
+
+debug the game 
+
+Debug function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+{\em str} & string to print \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GameEngine_8cpp_source_l00266}{266}} of file \mbox{\hyperlink{GameEngine_8cpp_source}{Game\+Engine.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00267\ \{}
+\DoxyCodeLine{00268\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[DEBUG]\ "{}}\ <<\ \textcolor{stringliteral}{"{}["{}}\ <<\ str\ <<\ \textcolor{stringliteral}{"{}]"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00269\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameEngine_aa094e903d95cc6f592e0a09223a238f4}\label{classGameEngine_aa094e903d95cc6f592e0a09223a238f4}} 
+\index{GameEngine@{GameEngine}!destroyEnemie@{destroyEnemie}}
+\index{destroyEnemie@{destroyEnemie}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{destroyEnemie()}{destroyEnemie()}}
+{\footnotesize\ttfamily void Game\+Engine\+::destroy\+Enemie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destroy the enemies 
+
+Function that destroy the enemies.
+
+Definition at line \mbox{\hyperlink{GameEngine_8cpp_source_l00274}{274}} of file \mbox{\hyperlink{GameEngine_8cpp_source}{Game\+Engine.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00275\ \{}
+\DoxyCodeLine{00276\ \ \ \ \ std::vector<EntityID>\ entities\ =\ \_ecs.\mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{getEntitiesWithComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>();}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordflow}{if}\ (!entities.empty())\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ entities.size();\ i++)\ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structCollider}{Collider}}\ \&collider\ =\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(entities[i]);}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collider.tag\ ==\ \textcolor{stringliteral}{"{}enemy"{}}\ \&\&\ (\_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(entities[i]).x\ <\ -\/10\ ||\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(entities[i]).x\ >\ 1920\ +\ 10\ ||\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(entities[i]).y\ <\ -\/10\ ||\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(entities[i]).y\ >\ 1080\ +\ 10))\ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}{debug}}(\textcolor{stringliteral}{"{}Destroy\ enemy\ "{}}\ +\ std::to\_string(\_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structID}{ID}}>(entities[i]).id));}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_commands.push\_back(\textcolor{stringliteral}{"{}Destroy\ enemy\ "{}}\ +\ std::to\_string(\_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structID}{ID}}>(entities[i]).id)\ +\ \textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}{removeEntity}}(entities[i]);}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (collider.tag\ ==\ \textcolor{stringliteral}{"{}enemy"{}}\ \&\&\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structHealth}{Health}}>(entities[i]).health\ <=\ 0)\ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}{debug}}(\textcolor{stringliteral}{"{}Destroy\ enemy\ "{}}\ +\ std::to\_string(\_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structID}{ID}}>(entities[i]).id));}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_commands.push\_back(\textcolor{stringliteral}{"{}Destroy\ enemy\ "{}}\ +\ std::to\_string(\_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structID}{ID}}>(entities[i]).id)\ +\ \textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}{removeEntity}}(entities[i]);}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\ \&e)\ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00295\ \ \ \ \ \}}
+\DoxyCodeLine{00296\ \ \ \ \ std::vector<EntityID>\ entities2\ =\ \_ecs.\mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{getEntitiesWithComponent}}<\mbox{\hyperlink{structHealth}{Health}}>();}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ entities2.size();\ i++)\ \{}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structHealth}{Health}}\ \&health\ =\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structHealth}{Health}}>(entities2[i]);}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structCollider}{Collider}}\ \&collider\ =\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(entities2[i]);}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (health.health\ <=\ 0)\ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}{debug}}(\textcolor{stringliteral}{"{}Destroy\ "{}}\ +\ collider.tag\ +\ \textcolor{stringliteral}{"{}\ "{}}\ +\ std::to\_string(\_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structID}{ID}}>(entities2[i]).id));}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \_commands.push\_back(\textcolor{stringliteral}{"{}Destroy\ "{}}\ +\ collider.tag\ +\ \textcolor{stringliteral}{"{}\ "{}}\ +\ std::to\_string(\_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structID}{ID}}>(entities2[i]).id)\ +\ \textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_abb0918a9bb7f69dd0ca990ebe078d40c}{removeEntity}}(entities2[i]);}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00305\ \ \ \ \ \}}
+\DoxyCodeLine{00306\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameEngine_ad91a0358e9efd498706a7a74b6b8b44c}\label{classGameEngine_ad91a0358e9efd498706a7a74b6b8b44c}} 
+\index{GameEngine@{GameEngine}!eraseCommands@{eraseCommands}}
+\index{eraseCommands@{eraseCommands}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{eraseCommands()}{eraseCommands()}}
+{\footnotesize\ttfamily void Game\+Engine\+::erase\+Commands (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Erase the Commands object. 
+
+
+
+Definition at line \mbox{\hyperlink{GameEngine_8hpp_source_l00065}{65}} of file \mbox{\hyperlink{GameEngine_8hpp_source}{Game\+Engine.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \_commands.erase(\_commands.begin());}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameEngine_a124dfcfb25f1fe61576aa7c214b026f9}\label{classGameEngine_a124dfcfb25f1fe61576aa7c214b026f9}} 
+\index{GameEngine@{GameEngine}!getCommands@{getCommands}}
+\index{getCommands@{getCommands}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{getCommands()}{getCommands()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ \& Game\+Engine\+::get\+Commands (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Commands object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$\& 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GameEngine_8hpp_source_l00057}{57}} of file \mbox{\hyperlink{GameEngine_8hpp_source}{Game\+Engine.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_commands;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameEngine_a116d0cf1d8d558ab337673e9042eec47}\label{classGameEngine_a116d0cf1d8d558ab337673e9042eec47}} 
+\index{GameEngine@{GameEngine}!levelMode@{levelMode}}
+\index{levelMode@{levelMode}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{levelMode()}{levelMode()}}
+{\footnotesize\ttfamily bool Game\+Engine\+::level\+Mode (\begin{DoxyParamCaption}\item[{int}]{level\+Size }\end{DoxyParamCaption})}
+
+
+
+Create a Level object. 
+
+Function for the level mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em level\+Size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em level\+Size} & number of levels \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GameEngine_8cpp_source_l00168}{168}} of file \mbox{\hyperlink{GameEngine_8cpp_source}{Game\+Engine.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00169\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Level:\ "{}}\ <<\ level\ <<\ std::endl;}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <=\ levelSize)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}{debug}}(\textcolor{stringliteral}{"{}Level\ "{}}\ +\ std::to\_string(level)\ +\ \textcolor{stringliteral}{"{}\ wave\ "{}}\ +\ std::to\_string(wave));}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (wave\ >=\ \_parser.\_levels[level].size()\ \&\&\ \mbox{\hyperlink{classGameEngine_a768501241c7566baec901654dfedb79a}{countObject}}(\textcolor{stringliteral}{"{}enemy"{}})\ ==\ 0)\ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}{debug}}(\textcolor{stringliteral}{"{}Level\ "{}}\ +\ std::to\_string(level)\ +\ \textcolor{stringliteral}{"{}\ completed"{}});}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ level++;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ wave\ =\ 0;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \_commands.push\_back(\textcolor{stringliteral}{"{}Level\ "{}}\ +\ std::to\_string(level));}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (waveTics\ >=\ \_parser.\_levels[level][0].first\ \&\&\ \mbox{\hyperlink{classGameEngine_a768501241c7566baec901654dfedb79a}{countObject}}(\textcolor{stringliteral}{"{}enemy"{}})\ ==\ 0)\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}{debug}}(\textcolor{stringliteral}{"{}New\ wave:\ "{}}\ +\ std::to\_string(wave\ +\ 1));}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ waveTics\ =\ 0;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a4957f7dd443004991bdf732a24d89f69}{createWave}}(\_parser.\_levels[level][wave].second);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ wave++;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \_commands.push\_back(\textcolor{stringliteral}{"{}Wave\ "{}}\ +\ std::to\_string(level));}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00188\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameEngine_acd98178c006060beb73dcd1ea91fb94e}\label{classGameEngine_acd98178c006060beb73dcd1ea91fb94e}} 
+\index{GameEngine@{GameEngine}!SendUpdate@{SendUpdate}}
+\index{SendUpdate@{SendUpdate}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{SendUpdate()}{SendUpdate()}}
+{\footnotesize\ttfamily void Game\+Engine\+::\+Send\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+send the update 
+
+Function that send the update to the client.
+
+Definition at line \mbox{\hyperlink{GameEngine_8cpp_source_l00229}{229}} of file \mbox{\hyperlink{GameEngine_8cpp_source}{Game\+Engine.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00230\ \{}
+\DoxyCodeLine{00231\ \ \ \ \ std::vector<EntityID>\ entities\ =\ \_ecs.\mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{getEntitiesWithComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>();}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ entities.size();\ i++)\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTransform}{Transform}}\ \&transform\ =\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(entities[i]);}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structCollider}{Collider}}\ \&collider\ =\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(entities[i]);}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structHealth}{Health}}\ \&health\ =\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structHealth}{Health}}>(entities[i]);}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structID}{ID}}\ \&\textcolor{keywordtype}{id}\ =\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structID}{ID}}>(entities[i]);}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ std::string\ tag\ =\ collider.tag;}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tag\ ==\ \textcolor{stringliteral}{"{}enemy"{}})\ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}{debug}}(\textcolor{stringliteral}{"{}Update\ "{}}\ +\ tag\ +\ \textcolor{stringliteral}{"{}\ "{}}\ +\ std::to\_string(\textcolor{keywordtype}{id}.\textcolor{keywordtype}{id})\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string((\textcolor{keywordtype}{int})transform.x)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string((\textcolor{keywordtype}{int})transform.y)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(health.health)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string((\textcolor{keywordtype}{int})transform.z)\ +\ \textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ command\ =\ \textcolor{stringliteral}{"{}Update\ "{}}\ +\ tag\ +\ \textcolor{stringliteral}{"{}\ "{}}\ +\ std::to\_string(\textcolor{keywordtype}{id}.\textcolor{keywordtype}{id})\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string((\textcolor{keywordtype}{int})transform.x)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string((\textcolor{keywordtype}{int})transform.y)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(health.health)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string((\textcolor{keywordtype}{int})transform.z)\ +\ \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \_commands.push\_back(command);}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00243\ \ \ \ \ \}}
+\DoxyCodeLine{00244\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameEngine_a425ec68e14b2def17e162cbe3c6cfb13}\label{classGameEngine_a425ec68e14b2def17e162cbe3c6cfb13}} 
+\index{GameEngine@{GameEngine}!start@{start}}
+\index{start@{start}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Game\+Engine\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the game. 
+
+Function to start the game.
+
+Definition at line \mbox{\hyperlink{GameEngine_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{GameEngine_8cpp_source}{Game\+Engine.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{while}\ (canStart\ ==\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \_commands.push\_back(\textcolor{stringliteral}{"{}START\(\backslash\)n"{}});}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ \_WIN32}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ Sleep(1);}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ sleep(1);}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \_nbPlayers;\ i++)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ EntityID\ entity\ =\ \_ecs.\mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{createEntity}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}{debug}}(\textcolor{stringliteral}{"{}Player\ "{}}\ +\ std::to\_string(i));}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ std::string\ player\ =\ \textcolor{stringliteral}{"{}Player\ "{}}\ +\ std::to\_string(i)\ +\ \textcolor{stringliteral}{"{}:100:"{}}\ +\ std::to\_string(100\ +\ i\ *\ 50)\ +\ \textcolor{stringliteral}{"{}:25:25:50:10:2"{}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \_commands.push\_back(std::string(player));}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structID}{ID}}\{i\});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structHealth}{Health}}\{50\});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structTransform}{Transform}}\{100.0f,\ 100.0f,\ 0.0f\});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structCollider}{Collider}}\{25,\ 25,\ \textcolor{stringliteral}{"{}player"{}}\});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structPseudo}{Pseudo}}\{\textcolor{stringliteral}{"{}Player\ "{}}\ +\ std::to\_string(i)\});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structScore}{Score}}\{0\});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structSkinID}{SkinID}}\{0\});}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classSystem}{System}}\ system(\_ecs);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{float}\ deltaTime\ =\ 0.0f;}
+\DoxyCodeLine{00059\ \ \ \ \ clock\_t\ begin\ =\ clock();}
+\DoxyCodeLine{00060\ \ \ \ \ wave\ =\ 0;}
+\DoxyCodeLine{00061\ \ \ \ \ waveTics\ =\ 0;}
+\DoxyCodeLine{00062\ \ \ \ \ level\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ levelSize\ =\ \_parser.\_levels.size();}
+\DoxyCodeLine{00064\ \ \ \ \ globalTics\ =\ 0;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ updateTic\ =\ 3;}
+\DoxyCodeLine{00066\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Level\ size:\ "{}}\ <<\ levelSize\ <<\ \textcolor{stringliteral}{"{}type\ "{}}\ <<\ type\ <<\ std::endl;}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isStopped)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (deltaTime\ >\ \_globalSpeed)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/TIC-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ globalTics++;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ waveTics++;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ 1)}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a116d0cf1d8d558ab337673e9042eec47}{levelMode}}(levelSize);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ 2)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a380fb5118fae59143aeca556592e3e42}{waveMode}}();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (globalTics\ \%\ updateTic\ ==\ 0)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_acd98178c006060beb73dcd1ea91fb94e}{SendUpdate}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (std::exception\ \&e)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ deltaTime\ =\ 0.0f;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ begin\ =\ clock();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ system.handleCollision();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ system.handleMovement();}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_aa094e903d95cc6f592e0a09223a238f4}{destroyEnemie}}();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::exception\ \&e)\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ deltaTime\ =\ float(clock()\ -\/\ begin)\ /\ CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameEngine_a4a9ed9e9dfdfe675cba6e933a98a00fb}\label{classGameEngine_a4a9ed9e9dfdfe675cba6e933a98a00fb}} 
+\index{GameEngine@{GameEngine}!stop@{stop}}
+\index{stop@{stop}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Game\+Engine\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set stop boolean to true 
+
+
+
+Definition at line \mbox{\hyperlink{GameEngine_8hpp_source_l00132}{132}} of file \mbox{\hyperlink{GameEngine_8hpp_source}{Game\+Engine.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ isStopped\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameEngine_acd705e3e888c73dcf1fa7dd94e54585b}\label{classGameEngine_acd705e3e888c73dcf1fa7dd94e54585b}} 
+\index{GameEngine@{GameEngine}!update@{update}}
+\index{update@{update}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Game\+Engine\+::update (\begin{DoxyParamCaption}\item[{std\+::string}]{command,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Update the game. 
+
+Update function from the client informations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & \\
+\hline
+{\em id} & \\
+\hline
+{\em command} & command from the client \\
+\hline
+{\em id} & id of the client \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GameEngine_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{GameEngine_8cpp_source}{Game\+Engine.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}STARTED\(\backslash\)n"{}})\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ canStart\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}{debug}}(\textcolor{stringliteral}{"{}Update\ from\ client:\ "{}}\ +\ command);}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ std::vector<std::string>\ commands\ =\ \_parser.\mbox{\hyperlink{classParser_a4baa4cbfcef335cea2b1c7a2a1998fc9}{stringToArray}}(command,\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (commands[0]\ ==\ \textcolor{stringliteral}{"{}Update"{}})\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (commands[1]\ ==\ \textcolor{stringliteral}{"{}Player"{}})\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a0d4c4ad55d1fc9e62f118d1159b498ef}{updatePlayer}}(commands[2],\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (commands[0]\ ==\ \textcolor{stringliteral}{"{}Collision"{}})\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<EntityID>\ entities\ =\ \_ecs.\mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{getEntitiesWithComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>();}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ entities.size();\ i++)\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(entities[i]).tag\ ==\ \textcolor{stringliteral}{"{}enemy"{}})\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structID}{ID}}>(entities[i]).id\ ==\ std::stoi(commands[1]))\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structHealth}{Health}}>(entities[i]).health\ -\/=\ 10;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (commands[0]\ ==\ \textcolor{stringliteral}{"{}Shoot"{}})\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \_commands.push\_back(\textcolor{stringliteral}{"{}Shoot\ "{}}\ +\ commands[1]);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (commands[0]\ ==\ \textcolor{stringliteral}{"{}Dead"{}})\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \_commands.push\_back(\textcolor{stringliteral}{"{}Dead\ "{}}\ +\ commands[1]);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (std::exception\ \&e)\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameEngine_a0d4c4ad55d1fc9e62f118d1159b498ef}\label{classGameEngine_a0d4c4ad55d1fc9e62f118d1159b498ef}} 
+\index{GameEngine@{GameEngine}!updatePlayer@{updatePlayer}}
+\index{updatePlayer@{updatePlayer}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{updatePlayer()}{updatePlayer()}}
+{\footnotesize\ttfamily void Game\+Engine\+::update\+Player (\begin{DoxyParamCaption}\item[{std\+::string}]{command,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+update the players 
+
+Function that update the player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & \\
+\hline
+{\em id} & \\
+\hline
+{\em command} & informations to update the player \\
+\hline
+{\em id} & id of the player \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GameEngine_8cpp_source_l00313}{313}} of file \mbox{\hyperlink{GameEngine_8cpp_source}{Game\+Engine.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00314\ \{}
+\DoxyCodeLine{00315\ \ \ \ \ std::vector<std::string>\ args\ =\ \_parser.\mbox{\hyperlink{classParser_a4baa4cbfcef335cea2b1c7a2a1998fc9}{stringToArray}}(command,\ \textcolor{charliteral}{':'});}
+\DoxyCodeLine{00316\ \ \ \ \ std::vector<EntityID>\ entities\ =\ \_ecs.\mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{getEntitiesWithComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>();}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ entities.size();\ i++)\ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structCollider}{Collider}}\ \&collider\ =\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(entities[i]);}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collider.tag\ ==\ \textcolor{stringliteral}{"{}player"{}}\ \&\&\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structID}{ID}}>(entities[i]).id\ ==\ std::stoi(args[0]))\ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTransform}{Transform}}\ \&transform\ =\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(entities[i]);}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structHealth}{Health}}\ \&health\ =\ \_ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structHealth}{Health}}>(entities[i]);}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ transform.x\ =\ std::stoi(args[1]);}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ transform.y\ =\ std::stoi(args[2]);}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ health.health\ =\ std::stoi(args[3]);}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}{debug}}(\textcolor{stringliteral}{"{}Update\ player\ "{}}\ +\ std::to\_string(\textcolor{keywordtype}{id})\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string((\textcolor{keywordtype}{int})transform.x)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string((\textcolor{keywordtype}{int})transform.y)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(health.health)\ +\ \textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ command\ =\ \textcolor{stringliteral}{"{}Update\ player\ "{}}\ +\ std::to\_string(\textcolor{keywordtype}{id})\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string((\textcolor{keywordtype}{int})transform.x)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string((\textcolor{keywordtype}{int})transform.y)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(health.health)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string((\textcolor{keywordtype}{int})transform.z)\ +\ \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \_commands.push\_back(command);}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00329\ \ \ \ \ \}}
+\DoxyCodeLine{00330\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGameEngine_a380fb5118fae59143aeca556592e3e42}\label{classGameEngine_a380fb5118fae59143aeca556592e3e42}} 
+\index{GameEngine@{GameEngine}!waveMode@{waveMode}}
+\index{waveMode@{waveMode}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{waveMode()}{waveMode()}}
+{\footnotesize\ttfamily bool Game\+Engine\+::wave\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create a \doxylink{classWave}{Wave} object. 
+
+Function for the wave mode.
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GameEngine_8cpp_source_l00193}{193}} of file \mbox{\hyperlink{GameEngine_8cpp_source}{Game\+Engine.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00194\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordflow}{if}\ (waveTics\ >=\ 5\ /\ \_globalDifficulty\ \&\&\ \mbox{\hyperlink{classGameEngine_a768501241c7566baec901654dfedb79a}{countObject}}(\textcolor{stringliteral}{"{}enemy"{}})\ ==\ 0)\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}{debug}}(\textcolor{stringliteral}{"{}Wave\ tics:\ "{}}\ +\ std::to\_string(waveTics));}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a2ce975b8bd13a7f3554a61ebf2bf7698}{debug}}(\textcolor{stringliteral}{"{}New\ wave:\ "{}}\ +\ std::to\_string(wave));}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ std::vector<Parser::enemy>\ waves;}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)\_globalDifficulty;\ i++)\ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structParser_1_1enemy}{Parser::enemy}}\ enemy\ =\ \_parser.\mbox{\hyperlink{classParser_a72d5333cc3100b28568748136f201cdd}{stringToEnemy}}(std::to\_string(eID)\ +\ std::string(\textcolor{stringliteral}{"{}:1920:1080:10:10:50:10:2:0:180:"{}}));}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ enemy.health\ =\ (rand()\ \%\ 100)\ *\ \_globalDifficulty;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ enemy.damage\ =\ (rand()\ \%\ 2)\ *\ \_globalDifficulty;}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ enemy.speed\ =\ ((rand()\ \%\ 10)\ +\ 10);}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ enemy.y\ =\ (rand()\ \%\ 1080);}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ enemy.fireRate\ =\ (rand()\ \%\ 5)\ +\ 1;}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (wave\ \%\ 3\ ==\ 0\ \&\&\ wave\ !=\ 0)\ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemy.isBoss\ =\ 1;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemy.health\ *=\ 10;}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemy.damage\ *=\ 5;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemy.speed\ *=\ 0.5;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemy.sizeX\ *=\ 2;}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemy.sizeY\ *=\ 2;}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ waves.push\_back(enemy);}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ eID++;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ waveTics\ =\ 0;}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGameEngine_a4957f7dd443004991bdf732a24d89f69}{createWave}}(waves);}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ wave++;}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \_commands.push\_back(\textcolor{stringliteral}{"{}Wave\ "{}}\ +\ std::to\_string(wave));}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \_globalDifficulty\ +=\ 0.5;}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00224\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGameEngine_a665dfc3b902ddf4fd8c2fd15bbabc504}\label{classGameEngine_a665dfc3b902ddf4fd8c2fd15bbabc504}} 
+\index{GameEngine@{GameEngine}!\_update@{\_update}}
+\index{\_update@{\_update}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{\_update}{\_update}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Game\+Engine\+::\+\_\+update}
+
+
+
+Definition at line \mbox{\hyperlink{GameEngine_8hpp_source_l00135}{135}} of file \mbox{\hyperlink{GameEngine_8hpp_source}{Game\+Engine.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/includes/Game\+Engine.\+hpp\item 
+Server/sources/Game\+Engine.\+cpp\end{DoxyCompactItemize}

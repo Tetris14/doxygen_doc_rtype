@@ -1,0 +1,258 @@
+\hypertarget{server_8cpp_source}{}\doxysection{server.\+cpp}
+\label{server_8cpp_source}\index{Server/sources/server.cpp@{Server/sources/server.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}server.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}server\_udp.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00004}00004\ \textcolor{keyword}{static}\ std::vector<unsigned\ short>\ used\_ports;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00005}00005\ \textcolor{keyword}{static}\ std::map<std::string,\ std::string>\ \_logins;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00014}00014\ \textcolor{keywordtype}{bool}\ isPortBound(\textcolor{keywordtype}{int}\ port)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00015}00015\ \ \ \ \ asio::io\_service\ ioService;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00016}00016\ \ \ \ \ asio::ip::udp::socket\ socket\_(ioService);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00018}00018\ \ \ \ \ asio::error\_code\ ec;\ \ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00019}00019\ \ \ \ \ socket\_.open(asio::ip::udp::v4(),\ ec);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (ec)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ socket:\ "{}}\ <<\ ec.message()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ socket\_.bind(asio::ip::udp::endpoint(asio::ip::udp::v4(),\ port),\ ec);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ec)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ socket\_.close(ec);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ port\ is\ already\ bound}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00031}00031\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ binding\ socket:\ "{}}\ <<\ ex.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ failed\ to\ bind\ port}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00036}00036\ \ \ \ \ socket\_.close(ec);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ port\ is\ not\ bound}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00046}00046\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ get\_next\_port()\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00047}00047\ \ \ \ \ uint16\_t\ next\_port\ =\ 3000;\ \textcolor{comment}{//\ its\ for\ protocol\ reasons\ that\ we\ start\ at\ 1000\ for\ udp\ ports}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{while}\ (next\_port\ <\ 65535\ \&\&\ isPortBound(next\_port))\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ ++next\_port;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (next\_port\ ==\ 65535)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00054}00054\ \ \ \ \ used\_ports.push\_back(next\_port);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{return}\ next\_port;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00065}\mbox{\hyperlink{classServer_a902d0ee64507505581202765df2aa8d1}{00065}}\ \mbox{\hyperlink{classServer_a902d0ee64507505581202765df2aa8d1}{Server::Server}}(asio::io\_context\ \&ioc,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ port)}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00066}00066\ \ \ \ \ :\ acceptor\_(ioc,\ tcp::endpoint(tcp::v4(),\ port))\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00067}00067\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Created\ tcp\ server\ on\ port\ "{}}\ <<\ port\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00068}00068\ \ \ \ \ std::ifstream\ file(\textcolor{stringliteral}{"{}./config/login"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00069}00069\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00070}00070\ \ \ \ \ std::string\ login;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00071}00071\ \ \ \ \ std::string\ password;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ login\ =\ line.substr(0,\ line.find(\textcolor{stringliteral}{"{}:"{}}));}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ password\ =\ line.substr(line.find(\textcolor{stringliteral}{"{}:"{}})\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00076}00076\ \ \ \ \ \_logins[login]\ =\ password;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00077}00077\ \ \ \ \ DoAccept();}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00078}00078\ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00085}00085\ \textcolor{keywordtype}{void}\ Server::DoAccept()\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00086}00086\ \ \ \ \ acceptor\_.async\_accept([\textcolor{keyword}{this}](std::error\_code\ ec,\ tcp::socket\ socket)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ec)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ session\ =\ std::make\_shared<Session>(std::move(socket));}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ sessions.push\_back(std::make\_pair(std::move(socket),\ session));}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ session-\/>Start();}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ DoAccept();}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00093}00093\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00102}00102\ \textcolor{keywordtype}{void}\ Session::DoRead()\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keyword}{auto}\ self(shared\_from\_this());}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00104}00104\ \ \ \ \ socket\_.async\_read\_some(asio::buffer(data\_),}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ [\textcolor{keyword}{this},\ self](std::error\_code\ ec,\ std::size\_t\ length)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ec)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ message(data\_,\ length);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isNew\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Message\ received\ from:\ "{}}\ <<\ socket\_.remote\_endpoint()\ <<\ \textcolor{stringliteral}{"{}\ :\ "{}}\ <<\ message\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ clients\_tcp.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clients\_tcp[i].endpoint\ ==\ socket\_.remote\_endpoint())\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isNew\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isNew)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}New\ client\ connected\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structclient__tcp}{client\_tcp}}\ client;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ client.endpoint\ =\ socket\_.remote\_endpoint();}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ client.id\ =\ clients\_tcp.size();}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ client.isInGame\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ client.isLogged\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clients\_tcp.push\_back(client);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ command\ =\ message.substr(0,\ message.find(\textcolor{stringliteral}{"{}\ "{}}));}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (commands.find(command)\ ==\ commands.end())\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Command\ not\ found\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DoWrite(\textcolor{stringliteral}{"{}error\ command\ not\ found\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (this-\/>*commands[command])(message);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00140}00140\ \textcolor{keywordtype}{void}\ Session::HandleCreate(std::string\ command)\ \{\ \textcolor{comment}{//create=ion\ des\ serveur\ udp}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ clients\_tcp.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clients\_tcp[i].endpoint\ ==\ socket\_.remote\_endpoint())\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ found\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ i;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clients\_tcp[i].isInGame)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ already\ in\ game\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DoWrite(\textcolor{stringliteral}{"{}error\ you\ are\ already\ in\ a\ game\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00152}00152\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00153}00153\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Creating\ room\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00154}00154\ \ \ \ \ uint16\_t\ udp\_port\ =\ get\_next\_port();}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{if}\ (udp\_port\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ DoWrite(\textcolor{stringliteral}{"{}error\ no\ more\ ports\ available\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00158}00158\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00160}00160\ \ \ \ \ std::thread([\textcolor{keyword}{this},\ udp\_port]\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ asio::io\_context\ ioc;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer}{UDPServer}}\ server(udp\_port,\ ioc);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ server.start();}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00164}00164\ \ \ \ \ \}).detach();}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00166}00166\ \ \ \ \ clients\_tcp[c].isInGame\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00167}00167\ \ \ \ \ UDP\_ports.push\_back(\mbox{\hyperlink{structUDP__port}{UDP\_port}}\{udp\_port,\ \textcolor{keyword}{false},\ 1\});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00168}00168\ \ \ \ \ DoWrite(\textcolor{stringliteral}{"{}created\ "{}}\ +\ std::to\_string(udp\_port)\ +\ \textcolor{stringliteral}{"{}\ 0\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00169}00169\ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00177}00177\ \textcolor{keywordtype}{void}\ Session::DoWrite(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&message)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{keyword}{auto}\ self(shared\_from\_this());}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00179}00179\ \ \ \ \ asio::async\_write(socket\_,\ asio::buffer(message),}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ [\textcolor{keyword}{this},\ self](std::error\_code\ ec,\ std::size\_t\ length)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ec)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DoRead();}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00185}00185\ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00192}\mbox{\hyperlink{classSession_a68020021e9d13c85b641d853646e8b7a}{00192}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSession_a68020021e9d13c85b641d853646e8b7a}{Session::Start}}()\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00193}00193\ \ \ \ \ DoRead();}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00194}00194\ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00202}00202\ \textcolor{keywordtype}{void}\ Session::HandleJoin(std::string\ command)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00203}00203\ \ \ \ \ \textcolor{keywordtype}{int}\ c\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00204}00204\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ clients\_tcp.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clients\_tcp[i].endpoint\ ==\ socket\_.remote\_endpoint())\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ found\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ c\ =\ i;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clients\_tcp[i].isInGame)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ already\ in\ game\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DoWrite(\textcolor{stringliteral}{"{}error\ you\ are\ already\ in\ a\ game\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00214}00214\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00215}00215\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ std::stoi(command.substr(5));}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00216}00216\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Joining\ room\ "{}}\ <<\ \textcolor{keywordtype}{id}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00217}00217\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{id}\ >=\ UDP\_ports.size())\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ DoWrite(\textcolor{stringliteral}{"{}error\ no\ room\ with\ this\ id\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00220}00220\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00221}00221\ \ \ \ \ \textcolor{keywordflow}{if}\ (UDP\_ports[\textcolor{keywordtype}{id}].used)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ DoWrite(\textcolor{stringliteral}{"{}error\ game\ already\ started\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00224}00224\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00225}00225\ \ \ \ \ \textcolor{keywordflow}{if}\ (UDP\_ports[\textcolor{keywordtype}{id}].nb\_players\ >=\ 4)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ DoWrite(\textcolor{stringliteral}{"{}error\ room\ is\ full\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00228}00228\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00229}00229\ \ \ \ \ clients\_tcp[c].isInGame\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00230}00230\ \ \ \ \ DoWrite(\textcolor{stringliteral}{"{}joined\ "{}}\ +\ std::to\_string(UDP\_ports[\textcolor{keywordtype}{id}].port)\ +\ \textcolor{stringliteral}{"{}\ "{}}\ +\ std::to\_string(UDP\_ports[\textcolor{keywordtype}{id}].nb\_players)\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00231}00231\ \ \ \ \ UDP\_ports[id].nb\_players++;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00232}00232\ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00239}00239\ \textcolor{keywordtype}{void}\ Session::ListServer(std::string\ command)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00240}00240\ \ \ \ \ std::string\ message\ =\ \textcolor{stringliteral}{"{}list\ "{}};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00241}00241\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00242}00242\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&ports\ :\ UDP\_ports)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ports.used\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ message\ +=\ std::to\_string(i)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(ports.nb\_players)\ +\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00246}00246\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00247}00247\ \ \ \ \ message\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00248}00248\ \ \ \ \ DoWrite(message);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00249}00249\ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00256}00256\ \textcolor{keywordtype}{void}\ Session::leaveServer(std::string\ command)}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00257}00257\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00258}00258\ \ \ \ \ \textcolor{keywordtype}{int}\ port\ =\ std::stoi(command.substr(6));}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00259}00259\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ UDP\_ports.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00260}00260\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UDP\_ports[i].port\ ==\ port)}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ UDP\_ports[i].nb\_players-\/-\/;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (UDP\_ports[i].nb\_players\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UDP\_ports.erase(UDP\_ports.begin()\ +\ i);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00270}00270\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00271}00271\ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00273}00273\ \textcolor{keywordtype}{void}\ Session::Register(std::string\ command)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00274}00274\ \ \ \ \ std::string\ username\ =\ command.substr(9,\ command.find(\textcolor{stringliteral}{"{}\ "{}},\ 9)\ -\/\ 9);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00275}00275\ \ \ \ \ std::string\ password\ =\ command.substr(command.find(\textcolor{stringliteral}{"{}\ "{}},\ 9)\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00276}00276\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Registering\ "{}}\ <<\ username\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ password\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00277}00277\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_logins.find(username)\ !=\ \_logins.end())\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ DoWrite(\textcolor{stringliteral}{"{}error\ username\ already\ taken\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00280}00280\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00281}00281\ \ \ \ \ \_logins[username]\ =\ password;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00282}00282\ \ \ \ \ DoWrite(\textcolor{stringliteral}{"{}registered\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00283}00283\ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00285}00285\ \textcolor{keywordtype}{void}\ Session::Login(std::string\ command)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00286}00286\ \ \ \ \ std::string\ username\ =\ command.substr(6,\ command.find(\textcolor{stringliteral}{"{}\ "{}},\ 6)\ -\/\ 6);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00287}00287\ \ \ \ \ std::string\ password\ =\ command.substr(command.find(\textcolor{stringliteral}{"{}\ "{}},\ 6)\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00288}00288\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Logging\ in\ "{}}\ <<\ username\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ password\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00289}00289\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_logins.find(username)\ ==\ \_logins.end())\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ DoWrite(\textcolor{stringliteral}{"{}error\ username\ not\ found\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00292}00292\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00293}00293\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_logins[username]\ !=\ password)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ DoWrite(\textcolor{stringliteral}{"{}error\ wrong\ password\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00296}00296\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00297}00297\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ clients\_tcp.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clients\_tcp[i].endpoint\ ==\ socket\_.remote\_endpoint())\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ clients\_tcp[i].isLogged\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00302}00302\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00303}00303\ \ \ \ \ DoWrite(\textcolor{stringliteral}{"{}logged\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00304}00304\ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00306}\mbox{\hyperlink{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}{00306}}\ \mbox{\hyperlink{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}{Server::\string~Server}}()\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00307}00307\ \ \ \ \ std::ofstream\ file;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00308}00308\ \ \ \ \ file.open(\textcolor{stringliteral}{"{}./config/login"{}},\ std::ios::out\ |\ std::ios::trunc);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00309}00309\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&login\ :\ \_logins)\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ file\ <<\ login.first\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ login.second\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00311}00311\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00312}00312\ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00313}00313\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,142 @@
+\hypertarget{Client_2src_2client_8cpp_source}{}\doxysection{client.\+cpp}
+\label{Client_2src_2client_8cpp_source}\index{Client/src/client.cpp@{Client/src/client.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}client.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}data.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <regex>}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00005}\mbox{\hyperlink{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}{00005}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}{Client::UDPSend}}(std::string\ message)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Send:\ "{}\ <<\ message\ <<\ "{}\ to\ "{}\ <<\ \_endpoint.address().to\_string()\ <<\ "{}:"{}\ <<\ \_endpoint.port()\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00007}00007\ \ \ \ \ udpSocket\_.send\_to(asio::buffer(message),\ \_endpoint);}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00008}00008\ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00010}\mbox{\hyperlink{classClient_a840e519ca781888cbd54181572ebe3a7}{00010}}\ \mbox{\hyperlink{classClient_a840e519ca781888cbd54181572ebe3a7}{Client::\string~Client}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00011}00011\ \ \ \ \ \_isUsed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (udpSocket\_.is\_open())}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ leaveGame(0);}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00014}00014\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ destroyed"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00017}\mbox{\hyperlink{classClient_a8e589ccd12c8562d6aaef372d0b99781}{00017}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClient_a8e589ccd12c8562d6aaef372d0b99781}{Client::UDPReceive}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00018}00018\ \ \ \ \ udpSocket\_.async\_receive\_from(asio::buffer(\_recvBuffer),\ \_endpoint,\ [\textcolor{keyword}{this}](std::error\_code\ ec,\ std::size\_t\ bytes)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ std::regex\ regex(R\textcolor{stringliteral}{"{}(\string^(\(\backslash\)w+)\(\backslash\)s+(.*))"{});}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00020}00020\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ std::smatch\ match;}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00021}00021\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00022}00022\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ }\textcolor{keywordflow}{if}\ (!ec)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Received:\ "{}}\ <<\ \_recvBuffer.data()\ <<\ \textcolor{stringliteral}{"{}|"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::string(\_recvBuffer.data()).find(\textcolor{stringliteral}{"{}VU"{}})\ ==\ std::string::npos\ \&\&\ std::string(\_recvBuffer.data()).find(\textcolor{stringliteral}{"{}START"{}})\ ==\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_serverData.push\_back(\_recvBuffer.data());}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::string(\_recvBuffer.data()).find(\textcolor{stringliteral}{"{}START"{}})\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}{UDPSend}}(\textcolor{stringliteral}{"{}STARTED\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Game\ started"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isStarted\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bytes\ >0)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ received\_data(\_recvBuffer.data(),\ bytes);}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \_recvBuffer\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classClient_a8e589ccd12c8562d6aaef372d0b99781}{UDPReceive}}();}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00037}00037\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00040}00040\ \textcolor{keywordtype}{void}\ Client::createGame(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00041}00041\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}create\ game\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ udpSocket\_.open(asio::ip::udp::v4());}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \_endpoint\ =\ asio::ip::udp::endpoint(asio::ip::address::from\_string(\_ip),\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00045}00045\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ Sleep(1);}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00047}00047\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00049}00049\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}{UDPSend}}(\textcolor{stringliteral}{"{}Create\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ std::thread([\textcolor{keyword}{this}]\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classClient_a8e589ccd12c8562d6aaef372d0b99781}{UDPReceive}}();}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ ioc-\/>run();}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \}).detach();}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00055}00055\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ in\ createGame:\ "{}}\ <<\ ex.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00060}00060\ std::string\ Client::listGames()\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}list\ games\(\backslash\)n"{};}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{classClient_af8e601dd957b47139ad921a509c842fd}{Write}}(\textcolor{stringliteral}{"{}list"{}});}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classClient_afb1e52684f9e8e052f66353156a982b8}{Read}}().substr(5);}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00066}00066\ \textcolor{keywordtype}{void}\ Client::joinGame(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00067}00067\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}join\ game\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ udpSocket\_.open(asio::ip::udp::v4());}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \_endpoint\ =\ asio::ip::udp::endpoint(asio::ip::address::from\_string(\_ip),\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00071}00071\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ Sleep(1);}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00073}00073\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00075}00075\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}{UDPSend}}(\textcolor{stringliteral}{"{}Join\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ std::thread([\textcolor{keyword}{this}]\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classClient_a8e589ccd12c8562d6aaef372d0b99781}{UDPReceive}}();}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ ioc-\/>run();}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \}).detach();}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00081}00081\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ in\ createGame:\ "{}}\ <<\ ex.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00086}00086\ \textcolor{keywordtype}{void}\ Client::leaveGame(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00087}00087\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}leave\ game\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}{UDPSend}}(\textcolor{stringliteral}{"{}Leave\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{classClient_af8e601dd957b47139ad921a509c842fd}{Write}}(\textcolor{stringliteral}{"{}Leave\ "{}}\ +\ std::to\_string(\_endpoint.port()));}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00090}00090\ \ \ \ \ udpSocket\_.close();}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00091}00091\ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00093}00093\ \textcolor{keywordtype}{void}\ Client::startGame(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00094}00094\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}start\ game\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}{UDPSend}}(\textcolor{stringliteral}{"{}Start\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00098}00098\ \textcolor{keywordtype}{void}\ Client::endGame(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00099}00099\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}end\ game\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00100}00100\ \ \ \ \ \mbox{\hyperlink{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}{UDPSend}}(\textcolor{stringliteral}{"{}Leave\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00101}00101\ \ \ \ \ udpSocket\_.close();}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00102}00102\ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00112}\mbox{\hyperlink{classClient_a7d5b1337ba06b679b0c94061cb8a68b0}{00112}}\ \mbox{\hyperlink{classClient_a7d5b1337ba06b679b0c94061cb8a68b0}{Client::Client}}(asio::io\_context\&\ ioc,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ host,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ port)}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00113}00113\ \ \ \ \ \ \ :\ tcpSocket\_(ioc),\ resolver\_(ioc)\ ,\ udpSocket\_(ioc)\ \ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00114}00114\ \ \ \ \ \_isUsed\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00115}00115\ \ \ \ \ tcp::resolver::results\_type\ endpoints\ =}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ resolver\_.resolve(host,\ port);}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00117}00117\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ created"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00118}00118\ \ \ \ \ \_ip\ =\ host;}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00119}00119\ \ \ \ \ this-\/>ioc\ =\ \&ioc;}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00120}00120\ \ \ \ \ command\_[\textcolor{stringliteral}{"{}created"{}}]\ =\ \&Client::createGame;}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00121}00121\ \ \ \ \ command\_[\textcolor{stringliteral}{"{}joined"{}}]\ =\ \&Client::joinGame;}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00122}00122\ \ \ \ \ command\_[\textcolor{stringliteral}{"{}left"{}}]\ =\ \&Client::leaveGame;}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00123}00123\ \ \ \ \ command\_[\textcolor{stringliteral}{"{}started"{}}]\ =\ \&Client::startGame;}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00124}00124\ \ \ \ \ command\_[\textcolor{stringliteral}{"{}end"{}}]\ =\ \&Client::endGame;}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00125}00125\ \ \ \ \ asio::connect(tcpSocket\_,\ endpoints);}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00126}00126\ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00134}\mbox{\hyperlink{classClient_af8e601dd957b47139ad921a509c842fd}{00134}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClient_af8e601dd957b47139ad921a509c842fd}{Client::Write}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ message)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00135}00135\ \ \ \ \ asio::async\_write(tcpSocket\_,\ asio::buffer(message),}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00136}00136\ \ \ \ \ [\textcolor{keyword}{this}](std::error\_code\ ec,\ std::size\_t\ bytes\_transferred)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ec)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ while\ sending\ data\ to\ server:\ "{}}\ <<\ ec.message()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00141}00141\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00142}00142\ \}}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00151}\mbox{\hyperlink{classClient_afb1e52684f9e8e052f66353156a982b8}{00151}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classClient_afb1e52684f9e8e052f66353156a982b8}{Client::Read}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{keywordtype}{char}\ buffer[4096];}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00153}00153\ \ \ \ \ asio::error\_code\ ec;}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00154}00154\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ bytes\_transferred\ =\ tcpSocket\_.read\_some(asio::buffer(buffer),\ ec);}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{return}\ string(buffer,\ bytes\_transferred);}
+\DoxyCodeLine{\Hypertarget{Client_2src_2client_8cpp_source_l00156}00156\ \}}
+
+\end{DoxyCode}

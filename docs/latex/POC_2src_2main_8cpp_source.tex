@@ -1,0 +1,37 @@
+\hypertarget{POC_2src_2main_8cpp_source}{}\doxysection{main.\+cpp}
+\label{POC_2src_2main_8cpp_source}\index{POC/src/main.cpp@{POC/src/main.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2022}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00003}00003\ \textcolor{comment}{**\ Untitled\ (Workspace)}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00005}00005\ \textcolor{comment}{**\ main}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}client.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}data.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00012}00012\ \textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00013}00013\ \ \ \ \ asio::io\_context\ ioc;}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{classClient}{Client}}\ c(ioc,\ \textcolor{stringliteral}{"{}localhost"{}},\ \textcolor{stringliteral}{"{}55555"{}});}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{structMyData}{MyData}}\ data\ =\ \{1,\ 2,\ 3,\ \textcolor{keyword}{true}\};}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ command;}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ response;}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout\ \&\#8203;`oaicite:\{"{}index"{}:0,"{}invalid\_reason"{}:"{}Malformed\ citation\ <<\ \(\backslash\)"{}Enter\ command:\ \(\backslash\)"{};\(\backslash\)n\ \ \ \ cin\ >>"{}\}`\&\#8203;\ command;}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Enter\ command:\ "{}};}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ cin\ >>\ command;}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ c.Write(command.c\_str());}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ response\ =\ c.Read();}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Response:\ "{}}\ <<\ response\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (response.substr(0,\ 7)\ ==\ \textcolor{stringliteral}{"{}created"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPClient}{UDPClient}}\ cd(ioc,\ \textcolor{stringliteral}{"{}localhost"{}},\ response.substr(8,\ response.size()\ -\/\ 8));}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ cd.send(data);}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{POC_2src_2main_8cpp_source_l00031}00031\ \}}
+
+\end{DoxyCode}

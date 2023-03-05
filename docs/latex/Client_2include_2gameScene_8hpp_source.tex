@@ -1,0 +1,94 @@
+\hypertarget{Client_2include_2gameScene_8hpp_source}{}\doxysection{game\+Scene.\+hpp}
+\label{Client_2include_2gameScene_8hpp_source}\index{Client/include/gameScene.hpp@{Client/include/gameScene.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00005}00005\ \textcolor{comment}{**\ gameScene}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ GAMESCENE\_HPP}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#define\ GAMESCENE\_HPP}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}scene.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}client.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}input.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}life.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}hitbox.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00021}\mbox{\hyperlink{classGameScene}{00021}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGameScene}{GameScene}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classScene}{Scene}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00023}00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00024}00024\ \ \ \mbox{\hyperlink{classLife}{Life}}\ \_life;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00025}00025\ \ \ \mbox{\hyperlink{classHitbox}{Hitbox}}\ \_hitbox;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00026}00026\ \ \ \mbox{\hyperlink{classDraw}{Draw}}\ \_draw;\ \textcolor{comment}{//\ draw}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00027}00027\ \ \ \mbox{\hyperlink{classMusic}{Music}}\ \_music;\ \textcolor{comment}{//\ music}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00028}00028\ \ \ \mbox{\hyperlink{classBackground}{Background}}\ \_background;\ \textcolor{comment}{//\ background}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00029}00029\ \ \ std::vector<EntityID>\ \_entity;\ \textcolor{comment}{//\ entities}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00030}00030\ \ \ \textcolor{keywordtype}{bool}\ \_showConsole\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00031}00031\ \ \ \mbox{\hyperlink{classInput}{Input}}\ \_input;\ \textcolor{comment}{//\ input}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00032}00032\ \ \ \mbox{\hyperlink{classECS}{ECS}}\ *ecs;\ \textcolor{comment}{//\ ecs}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00033}00033\ \ \ std::map<std::string,\ void\ (\mbox{\hyperlink{classGameScene}{GameScene}}::*)(std::string\ \&str)>\ \_func2;\ \textcolor{comment}{//\ functions}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00034}00034\ \ \ std::string\ \_text\ =\ std::string(128,\ \textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00035}00035\ \ \ std::string\ \_text2\ =\ std::string(128,\ \textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00036}00036\ \ \ std::map<int,\ std::pair<std::string,\ unsigned\ int>>\ \_EnemyMap;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00037}00037\ \ \ \mbox{\hyperlink{classConsole}{Console}}\ \_Console\{\textcolor{stringliteral}{"{}Console"{}},\ \_text\};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00038}00038\ \ \ \mbox{\hyperlink{classChatBox}{ChatBox}}\ \_chatBox\{\textcolor{stringliteral}{"{}ChatBox"{}},\ \_text2\};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00039}00039\ \ \ std::map<int,\ std::pair<std::string,\ unsigned\ int>>\ \_PlayerMap;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00040}00040\ \ \ sf::Clock\ shootClock;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00041}00041\ \ \ \textcolor{comment}{//\ dimensions}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00042}00042\ \ \ std::pair<float,\ float>\ \_dimensions;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00043}00043\ \ \ \textcolor{keywordtype}{int}\ level\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00044}00044\ \ \ \textcolor{keywordtype}{int}\ wave\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00045}00045\ \ \ \textcolor{keywordtype}{bool}\ \_showHitbox\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00047}00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{classClient}{Client}}\ *\ \_client;\ \textcolor{comment}{//\ client}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00055}00055\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{classGameScene}{GameScene}}(\textcolor{keyword}{const}\ std::pair<float,\ float>\ \&dimensions,\ \textcolor{keyword}{const}\ std::string\ \&music);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{classGameScene_add5bc48c372aaa7f526c02558a8adf00}{\string~GameScene}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_ac15838bd307cdabe041b2795028d0f44}{load}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a3d995b01062050275ef5351ab53507cf}{unload}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00081}00081\ \ \ \ \ states\ \mbox{\hyperlink{classGameScene_ac043981068ab91b57eef466ca0501883}{handleEvent}}(sf::Event\ event,\ \mbox{\hyperlink{classWindow}{Window}}\ \&window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a4b467f352aa0743726d33e77afdee2e0}{update}}(\mbox{\hyperlink{classClock}{Clock}}\ \&clock)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a5df345ca968bbf3cff1ede138f71948f}{draw}}(\mbox{\hyperlink{classWindow}{Window}}\ \&window,\ \mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a47455b9a0b8c7c24d6f3d8be1c5b2f08}{createPlayer}}(std::string\ \&str);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_afcf39996fdd1fae8a5f08b2eec357d40}{createEnemy}}(std::string\ \&str);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00117}00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a7ac7269945b1b94aac7a4cbed544462d}{otherPlayerShoot}}(std::string\ \&str);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00124}00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a8c47ec60078dd1c84a81f7a049caf8d1}{updateEntities}}(std::string\ \&str);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00131}\mbox{\hyperlink{classGameScene_ac12b8c0f3fab335652172976204cf5da}{00131}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_ac12b8c0f3fab335652172976204cf5da}{updatePlayer}}(std::string\ \&str);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00138}\mbox{\hyperlink{classGameScene_ae13c7f631168e0df70c52a0ed701ef33}{00138}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_ae13c7f631168e0df70c52a0ed701ef33}{updateEnemy}}(std::string\ \&str);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00145}00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_aac29f854740993073e3e2de2d0014319}{destroyEntities}}(std::string\ \&str);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00152}00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_ae8bb4318836d150f44f393c5317a36ad}{changeLevel}}(std::string\ \&str);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00159}00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a10d7558aa7397ab88bfbabd38cc7e04c}{changeWave}}(std::string\ \&str);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00166}00166\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a27373d444dd2af10a6ec59a36bbc1b3e}{handleChat}}(std::string\ \&str);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00173}00173\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a5d342f07fbfd1e715025d03ee2a1ca9f}{handleDead}}(std::string\ \&str);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00180}00180\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a0ce0ad57e077ac02f6182e2d006866a1}{checkEnemiesCollision}}(\mbox{\hyperlink{classSystem}{System}}\ \&system);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00186}00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_ab091f19fe0e407db5ba0573a1c5c73d0}{enemyShoot}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00194}00194\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGameScene_af2498d0a576f14fd0aaf090d35e8950d}{isPlayerDead}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00195}00195\ \};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2gameScene_8hpp_source_l00197}00197\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !GAMESCENE\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

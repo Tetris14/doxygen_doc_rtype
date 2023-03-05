@@ -1,0 +1,52 @@
+\hypertarget{SpriteManager_8hpp_source}{}\doxysection{Sprite\+Manager.\+hpp}
+\label{SpriteManager_8hpp_source}\index{Client/include/SpriteManager.hpp@{Client/include/SpriteManager.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}tools.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00011}\mbox{\hyperlink{classSpriteManager}{00011}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSpriteManager}{SpriteManager}}\ \{}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00012}00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00017}\mbox{\hyperlink{classSpriteManager_a2c102a1fc7f688003c5b3c98d601e424}{00017}}\ \ \ \ \ \mbox{\hyperlink{classSpriteManager_a2c102a1fc7f688003c5b3c98d601e424}{SpriteManager}}(\textcolor{keyword}{const}\ std::pair<float,\ float>\ \&dimensions)\ \{}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \_dimensions\ =\ dimensions;}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00025}\mbox{\hyperlink{classSpriteManager_ae01a31b1c80f676604ba55c93b499e1f}{00025}}\ \ \ \ \ \mbox{\hyperlink{classSpriteManager_ae01a31b1c80f676604ba55c93b499e1f}{\string~SpriteManager}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00036}\mbox{\hyperlink{classSpriteManager_ae117be8da181d774ed3759a2abef646c}{00036}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpriteManager_ae117be8da181d774ed3759a2abef646c}{addSprite}}(\textcolor{keyword}{const}\ std::string\&\ filepath,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ sizeX=1.0f,\ \textcolor{keywordtype}{float}\ sizeY=1.0f)\ \{}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ sf::Texture\ texture;}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!texture.loadFromFile(findFile(filepath)))\ \{}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ error\ loading\ texture}}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ sf::Sprite\ sprite;}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ sf::Vector2f\ pos((\_dimensions.first\ /\ 100)\ *\ x,\ (\_dimensions.second\ /\ 100)\ *\ y);}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ scaleX\ =\ sizeX\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\_dimensions.first)\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(texture.getSize().x);}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ scaleY\ =\ sizeY\ *\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\_dimensions.second)\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(texture.getSize().y);}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ sf::Vector2f\ size(scaleX,\ scaleY);}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ sprite.setPosition(pos);}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00048}00048\ \ \ \ \ \ \ \ \ sprite.setScale(size);}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ std::pair<sf::Texture,\ sf::Sprite>\ spritePair\ =\ std::make\_pair(texture,\ sprite);}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \_sprites.insert(std::make\_pair(filepath,\ spritePair));}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00058}\mbox{\hyperlink{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}{00058}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}{drawSprite}}(sf::RenderWindow\&\ window,\ \textcolor{keyword}{const}\ std::string\ \&filepath)\ \{}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ spriteIter\ =\ \_sprites.find(filepath);}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (spriteIter\ !=\ \_sprites.end())\ \{}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Texture\&\ texture\ =\ spriteIter-\/>second.first;}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Sprite\&\ sprite\ =\ spriteIter-\/>second.second;}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ sprite.setTexture(texture);}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ window.draw(sprite);}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00069}00069\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00070}00070\ \ \ \ \ std::pair<float,\ float>\ \_dimensions;\ \textcolor{comment}{//\ dimensions\ of\ the\ window}}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00071}00071\ \ \ \ \ std::map<std::string,\ std::pair<sf::Texture,\ sf::Sprite>>\ \_sprites;\ \textcolor{comment}{//\ map\ of\ sprites}}
+\DoxyCodeLine{\Hypertarget{SpriteManager_8hpp_source_l00072}00072\ \};}
+
+\end{DoxyCode}

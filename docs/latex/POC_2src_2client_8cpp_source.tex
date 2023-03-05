@@ -1,0 +1,48 @@
+\hypertarget{POC_2src_2client_8cpp_source}{}\doxysection{client.\+cpp}
+\label{POC_2src_2client_8cpp_source}\index{POC/src/client.cpp@{POC/src/client.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}client.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00003}00003\ UDPClient::UDPClient(asio::io\_context\ \&ioService,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&host,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&port)\ :\ socket\_(ioService),\ resolver\_(ioService)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00004}00004\ \ \ \ \ udp::resolver::results\_type\ endpoints\ =\ resolver\_.resolve(udp::v4(),\ host,\ port);}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00005}00005\ \ \ \ \ \_endpoint\ =\ *endpoints.begin();}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00006}00006\ \ \ \ \ socket\_.open(udp::v4());}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00007}00007\ \}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00009}00009\ \textcolor{keywordtype}{void}\ UDPClient::send(\mbox{\hyperlink{structMyData}{MyData}}\ \&data)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00010}00010\ \ \ \ \ socket\_.send\_to(data.ToBuffers(),\ \_endpoint);}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00013}00013\ \textcolor{keywordtype}{void}\ UDPClient::listen()\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00014}00014\ \ \ \ \ socket\_.async\_receive\_from(asio::buffer(\_recvBuffer),\ \_endpoint,\ [\textcolor{keyword}{this}](std::error\_code\ ec,\ std::size\_t\ bytes\_transferred)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ec)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structMyData}{MyData}}\ data;}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ data.id\ =\ \_endpoint.port();}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \_data\_client.push\_back(data);}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ listen();}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00021}00021\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00032}00032\ \mbox{\hyperlink{classClient_a7d5b1337ba06b679b0c94061cb8a68b0}{Client::Client}}(asio::io\_context\&\ ioc,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ host,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ port)}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00033}00033\ \ \ \ \ \ \ :\ socket\_(ioc),\ resolver\_(ioc)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00034}00034\ \ \ \ \ tcp::resolver::results\_type\ endpoints\ =}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ resolver\_.resolve(host,\ port);}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00037}00037\ \ \ \ \ asio::connect(socket\_,\ endpoints);}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00046}00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClient_af8e601dd957b47139ad921a509c842fd}{Client::Write}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ message)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00047}00047\ \ \ \ \ asio::write(socket\_,\ asio::buffer(message));}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00057}00057\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classClient_afb1e52684f9e8e052f66353156a982b8}{Client::Read}}()\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{char}\ buffer[4096];}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00059}00059\ \ \ \ \ asio::error\_code\ ec;}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ bytes\_transferred\ =\ socket\_.read\_some(asio::buffer(buffer),\ ec);}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{return}\ string(buffer,\ bytes\_transferred);}
+\DoxyCodeLine{\Hypertarget{POC_2src_2client_8cpp_source_l00062}00062\ \}}
+
+\end{DoxyCode}

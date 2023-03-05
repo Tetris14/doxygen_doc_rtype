@@ -1,0 +1,151 @@
+\hypertarget{classRectangle}{}\doxysection{Rectangle Class Reference}
+\label{classRectangle}\index{Rectangle@{Rectangle}}
+
+
+class \doxylink{classRectangle}{Rectangle}  
+
+
+
+
+{\ttfamily \#include $<$user\+Interface.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}{Rectangle}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classRectangle}{Rectangle} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRectangle_a985548fa4b2b54823af0c22e57936ef4}{set\+Rectangle}} (const std\+::string \&config\+File, const std\+::pair$<$ float, float $>$ \&dimensions)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{classRectangle}{Rectangle} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRectangle_a17972bcdb06e6e103d1bb404e3d562c7}{draw}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the rectangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class \doxylink{classRectangle}{Rectangle} 
+
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00360}{360}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}\label{classRectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}} 
+\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}}
+{\footnotesize\ttfamily Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{classRectangle}{Rectangle} object. 
+
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00366}{366}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00366\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRectangle_a17972bcdb06e6e103d1bb404e3d562c7}\label{classRectangle_a17972bcdb06e6e103d1bb404e3d562c7}} 
+\index{Rectangle@{Rectangle}!draw@{draw}}
+\index{draw@{draw}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Rectangle\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxylink{classDraw}{Draw} the rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00421}{421}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ window.draw(\_background);}
+\DoxyCodeLine{00423\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRectangle_a985548fa4b2b54823af0c22e57936ef4}\label{classRectangle_a985548fa4b2b54823af0c22e57936ef4}} 
+\index{Rectangle@{Rectangle}!setRectangle@{setRectangle}}
+\index{setRectangle@{setRectangle}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{setRectangle()}{setRectangle()}}
+{\footnotesize\ttfamily void Rectangle\+::set\+Rectangle (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{config\+File,  }\item[{const std\+::pair$<$ float, float $>$ \&}]{dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the \doxylink{classRectangle}{Rectangle} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config\+File} & \\
+\hline
+{\em dimensions} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00374}{374}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ std::ifstream\ file(configFile);}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ opening\ config\ file}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ nlohmann::json\ config;}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ file\ >>\ config;}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ textfield\ properties\ from\ JSON\ object}}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ rectObj\ =\ config[\textcolor{stringliteral}{"{}rectangle"{}}];}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rectObj.empty())\ \{}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ reading\ textfield\ properties\ from\ JSON\ object}}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ textfield\ properties}}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \_x\ =\ (dimensions.first\ /\ 100)\ *\ rectObj[\textcolor{stringliteral}{"{}x"{}}].get<float>();}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \_y\ =\ (dimensions.second\ /\ 100)\ *\ rectObj[\textcolor{stringliteral}{"{}y"{}}].get<float>();}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \_width\ =\ (dimensions.first\ /\ 100)\ *\ rectObj[\textcolor{stringliteral}{"{}width"{}}].get<float>();}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \_height\ =\ (dimensions.second\ /\ 100)\ *\ rectObj[\textcolor{stringliteral}{"{}height"{}}].get<float>();}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ bgColorObj\ =\ rectObj[\textcolor{stringliteral}{"{}background\_color"{}}];}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \_backgroundColor.r\ =\ bgColorObj[0].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \_backgroundColor.g\ =\ bgColorObj[1].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \_backgroundColor.b\ =\ bgColorObj[2].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \_backgroundColor.a\ =\ bgColorObj[3].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ borderColorObj\ =\ rectObj[\textcolor{stringliteral}{"{}border\_color"{}}];}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \_borderColor.r\ =\ borderColorObj[0].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \_borderColor.g\ =\ borderColorObj[1].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \_borderColor.b\ =\ borderColorObj[2].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \_borderColor.a\ =\ borderColorObj[3].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ textfield\ background}}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \_background.setSize(sf::Vector2f(\_width,\ \_height));}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \_background.setFillColor(\_backgroundColor);}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \_background.setPosition(sf::Vector2f(\_x,\ \_y));}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \_background.setOutlineThickness(4);}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \_background.setOutlineColor(\_borderColor);}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \_background.setOutlineThickness(4);}
+\DoxyCodeLine{00414\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/user\+Interface.\+hpp\end{DoxyCompactItemize}

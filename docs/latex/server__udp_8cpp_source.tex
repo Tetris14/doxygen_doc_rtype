@@ -1,0 +1,188 @@
+\hypertarget{server__udp_8cpp_source}{}\doxysection{server\+\_\+udp.\+cpp}
+\label{server__udp_8cpp_source}\index{Server/sources/server\_udp.cpp@{Server/sources/server\_udp.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}server\_udp.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <regex>}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\ \ \ \ \#include\ <winsock2.h>}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00016}\mbox{\hyperlink{classUDPServer_aa4f0dd1d9862283edb8cf30e2068a9dc}{00016}}\ \mbox{\hyperlink{classUDPServer_aa4f0dd1d9862283edb8cf30e2068a9dc}{UDPServer::UDPServer}}(uint16\_t\ port,\ asio::io\_context\ \&ioService)\ :\ socket\_(ioService,\ asio::ip::udp::endpoint(asio::ip::udp::v4(),\ port)),\ \_ioService(ioService)}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00018}00018\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Created\ udp\ server\ on\ port\ "{}}\ <<\ port\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00019}00019\ \ \ \ \ \_gameEngine\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\_parseFunction\ =\ \{\{"{}Join"{},\ \&join\},\{"{}Start"{},\ \&startLobby\},\{"{}Type"{},\ \&chooseGame\},\{"{}Leave"{},\ \&leave\}\}}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00021}00021\ \ \ \ \ \_parseFunction[\textcolor{stringliteral}{"{}Join"{}}]\ =\ \&UDPServer::join;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00022}00022\ \ \ \ \ \_parseFunction[\textcolor{stringliteral}{"{}Start"{}}]\ =\ \&UDPServer::startLobby;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00023}00023\ \ \ \ \ \_parseFunction[\textcolor{stringliteral}{"{}Type"{}}]\ =\ \&UDPServer::chooseGame;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00024}00024\ \ \ \ \ \_parseFunction[\textcolor{stringliteral}{"{}Leave"{}}]\ =\ \&UDPServer::leave;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00025}00025\ \ \ \ \ \_parseFunction[\textcolor{stringliteral}{"{}Create"{}}]\ =\ \&UDPServer::CreateRoom;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00026}00026\ \ \ \ \ \_parseFunction[\textcolor{stringliteral}{"{}Chat"{}}]\ =\ \&UDPServer::chat;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{classUDPServer_adff289696d8b33e8cd2e25ba6cfde86d}{start}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00035}\mbox{\hyperlink{classUDPServer_a09b1a38f1a03d3832f85fe05e6370a11}{00035}}\ \mbox{\hyperlink{classUDPServer_a09b1a38f1a03d3832f85fe05e6370a11}{UDPServer::\string~UDPServer}}()}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00044}\mbox{\hyperlink{classUDPServer_adff289696d8b33e8cd2e25ba6cfde86d}{00044}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_adff289696d8b33e8cd2e25ba6cfde86d}{UDPServer::start}}()}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00045}00045\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_accca8d6667e3f7d27d1d9c90c9abaf12}{loopRead}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_accabe8f013ff6e8758fe9db98cc5b031}{start\_send\_timer}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \_ioService.run();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00051}00051\ \textcolor{keywordtype}{void}\ UDPServer::CreateRoom()}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00053}00053\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ created\ a\ server"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00054}00054\ \ \ \ \ \_endpoints.push\_back(\_endpoint);}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00055}00055\ \ \ \ \ nb\_players++;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{classUDPServer_a4bf53cfe5bbf524309d317f8e87c621a}{send\_message}}(\textcolor{stringliteral}{"{}VU\(\backslash\)n"{}},\ \_endpoint);}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00060}00060\ \textcolor{keywordtype}{void}\ UDPServer::leave()}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00061}00061\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00062}00062\ \ \ \ \ \_endpoints.erase(std::find(\_endpoints.begin(),\ \_endpoints.end(),\ \_endpoint));}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00063}00063\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ left\ "{}}\ <<\ \_endpoints.size()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_endpoints.size()\ <\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_gameEngine\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \_gameEngine-\/>\mbox{\hyperlink{classGameEngine_a4a9ed9e9dfdfe675cba6e933a98a00fb}{stop}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \_gameEngine\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Game\ ended"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ socket\_.close();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00073}00073\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00079}00079\ \textcolor{keywordtype}{void}\ UDPServer::startLobby()}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00080}00080\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{classUDPServer_a15f599783ce68afda59c3ee274b54e4f}{startGame}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00083}00083\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00089}00089\ \textcolor{keywordtype}{void}\ UDPServer::join()}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00090}00090\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00091}00091\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ joined"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00092}00092\ \ \ \ \ \_endpoints.push\_back(\_endpoint);}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00093}00093\ \ \ \ \ nb\_players++;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{classUDPServer_a4bf53cfe5bbf524309d317f8e87c621a}{send\_message}}(\textcolor{stringliteral}{"{}VU\(\backslash\)n"{}},\ \_endpoint);}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00102}00102\ \textcolor{keywordtype}{void}\ UDPServer::chooseGame()}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00103}00103\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00104}00104\ \ \ \ \ \_gameType\ =\ std::stoi(std::string(\_recvBuffer.data()).substr(5,\ 1));}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00105}00105\ \ \ \ \ \mbox{\hyperlink{classUDPServer_a4bf53cfe5bbf524309d317f8e87c621a}{send\_message}}(\textcolor{stringliteral}{"{}VU\(\backslash\)n"{}},\ \_endpoint);}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00107}00107\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00114}\mbox{\hyperlink{classUDPServer_af5508a5a0eaab045026fabb6ecdb4c1c}{00114}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_af5508a5a0eaab045026fabb6ecdb4c1c}{UDPServer::parseData}}()}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00115}00115\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00116}00116\ \ \ \ \ std::string\ data\ =\ std::string(\_recvBuffer.data());}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00117}00117\ \ \ \ \ std::vector<std::string>\ delimitors\ =\ \{\textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ \textcolor{stringliteral}{"{}\ "{}}\};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00118}00118\ \ \ \ \ std::string\ token;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&delimitor\ :\ delimitors)\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.find(delimitor)\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ token\ =\ delimitor;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00125}00125\ \ \ \ \ std::string\ Ndata\ =\ data.substr(0,\ data.find(token));}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{if}\ (data.size()\ >\ 0\ \&\&\ \_parseFunction.find(Ndata)\ !=\ \_parseFunction.end())\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Received\ data\ from\ client:\ "{}}\ <<\ Ndata\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ (this-\/>*\_parseFunction[Ndata])();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00130}00130\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_gameEngine\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \_gameEngine-\/>\mbox{\hyperlink{classGameEngine_acd705e3e888c73dcf1fa7dd94e54585b}{update}}(\_recvBuffer.data(),\ std::find(\_endpoints.begin(),\ \_endpoints.end(),\ \_endpoint)\ -\/\ \_endpoints.begin());}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00134}00134\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00142}\mbox{\hyperlink{classUDPServer_accca8d6667e3f7d27d1d9c90c9abaf12}{00142}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_accca8d6667e3f7d27d1d9c90c9abaf12}{UDPServer::loopRead}}()}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00143}00143\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00144}00144\ \ \ \ \ socket\_.async\_receive\_from(asio::buffer(\_recvBuffer),\ \_endpoint,\ [\textcolor{keyword}{this}](std::error\_code\ ec,\ std::size\_t\ bytes)\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ec)\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ while\ receiving\ data\ from\ client:\ "{}}\ <<\ ec.message()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_af5508a5a0eaab045026fabb6ecdb4c1c}{parseData}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \_recvBuffer\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_accca8d6667e3f7d27d1d9c90c9abaf12}{loopRead}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00152}00152\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00153}00153\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00160}\mbox{\hyperlink{classUDPServer_a15f599783ce68afda59c3ee274b54e4f}{00160}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_a15f599783ce68afda59c3ee274b54e4f}{UDPServer::startGame}}()\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00161}00161\ \ \ \ \ \_gameEngine\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classGameEngine}{GameEngine}}(nb\_players,\ \_gameType);}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00162}00162\ \ \ \ \ \_gameThread\ =\ \textcolor{keyword}{new}\ std::thread([\textcolor{keyword}{this}]()\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Game\ started"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \_gameEngine-\/>\mbox{\hyperlink{classGameEngine_a425ec68e14b2def17e162cbe3c6cfb13}{start}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00165}00165\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00166}00166\ \ \ \ \ \_gameThread-\/>detach();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00167}00167\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00174}\mbox{\hyperlink{classUDPServer_accabe8f013ff6e8758fe9db98cc5b031}{00174}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_accabe8f013ff6e8758fe9db98cc5b031}{UDPServer::start\_send\_timer}}()}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00175}00175\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00176}00176\ \ \ \ \ timer\_.expires\_after(std::chrono::milliseconds(100));}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00177}00177\ \ \ \ \ timer\_.async\_wait([\textcolor{keyword}{this}](std::error\_code\ ec)\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ec)\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ while\ waiting\ for\ timer:\ "{}}\ <<\ ec.message()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_a04bb244d870a1f1ff5b077d02b5ff8c0}{send\_queue}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_accabe8f013ff6e8758fe9db98cc5b031}{start\_send\_timer}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00184}00184\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00185}00185\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00192}\mbox{\hyperlink{classUDPServer_a4bf53cfe5bbf524309d317f8e87c621a}{00192}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_a4bf53cfe5bbf524309d317f8e87c621a}{UDPServer::send\_message}}(std::string\ message,\ asio::ip::udp::endpoint\ endpoint)}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00193}00193\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00194}00194\ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Sending\ message\ to\ client:\ "{}\ <<\ message\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00195}00195\ \ \ \ \ socket\_.async\_send\_to(asio::buffer(message),\ endpoint,\ [\textcolor{keyword}{this}](std::error\_code\ ec,\ std::size\_t\ bytes)\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ec)\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ while\ sending\ data\ to\ client:\ "{}}\ <<\ ec.message()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00200}00200\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00201}00201\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00208}\mbox{\hyperlink{classUDPServer_a76b6aeeffa5765dbf290163eb3f8ffcf}{00208}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_a76b6aeeffa5765dbf290163eb3f8ffcf}{UDPServer::sendToAll}}(std::string\ message)}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00209}00209\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00210}00210\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ endpoint\ :\ \_endpoints)\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_a4bf53cfe5bbf524309d317f8e87c621a}{send\_message}}(message,\ endpoint);}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00212}00212\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00213}00213\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00220}\mbox{\hyperlink{classUDPServer_a04bb244d870a1f1ff5b077d02b5ff8c0}{00220}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUDPServer_a04bb244d870a1f1ff5b077d02b5ff8c0}{UDPServer::send\_queue}}()}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00221}00221\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00222}00222\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_gameEngine\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00224}00224\ \ \ \ \ std::vector<std::string>\ \_commands\ =\ \_gameEngine-\/>\mbox{\hyperlink{classGameEngine_a124dfcfb25f1fe61576aa7c214b026f9}{getCommands}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00225}00225\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_commands.size()\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00227}00227\ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Sending\ queue\ to\ client:\ "{}\ <<\ \_commands.size()\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00228}00228\ \ \ \ \ \textcolor{keywordtype}{int}\ size\ =\ \_commands.size();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00229}00229\ \ \ \ \ \textcolor{keywordtype}{int}\ toDel\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00230}00230\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPServer_a76b6aeeffa5765dbf290163eb3f8ffcf}{sendToAll}}(\_commands[i]);}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ toDel++;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00233}00233\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00234}00234\ \ \ \ \ \_commands.erase(\_commands.begin()\ +\ toDel);}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00235}00235\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \_gameEngine-\/>\mbox{\hyperlink{classGameEngine_ad91a0358e9efd498706a7a74b6b8b44c}{eraseCommands}}();}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00237}00237\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00238}00238\ \}}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00240}00240\ \textcolor{keywordtype}{void}\ UDPServer::chat()}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00241}00241\ \{}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00242}00242\ \ \ \ \ std::string\ data\ =\ std::string(\_recvBuffer.data());}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00243}00243\ \ \ \ \ std::string\ message\ =\ data.substr(5,\ data.size()\ -\/\ 5);}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00244}00244\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ sent\ a\ message:\ "{}}\ <<\ message\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00245}00245\ \ \ \ \ \mbox{\hyperlink{classUDPServer_a76b6aeeffa5765dbf290163eb3f8ffcf}{sendToAll}}(\textcolor{stringliteral}{"{}Chat\ "{}}\ +\ message);}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00246}00246\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{server__udp_8cpp_source_l00247}00247\ \}}
+
+\end{DoxyCode}

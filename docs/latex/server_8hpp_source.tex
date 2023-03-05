@@ -1,0 +1,89 @@
+\hypertarget{server_8hpp_source}{}\doxysection{server.\+hpp}
+\label{server_8hpp_source}\index{Server/includes/server.hpp@{Server/includes/server.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2022}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00003}00003\ \textcolor{comment}{**\ Untitled\ (Workspace)}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00005}00005\ \textcolor{comment}{**\ server}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <asio.hpp>}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}data.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00014}00014\ \textcolor{keyword}{using\ namespace\ }std;\ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00015}00015\ \textcolor{keyword}{using\ }asio::ip::tcp;\ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#ifndef\ SERVER\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#define\ SERVER\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00024}\mbox{\hyperlink{structUDP__port}{00024}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structUDP__port}{UDP\_port}}\ \{}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ port;}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ used;}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{int}\ nb\_players;}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00028}00028\ \};}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00034}\mbox{\hyperlink{structclient__tcp}{00034}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structclient__tcp}{client\_tcp}}\ \{}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00035}00035\ \ \ \ \ tcp::endpoint\ endpoint;}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ isLogged;}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ isInGame;}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00039}00039\ \};}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00041}00041\ \textcolor{keyword}{static}\ std::vector<UDP\_port>\ UDP\_ports;\ \textcolor{comment}{//\ UDP\ ports}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00042}00042\ \textcolor{keyword}{static}\ std::vector<client\_tcp>\ clients\_tcp;\ \textcolor{comment}{//\ TCP\ clients}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00043}00043\ \ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00048}\mbox{\hyperlink{classSession}{00048}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSession}{Session}}:\ \textcolor{keyword}{public}\ std::enable\_shared\_from\_this<Session>\ \{}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00049}00049\ \ \ \ \ public\ :}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00055}\mbox{\hyperlink{classSession_a936fb78d44e9593395f873e388cc1b85}{00055}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSession_a936fb78d44e9593395f873e388cc1b85}{Session}}(tcp::socket\ socket):\ socket\_(std::move(socket))\ \{\};}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSession_a68020021e9d13c85b641d853646e8b7a}{Start}}();}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00062}00062\ \ \ \ \ private\ :}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00063}00063\ \ \ \ \ std::map<std::string,\ void\ (\mbox{\hyperlink{classSession}{Session}}::*)(std::string\ command)>\ commands\ =\ \{}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}create"{}},\ \&Session::HandleCreate\},}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}join"{}},\ \&Session::HandleJoin\},}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}list"{}},\ \&Session::ListServer\},}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}Leave"{}},\ \&Session::leaveServer\},}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}register"{}},\ \&Session::Register\},}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}login"{}},\ \&Session::Login\}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00070}00070\ \ \ \ \ \};\ \textcolor{comment}{//\ map\ of\ function\ pointers}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DoRead();}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DoWrite(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&message);}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ HandleCreate(std::string\ command);}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ HandleJoin(std::string\ command);}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ListServer(std::string\ command);}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ leaveServer(std::string\ command);}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Register(std::string\ command);}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Login(std::string\ command);}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00126}00126\ \ \ \ \ \ \ \ \ tcp::socket\ socket\_;\ \textcolor{comment}{//\ socket}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ data\_[1024];\ \textcolor{comment}{//\ data}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00128}00128\ \};}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00134}\mbox{\hyperlink{classServer}{00134}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classServer}{Server}}\ \{}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00135}00135\ \ \ \ \ public\ :}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classServer}{Server}}(asio::io\_context\ \&ioc,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ port);}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}{\string~Server}}();}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00149}00149\ \ \ \ \ private\ :}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DoAccept();}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00155}00155\ \ \ \ \ \ \ \ \ tcp::acceptor\ acceptor\_;\ \textcolor{comment}{//\ acceptor}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00156}00156\ \ \ \ \ \ \ \ \ std::vector<std::pair<tcp::socket,\ std::shared\_ptr<Session>>>\ sessions;\ \textcolor{comment}{//\ sessions}}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00157}00157\ \};}
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{server_8hpp_source_l00161}00161\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !SERVER\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

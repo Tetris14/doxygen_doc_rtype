@@ -1,0 +1,158 @@
+\hypertarget{classLife}{}\doxysection{Life Class Reference}
+\label{classLife}\index{Life@{Life}}
+
+
+\doxylink{classLife}{Life} class.  
+
+
+
+
+{\ttfamily \#include $<$life.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLife_ac4042a3f9fbb9c784d9b37420b1fd029}{Life}} (const std\+::pair$<$ float, float $>$ \&dimensions, const int \&maxlife)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classLife}{Life} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLife_ac5a521e06906fb4f834001b2b4f7adc7}{$\sim$\+Life}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classLife}{Life} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLife_adaf23d7adafe35496d5c0f59e6f7829f}{set\+Life}} (const float \&life)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{classLife}{Life} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLife_af77c1f8988faa006d7a062223424c9a9}{draw\+Life}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the life. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classLife}{Life} class. 
+
+
+
+Definition at line \mbox{\hyperlink{life_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{life_8hpp_source}{life.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLife_ac4042a3f9fbb9c784d9b37420b1fd029}\label{classLife_ac4042a3f9fbb9c784d9b37420b1fd029}} 
+\index{Life@{Life}!Life@{Life}}
+\index{Life@{Life}!Life@{Life}}
+\doxysubsubsection{\texorpdfstring{Life()}{Life()}}
+{\footnotesize\ttfamily Life\+::\+Life (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ float, float $>$ \&}]{dimensions,  }\item[{const int \&}]{maxlife }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{classLife}{Life} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dimensions} & \\
+\hline
+{\em maxlife} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{life_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{life_8hpp_source}{life.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \_life\ =\ maxlife;}
+\DoxyCodeLine{00033\ \ \ \ \ \_maxLife\ =\ maxlife;}
+\DoxyCodeLine{00034\ \ \ \ \ \_rectangle.setPosition(sf::Vector2f(10,\ 10));}
+\DoxyCodeLine{00035\ \ \ \ \ \_background.setPosition(sf::Vector2f(10,\ 10));}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ sf::Vector2f\ size((dimensions.first\ /\ 100)\ *\ 6,\ (dimensions.second\ /\ 100)\ *\ 1.5f);}
+\DoxyCodeLine{00037\ \ \ \ \ \_width\ =\ size.x;}
+\DoxyCodeLine{00038\ \ \ \ \ \_rectangle.setSize(size);}
+\DoxyCodeLine{00039\ \ \ \ \ \_background.setSize(size);}
+\DoxyCodeLine{00040\ \ \ \ \ \_rectangle.setOutlineThickness(4.0f);}
+\DoxyCodeLine{00041\ \ \ \ \ \_rectangle.setOutlineColor(sf::Color::White);}
+\DoxyCodeLine{00042\ \ \ \ \ \_background.setOutlineThickness(4.0f);}
+\DoxyCodeLine{00043\ \ \ \ \ \_background.setOutlineColor(sf::Color::White);}
+\DoxyCodeLine{00044\ \ \ \ \ \_rectangle.setFillColor(sf::Color::Green);}
+\DoxyCodeLine{00045\ \ \ \ \ \_background.setFillColor(sf::Color::White);}
+\DoxyCodeLine{00046\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLife_ac5a521e06906fb4f834001b2b4f7adc7}\label{classLife_ac5a521e06906fb4f834001b2b4f7adc7}} 
+\index{Life@{Life}!````~Life@{$\sim$Life}}
+\index{````~Life@{$\sim$Life}!Life@{Life}}
+\doxysubsubsection{\texorpdfstring{$\sim$Life()}{~Life()}}
+{\footnotesize\ttfamily Life\+::$\sim$\+Life (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \doxylink{classLife}{Life} object. 
+
+
+
+Definition at line \mbox{\hyperlink{life_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{life_8hpp_source}{life.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \{\};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLife_af77c1f8988faa006d7a062223424c9a9}\label{classLife_af77c1f8988faa006d7a062223424c9a9}} 
+\index{Life@{Life}!drawLife@{drawLife}}
+\index{drawLife@{drawLife}!Life@{Life}}
+\doxysubsubsection{\texorpdfstring{drawLife()}{drawLife()}}
+{\footnotesize\ttfamily void Life\+::draw\+Life (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxylink{classDraw}{Draw} the life. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{life_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{life_8hpp_source}{life.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ window.draw(\_background);}
+\DoxyCodeLine{00073\ \ \ \ \ window.draw(\_rectangle);}
+\DoxyCodeLine{00074\ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classLife_adaf23d7adafe35496d5c0f59e6f7829f}\label{classLife_adaf23d7adafe35496d5c0f59e6f7829f}} 
+\index{Life@{Life}!setLife@{setLife}}
+\index{setLife@{setLife}!Life@{Life}}
+\doxysubsubsection{\texorpdfstring{setLife()}{setLife()}}
+{\footnotesize\ttfamily void Life\+::set\+Life (\begin{DoxyParamCaption}\item[{const float \&}]{life }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the \doxylink{classLife}{Life} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em life} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{life_8hpp_source_l00059}{59}} of file \mbox{\hyperlink{life_8hpp_source}{life.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \_life\ =\ life;}
+\DoxyCodeLine{00061\ \ \ \ \ sf::Vector2f\ size(\_rectangle.getSize().x,\ \_rectangle.getSize().y);}
+\DoxyCodeLine{00062\ \ \ \ \ size.x\ =\ (\_life\ /\ \_maxLife)\ *\ \_width;}
+\DoxyCodeLine{00063\ \ \ \ \ \_rectangle.setSize(sf::Vector2f(size));}
+\DoxyCodeLine{00064\ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/life.\+hpp\end{DoxyCompactItemize}

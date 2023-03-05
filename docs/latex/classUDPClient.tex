@@ -1,0 +1,90 @@
+\hypertarget{classUDPClient}{}\doxysection{UDPClient Class Reference}
+\label{classUDPClient}\index{UDPClient@{UDPClient}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUDPClient_abe26c2d65800271e6cd343cec9214396}{UDPClient}} (asio\+::io\+\_\+context \&io\+Service, const string \&host, const string \&port)
+\item 
+void \mbox{\hyperlink{classUDPClient_a0cfcf46ab0c2636788b47cbf64764738}{send}} (\mbox{\hyperlink{structMyData}{My\+Data}} \&data)
+\item 
+void \mbox{\hyperlink{classUDPClient_a63dcad23e0d07cfdc0974a5b00c049f0}{listen}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{POC_2include_2client_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{POC_2include_2client_8hpp_source}{client.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUDPClient_abe26c2d65800271e6cd343cec9214396}\label{classUDPClient_abe26c2d65800271e6cd343cec9214396}} 
+\index{UDPClient@{UDPClient}!UDPClient@{UDPClient}}
+\index{UDPClient@{UDPClient}!UDPClient@{UDPClient}}
+\doxysubsubsection{\texorpdfstring{UDPClient()}{UDPClient()}}
+{\footnotesize\ttfamily UDPClient\+::\+UDPClient (\begin{DoxyParamCaption}\item[{asio\+::io\+\_\+context \&}]{io\+Service,  }\item[{const string \&}]{host,  }\item[{const string \&}]{port }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{POC_2src_2client_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{POC_2src_2client_8cpp_source}{client.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ socket\_(ioService),\ resolver\_(ioService)\ \{}
+\DoxyCodeLine{00004\ \ \ \ \ udp::resolver::results\_type\ endpoints\ =\ resolver\_.resolve(udp::v4(),\ host,\ port);}
+\DoxyCodeLine{00005\ \ \ \ \ \_endpoint\ =\ *endpoints.begin();}
+\DoxyCodeLine{00006\ \ \ \ \ socket\_.open(udp::v4());}
+\DoxyCodeLine{00007\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUDPClient_a63dcad23e0d07cfdc0974a5b00c049f0}\label{classUDPClient_a63dcad23e0d07cfdc0974a5b00c049f0}} 
+\index{UDPClient@{UDPClient}!listen@{listen}}
+\index{listen@{listen}!UDPClient@{UDPClient}}
+\doxysubsubsection{\texorpdfstring{listen()}{listen()}}
+{\footnotesize\ttfamily void UDPClient\+::listen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{POC_2src_2client_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{POC_2src_2client_8cpp_source}{client.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ socket\_.async\_receive\_from(asio::buffer(\_recvBuffer),\ \_endpoint,\ [\textcolor{keyword}{this}](std::error\_code\ ec,\ std::size\_t\ bytes\_transferred)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ec)\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structMyData}{MyData}}\ data;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ data.id\ =\ \_endpoint.port();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \_data\_client.push\_back(data);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ listen();}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \});}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUDPClient_a0cfcf46ab0c2636788b47cbf64764738}\label{classUDPClient_a0cfcf46ab0c2636788b47cbf64764738}} 
+\index{UDPClient@{UDPClient}!send@{send}}
+\index{send@{send}!UDPClient@{UDPClient}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily void UDPClient\+::send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMyData}{My\+Data}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{POC_2src_2client_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{POC_2src_2client_8cpp_source}{client.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ socket\_.send\_to(data.ToBuffers(),\ \_endpoint);}
+\DoxyCodeLine{00011\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+POC/include/client.\+hpp\item 
+POC/src/client.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,57 @@
+\hypertarget{life_8hpp_source}{}\doxysection{life.\+hpp}
+\label{life_8hpp_source}\index{Client/include/life.hpp@{Client/include/life.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00003}00003\ \textcolor{comment}{**\ CPP}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00005}00005\ \textcolor{comment}{**\ life}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}window.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00016}\mbox{\hyperlink{classLife}{00016}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLife}{Life}}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00018}00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00019}00019\ \ \ \textcolor{keywordtype}{float}\ \_width;\ \textcolor{comment}{//\ width}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00020}00020\ \ \ \textcolor{keywordtype}{float}\ \_life;\ \textcolor{comment}{//\ life}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00021}00021\ \ \ \textcolor{keywordtype}{float}\ \_maxLife;\ \textcolor{comment}{//\ max\ life}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00022}00022\ \ \ sf::RectangleShape\ \_rectangle;\ \textcolor{comment}{//\ rectangle}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00023}00023\ \ \ sf::RectangleShape\ \_background;\ \textcolor{comment}{//\ background}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00024}00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00031}\mbox{\hyperlink{classLife_ac4042a3f9fbb9c784d9b37420b1fd029}{00031}}\ \ \ \mbox{\hyperlink{classLife_ac4042a3f9fbb9c784d9b37420b1fd029}{Life}}(\textcolor{keyword}{const}\ std::pair<float,\ float>\ \&dimensions,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&maxlife)\ \{}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00032}00032\ \ \ \ \ \_life\ =\ maxlife;}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00033}00033\ \ \ \ \ \_maxLife\ =\ maxlife;}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00034}00034\ \ \ \ \ \_rectangle.setPosition(sf::Vector2f(10,\ 10));}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00035}00035\ \ \ \ \ \_background.setPosition(sf::Vector2f(10,\ 10));}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{const}\ sf::Vector2f\ size((dimensions.first\ /\ 100)\ *\ 6,\ (dimensions.second\ /\ 100)\ *\ 1.5f);}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00037}00037\ \ \ \ \ \_width\ =\ size.x;}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00038}00038\ \ \ \ \ \_rectangle.setSize(size);}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00039}00039\ \ \ \ \ \_background.setSize(size);}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00040}00040\ \ \ \ \ \_rectangle.setOutlineThickness(4.0f);}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00041}00041\ \ \ \ \ \_rectangle.setOutlineColor(sf::Color::White);}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00042}00042\ \ \ \ \ \_background.setOutlineThickness(4.0f);}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00043}00043\ \ \ \ \ \_background.setOutlineColor(sf::Color::White);}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00044}00044\ \ \ \ \ \_rectangle.setFillColor(sf::Color::Green);}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00045}00045\ \ \ \ \ \_background.setFillColor(sf::Color::White);}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00046}00046\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00052}\mbox{\hyperlink{classLife_ac5a521e06906fb4f834001b2b4f7adc7}{00052}}\ \ \ \mbox{\hyperlink{classLife_ac5a521e06906fb4f834001b2b4f7adc7}{\string~Life}}()\ \{\};}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00059}\mbox{\hyperlink{classLife_adaf23d7adafe35496d5c0f59e6f7829f}{00059}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLife_adaf23d7adafe35496d5c0f59e6f7829f}{setLife}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&life)\ \{}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00060}00060\ \ \ \ \ \_life\ =\ life;}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00061}00061\ \ \ \ \ sf::Vector2f\ size(\_rectangle.getSize().x,\ \_rectangle.getSize().y);}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00062}00062\ \ \ \ \ size.x\ =\ (\_life\ /\ \_maxLife)\ *\ \_width;}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00063}00063\ \ \ \ \ \_rectangle.setSize(sf::Vector2f(size));}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00064}00064\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00071}\mbox{\hyperlink{classLife_af77c1f8988faa006d7a062223424c9a9}{00071}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLife_af77c1f8988faa006d7a062223424c9a9}{drawLife}}(sf::RenderWindow\&\ window)\ \{}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00072}00072\ \ \ \ \ window.draw(\_background);}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00073}00073\ \ \ \ \ window.draw(\_rectangle);}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00074}00074\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{life_8hpp_source_l00075}00075\ \};}
+
+\end{DoxyCode}

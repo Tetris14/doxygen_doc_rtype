@@ -1,0 +1,86 @@
+\hypertarget{Client_2include_2clock_8hpp_source}{}\doxysection{clock.\+hpp}
+\label{Client_2include_2clock_8hpp_source}\index{Client/include/clock.hpp@{Client/include/clock.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00005}00005\ \textcolor{comment}{**\ clock}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <SFML/System.hpp>}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#ifndef\ CLOCK\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#define\ CLOCK\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00021}\mbox{\hyperlink{classClock}{00021}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classClock}{Clock}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00023}00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00025}00025\ \ \ sf::Time\ \_fps;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00027}00027\ \ \ sf::Time\ \_game;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00029}00029\ \ \ sf::Time\ \_animation;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00031}00031\ \ \ sf::Time\ \_background;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00034}00034\ \ \ sf::Time\ \_wave;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00037}00037\ \ \ sf::Clock\ \_fpsClock;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00039}00039\ \ \ sf::Clock\ \_gameClock;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00041}00041\ \ \ sf::Clock\ \_animationClock;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00043}00043\ \ \ sf::Clock\ \_backgroundClock;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00045}00045\ \ \ sf::Clock\ \_sendClock;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00047}00047\ \ \ sf::Clock\ \_updateClock;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00049}00049\ \ \ sf::Clock\ \_lifeClock;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00051}00051\ \ \ sf::Clock\ \_eventClock;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00053}00053\ \ \ sf::Clock\ \_waveClock;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00055}00055\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00057}00057\ \ \ \mbox{\hyperlink{classClock_adbc370eb6b5f8d01645cf440188160a8}{Clock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00060}00060\ \ \ \mbox{\hyperlink{classClock_afc976ce68fa85e15cc06f9ed47bddb7c}{\string~Clock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00069}00069\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classClock_aecd47b1d735fd0cb85c9c76ea411434f}{getFpsClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00078}00078\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classClock_afad4629968120895853b5f213798da71}{getWaveClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00085}00085\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClock_aa9236ffef2ebd25b09461bacf9395737}{resetWaveClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00093}00093\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classClock_a0e33aae8052b1f9d60199f4fd1fda019}{getGameClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00102}00102\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classClock_a48b1dc793e34188913e3778368a9e808}{getAnimationClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00111}00111\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classClock_a2f4de873dbe9b83b448e638372edb80e}{getBackgroundClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00118}00118\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClock_a73f2f0880ddc23290c0f4f4881fbd56d}{resetFpsClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00125}00125\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClock_ac028b18e1e70503626f21daf113fa5e0}{resetGameClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00132}00132\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClock_a6a187abd815ce215d8c9b0c0b3275a49}{resetAnimationClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00139}00139\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClock_a9df36859a10b8aea20336f21261eeb41}{resetBackgroundClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00145}00145\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClock_ad572a24eda87760d66f80ffe41b2cd39}{resetSendClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00152}00152\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classClock_a9b56f6e735f558609bc699a8c85207ec}{getSendClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00158}00158\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClock_a1c0406dd98b464af98856c2d47c9107f}{resetUpdateClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00165}00165\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classClock_aad3a946f144448d1946b17f7e303204c}{getUpdateClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00171}00171\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClock_a99d7c41dd01106c763898bd85b48a1d8}{resetLifeClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00178}00178\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classClock_a1c0ee325c7b1612d1f37d0fce2b3a819}{getLifeClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00184}00184\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClock_a67fa39a7549e29fae31a9e95d4179e0a}{resetEventClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00191}00191\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classClock_a9d833037cd781fe106d4c2077b49c7ca}{getEventClock}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00192}00192\ \};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2clock_8hpp_source_l00195}00195\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !CLOCK\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

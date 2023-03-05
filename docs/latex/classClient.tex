@@ -1,0 +1,397 @@
+\hypertarget{classClient}{}\doxysection{Client Class Reference}
+\label{classClient}\index{Client@{Client}}
+
+
+Class for \doxylink{classClient}{Client} handling.  
+
+
+
+
+{\ttfamily \#include $<$client.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClient_a7d5b1337ba06b679b0c94061cb8a68b0}{Client}} (asio\+::io\+\_\+context \&ioc, const string \&host, const string \&port)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classClient}{Client} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classClient_a840e519ca781888cbd54181572ebe3a7}{$\sim$\+Client}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classClient}{Client} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classClient_afb1e52684f9e8e052f66353156a982b8}{Read}} ()
+\begin{DoxyCompactList}\small\item\em Read data from server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClient_af8e601dd957b47139ad921a509c842fd}{Write}} (const string \&message)
+\begin{DoxyCompactList}\small\item\em Write data to server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}{UDPSend}} (std\+::string message)
+\begin{DoxyCompactList}\small\item\em Send data to server via UDP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClient_a8e589ccd12c8562d6aaef372d0b99781}{UDPReceive}} ()
+\begin{DoxyCompactList}\small\item\em Receive data from server via UDP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClient_a1581afc29d591cae99fba7fb87bf325f}{start\+Game}} (int id)
+\item 
+std\+::string \mbox{\hyperlink{classClient_ad3d27059aa8ff0eb9f79938704ac600e}{list\+Games}} ()
+\item 
+\mbox{\Hypertarget{classClient_a7d5b1337ba06b679b0c94061cb8a68b0}\label{classClient_a7d5b1337ba06b679b0c94061cb8a68b0}} 
+{\bfseries Client} (asio\+::io\+\_\+context \&ioc, const string \&host, const string \&port)
+\item 
+\mbox{\Hypertarget{classClient_afb1e52684f9e8e052f66353156a982b8}\label{classClient_afb1e52684f9e8e052f66353156a982b8}} 
+string {\bfseries Read} ()
+\item 
+\mbox{\Hypertarget{classClient_af8e601dd957b47139ad921a509c842fd}\label{classClient_af8e601dd957b47139ad921a509c842fd}} 
+void {\bfseries Write} (const string \&message)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, void(Client\+::$\ast$)(int)$>$ \mbox{\hyperlink{classClient_a13602e2630519601331dc07e18d1891e}{command\+\_\+}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classClient_a78f61723facd97ed0ccf0f183f771131}{\+\_\+server\+Data}}
+\item 
+int \mbox{\hyperlink{classClient_a0782341087e1e861cd87f83fdd3104aa}{player\+ID}}
+\item 
+bool \mbox{\hyperlink{classClient_a1534f6804da1722894148419995d25b4}{is\+Started}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for \doxylink{classClient}{Client} handling. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2client_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{Client_2include_2client_8hpp_source}{client.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classClient_a7d5b1337ba06b679b0c94061cb8a68b0}\label{classClient_a7d5b1337ba06b679b0c94061cb8a68b0}} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Client()}{Client()}}
+{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}\item[{asio\+::io\+\_\+context \&}]{ioc,  }\item[{const string \&}]{host,  }\item[{const string \&}]{port }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{classClient}{Client} object. 
+
+Construct a new \doxylink{classClient}{Client}\+:\+: \doxylink{classClient}{Client} object ~\newline
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em ioc} & \\
+\hline
+{\em host} & \\
+\hline
+{\em port} & \\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em ioc} & \\
+\hline
+{\em host} & \\
+\hline
+{\em port} & \\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em ioc} & \\
+\hline
+{\em host} & \\
+\hline
+{\em port} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2client_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{Client_2src_2client_8cpp_source}{client.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ :\ tcpSocket\_(ioc),\ resolver\_(ioc)\ ,\ udpSocket\_(ioc)\ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \_isUsed\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00115\ \ \ \ \ tcp::resolver::results\_type\ endpoints\ =}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ resolver\_.resolve(host,\ port);}
+\DoxyCodeLine{00117\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ created"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00118\ \ \ \ \ \_ip\ =\ host;}
+\DoxyCodeLine{00119\ \ \ \ \ this-\/>ioc\ =\ \&ioc;}
+\DoxyCodeLine{00120\ \ \ \ \ command\_[\textcolor{stringliteral}{"{}created"{}}]\ =\ \&Client::createGame;}
+\DoxyCodeLine{00121\ \ \ \ \ command\_[\textcolor{stringliteral}{"{}joined"{}}]\ =\ \&Client::joinGame;}
+\DoxyCodeLine{00122\ \ \ \ \ command\_[\textcolor{stringliteral}{"{}left"{}}]\ =\ \&Client::leaveGame;}
+\DoxyCodeLine{00123\ \ \ \ \ command\_[\textcolor{stringliteral}{"{}started"{}}]\ =\ \&Client::startGame;}
+\DoxyCodeLine{00124\ \ \ \ \ command\_[\textcolor{stringliteral}{"{}end"{}}]\ =\ \&Client::endGame;}
+\DoxyCodeLine{00125\ \ \ \ \ asio::connect(tcpSocket\_,\ endpoints);}
+\DoxyCodeLine{00126\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classClient_a840e519ca781888cbd54181572ebe3a7}\label{classClient_a840e519ca781888cbd54181572ebe3a7}} 
+\index{Client@{Client}!````~Client@{$\sim$Client}}
+\index{````~Client@{$\sim$Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{$\sim$Client()}{~Client()}}
+{\footnotesize\ttfamily Client\+::$\sim$\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \doxylink{classClient}{Client} object. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2client_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{Client_2src_2client_8cpp_source}{client.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \_isUsed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (udpSocket\_.is\_open())}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ leaveGame(0);}
+\DoxyCodeLine{00014\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ destroyed"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classClient_ad3d27059aa8ff0eb9f79938704ac600e}\label{classClient_ad3d27059aa8ff0eb9f79938704ac600e}} 
+\index{Client@{Client}!listGames@{listGames}}
+\index{listGames@{listGames}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{listGames()}{listGames()}}
+{\footnotesize\ttfamily std\+::string Client\+::list\+Games (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2client_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{Client_2src_2client_8cpp_source}{client.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}list\ games\(\backslash\)n"{};}}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classClient_af8e601dd957b47139ad921a509c842fd}{Write}}(\textcolor{stringliteral}{"{}list"{}});}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classClient_afb1e52684f9e8e052f66353156a982b8}{Read}}().substr(5);}
+\DoxyCodeLine{00064\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classClient_afb1e52684f9e8e052f66353156a982b8}\label{classClient_afb1e52684f9e8e052f66353156a982b8}} 
+\index{Client@{Client}!Read@{Read}}
+\index{Read@{Read}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily string Client\+::\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read data from server. 
+
+Function to read the message from the server.
+
+\begin{DoxyReturn}{Returns}
+std\+::string
+\end{DoxyReturn}
+
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2client_8cpp_source_l00151}{151}} of file \mbox{\hyperlink{Client_2src_2client_8cpp_source}{client.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{char}\ buffer[4096];}
+\DoxyCodeLine{00153\ \ \ \ \ asio::error\_code\ ec;}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ bytes\_transferred\ =\ tcpSocket\_.read\_some(asio::buffer(buffer),\ ec);}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{return}\ string(buffer,\ bytes\_transferred);}
+\DoxyCodeLine{00156\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classClient_a1581afc29d591cae99fba7fb87bf325f}\label{classClient_a1581afc29d591cae99fba7fb87bf325f}} 
+\index{Client@{Client}!startGame@{startGame}}
+\index{startGame@{startGame}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{startGame()}{startGame()}}
+{\footnotesize\ttfamily void Client\+::start\+Game (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2client_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{Client_2src_2client_8cpp_source}{client.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}start\ game\(\backslash\)n"{}};}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}{UDPSend}}(\textcolor{stringliteral}{"{}Start\(\backslash\)n"{}});}
+\DoxyCodeLine{00096\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classClient_a8e589ccd12c8562d6aaef372d0b99781}\label{classClient_a8e589ccd12c8562d6aaef372d0b99781}} 
+\index{Client@{Client}!UDPReceive@{UDPReceive}}
+\index{UDPReceive@{UDPReceive}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{UDPReceive()}{UDPReceive()}}
+{\footnotesize\ttfamily void Client\+::\+UDPReceive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Receive data from server via UDP. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2client_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{Client_2src_2client_8cpp_source}{client.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ udpSocket\_.async\_receive\_from(asio::buffer(\_recvBuffer),\ \_endpoint,\ [\textcolor{keyword}{this}](std::error\_code\ ec,\ std::size\_t\ bytes)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ std::regex\ regex(R\textcolor{stringliteral}{"{}(\string^(\(\backslash\)w+)\(\backslash\)s+(.*))"{});}}
+\DoxyCodeLine{00020\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ std::smatch\ match;}}
+\DoxyCodeLine{00021\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00022\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ }\textcolor{keywordflow}{if}\ (!ec)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Received:\ "{}}\ <<\ \_recvBuffer.data()\ <<\ \textcolor{stringliteral}{"{}|"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::string(\_recvBuffer.data()).find(\textcolor{stringliteral}{"{}VU"{}})\ ==\ std::string::npos\ \&\&\ std::string(\_recvBuffer.data()).find(\textcolor{stringliteral}{"{}START"{}})\ ==\ std::string::npos)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_serverData.push\_back(\_recvBuffer.data());}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::string(\_recvBuffer.data()).find(\textcolor{stringliteral}{"{}START"{}})\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}{UDPSend}}(\textcolor{stringliteral}{"{}STARTED\(\backslash\)n"{}});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Game\ started"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isStarted\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bytes\ >0)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ received\_data(\_recvBuffer.data(),\ bytes);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \_recvBuffer\ =\ \{\};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classClient_a8e589ccd12c8562d6aaef372d0b99781}{UDPReceive}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \});}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}\label{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}} 
+\index{Client@{Client}!UDPSend@{UDPSend}}
+\index{UDPSend@{UDPSend}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{UDPSend()}{UDPSend()}}
+{\footnotesize\ttfamily void Client\+::\+UDPSend (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+Send data to server via UDP. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2client_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{Client_2src_2client_8cpp_source}{client.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Send:\ "{}\ <<\ message\ <<\ "{}\ to\ "{}\ <<\ \_endpoint.address().to\_string()\ <<\ "{}:"{}\ <<\ \_endpoint.port()\ <<\ std::endl;}}
+\DoxyCodeLine{00007\ \ \ \ \ udpSocket\_.send\_to(asio::buffer(message),\ \_endpoint);}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classClient_af8e601dd957b47139ad921a509c842fd}\label{classClient_af8e601dd957b47139ad921a509c842fd}} 
+\index{Client@{Client}!Write@{Write}}
+\index{Write@{Write}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily void Client\+::\+Write (\begin{DoxyParamCaption}\item[{const string \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Write data to server. 
+
+Destroy the \doxylink{classClient}{Client}\+:\+: \doxylink{classClient}{Client} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2src_2client_8cpp_source_l00134}{134}} of file \mbox{\hyperlink{Client_2src_2client_8cpp_source}{client.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ asio::async\_write(tcpSocket\_,\ asio::buffer(message),}
+\DoxyCodeLine{00136\ \ \ \ \ [\textcolor{keyword}{this}](std::error\_code\ ec,\ std::size\_t\ bytes\_transferred)\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ec)\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ while\ sending\ data\ to\ server:\ "{}}\ <<\ ec.message()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \});}
+\DoxyCodeLine{00142\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classClient_a78f61723facd97ed0ccf0f183f771131}\label{classClient_a78f61723facd97ed0ccf0f183f771131}} 
+\index{Client@{Client}!\_serverData@{\_serverData}}
+\index{\_serverData@{\_serverData}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{\_serverData}{\_serverData}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Client\+::\+\_\+server\+Data}
+
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2client_8hpp_source_l00080}{80}} of file \mbox{\hyperlink{Client_2include_2client_8hpp_source}{client.\+hpp}}.
+
+\mbox{\Hypertarget{classClient_a13602e2630519601331dc07e18d1891e}\label{classClient_a13602e2630519601331dc07e18d1891e}} 
+\index{Client@{Client}!command\_@{command\_}}
+\index{command\_@{command\_}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{command\_}{command\_}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, void (Client\+::$\ast$)(int)$>$ Client\+::command\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2client_8hpp_source_l00079}{79}} of file \mbox{\hyperlink{Client_2include_2client_8hpp_source}{client.\+hpp}}.
+
+\mbox{\Hypertarget{classClient_a1534f6804da1722894148419995d25b4}\label{classClient_a1534f6804da1722894148419995d25b4}} 
+\index{Client@{Client}!isStarted@{isStarted}}
+\index{isStarted@{isStarted}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{isStarted}{isStarted}}
+{\footnotesize\ttfamily bool Client\+::is\+Started = false}
+
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2client_8hpp_source_l00084}{84}} of file \mbox{\hyperlink{Client_2include_2client_8hpp_source}{client.\+hpp}}.
+
+\mbox{\Hypertarget{classClient_a0782341087e1e861cd87f83fdd3104aa}\label{classClient_a0782341087e1e861cd87f83fdd3104aa}} 
+\index{Client@{Client}!playerID@{playerID}}
+\index{playerID@{playerID}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{playerID}{playerID}}
+{\footnotesize\ttfamily int Client\+::player\+ID}
+
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2client_8hpp_source_l00083}{83}} of file \mbox{\hyperlink{Client_2include_2client_8hpp_source}{client.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/client.\+hpp\item 
+POC/include/client.\+hpp\item 
+Client/src/client.\+cpp\item 
+POC/src/client.\+cpp\end{DoxyCompactItemize}

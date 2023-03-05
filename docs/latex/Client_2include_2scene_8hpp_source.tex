@@ -1,0 +1,54 @@
+\hypertarget{Client_2include_2scene_8hpp_source}{}\doxysection{scene.\+hpp}
+\label{Client_2include_2scene_8hpp_source}\index{Client/include/scene.hpp@{Client/include/scene.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00005}00005\ \textcolor{comment}{**\ scene}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ SCENE\_HPP}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#define\ SCENE\_HPP}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}client.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}userInterface.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}game.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}draw.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}audio.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}background.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}window.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}SpriteManager.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00024}00024\ \textcolor{keyword}{enum}\ states\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00025}00025\ \ \ OK,}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00026}00026\ \ \ MENU,}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00027}00027\ \ \ LOBBY,}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00028}00028\ \ \ JOIN,}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00029}00029\ \ \ CREATE,}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00030}00030\ \ \ SINGLE,}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00031}00031\ \ \ MULTIPLAYER,}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00032}00032\ \ \ SETTINGS,}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00033}00033\ \ \ QUIT,}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00034}00034\ \ \ BACK,}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00035}00035\ \ \ TYPE1,}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00036}00036\ \ \ TYPE2,}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00037}00037\ \};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00043}\mbox{\hyperlink{classScene}{00043}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classScene}{Scene}}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00044}00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00050}\mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{00050}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{load}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00057}\mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{00057}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{unload}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00064}\mbox{\hyperlink{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}{00064}}\ \ \ \ \ \textcolor{keyword}{virtual}\ states\ \mbox{\hyperlink{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}{handleEvent}}(sf::Event\ event,\ \mbox{\hyperlink{classWindow}{Window}}\ \&window)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00071}\mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{00071}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{update}}(\mbox{\hyperlink{classClock}{Clock}}\ \&clock)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00079}\mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{00079}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{draw}}(\mbox{\hyperlink{classWindow}{Window}}\ \&window,\ \mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00080}00080\ \};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2scene_8hpp_source_l00082}00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !SCENE\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

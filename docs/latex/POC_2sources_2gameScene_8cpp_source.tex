@@ -1,0 +1,78 @@
+\hypertarget{POC_2sources_2gameScene_8cpp_source}{}\doxysection{game\+Scene.\+cpp}
+\label{POC_2sources_2gameScene_8cpp_source}\index{POC/sources/gameScene.cpp@{POC/sources/gameScene.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00005}00005\ \textcolor{comment}{**\ gameScene}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}gameScene.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00010}00010\ \mbox{\hyperlink{classGameScene_a653642e5f038df97bdc4f6ff2cef138e}{GameScene::GameScene}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&screenWidth,\ \textcolor{keyword}{const}\ std::string\ \&music)\ :\ \_background(screenWidth),\ \_music(findFile(music))}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00014}00014\ \mbox{\hyperlink{classGameScene_add5bc48c372aaa7f526c02558a8adf00}{GameScene::\string~GameScene}}()}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00016}00016\ \}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00018}00018\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_ac15838bd307cdabe041b2795028d0f44}{GameScene::load}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00020}00020\ \ \ EntityID\ Player\ =\ ecs.\mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{createEntity}}();}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00021}00021\ \ \ EntityID\ Enemy\ =\ ecs.\mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{createEntity}}();}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00022}00022\ \ \ \_entity.push\_back(Player);}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00023}00023\ \ \ \_entity.push\_back(Enemy);}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00024}00024\ \ \ ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(Player,\ \mbox{\hyperlink{structTransform}{Transform}}\{100.0f,\ 100.0f,\ 0.0f\});}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00025}00025\ \ \ ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(Player,\ \mbox{\hyperlink{structPhysics}{Physics}}\{1.0f\});}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00026}00026\ \ \ ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(Player,\ \mbox{\hyperlink{structRender}{Render}}\{\textcolor{stringliteral}{"{}player.png"{}},\ 3\});}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00027}00027\ \ \ ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(Player,\ \mbox{\hyperlink{structCollider}{Collider}}\{10.0f,\ 10.0f\});}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00028}00028\ \ \ ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(Enemy,\ \mbox{\hyperlink{structTransform}{Transform}}\{0.0f,\ 0.0f,\ 0.0f\});}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00029}00029\ \ \ ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(Enemy,\ \mbox{\hyperlink{structPhysics}{Physics}}\{1.0f\});}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00030}00030\ \ \ ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(Enemy,\ \mbox{\hyperlink{structRender}{Render}}\{\textcolor{stringliteral}{"{}enemy.png"{}},\ 5\});}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00031}00031\ \ \ ecs.\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(Enemy,\ \mbox{\hyperlink{structCollider}{Collider}}\{10.0f,\ 10.0f\});}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00032}00032\ \ \ \_draw\ =\ \{\{ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structRender}{Render}}>(Enemy).assetPath,\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structRender}{Render}}>(Enemy).frame\},}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structRender}{Render}}>(Player).assetPath,\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structRender}{Render}}>(Player).frame\},}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}shoot.png"{}},\ 2\}\};}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00035}00035\ \ \ \_draw.\mbox{\hyperlink{classDraw_a3cf6b1b48a559e6cd5bc075da3dd10eb}{setTexture}}(ecs);}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00036}00036\ \ \ \_music.\mbox{\hyperlink{classMusic_a54b941f6f7634d7f99b473c78fe6e4da}{play}}();}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00039}00039\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a3d995b01062050275ef5351ab53507cf}{GameScene::unload}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00041}00041\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&ent\ :\ \_entity)\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00042}00042\ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}{removeComponent}}<\mbox{\hyperlink{structTransform}{Transform}}>(ent);}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00043}00043\ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}{removeComponent}}<\mbox{\hyperlink{structPhysics}{Physics}}>(ent);}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00044}00044\ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}{removeComponent}}<\mbox{\hyperlink{structRender}{Render}}>(ent);}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00045}00045\ \ \ \ \ ecs.\mbox{\hyperlink{classECS_a5356e5961622948df5ea3bbb9e6ffc2b}{removeComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(ent);}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00046}00046\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00049}00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_ac043981068ab91b57eef466ca0501883}{GameScene::handleEvent}}(sf::Event\ event)}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00050}00050\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00054}00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a4b467f352aa0743726d33e77afdee2e0}{GameScene::update}}(\mbox{\hyperlink{classClock}{Clock}}\ \&clock)}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00055}00055\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (clock.\mbox{\hyperlink{classClock_a2f4de873dbe9b83b448e638372edb80e}{getBackgroundClock}}()\ >\ 1)}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00057}00057\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \_background.\mbox{\hyperlink{classBackground_a78cb966afe30df3531dd4a731e6fe432}{setBackgroundPos}}();}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ clock.\mbox{\hyperlink{classClock_a9df36859a10b8aea20336f21261eeb41}{resetBackgroundClock}}();}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (clock.\mbox{\hyperlink{classClock_a48b1dc793e34188913e3778368a9e808}{getAnimationClock}}()\ >\ 250)}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00062}00062\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \_draw.\mbox{\hyperlink{classDraw_ad3da04d63bbf3ad7ba124113e844401d}{animateEntities}}();}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ clock.\mbox{\hyperlink{classClock_a6a187abd815ce215d8c9b0c0b3275a49}{resetAnimationClock}}();}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00068}00068\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a5df345ca968bbf3cff1ede138f71948f}{GameScene::draw}}(\mbox{\hyperlink{classWindow}{Window}}\ \&window,\ \mbox{\hyperlink{classECS}{ECS}}\ \&ecs)}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00069}00069\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00070}00070\ \ \ \ \ \_background.\mbox{\hyperlink{classBackground_aee666bf38da5bcfddbf582818a15e116}{drawBackground}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00071}00071\ \ \ \ \ \_draw.\mbox{\hyperlink{classDraw_aec1cef5bd67213c10ef17657fa172648}{displayEntities}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ ecs);}
+\DoxyCodeLine{\Hypertarget{POC_2sources_2gameScene_8cpp_source_l00072}00072\ \}}
+
+\end{DoxyCode}

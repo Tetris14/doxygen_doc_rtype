@@ -1,0 +1,56 @@
+\hypertarget{Client_2include_2menuScene_8hpp_source}{}\doxysection{menu\+Scene.\+hpp}
+\label{Client_2include_2menuScene_8hpp_source}\index{Client/include/menuScene.hpp@{Client/include/menuScene.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00005}00005\ \textcolor{comment}{**\ menuScene}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ MENUSCENE\_HPP}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#define\ MENUSCENE\_HPP}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}scene.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}input.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00018}\mbox{\hyperlink{classMenuScene}{00018}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMenuScene}{MenuScene}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classScene}{Scene}}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00020}00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{classDraw}{Draw}}\ \_draw;\ \textcolor{comment}{//\ draw}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{classMusic}{Music}}\ \_music;\ \textcolor{comment}{//\ music}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{classSpriteManager}{SpriteManager}}\ \_spriteManager;\ \textcolor{comment}{//\ sprite\ manager}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{classInput}{Input}}\ \_input;\ \textcolor{comment}{//\ input}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_showConsole\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ show\ console}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//\ buttons}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{classButton}{Button}}\ \_singleButton;\ \textcolor{comment}{//\ single\ button}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{classButton}{Button}}\ \_multiButton;\ \textcolor{comment}{//\ multi\ button}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{classButton}{Button}}\ \_settingsButton;\ \textcolor{comment}{//\ settings\ button}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{classButton}{Button}}\ \_quitButton;\ \textcolor{comment}{//\ quit\ button}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{classButton}{Button}}\ \_joinButton;\ \textcolor{comment}{//\ join\ button}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00032}00032\ \ \ \ \ std::string\ \_text\ =\ std::string(128,\ \textcolor{charliteral}{'\(\backslash\)0'});\ \textcolor{comment}{//\ text}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{classConsole}{Console}}\ \_Console\{\textcolor{stringliteral}{"{}Console"{}},\ \_text\};\ \textcolor{comment}{//\ console}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{classRectangle}{Rectangle}}\ \_backgoundMenu;\ \textcolor{comment}{//\ background\ menu}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ dimensions\ }}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00037}00037\ \ \ \ \ std::pair<float,\ float>\ \_dimensions;\ \textcolor{comment}{//\ dimensions}}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00038}00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{classMenuScene}{MenuScene}}(\textcolor{keyword}{const}\ std::pair<float,\ float>\ \&dimensions,\ \textcolor{keyword}{const}\ std::string\ \&music,\ sf::RenderWindow\ \&window);}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{classMenuScene_a9b8d7fd2c641191231e9d352932be80d}{\string~MenuScene}}();}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenuScene_a2bd97ff77fcb7bf11af7cf2aef82eed6}{load}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenuScene_a3a218e9482bee0d11254ca9f3d20d1d5}{unload}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00069}00069\ \ \ \ \ states\ \mbox{\hyperlink{classMenuScene_aa621ddd7862a779962e7805c92a6da14}{handleEvent}}(sf::Event\ event,\ \mbox{\hyperlink{classWindow}{Window}}\ \&window)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenuScene_adb1f8ad1eabcd12c23927517f4574022}{update}}(\mbox{\hyperlink{classClock}{Clock}}\ \&clock)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenuScene_a6448f4df0e4c11a43e8cc87b9ac909a4}{draw}}(\mbox{\hyperlink{classWindow}{Window}}\ \&window,\ \mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00085}00085\ \};}
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{Client_2include_2menuScene_8hpp_source_l00087}00087\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !MENUSCENE\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

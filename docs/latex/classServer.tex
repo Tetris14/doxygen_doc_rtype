@@ -1,0 +1,111 @@
+\hypertarget{classServer}{}\doxysection{Server Class Reference}
+\label{classServer}\index{Server@{Server}}
+
+
+\doxylink{classServer}{Server} class.  
+
+
+
+
+{\ttfamily \#include $<$server.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServer_a902d0ee64507505581202765df2aa8d1}{Server}} (asio\+::io\+\_\+context \&ioc, unsigned short port)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classServer}{Server} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}{$\sim$\+Server}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classServer}{Server} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classServer}{Server} class. 
+
+
+
+Definition at line \mbox{\hyperlink{server_8hpp_source_l00134}{134}} of file \mbox{\hyperlink{server_8hpp_source}{server.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServer_a902d0ee64507505581202765df2aa8d1}\label{classServer_a902d0ee64507505581202765df2aa8d1}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}\item[{asio\+::io\+\_\+context \&}]{ioc,  }\item[{unsigned short}]{port }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{classServer}{Server} object. 
+
+Construct a new \doxylink{classServer}{Server}\+:\+: \doxylink{classServer}{Server} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ioc} & \\
+\hline
+{\em port} & \\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em ioc} & \\
+\hline
+{\em port} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{server_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{server_8cpp_source}{server.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \ \ \ \ :\ acceptor\_(ioc,\ tcp::endpoint(tcp::v4(),\ port))\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Created\ tcp\ server\ on\ port\ "{}}\ <<\ port\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00068\ \ \ \ \ std::ifstream\ file(\textcolor{stringliteral}{"{}./config/login"{}});}
+\DoxyCodeLine{00069\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00070\ \ \ \ \ std::string\ login;}
+\DoxyCodeLine{00071\ \ \ \ \ std::string\ password;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ login\ =\ line.substr(0,\ line.find(\textcolor{stringliteral}{"{}:"{}}));}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ password\ =\ line.substr(line.find(\textcolor{stringliteral}{"{}:"{}})\ +\ 1);}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \_logins[login]\ =\ password;}
+\DoxyCodeLine{00077\ \ \ \ \ DoAccept();}
+\DoxyCodeLine{00078\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}\label{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}} 
+\index{Server@{Server}!````~Server@{$\sim$Server}}
+\index{````~Server@{$\sim$Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{$\sim$Server()}{~Server()}}
+{\footnotesize\ttfamily Server\+::$\sim$\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \doxylink{classServer}{Server} object. 
+
+
+
+Definition at line \mbox{\hyperlink{server_8cpp_source_l00306}{306}} of file \mbox{\hyperlink{server_8cpp_source}{server.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00307\ \ \ \ \ std::ofstream\ file;}
+\DoxyCodeLine{00308\ \ \ \ \ file.open(\textcolor{stringliteral}{"{}./config/login"{}},\ std::ios::out\ |\ std::ios::trunc);}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&login\ :\ \_logins)\ \{}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ file\ <<\ login.first\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ login.second\ <<\ std::endl;}
+\DoxyCodeLine{00311\ \ \ \ \ \}}
+\DoxyCodeLine{00312\ \ \ \ \ file.close();}
+\DoxyCodeLine{00313\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server/includes/server.\+hpp\item 
+Server/sources/server.\+cpp\end{DoxyCompactItemize}

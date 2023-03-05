@@ -1,0 +1,77 @@
+\label{index_md_Readme}%
+\Hypertarget{index_md_Readme}%
+ The purpose of the project is to recreate the video game called R-\/\+Type \href{https://en.wikipedia.org/wiki/R-Type}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+R-\/\+Type}} (a famous Shoot \textquotesingle{}em game in the 90\textquotesingle{}s) but with a additional multiplayer mode.\hypertarget{index_autotoc_md1}{}\doxysection{Requirements}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Linux or Windows
+\item CMake
+\item Compiler C++
+\item Asio
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{How to use}\label{index_autotoc_md2}
+Git clone the project 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ git@github.com:EpitechPromo2025/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory.git}
+
+\end{DoxyCode}
+
+
+Create build folder and use cmake For mac users \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ build\ \&\&\ cd\ build}
+\DoxyCodeLine{conan\ remote\ add\ bincrafters\ https://bincrafters.jfrog.io/artifactory/api/conan/conan}
+\DoxyCodeLine{conan\ install\ ..\ -\/-\/build=missing\ -\/s\ build\_type=Release\ -\/s\ compiler.libcxx=libc++}
+\DoxyCodeLine{cd\ ..}
+\DoxyCodeLine{cmake\ -\/B\ build\ -\/S\ .}
+\DoxyCodeLine{cmake\ -\/-\/build\ build}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ build\ \&\&\ cd\ build}
+\DoxyCodeLine{conan\ remote\ add\ bincrafters\ https://bincrafters.jfrog.io/artifactory/api/conan/conan}
+\DoxyCodeLine{conan\ install\ ..\ -\/-\/build=missing\ -\/s\ build\_type=Release\ -\/s\ compiler.libcxx=libstdc++11}
+\DoxyCodeLine{cd\ ..}
+\DoxyCodeLine{cmake\ -\/B\ build\ -\/S\ .}
+\DoxyCodeLine{cmake\ -\/-\/build\ build}
+
+\end{DoxyCode}
+ Binary/\+Executable are in build/bin 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mv\ ./build/bin/r-\/type-\/server\ ./Server/r-\/type-\/server}
+\DoxyCodeLine{mv\ ./build/bin/r-\/type-\/client\ ./Client/r-\/type-\/client}
+
+\end{DoxyCode}
+
+
+On Windows, don\textquotesingle{}t forget to move all .dll with executable for client 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mv\ bin/*.dll\ ../Client/r-\/type-\/client}
+
+\end{DoxyCode}
+
+
+Use the executables which has been created by make
+
+For the server 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./r-\/type\_server}
+
+\end{DoxyCode}
+
+
+For the clients 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./r-\/type\_client}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md3}{}\doxysection{Authors}\label{index_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\bfseries{Tristan Gory}} \href{https://github.com/Tetris14}{\texttt{ @\+Tetris14}}
+\item {\bfseries{Mateo Abribat}} \href{https://github.com/Mateo-Abribat}{\texttt{ @\+Mateo-\/Abribat}}
+\item {\bfseries{Robin Auxietre}} \href{https://github.com/roxietre}{\texttt{ @roxietre}}
+\item {\bfseries{Jeremie Joannard}} \href{https://github.com/Samael2769}{\texttt{ @\+Samael12769}}
+\item {\bfseries{Paul Atzenhoffer}} \href{https://github.com/Studki}{\texttt{ @\+Studki}}
+\end{DoxyItemize}
+
+Setup.md 

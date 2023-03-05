@@ -1,0 +1,195 @@
+\hypertarget{singlePlayerScene_8hpp_source}{}\doxysection{single\+Player\+Scene.\+hpp}
+\label{singlePlayerScene_8hpp_source}\index{Client/include/singlePlayerScene.hpp@{Client/include/singlePlayerScene.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00005}00005\ \textcolor{comment}{**\ SinglePlayerScene}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ SINGlEPLAYERSCENE\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#define\ SINGlEPLAYERSCENE\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}scene.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}input.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}life.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}hitbox.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00022}00022\ \textcolor{keyword}{enum}\ EType\ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00023}00023\ \ \ \ \ Basic,}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00024}00024\ \ \ \ \ Fast,}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00025}00025\ \ \ \ \ Boss}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00026}00026\ \};}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00032}\mbox{\hyperlink{classWave}{00032}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWave}{Wave}}\ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00033}00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00034}00034\ \ \ \ \ EType\ enemyType;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{int}\ enemyCount;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{float}\ spawnRate;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00037}00037\ \};}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00043}00043\ std::vector<Wave>\ waves\ =\ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00044}00044\ \ \ \ \ \{\ EType::Basic,\ 10,\ 1.0f\ \},}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00045}00045\ \ \ \ \ \{\ EType::Fast,\ 15,\ 0.5f\ \},}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00046}00046\ \ \ \ \ \{\ EType::Boss,\ 1,\ 0.0f\ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00047}00047\ \};}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00053}\mbox{\hyperlink{classSinglePlayerScene}{00053}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSinglePlayerScene}{SinglePlayerScene}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classScene}{Scene}}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00054}00054\ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00055}00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{classLife}{Life}}\ \_life;\ \textcolor{comment}{//\ life}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{classHitbox}{Hitbox}}\ \_hitbox;\ \textcolor{comment}{//\ hitbox}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{classDraw}{Draw}}\ \_draw;\ \textcolor{comment}{//\ draw}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{classMusic}{Music}}\ \_music;\ \textcolor{comment}{//\ music}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{classBackground}{Background}}\ \_background;\ \textcolor{comment}{//\ background}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00061}00061\ \ \ \ \ std::vector<EntityID>\ \_entity;\ \textcolor{comment}{//\ entities\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_showConsole\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{classInput}{Input}}\ \_input;\ \textcolor{comment}{//\ input}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{classECS}{ECS}}\ *ecs;\ \textcolor{comment}{//\ ecs}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00065}00065\ \ \ \ \ std::string\ \_text\ =\ std::string(128,\ \textcolor{charliteral}{'\(\backslash\)0'});\ \textcolor{comment}{//\ text}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{classConsole}{Console}}\ \_Console\{\textcolor{stringliteral}{"{}Console"{}},\ \_text\};\ \textcolor{comment}{//\ console}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00067}00067\ \ \ \ \ std::pair<float,\ float>\ \_dimensions;\ \textcolor{comment}{//\ dimensions}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{int}\ level\ =\ 0;\ \textcolor{comment}{//\ level}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{int}\ wave\ =\ 0;\ \textcolor{comment}{//\ wave}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_showHitbox\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ show\ hitbox}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{int}\ enemiesSpawned\ =\ 0;\ \textcolor{comment}{//\ enemies\ spawned}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00073}00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00080}\mbox{\hyperlink{classSinglePlayerScene_a288b1de38376f551b1e6dc1d75ed43d4}{00080}}\ \ \ \ \ \mbox{\hyperlink{classSinglePlayerScene_a288b1de38376f551b1e6dc1d75ed43d4}{SinglePlayerScene}}(\textcolor{keyword}{const}\ std::pair<float,\ float>\ \&dimensions,\ \textcolor{keyword}{const}\ std::string\ \&music)\ :\ \_background(dimensions.first),\ \_music(findFile(music)),\ \_life(dimensions,\ 50)}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00081}00081\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \_dimensions\ =\ dimensions;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00089}\mbox{\hyperlink{classSinglePlayerScene_a39830a1e4fa08541e77696c76aad6c09}{00089}}\ \ \ \ \ \mbox{\hyperlink{classSinglePlayerScene_a39830a1e4fa08541e77696c76aad6c09}{\string~SinglePlayerScene}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00096}\mbox{\hyperlink{classSinglePlayerScene_a03c30329a48033dcedb6107d169c34d2}{00096}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSinglePlayerScene_a03c30329a48033dcedb6107d169c34d2}{load}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00097}00097\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ this-\/>ecs\ =\ \&ecs;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \_draw\ =\ \{\{\textcolor{stringliteral}{"{}player.png"{}},\ 3\},\ \{\textcolor{stringliteral}{"{}shoot.png"{}},\ 2\},\ \{\textcolor{stringliteral}{"{}enemy.png"{}},\ 5\},\ \{\textcolor{stringliteral}{"{}shoot2.png"{}},\ 2\},\ \{\textcolor{stringliteral}{"{}theboss.png"{}},\ 1\}\};}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \_draw.\mbox{\hyperlink{classDraw_a3cf6b1b48a559e6cd5bc075da3dd10eb}{setTexture}}(ecs);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \_music.\mbox{\hyperlink{classMusic_a54b941f6f7634d7f99b473c78fe6e4da}{play}}();}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00109}\mbox{\hyperlink{classSinglePlayerScene_a9fd2ef37db58b1750f87a7d4b7fcde5d}{00109}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSinglePlayerScene_a9fd2ef37db58b1750f87a7d4b7fcde5d}{unload}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00110}00110\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ (auto\ \&ent\ :\ \_entity)\ \{}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ ecs.removeComponent<Transform>(ent);}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ ecs.removeComponent<Physics>(ent);}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ ecs.removeComponent<Render>(ent);}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ ecs.removeComponent<Collider>(ent);}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00124}\mbox{\hyperlink{classSinglePlayerScene_afec0b6d9f3b5a8ecc110e0b4cc39cdb8}{00124}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSinglePlayerScene_afec0b6d9f3b5a8ecc110e0b4cc39cdb8}{update}}(\mbox{\hyperlink{classClock}{Clock}}\ \&clock)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00125}00125\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSystem}{System}}\ system(*ecs);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clock.\mbox{\hyperlink{classClock_a2f4de873dbe9b83b448e638372edb80e}{getBackgroundClock}}()\ >\ 1)}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \_background.\mbox{\hyperlink{classBackground_a78cb966afe30df3531dd4a731e6fe432}{setBackgroundPos}}();}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ clock.\mbox{\hyperlink{classClock_a9df36859a10b8aea20336f21261eeb41}{resetBackgroundClock}}();}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clock.\mbox{\hyperlink{classClock_a48b1dc793e34188913e3778368a9e808}{getAnimationClock}}()\ >\ 50)}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \_draw.\mbox{\hyperlink{classDraw_ad3da04d63bbf3ad7ba124113e844401d}{animateEntities}}();}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ clock.\mbox{\hyperlink{classClock_a6a187abd815ce215d8c9b0c0b3275a49}{resetAnimationClock}}();}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (enemiesSpawned\ <\ waves[wave].enemyCount\ \&\&\ clock.\mbox{\hyperlink{classClock_afad4629968120895853b5f213798da71}{getWaveClock}}()\ >\ waves[wave].spawnRate)}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSinglePlayerScene_a2db65a03f31dcd580fcf2bb7d6bee35f}{spawnEnemy}}(waves[wave].enemyType);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ enemiesSpawned++;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ clock.\mbox{\hyperlink{classClock_aa9236ffef2ebd25b09461bacf9395737}{resetWaveClock}}();}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (enemiesSpawned\ ==\ waves[wave].enemyCount\ \&\&\ wave\ <=\ 3)\ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ wave++;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ enemiesSpawned\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00147}00147\ \ \ \ \ \ \ \ \ system.\mbox{\hyperlink{classSystem_a9cec4911485efab0fa7ffa77424fc331}{handleCollision}}(1920);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00148}00148\ \ \ \ \ \ \ \ \ system.\mbox{\hyperlink{classSystem_a314d8471cc27c08e46f6888c4d46fdeb}{handleMovement}}();}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00149}00149\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00158}\mbox{\hyperlink{classSinglePlayerScene_a51918c21b75a6ef31ee3d6c53f4e07c2}{00158}}\ \ \ \ \ states\ \mbox{\hyperlink{classSinglePlayerScene_a51918c21b75a6ef31ee3d6c53f4e07c2}{handleEvent}}(sf::Event\ event,\ \mbox{\hyperlink{classWindow}{Window}}\ \&window)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00159}00159\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_input.\mbox{\hyperlink{classInput_aa430e51ec53ef420fbee13493d950bf4}{isKeyPressed}}(C))\ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \_showConsole\ =\ !\_showConsole;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_input.\mbox{\hyperlink{classInput_aa430e51ec53ef420fbee13493d950bf4}{isKeyPressed}}(HITBOX))\ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \_showHitbox\ =\ !\_showHitbox;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SINGLE;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00175}\mbox{\hyperlink{classSinglePlayerScene_a9bc8e08313bf1b72bc4d9730c3d93cf5}{00175}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSinglePlayerScene_a9bc8e08313bf1b72bc4d9730c3d93cf5}{draw}}(\mbox{\hyperlink{classWindow}{Window}}\ \&window,\ \mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00176}00176\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_showConsole)}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \_Console.\mbox{\hyperlink{classConsole_a3e89d786bdcadabf0344576a51ed8023}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ ecs);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \_background.\mbox{\hyperlink{classBackground_aee666bf38da5bcfddbf582818a15e116}{drawBackground}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \_draw.\mbox{\hyperlink{classDraw_aec1cef5bd67213c10ef17657fa172648}{displayEntities}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ ecs);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \_life.\mbox{\hyperlink{classLife_af77c1f8988faa006d7a062223424c9a9}{drawLife}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_showHitbox)\ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \_hitbox.\mbox{\hyperlink{classHitbox_ad57a14a4b268414b5b7e16f684251065}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00185}00185\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00192}\mbox{\hyperlink{classSinglePlayerScene_a8c37fe9fbbd79b93ba3b426612303783}{00192}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classSinglePlayerScene_a8c37fe9fbbd79b93ba3b426612303783}{generateRandomFloat}}()\ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ seeded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!seeded)\ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ srand(time(\textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ seeded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ max\_value\ =\ 1080.0f;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ scale\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(RAND\_MAX)\ +\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ random\_float\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(rand())\ /\ scale\ *\ max\_value;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ random\_float;}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00204}00204\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00211}\mbox{\hyperlink{classSinglePlayerScene_a2db65a03f31dcd580fcf2bb7d6bee35f}{00211}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSinglePlayerScene_a2db65a03f31dcd580fcf2bb7d6bee35f}{spawnEnemy}}(EType\ enemyType)}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00212}00212\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (enemyType\ ==\ EType::Boss)\ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ EntityID\ entity\ =\ ecs-\/>\mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{createEntity}}();}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \_entity.push\_back(entity);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>enemyEntities.push\_back(entity);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structTransform}{Transform}}\{1920.0f,\ 500.0f,\ 180.0f\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structCollider}{Collider}}\{50.0f,\ 50.0f,\ \textcolor{stringliteral}{"{}theboss"{}}\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structHealth}{Health}}\{500\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structPhysics}{Physics}}\{2.0f\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structDamage}{Damage}}\{30\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structRender}{Render}}\{\textcolor{stringliteral}{"{}theboss.png"{}},\ 1\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structFireRate}{FireRate}}\{0.25f\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \_draw.\mbox{\hyperlink{classDraw_a3cf6b1b48a559e6cd5bc075da3dd10eb}{setTexture}}(*ecs);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (enemyType\ ==\ EType::Basic)\ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ EntityID\ entity\ =\ ecs-\/>\mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{createEntity}}();}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \_entity.push\_back(entity);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>enemyEntities.push\_back(entity);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structTransform}{Transform}}\{1919.0f,\ \mbox{\hyperlink{classSinglePlayerScene_a8c37fe9fbbd79b93ba3b426612303783}{generateRandomFloat}}(),\ 180.0f\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structCollider}{Collider}}\{50.0f,\ 50.0f,\ \textcolor{stringliteral}{"{}enemy"{}}\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structHealth}{Health}}\{100\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structPhysics}{Physics}}\{10.0f\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structDamage}{Damage}}\{10\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structRender}{Render}}\{\textcolor{stringliteral}{"{}enemy.png"{}},\ 5\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structFireRate}{FireRate}}\{0.5f\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \_draw.\mbox{\hyperlink{classDraw_a3cf6b1b48a559e6cd5bc075da3dd10eb}{setTexture}}(*ecs);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (enemyType\ ==\ EType::Fast)\ \{}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ EntityID\ entity\ =\ ecs-\/>\mbox{\hyperlink{classECS_a2798b90c62dcabd4a97aa795d1c78ef8}{createEntity}}();}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \_entity.push\_back(entity);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>enemyEntities.push\_back(entity);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structTransform}{Transform}}\{1920.0f,\ \mbox{\hyperlink{classSinglePlayerScene_a8c37fe9fbbd79b93ba3b426612303783}{generateRandomFloat}}(),\ 180.0f\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structCollider}{Collider}}\{50.0f,\ 50.0f,\ \textcolor{stringliteral}{"{}enemy"{}}\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structHealth}{Health}}\{50\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structPhysics}{Physics}}\{15.0f\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structDamage}{Damage}}\{5\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structRender}{Render}}\{\textcolor{stringliteral}{"{}enemy.png"{}},\ 5\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ ecs-\/>\mbox{\hyperlink{classECS_ab911dacb3696da6596da2758e75f57b5}{addComponent}}(entity,\ \mbox{\hyperlink{structFireRate}{FireRate}}\{0.25f\});}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \_draw.\mbox{\hyperlink{classDraw_a3cf6b1b48a559e6cd5bc075da3dd10eb}{setTexture}}(*ecs);}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00250}00250\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00251}00251\ \};}
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{singlePlayerScene_8hpp_source_l00253}00253\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !SINGlEPLAYERSCENE\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

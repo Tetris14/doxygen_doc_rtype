@@ -1,0 +1,82 @@
+\hypertarget{classInput}{}\doxysection{Input Class Reference}
+\label{classInput}\index{Input@{Input}}
+
+
+Class that handle the input.  
+
+
+
+
+{\ttfamily \#include $<$input.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classInput_a212fe61f708c212e8dac91d145146050}\label{classInput_a212fe61f708c212e8dac91d145146050}} 
+{\bfseries Input} ()=default
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classInput}{Input} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInput_ade7428e932177ef33fa8195f073e5a41}\label{classInput_ade7428e932177ef33fa8195f073e5a41}} 
+{\bfseries $\sim$\+Input} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classInput}{Input} class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInput_aa430e51ec53ef420fbee13493d950bf4}{is\+Key\+Pressed}} (control key)
+\begin{DoxyCompactList}\small\item\em Check if a key is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that handle the input. 
+
+Definition at line \mbox{\hyperlink{input_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{input_8hpp_source}{input.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInput_aa430e51ec53ef420fbee13493d950bf4}\label{classInput_aa430e51ec53ef420fbee13493d950bf4}} 
+\index{Input@{Input}!isKeyPressed@{isKeyPressed}}
+\index{isKeyPressed@{isKeyPressed}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{isKeyPressed()}{isKeyPressed()}}
+{\footnotesize\ttfamily bool Input\+::is\+Key\+Pressed (\begin{DoxyParamCaption}\item[{control}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if a key is pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the key is pressed, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{input_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{input_8hpp_source}{input.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (key\ ==\ SHOOT)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::Space);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ ==\ FONE)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::Right);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ ==\ C)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::C);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ ==\ UP)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::Up);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ ==\ DOWN)}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::Down);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ ==\ LEFT)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::Left);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ ==\ RIGHT)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::Right);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ ==\ HITBOX)}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::P);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/input.\+hpp\end{DoxyCompactItemize}

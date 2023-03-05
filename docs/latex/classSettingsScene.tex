@@ -1,0 +1,293 @@
+\hypertarget{classSettingsScene}{}\doxysection{Settings\+Scene Class Reference}
+\label{classSettingsScene}\index{SettingsScene@{SettingsScene}}
+
+
+Settings scene.  
+
+
+
+
+{\ttfamily \#include $<$settings\+Scene.\+hpp$>$}
+
+Inheritance diagram for Settings\+Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSettingsScene}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSettingsScene_a423373b2fcbfc44f703e4a5758f23530}{Settings\+Scene}} (const std\+::pair$<$ float, float $>$ \&dimensions, const std\+::string \&music, sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Construct a new Settings \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSettingsScene_a73fb29c89277b49c282727cc91339e0b}{$\sim$\+Settings\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Settings \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSettingsScene_a37796870c783c35c69025aa4dfd76ba0}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em Load the Settings \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSettingsScene_a7e79ee8cbd29d6d75ccbb9dd63e5f45f}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em Unload the Settings \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSettingsScene_ad8aae77c197e4f75c71f2197bf4b9487}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock) override
+\begin{DoxyCompactList}\small\item\em Update the Settings \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+states \mbox{\hyperlink{classSettingsScene_acf857102a6cf3996f85b6b04dd3b4533}{handle\+Event}} (sf\+::\+Event event, \mbox{\hyperlink{classWindow}{Window}} \&window) override
+\begin{DoxyCompactList}\small\item\em Handle the event of the Settings \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSettingsScene_ab749e09b35df3fe59f66c8c7f6fc97c1}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs) override
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the Settings \doxylink{classScene}{Scene} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classScene}{Scene}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em loads a \doxylink{classScene}{Scene} \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em Unloads a \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+virtual states \mbox{\hyperlink{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}{handle\+Event}} (sf\+::\+Event event, \mbox{\hyperlink{classWindow}{Window}} \&window)=0
+\begin{DoxyCompactList}\small\item\em Handle events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock)=0
+\begin{DoxyCompactList}\small\item\em Update the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\item 
+\mbox{\Hypertarget{classScene_a6d44d0f4b3ceb248ed0b6d137e6bd37f}\label{classScene_a6d44d0f4b3ceb248ed0b6d137e6bd37f}} 
+virtual void {\bfseries handle\+Event} (sf\+::\+Event event)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Settings scene. 
+
+
+
+Definition at line \mbox{\hyperlink{settingsScene_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{settingsScene_8hpp_source}{settings\+Scene.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSettingsScene_a423373b2fcbfc44f703e4a5758f23530}\label{classSettingsScene_a423373b2fcbfc44f703e4a5758f23530}} 
+\index{SettingsScene@{SettingsScene}!SettingsScene@{SettingsScene}}
+\index{SettingsScene@{SettingsScene}!SettingsScene@{SettingsScene}}
+\doxysubsubsection{\texorpdfstring{SettingsScene()}{SettingsScene()}}
+{\footnotesize\ttfamily Settings\+Scene\+::\+Settings\+Scene (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ float, float $>$ \&}]{dimensions,  }\item[{const std\+::string \&}]{music,  }\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Settings \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dimensions} & \\
+\hline
+{\em music} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{settingsScene_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{settingsScene_8hpp_source}{settings\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \_dimensions(dimensions),\ \_music(findFile(music)),\ \_spriteManager(dimensions)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ae117be8da181d774ed3759a2abef646c}{addSprite}}(\textcolor{stringliteral}{"{}background.jpg"{}},\ 0.0f,\ 0.0f,\ 1.0f,\ 1.0f);}
+\DoxyCodeLine{00035\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ae117be8da181d774ed3759a2abef646c}{addSprite}}(\textcolor{stringliteral}{"{}R-\/Type\_logo.png"{}},\ 35.0f,\ 15.0f,\ 0.3f,\ 0.15f);}
+\DoxyCodeLine{00036\ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSettingsScene_a73fb29c89277b49c282727cc91339e0b}\label{classSettingsScene_a73fb29c89277b49c282727cc91339e0b}} 
+\index{SettingsScene@{SettingsScene}!````~SettingsScene@{$\sim$SettingsScene}}
+\index{````~SettingsScene@{$\sim$SettingsScene}!SettingsScene@{SettingsScene}}
+\doxysubsubsection{\texorpdfstring{$\sim$SettingsScene()}{~SettingsScene()}}
+{\footnotesize\ttfamily Settings\+Scene\+::$\sim$\+Settings\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the Settings \doxylink{classScene}{Scene} object. 
+
+
+
+Definition at line \mbox{\hyperlink{settingsScene_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{settingsScene_8hpp_source}{settings\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSettingsScene_ab749e09b35df3fe59f66c8c7f6fc97c1}\label{classSettingsScene_ab749e09b35df3fe59f66c8c7f6fc97c1}} 
+\index{SettingsScene@{SettingsScene}!draw@{draw}}
+\index{draw@{draw}!SettingsScene@{SettingsScene}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Settings\+Scene\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{classDraw}{Draw} the Settings \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{settingsScene_8hpp_source_l00095}{95}} of file \mbox{\hyperlink{settingsScene_8hpp_source}{settings\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096\ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \_back.\mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{setButton}}(findFile(\textcolor{stringliteral}{"{}backButton.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00098\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}{drawSprite}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ \textcolor{stringliteral}{"{}background.jpg"{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \_backgoundMenu.\mbox{\hyperlink{classRectangle_a985548fa4b2b54823af0c22e57936ef4}{setRectangle}}(findFile(\textcolor{stringliteral}{"{}menuRectangle.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{00100\ \ \ \ \ \_backgoundMenu.\mbox{\hyperlink{classRectangle_a17972bcdb06e6e103d1bb404e3d562c7}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00101\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}{drawSprite}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ \textcolor{stringliteral}{"{}R-\/Type\_logo.png"{}});}
+\DoxyCodeLine{00102\ \ \ \ \ \_back.\mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{isHover}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00103\ \ \ \ \ \_back.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{00104\ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSettingsScene_acf857102a6cf3996f85b6b04dd3b4533}\label{classSettingsScene_acf857102a6cf3996f85b6b04dd3b4533}} 
+\index{SettingsScene@{SettingsScene}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!SettingsScene@{SettingsScene}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}}
+{\footnotesize\ttfamily states Settings\+Scene\+::handle\+Event (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{event,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handle the event of the Settings \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+states 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{settingsScene_8hpp_source_l00082}{82}} of file \mbox{\hyperlink{settingsScene_8hpp_source}{settings\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_back.\mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{isClicked}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}()))}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BACK;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{return}\ OK;}
+\DoxyCodeLine{00087\ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSettingsScene_a37796870c783c35c69025aa4dfd76ba0}\label{classSettingsScene_a37796870c783c35c69025aa4dfd76ba0}} 
+\index{SettingsScene@{SettingsScene}!load@{load}}
+\index{load@{load}!SettingsScene@{SettingsScene}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Settings\+Scene\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Load the Settings \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{settingsScene_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{settingsScene_8hpp_source}{settings\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \_music.\mbox{\hyperlink{classMusic_a54b941f6f7634d7f99b473c78fe6e4da}{play}}();}
+\DoxyCodeLine{00054\ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSettingsScene_a7e79ee8cbd29d6d75ccbb9dd63e5f45f}\label{classSettingsScene_a7e79ee8cbd29d6d75ccbb9dd63e5f45f}} 
+\index{SettingsScene@{SettingsScene}!unload@{unload}}
+\index{unload@{unload}!SettingsScene@{SettingsScene}}
+\doxysubsubsection{\texorpdfstring{unload()}{unload()}}
+{\footnotesize\ttfamily void Settings\+Scene\+::unload (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Unload the Settings \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{settingsScene_8hpp_source_l00061}{61}} of file \mbox{\hyperlink{settingsScene_8hpp_source}{settings\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \_music.\mbox{\hyperlink{classMusic_a008211b514c1c89c15399d3384d3fcea}{stop}}();}
+\DoxyCodeLine{00064\ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSettingsScene_ad8aae77c197e4f75c71f2197bf4b9487}\label{classSettingsScene_ad8aae77c197e4f75c71f2197bf4b9487}} 
+\index{SettingsScene@{SettingsScene}!update@{update}}
+\index{update@{update}!SettingsScene@{SettingsScene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Settings\+Scene\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClock}{Clock}} \&}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update the Settings \doxylink{classScene}{Scene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{Scene}}.
+
+
+
+Definition at line \mbox{\hyperlink{settingsScene_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{settingsScene_8hpp_source}{settings\+Scene.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/settings\+Scene.\+hpp\end{DoxyCompactItemize}

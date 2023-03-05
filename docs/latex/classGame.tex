@@ -1,0 +1,266 @@
+\hypertarget{classGame}{}\doxysection{Game Class Reference}
+\label{classGame}\index{Game@{Game}}
+
+
+Class that handle the game fps, screen width and height.  
+
+
+
+
+{\ttfamily \#include $<$game.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGame_ad59df6562a58a614fda24622d3715b65}{Game}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classGame}{Game} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGame_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classGame}{Game} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGame_a241315cc9124a765cb49580bb0b2568b}{get\+Fps}} ()
+\begin{DoxyCompactList}\small\item\em Get the fps. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classGame_a6459bfc7e7c7df8221a4a7dea0baffa1}{get\+Screen\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Get the screen width. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classGame_adc51dfdb2488da1e94f62d54e40d9e8b}{get\+Screen\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Get the screen height. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_a4b59886b169475a3a392b91238bd0e70}{increase\+Fps\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Increase the fps. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_a38eb3e96da823470b0b10debc9fb0f97}{set\+Fps}} (const int \&fps)
+\begin{DoxyCompactList}\small\item\em Set the fps. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_a447de5ff5045fe00885e7b87f41999e6}{set\+Screen\+Width}} (const int \&width)
+\begin{DoxyCompactList}\small\item\em Set the screen width. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_ace21b29515891dccdfa70ad32af3059a}{set\+Screen\+Height}} (const int \&height)
+\begin{DoxyCompactList}\small\item\em Set the screen height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that handle the game fps, screen width and height. 
+
+Definition at line \mbox{\hyperlink{game_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{game_8hpp_source}{game.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGame_ad59df6562a58a614fda24622d3715b65}\label{classGame_ad59df6562a58a614fda24622d3715b65}} 
+\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classGame}{Game} class. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \_fps\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ sf::VideoMode\ desktopMode\ =\ sf::VideoMode::getDesktopMode();}
+\DoxyCodeLine{00014\ \ \ \_screenWidth\ =\ desktopMode.width;}
+\DoxyCodeLine{00015\ \ \ \_screenHeight\ =\ desktopMode.height;}
+\DoxyCodeLine{00016\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGame_ae3d112ca6e0e55150d2fdbc704474530}\label{classGame_ae3d112ca6e0e55150d2fdbc704474530}} 
+\index{Game@{Game}!````~Game@{$\sim$Game}}
+\index{````~Game@{$\sim$Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{$\sim$Game()}{~Game()}}
+{\footnotesize\ttfamily Game\+::$\sim$\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \doxylink{classGame}{Game} class. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGame_a241315cc9124a765cb49580bb0b2568b}\label{classGame_a241315cc9124a765cb49580bb0b2568b}} 
+\index{Game@{Game}!getFps@{getFps}}
+\index{getFps@{getFps}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getFps()}{getFps()}}
+{\footnotesize\ttfamily int Game\+::get\+Fps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the fps. 
+
+\begin{DoxyReturn}{Returns}
+fps 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{game_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordflow}{return}\ \_fps;}
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGame_adc51dfdb2488da1e94f62d54e40d9e8b}\label{classGame_adc51dfdb2488da1e94f62d54e40d9e8b}} 
+\index{Game@{Game}!getScreenHeight@{getScreenHeight}}
+\index{getScreenHeight@{getScreenHeight}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getScreenHeight()}{getScreenHeight()}}
+{\footnotesize\ttfamily float Game\+::get\+Screen\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the screen height. 
+
+\begin{DoxyReturn}{Returns}
+screen height 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{game_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordflow}{return}\ \_screenHeight;}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGame_a6459bfc7e7c7df8221a4a7dea0baffa1}\label{classGame_a6459bfc7e7c7df8221a4a7dea0baffa1}} 
+\index{Game@{Game}!getScreenWidth@{getScreenWidth}}
+\index{getScreenWidth@{getScreenWidth}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getScreenWidth()}{getScreenWidth()}}
+{\footnotesize\ttfamily float Game\+::get\+Screen\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the screen width. 
+
+\begin{DoxyReturn}{Returns}
+screen width 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{game_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordflow}{return}\ \_screenWidth;}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGame_a4b59886b169475a3a392b91238bd0e70}\label{classGame_a4b59886b169475a3a392b91238bd0e70}} 
+\index{Game@{Game}!increaseFpsCount@{increaseFpsCount}}
+\index{increaseFpsCount@{increaseFpsCount}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{increaseFpsCount()}{increaseFpsCount()}}
+{\footnotesize\ttfamily void Game\+::increase\+Fps\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increase the fps. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \_fps++;}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGame_a38eb3e96da823470b0b10debc9fb0f97}\label{classGame_a38eb3e96da823470b0b10debc9fb0f97}} 
+\index{Game@{Game}!setFps@{setFps}}
+\index{setFps@{setFps}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{setFps()}{setFps()}}
+{\footnotesize\ttfamily void Game\+::set\+Fps (\begin{DoxyParamCaption}\item[{const int \&}]{fps }\end{DoxyParamCaption})}
+
+
+
+Set the fps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fps} & fps \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{game_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \_fps\ =\ fps;}
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGame_ace21b29515891dccdfa70ad32af3059a}\label{classGame_ace21b29515891dccdfa70ad32af3059a}} 
+\index{Game@{Game}!setScreenHeight@{setScreenHeight}}
+\index{setScreenHeight@{setScreenHeight}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{setScreenHeight()}{setScreenHeight()}}
+{\footnotesize\ttfamily void Game\+::set\+Screen\+Height (\begin{DoxyParamCaption}\item[{const int \&}]{height }\end{DoxyParamCaption})}
+
+
+
+Set the screen height. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & screen height \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{game_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \_screenHeight\ =\ height;}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGame_a447de5ff5045fe00885e7b87f41999e6}\label{classGame_a447de5ff5045fe00885e7b87f41999e6}} 
+\index{Game@{Game}!setScreenWidth@{setScreenWidth}}
+\index{setScreenWidth@{setScreenWidth}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{setScreenWidth()}{setScreenWidth()}}
+{\footnotesize\ttfamily void Game\+::set\+Screen\+Width (\begin{DoxyParamCaption}\item[{const int \&}]{width }\end{DoxyParamCaption})}
+
+
+
+Set the screen width. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & screen width \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{game_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \_screenWidth\ =\ width;}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/game.\+hpp\item 
+Client/src/game.\+cpp\end{DoxyCompactItemize}

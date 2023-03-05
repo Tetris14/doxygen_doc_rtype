@@ -1,0 +1,240 @@
+\hypertarget{classButton}{}\doxysection{Button Class Reference}
+\label{classButton}\index{Button@{Button}}
+
+
+class button  
+
+
+
+
+{\ttfamily \#include $<$user\+Interface.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classButton_a3b36df1ae23c58aedb9e15a713159459}{Button}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classButton}{Button} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{set\+Button}} (const std\+::string \&config\+File, const std\+::pair$<$ float, float $>$ \&dimensions)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{classButton}{Button} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{is\+Hover}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Check if the mouse is hovering over the button. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{is\+Clicked}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Check if the button is clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class button 
+
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classButton_a3b36df1ae23c58aedb9e15a713159459}\label{classButton_a3b36df1ae23c58aedb9e15a713159459}} 
+\index{Button@{Button}!Button@{Button}}
+\index{Button@{Button}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{Button()}{Button()}}
+{\footnotesize\ttfamily Button\+::\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{classButton}{Button} object. 
+
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classButton_adf65892636ea303a84e1391106ea7cb0}\label{classButton_adf65892636ea303a84e1391106ea7cb0}} 
+\index{Button@{Button}!draw@{draw}}
+\index{draw@{draw}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Button\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxylink{classDraw}{Draw} the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00099}{99}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ window.draw(\_background);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ window.draw(\_textObj);}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classButton_a271462128aa8d631799cda1a72d6ef79}\label{classButton_a271462128aa8d631799cda1a72d6ef79}} 
+\index{Button@{Button}!isClicked@{isClicked}}
+\index{isClicked@{isClicked}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{isClicked()}{isClicked()}}
+{\footnotesize\ttfamily bool Button\+::is\+Clicked (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the button is clicked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00125}{125}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ sf::Vector2i\ mousePos\ =\ sf::Mouse::getPosition(window);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sf::Mouse::isButtonPressed(sf::Mouse::Left)\ \&\&}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ mousePos.x\ >=\ \_x\ \&\&\ mousePos.x\ <=\ \_x\ +\ \_width\ \&\&}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ mousePos.y\ >=\ \_y\ \&\&\ mousePos.y\ <=\ \_y\ +\ \_height)\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classButton_a7b952d56357405f55ecdff3f1fb27f73}\label{classButton_a7b952d56357405f55ecdff3f1fb27f73}} 
+\index{Button@{Button}!isHover@{isHover}}
+\index{isHover@{isHover}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{isHover()}{isHover()}}
+{\footnotesize\ttfamily void Button\+::is\+Hover (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the mouse is hovering over the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00109}{109}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ sf::Vector2i\ mousePos\ =\ sf::Mouse::getPosition(window);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mousePos.x\ >=\ \_x\ \&\&\ mousePos.x\ <=\ \_x\ +\ \_width\ \&\&}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ mousePos.y\ >=\ \_y\ \&\&\ mousePos.y\ <=\ \_y\ +\ \_height)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \_background.setOutlineColor(\_backgroundColorHover);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}\label{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}} 
+\index{Button@{Button}!setButton@{setButton}}
+\index{setButton@{setButton}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{setButton()}{setButton()}}
+{\footnotesize\ttfamily void Button\+::set\+Button (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{config\+File,  }\item[{const std\+::pair$<$ float, float $>$ \&}]{dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the \doxylink{classButton}{Button} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config\+File} & \\
+\hline
+{\em dimensions} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::ifstream\ file(configFile);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ opening\ config\ file}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ nlohmann::json\ config;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ file\ >>\ config;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ button\ properties\ from\ JSON\ object}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ buttonObj\ =\ config[\textcolor{stringliteral}{"{}button"{}}];}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buttonObj.empty())\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ reading\ button\ properties\ from\ JSON\ object}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ button\ properties}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \_x\ =\ (dimensions.first\ /\ 100)\ *\ buttonObj[\textcolor{stringliteral}{"{}x"{}}].get<float>();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \_y\ =\ (dimensions.second\ /\ 100)\ *\ buttonObj[\textcolor{stringliteral}{"{}y"{}}].get<float>();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \_width\ =\ (dimensions.first\ /\ 100)\ *\ buttonObj[\textcolor{stringliteral}{"{}width"{}}].get<float>();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \_height\ =\ (dimensions.second\ /\ 100)\ *\ buttonObj[\textcolor{stringliteral}{"{}height"{}}].get<float>();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \_text\ =\ buttonObj[\textcolor{stringliteral}{"{}text"{}}].get<std::string>();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ textColorObj\ =\ buttonObj[\textcolor{stringliteral}{"{}text\_color"{}}];}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \_textColor.r\ =\ textColorObj[0].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \_textColor.g\ =\ textColorObj[1].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \_textColor.b\ =\ textColorObj[2].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ bgColorObj\ =\ buttonObj[\textcolor{stringliteral}{"{}background\_color"{}}];}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \_backgroundColor.r\ =\ bgColorObj[0].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \_backgroundColor.g\ =\ bgColorObj[1].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \_backgroundColor.b\ =\ bgColorObj[2].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ bgColorhoverObj\ =\ buttonObj[\textcolor{stringliteral}{"{}background\_color\_hover"{}}];}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \_backgroundColorHover.r\ =\ bgColorhoverObj[0].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \_backgroundColorHover.g\ =\ bgColorhoverObj[1].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \_backgroundColorHover.b\ =\ bgColorhoverObj[2].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \_fontFile\ =\ buttonObj[\textcolor{stringliteral}{"{}font"{}}].get<std::string>();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \_fontSize\ =\ buttonObj[\textcolor{stringliteral}{"{}font\_size"{}}].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Load\ font}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_font.loadFromFile(findFile(\_fontFile)))\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \_textObj.setFont(\_font);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ text}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \_textObj.setFont(\_font);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \_textObj.setCharacterSize(\_fontSize);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \_textObj.setString(\_text);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \_textObj.setFillColor(\_textColor);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \_textObj.setPosition(sf::Vector2f(\_x\ +\ \_width\ /\ 2\ -\/\ \_textObj.getGlobalBounds().width\ /\ 2,\_y\ +\ \_height\ /\ 2\ -\/\ \_textObj.getGlobalBounds().height\ /\ 2));}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ button\ background}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \_background.setSize(sf::Vector2f(\_width,\ \_height));}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \_background.setOutlineThickness(4);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \_background.setOutlineColor(\_backgroundColor);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \_background.setPosition(sf::Vector2f(\_x,\ \_y));}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \_background.setFillColor(sf::Color::Transparent);}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/user\+Interface.\+hpp\end{DoxyCompactItemize}

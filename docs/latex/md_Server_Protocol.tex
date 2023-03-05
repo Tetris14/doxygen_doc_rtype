@@ -1,0 +1,149 @@
+The Protocol is composed of two parts, the TCP protocol and the UDP protocol. The TCP protocol is used to create, join, and leave games. The UDP protocol is used to send game information between the game server and clients.\hypertarget{md_Server_Protocol_autotoc_md5}{}\doxysection{UDP Protocol}\label{md_Server_Protocol_autotoc_md5}
+The UDP game binary protocol is designed for transmitting game information between the game server and clients in a multiplayer shooter game. The protocol uses Asio for data compression and transmission. The protocol supports the transmission of player information, such as position, life, and shoot, as well as enemy information and other player information.\hypertarget{md_Server_Protocol_autotoc_md6}{}\doxysection{Data Types}\label{md_Server_Protocol_autotoc_md6}
+The UDP game binary protocol uses strings encoded in bytes to transmit data. The protocol uses the following data types\hypertarget{md_Server_Protocol_autotoc_md7}{}\doxysection{Data Structure}\label{md_Server_Protocol_autotoc_md7}
+\begin{DoxyVerb}player:
+    id: int
+    x: int
+    y: int
+    colliderX: int
+    colliderY: int
+    life: int
+    speed: int
+    damage: int
+
+enemy:
+    id: int
+    x: int
+    y: int
+    colliderX: int
+    colliderY: int
+    life: int
+    speed: int
+    damage: int
+    type: int
+    rotation: int
+    fireRate: int
+    waypoints: list of pair of int
+
+update:
+    player: 
+        id: int
+        x: int
+        y: int
+        life: int
+    enemy:
+        id: int
+        x: int
+        y: int
+        life: int
+        rotation: int
+
+Shoot:
+    playerID: int
+
+Dead:
+    playerID: int
+
+Wave:
+    wave: int
+
+Level:
+    level: int
+
+Chat:
+    playerID: int
+    message: string
+\end{DoxyVerb}
+ every keywords should be space separated and every data should be separated by a double point
+
+exemple\+: Update enemy 0\+:1920\+:840\+:33\hypertarget{md_Server_Protocol_autotoc_md8}{}\doxysection{Client commands}\label{md_Server_Protocol_autotoc_md8}
+\begin{DoxyVerb}Update: 
+    Inform the server about the player position and life
+    exemple: Update 0:1920:840:33
+
+Shoot:
+    Inform the server that the player shoot
+    exemple: Shoot 0
+
+Dead:
+    SInform the server about the death of a player with the id of the player
+    exemple: Dead 0
+
+Collision:
+    Inform the server about the collision of a shoot and an enemy with the id of the enemy
+    exemple: Collision 0
+
+Before Game Start:
+    Create:
+        Inform the UDP server that the player want to create a game
+        Create
+        the server return "Vu\n"
+
+    Join:
+        Inform the UDP server that the player want to join a game
+        Join
+        the server return "Vu\n"
+
+    Leave:
+        Inform the UDP server that the player want to leave a game
+        Leave
+        the server return "Vu\n"
+
+    Start:
+        Send it to tell the server to start the game
+        Start
+
+    Type:
+        Send it to change the game Mode (1 for classic and 2 for survival)
+        Type gameMode
+        exemple: Type 1
+
+    Chat:
+        Send it to send a message to the other player
+        Chat playerID message
+        exemple: Chat 0 hello world
+\end{DoxyVerb}
+ \hypertarget{md_Server_Protocol_autotoc_md9}{}\doxysection{Data Transmission}\label{md_Server_Protocol_autotoc_md9}
+\begin{DoxyVerb}Update on enemies are sent every 20 ms
+Update on players are sent every 100 ms
+Shoot are sent when the player shoot
+Dead are sent when the player die
+Collision are sent when a shoot hit an enemy
+\end{DoxyVerb}
+\hypertarget{md_Server_Protocol_autotoc_md10}{}\doxysection{Error Handling}\label{md_Server_Protocol_autotoc_md10}
+The UDP game binary protocol does not include any built-\/in error handling mechanisms. It is up to the implementation to detect and handle any errors that may occur during the transmission of data.\hypertarget{md_Server_Protocol_autotoc_md11}{}\doxysection{TCP Protocol}\label{md_Server_Protocol_autotoc_md11}
+in tcp you can only can do this commands to the server be carful the terme \char`\"{}game\char`\"{} is a udp server that have a special protocol refer to the udp protocol to communicate with the game server part. \begin{DoxyVerb}create a game commande that gonna create a game and return the id of the newely added game. the "game" is a udp server that have a special protocol refer to the udp protocol.
+
+    client send :  "create" 
+    server send :  "created <id>" if there is a creation error the server gonna send "error <reason>"
+
+
+join a game commande that gonna join a game and return if you have manage to connect and if not why.
+
+    client send :  "join <id>"
+    server send :  "joined" if the game is full or the game or you are already in a other game is not exist the server gonna send "full" or "not exist" or "alrady in a game" if there other type of error the server gonna send "error <reason>"
+
+leave a game commande that gonna leave a game and return if you have manage to leave and if not why.
+
+    client send :  "leave"
+    server send :  "left" if you are not in the game the server gonna send "not in game" if there other type of error the server gonna send "error <reason>"
+
+start a game commande that gonna start a game and return if you have manage to start and if not why.
+
+    client send :  "start"
+    server send :  "started" if you are not in a game the server gonna send "not in game" if there other type of error the server gonna send "error <reason>"
+
+list all the room available
+
+    client send :  "list"
+    server send :  "list <id> <id> <id> <id> <id> <id> <id> <id> <id> <id>" if there is no room the server gonna send an empty list if there other type of error the server gonna send "error <reason>"
+
+when the game end you gonna recieve a message from the server that gonna the game gonna be delete dont try to reconnect to the same id.
+
+    server send :  "end" if there other type of error the server gonna send "endError <reason>" that mean the game have been delete cause of an error   
+
+
+every unknown command gonna be responded by the server with "error command not found"
+if you are solo in a room and leave the room the room gonna be deleted. also you cant create more than 1 room at the same time per client.
+\end{DoxyVerb}
+ 

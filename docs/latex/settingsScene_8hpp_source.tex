@@ -1,0 +1,68 @@
+\hypertarget{settingsScene_8hpp_source}{}\doxysection{settings\+Scene.\+hpp}
+\label{settingsScene_8hpp_source}\index{Client/include/settingsScene.hpp@{Client/include/settingsScene.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00005}00005\ \textcolor{comment}{**\ settingsScene}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}scene.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00016}\mbox{\hyperlink{classSettingsScene}{00016}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSettingsScene}{SettingsScene}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classScene}{Scene}}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00018}00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00019}00019\ \ \ \mbox{\hyperlink{classDraw}{Draw}}\ \_draw;\ \textcolor{comment}{//\ draw}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00020}00020\ \ \ \mbox{\hyperlink{classMusic}{Music}}\ \_music;\ \textcolor{comment}{//\ music}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00021}00021\ \ \ \mbox{\hyperlink{classSpriteManager}{SpriteManager}}\ \_spriteManager;\ \textcolor{comment}{//\ sprite\ manager}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00022}00022\ \ \ \mbox{\hyperlink{classButton}{Button}}\ \_back;\ \textcolor{comment}{//\ back\ button}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00023}00023\ \ \ std::pair<float,\ float>\ \_dimensions;\ \textcolor{comment}{//\ dimensions}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00024}00024\ \ \ \mbox{\hyperlink{classRectangle}{Rectangle}}\ \_backgoundMenu;\ \textcolor{comment}{//\ background\ menu}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00025}00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00033}\mbox{\hyperlink{classSettingsScene_a423373b2fcbfc44f703e4a5758f23530}{00033}}\ \ \ \mbox{\hyperlink{classSettingsScene_a423373b2fcbfc44f703e4a5758f23530}{SettingsScene}}(\textcolor{keyword}{const}\ std::pair<float,\ float>\ \&dimensions,\ \textcolor{keyword}{const}\ std::string\ \&music,\ sf::RenderWindow\ \&window)\ :\ \_dimensions(dimensions),\ \_music(findFile(music)),\ \_spriteManager(dimensions)\ \{}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00034}00034\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ae117be8da181d774ed3759a2abef646c}{addSprite}}(\textcolor{stringliteral}{"{}background.jpg"{}},\ 0.0f,\ 0.0f,\ 1.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00035}00035\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ae117be8da181d774ed3759a2abef646c}{addSprite}}(\textcolor{stringliteral}{"{}R-\/Type\_logo.png"{}},\ 35.0f,\ 15.0f,\ 0.3f,\ 0.15f);}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00036}00036\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00042}\mbox{\hyperlink{classSettingsScene_a73fb29c89277b49c282727cc91339e0b}{00042}}\ \ \ \mbox{\hyperlink{classSettingsScene_a73fb29c89277b49c282727cc91339e0b}{\string~SettingsScene}}()}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00043}00043\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00044}00044\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00051}\mbox{\hyperlink{classSettingsScene_a37796870c783c35c69025aa4dfd76ba0}{00051}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSettingsScene_a37796870c783c35c69025aa4dfd76ba0}{load}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00052}00052\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00053}00053\ \ \ \ \ \ \ \_music.\mbox{\hyperlink{classMusic_a54b941f6f7634d7f99b473c78fe6e4da}{play}}();}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00054}00054\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00061}\mbox{\hyperlink{classSettingsScene_a7e79ee8cbd29d6d75ccbb9dd63e5f45f}{00061}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSettingsScene_a7e79ee8cbd29d6d75ccbb9dd63e5f45f}{unload}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00062}00062\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00063}00063\ \ \ \ \ \ \ \_music.\mbox{\hyperlink{classMusic_a008211b514c1c89c15399d3384d3fcea}{stop}}();}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00064}00064\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00071}\mbox{\hyperlink{classSettingsScene_ad8aae77c197e4f75c71f2197bf4b9487}{00071}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSettingsScene_ad8aae77c197e4f75c71f2197bf4b9487}{update}}(\mbox{\hyperlink{classClock}{Clock}}\ \&clock)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00072}00072\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00073}00073\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00082}\mbox{\hyperlink{classSettingsScene_acf857102a6cf3996f85b6b04dd3b4533}{00082}}\ \ \ states\ \mbox{\hyperlink{classSettingsScene_acf857102a6cf3996f85b6b04dd3b4533}{handleEvent}}(sf::Event\ event,\ \mbox{\hyperlink{classWindow}{Window}}\ \&window)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00083}00083\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_back.\mbox{\hyperlink{classButton_a271462128aa8d631799cda1a72d6ef79}{isClicked}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}()))}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00085}00085\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BACK;}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{return}\ OK;}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00087}00087\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00095}\mbox{\hyperlink{classSettingsScene_ab749e09b35df3fe59f66c8c7f6fc97c1}{00095}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSettingsScene_ab749e09b35df3fe59f66c8c7f6fc97c1}{draw}}(\mbox{\hyperlink{classWindow}{Window}}\ \&window,\ \mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00096}00096\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00097}00097\ \ \ \ \ \_back.\mbox{\hyperlink{classButton_a0e8859ed7d2ad2d5811e7c02c637e81d}{setButton}}(findFile(\textcolor{stringliteral}{"{}backButton.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00098}00098\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}{drawSprite}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ \textcolor{stringliteral}{"{}background.jpg"{}});}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00099}00099\ \ \ \ \ \_backgoundMenu.\mbox{\hyperlink{classRectangle_a985548fa4b2b54823af0c22e57936ef4}{setRectangle}}(findFile(\textcolor{stringliteral}{"{}menuRectangle.json"{}}),\ \_dimensions);}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00100}00100\ \ \ \ \ \_backgoundMenu.\mbox{\hyperlink{classRectangle_a17972bcdb06e6e103d1bb404e3d562c7}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00101}00101\ \ \ \ \ \_spriteManager.\mbox{\hyperlink{classSpriteManager_ab205ccf8c8c8c06dd2bab1f41e53ac0e}{drawSprite}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}(),\ \textcolor{stringliteral}{"{}R-\/Type\_logo.png"{}});}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00102}00102\ \ \ \ \ \_back.\mbox{\hyperlink{classButton_a7b952d56357405f55ecdff3f1fb27f73}{isHover}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00103}00103\ \ \ \ \ \_back.\mbox{\hyperlink{classButton_adf65892636ea303a84e1391106ea7cb0}{draw}}(window.\mbox{\hyperlink{classWindow_a376a8597bf522cdb0b334b3ac7aa005a}{getWindow}}());}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00104}00104\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{settingsScene_8hpp_source_l00105}00105\ \};}
+
+\end{DoxyCode}

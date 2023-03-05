@@ -1,0 +1,157 @@
+\hypertarget{classMusic}{}\doxysection{Music Class Reference}
+\label{classMusic}\index{Music@{Music}}
+
+
+Represents a music file.  
+
+
+
+
+{\ttfamily \#include $<$audio.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMusic_a32a10c33c7b576bd9140052b668ebd95}{Music}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMusic_a6846b48b4318cbf38c2a7e8636749e93}{$\sim$\+Music}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMusic_a54b941f6f7634d7f99b473c78fe6e4da}{play}} ()
+\begin{DoxyCompactList}\small\item\em Play the music. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMusic_a008211b514c1c89c15399d3384d3fcea}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the music. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMusic_a234ca5b816dfbb2a9ed6f91d9d51b5bc}{set\+Loop}} (bool loop)
+\begin{DoxyCompactList}\small\item\em Set the looping behavior of the music. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a music file. 
+
+This class is used to play background music in a game or application. The music is represented by an {\ttfamily sf\+::\+Music} object, and can be looped or played once.
+
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classMusic}{Music}}\ music(\textcolor{stringliteral}{"{}background\_music.ogg"{}});}
+\DoxyCodeLine{music.play();}
+\DoxyCodeLine{...}
+\DoxyCodeLine{music.stop();}
+
+\end{DoxyCode}
+ 
+
+Definition at line \mbox{\hyperlink{audio_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{audio_8hpp_source}{audio.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMusic_a32a10c33c7b576bd9140052b668ebd95}\label{classMusic_a32a10c33c7b576bd9140052b668ebd95}} 
+\index{Music@{Music}!Music@{Music}}
+\index{Music@{Music}!Music@{Music}}
+\doxysubsubsection{\texorpdfstring{Music()}{Music()}}
+{\footnotesize\ttfamily Music\+::\+Music (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+This constructor takes the filename of a music file and loads it into an {\ttfamily sf\+::\+Music} object. The music is set to loop by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the music file to load. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{audio_8hpp_source_l00038}{38}} of file \mbox{\hyperlink{audio_8hpp_source}{audio.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \_music.openFromFile(filename);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \_music.setLoop(\textcolor{keyword}{true});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMusic_a6846b48b4318cbf38c2a7e8636749e93}\label{classMusic_a6846b48b4318cbf38c2a7e8636749e93}} 
+\index{Music@{Music}!````~Music@{$\sim$Music}}
+\index{````~Music@{$\sim$Music}!Music@{Music}}
+\doxysubsubsection{\texorpdfstring{$\sim$Music()}{~Music()}}
+{\footnotesize\ttfamily Music\+::$\sim$\+Music (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+The destructor is defaulted. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMusic_a54b941f6f7634d7f99b473c78fe6e4da}\label{classMusic_a54b941f6f7634d7f99b473c78fe6e4da}} 
+\index{Music@{Music}!play@{play}}
+\index{play@{play}!Music@{Music}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void Music\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Play the music. 
+
+This function starts playing the music. 
+
+Definition at line \mbox{\hyperlink{audio_8hpp_source_l00055}{55}} of file \mbox{\hyperlink{audio_8hpp_source}{audio.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \{\ \_music.play();\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMusic_a234ca5b816dfbb2a9ed6f91d9d51b5bc}\label{classMusic_a234ca5b816dfbb2a9ed6f91d9d51b5bc}} 
+\index{Music@{Music}!setLoop@{setLoop}}
+\index{setLoop@{setLoop}!Music@{Music}}
+\doxysubsubsection{\texorpdfstring{setLoop()}{setLoop()}}
+{\footnotesize\ttfamily void Music\+::set\+Loop (\begin{DoxyParamCaption}\item[{bool}]{loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the looping behavior of the music. 
+
+This function sets the looping behavior of the music. If {\ttfamily loop} is {\ttfamily true}, the music will play continuously in a loop. If {\ttfamily loop} is {\ttfamily false}, the music will play once and stop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop} & The desired looping behavior of the music. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{audio_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{audio_8hpp_source}{audio.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \{\ \_music.setLoop(loop);\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMusic_a008211b514c1c89c15399d3384d3fcea}\label{classMusic_a008211b514c1c89c15399d3384d3fcea}} 
+\index{Music@{Music}!stop@{stop}}
+\index{stop@{stop}!Music@{Music}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Music\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stop the music. 
+
+This function stops the music. 
+
+Definition at line \mbox{\hyperlink{audio_8hpp_source_l00062}{62}} of file \mbox{\hyperlink{audio_8hpp_source}{audio.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \{\ \_music.stop();\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/audio.\+hpp\end{DoxyCompactItemize}

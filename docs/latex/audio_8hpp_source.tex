@@ -1,0 +1,58 @@
+\hypertarget{audio_8hpp_source}{}\doxysection{audio.\+hpp}
+\label{audio_8hpp_source}\index{Client/include/audio.hpp@{Client/include/audio.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00005}00005\ \textcolor{comment}{**\ audio}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <SFML/Audio.hpp>}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#ifndef\ AUDIO\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#define\ AUDIO\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00028}\mbox{\hyperlink{classMusic}{00028}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMusic}{Music}}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00038}\mbox{\hyperlink{classMusic_a32a10c33c7b576bd9140052b668ebd95}{00038}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMusic_a32a10c33c7b576bd9140052b668ebd95}{Music}}(\textcolor{keyword}{const}\ std::string\ \&filename)\ \{}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \_music.openFromFile(filename);}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \_music.setLoop(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00048}\mbox{\hyperlink{classMusic_a6846b48b4318cbf38c2a7e8636749e93}{00048}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMusic_a6846b48b4318cbf38c2a7e8636749e93}{\string~Music}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00055}\mbox{\hyperlink{classMusic_a54b941f6f7634d7f99b473c78fe6e4da}{00055}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMusic_a54b941f6f7634d7f99b473c78fe6e4da}{play}}()\ \{\ \_music.play();\ \}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00062}\mbox{\hyperlink{classMusic_a008211b514c1c89c15399d3384d3fcea}{00062}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMusic_a008211b514c1c89c15399d3384d3fcea}{stop}}()\ \{\ \_music.stop();\ \}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00071}\mbox{\hyperlink{classMusic_a234ca5b816dfbb2a9ed6f91d9d51b5bc}{00071}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMusic_a234ca5b816dfbb2a9ed6f91d9d51b5bc}{setLoop}}(\textcolor{keywordtype}{bool}\ loop)\ \{\ \_music.setLoop(loop);\ \}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00073}00073\ \ \ \ \ \ \ \ \ sf::Music\ \_music;\ }
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00074}00074\ \};}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00089}\mbox{\hyperlink{classSound}{00089}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSound}{Sound}}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00090}00090\ \{}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00099}\mbox{\hyperlink{classSound_a6dae6f8919e5d081934c49706b396d0b}{00099}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSound_a6dae6f8919e5d081934c49706b396d0b}{Sound}}(\textcolor{keyword}{const}\ std::string\ \&filename)\ \{}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \_buffer.loadFromFile(filename);}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \_sound.setBuffer(\_buffer);}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \_sound.setVolume(100);}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00110}\mbox{\hyperlink{classSound_aa0dc117b3ed3ffc81febf25653de19e1}{00110}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSound_aa0dc117b3ed3ffc81febf25653de19e1}{\string~Sound}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00117}\mbox{\hyperlink{classSound_a3ce5b74dc968ccf49b06fe1bbb22b68f}{00117}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSound_a3ce5b74dc968ccf49b06fe1bbb22b68f}{playSound}}()\ \{\ \_sound.play();\ \}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00124}\mbox{\hyperlink{classSound_af817e5dac393bfbe28fc9aa2da6dd7c6}{00124}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSound_af817e5dac393bfbe28fc9aa2da6dd7c6}{stopSound}}()\ \{\ \_sound.stop();\ \}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00125}00125\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00126}00126\ \ \ \ \ \ \ \ \ sf::SoundBuffer\ \_buffer;\ \textcolor{comment}{//\ The\ `sf::SoundBuffer`\ object\ representing\ the\ sound}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00127}00127\ \ \ \ \ \ \ \ \ sf::Sound\ \_sound;\ \textcolor{comment}{//\ The\ `sf::Sound`\ object\ representing\ the\ sound}}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00128}00128\ \};}
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{audio_8hpp_source_l00131}00131\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !AUDIO\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

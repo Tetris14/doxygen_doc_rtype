@@ -1,0 +1,57 @@
+\hypertarget{input_8hpp_source}{}\doxysection{input.\+hpp}
+\label{input_8hpp_source}\index{Client/include/input.hpp@{Client/include/input.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00005}00005\ \textcolor{comment}{**\ input}}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#ifndef\ INPUT\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#define\ INPUT\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00017}00017\ \textcolor{keyword}{enum}\ control\ \{}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00018}00018\ \ \ \ \ UP,}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00019}00019\ \ \ \ \ DOWN,}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00020}00020\ \ \ \ \ LEFT,}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00021}00021\ \ \ \ \ RIGHT,}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00022}00022\ \ \ \ \ SHOOT,}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00023}00023\ \ \ \ \ C,}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00024}00024\ \ \ \ \ HITBOX,}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00025}00025\ \ \ \ \ FONE}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00026}00026\ \};}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00032}\mbox{\hyperlink{classInput}{00032}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInput}{Input}}}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00038}\mbox{\hyperlink{classInput_a212fe61f708c212e8dac91d145146050}{00038}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInput_a212fe61f708c212e8dac91d145146050}{Input}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00042}\mbox{\hyperlink{classInput_ade7428e932177ef33fa8195f073e5a41}{00042}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInput_ade7428e932177ef33fa8195f073e5a41}{\string~Input}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00049}\mbox{\hyperlink{classInput_aa430e51ec53ef420fbee13493d950bf4}{00049}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classInput_aa430e51ec53ef420fbee13493d950bf4}{isKeyPressed}}(control\ key)\ \{}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (key\ ==\ SHOOT)}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::Space);}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ ==\ FONE)}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::Right);}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ ==\ C)}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::C);}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ ==\ UP)}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::Up);}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ ==\ DOWN)}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::Down);}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ ==\ LEFT)}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::Left);}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ ==\ RIGHT)}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::Right);}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (key\ ==\ HITBOX)}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Keyboard::isKeyPressed(sf::Keyboard::P);}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00068}00068\ \};}
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{input_8hpp_source_l00070}00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !INPUT\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

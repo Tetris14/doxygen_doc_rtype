@@ -1,0 +1,457 @@
+\hypertarget{classSceneManager_1_1Event}{}\doxysection{Scene\+Manager\+::Event Class Reference}
+\label{classSceneManager_1_1Event}\index{SceneManager::Event@{SceneManager::Event}}
+
+
+\doxylink{classSceneManager_1_1Event}{Event} class that handles events within the game.  
+
+
+
+
+{\ttfamily \#include $<$scene\+Manager.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSceneManager_1_1Event_a57880af0e39ccfa4eff278f62d49cacd}{Event}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classSceneManager_1_1Event}{Event} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSceneManager_1_1Event_a5f4f5668d6b11bac1fc6cb88813ef837}{$\sim$\+Event}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classSceneManager_1_1Event}{Event} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_1_1Event_acb863a49c225f4b198415826a18e7091}{menu}} (\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&scene, \mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classClient}{Client}} \&client)
+\begin{DoxyCompactList}\small\item\em loads menu scene \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_1_1Event_ad040ddc244ac893c43bd1e04d8304f14}{join}} (\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&scene, \mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classClient}{Client}} \&client)
+\begin{DoxyCompactList}\small\item\em loads the join scene scene \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_1_1Event_a40e58e526242f93dfd485c95b82d8a1f}{create}} (\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&scene, \mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classClient}{Client}} \&client)
+\begin{DoxyCompactList}\small\item\em loads the create scene \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_1_1Event_a7bec26425ecd8810d1612ced414e9626}{start\+Single\+Player}} (\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&scene, \mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classClient}{Client}} \&client)
+\begin{DoxyCompactList}\small\item\em loads the single player scene \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_1_1Event_a86caaecce17e00772f2a0f8037585cb6}{start\+Multiplayer}} (\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&scene, \mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classClient}{Client}} \&client)
+\begin{DoxyCompactList}\small\item\em loads the multiplayer scene \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_1_1Event_a5ec8fbe4345f3d9df7c3feec74072f61}{settings}} (\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&scene, \mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classClient}{Client}} \&client)
+\begin{DoxyCompactList}\small\item\em loads the settings scene \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_1_1Event_a2b3e79d8b06b8f40d3e13a02db688767}{quit}} (\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&scene, \mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classClient}{Client}} \&client)
+\begin{DoxyCompactList}\small\item\em closes the window \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_1_1Event_a12ab0c4d6be582b59a991ada23630111}{back}} (\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&scene, \mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classClient}{Client}} \&client)
+\begin{DoxyCompactList}\small\item\em loads the previous scene \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_1_1Event_ade1d67898d45f48dc8b8c98456ada53f}{type1}} (\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&scene, \mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classClient}{Client}} \&client)
+\begin{DoxyCompactList}\small\item\em sends a type 1 message \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSceneManager_1_1Event_aa04fb965630e376846453e094b59970e}{type2}} (\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&scene, \mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classClient}{Client}} \&client)
+\begin{DoxyCompactList}\small\item\em sends a type 2 message \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ states, void(Event\+::$\ast$)(\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&, \mbox{\hyperlink{classWindow}{Window}} \&, \mbox{\hyperlink{classClient}{Client}} \&)$>$ \mbox{\hyperlink{classSceneManager_1_1Event_a9b8525edfb5e52ede31ae7cc07b9a190}{\+\_\+function\+Pointer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classSceneManager_1_1Event}{Event} class that handles events within the game. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00083}{83}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSceneManager_1_1Event_a57880af0e39ccfa4eff278f62d49cacd}\label{classSceneManager_1_1Event_a57880af0e39ccfa4eff278f62d49cacd}} 
+\index{SceneManager::Event@{SceneManager::Event}!Event@{Event}}
+\index{Event@{Event}!SceneManager::Event@{SceneManager::Event}}
+\doxysubsubsection{\texorpdfstring{Event()}{Event()}}
+{\footnotesize\ttfamily Scene\+Manager\+::\+Event\+::\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{classSceneManager_1_1Event}{Event} object. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00092}{92}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \_pattern((R\textcolor{stringliteral}{"{}((\(\backslash\)w+)\(\backslash\)s+(\(\backslash\)d+)\(\backslash\)s+(\(\backslash\)d+))"{}))\ \{}}
+\DoxyCodeLine{00093\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \_functionPointer[MENU]\ =\ \&\mbox{\hyperlink{classSceneManager_1_1Event_acb863a49c225f4b198415826a18e7091}{Event::menu}};}}
+\DoxyCodeLine{00094\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \_functionPointer[SINGLE]\ =\ \&\mbox{\hyperlink{classSceneManager_1_1Event_a7bec26425ecd8810d1612ced414e9626}{Event::startSinglePlayer}};}}
+\DoxyCodeLine{00095\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \_functionPointer[JOIN]\ =\ \&\mbox{\hyperlink{classSceneManager_1_1Event_ad040ddc244ac893c43bd1e04d8304f14}{Event::join}};}}
+\DoxyCodeLine{00096\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \_functionPointer[CREATE]\ =\ \&\mbox{\hyperlink{classSceneManager_1_1Event_a40e58e526242f93dfd485c95b82d8a1f}{Event::create}};}}
+\DoxyCodeLine{00097\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \_functionPointer[MULTIPLAYER]\ =\ \&\mbox{\hyperlink{classSceneManager_1_1Event_a86caaecce17e00772f2a0f8037585cb6}{Event::startMultiplayer}};}}
+\DoxyCodeLine{00098\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \_functionPointer[SETTINGS]\ =\ \&\mbox{\hyperlink{classSceneManager_1_1Event_a5ec8fbe4345f3d9df7c3feec74072f61}{Event::settings}};}}
+\DoxyCodeLine{00099\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \_functionPointer[TYPE1]\ =\ \&\mbox{\hyperlink{classSceneManager_1_1Event_ade1d67898d45f48dc8b8c98456ada53f}{Event::type1}};}}
+\DoxyCodeLine{00100\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \_functionPointer[TYPE2]\ =\ \&\mbox{\hyperlink{classSceneManager_1_1Event_aa04fb965630e376846453e094b59970e}{Event::type2}};}}
+\DoxyCodeLine{00101\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \_functionPointer[QUIT]\ =\ \&\mbox{\hyperlink{classSceneManager_1_1Event_a2b3e79d8b06b8f40d3e13a02db688767}{Event::quit}};}}
+\DoxyCodeLine{00102\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \_functionPointer[BACK]\ =\ \&\mbox{\hyperlink{classSceneManager_1_1Event_a12ab0c4d6be582b59a991ada23630111}{Event::back}};}}
+\DoxyCodeLine{00103\ \textcolor{stringliteral}{\ \ \ \ \};}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_1_1Event_a5f4f5668d6b11bac1fc6cb88813ef837}\label{classSceneManager_1_1Event_a5f4f5668d6b11bac1fc6cb88813ef837}} 
+\index{SceneManager::Event@{SceneManager::Event}!````~Event@{$\sim$Event}}
+\index{````~Event@{$\sim$Event}!SceneManager::Event@{SceneManager::Event}}
+\doxysubsubsection{\texorpdfstring{$\sim$Event()}{~Event()}}
+{\footnotesize\ttfamily Scene\+Manager\+::\+Event\+::$\sim$\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \doxylink{classSceneManager_1_1Event}{Event} object. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00109}{109}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109\ \{\};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSceneManager_1_1Event_a12ab0c4d6be582b59a991ada23630111}\label{classSceneManager_1_1Event_a12ab0c4d6be582b59a991ada23630111}} 
+\index{SceneManager::Event@{SceneManager::Event}!back@{back}}
+\index{back@{back}!SceneManager::Event@{SceneManager::Event}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::\+Event\+::back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&}]{scene,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classClient}{Client}} \&}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+loads the previous scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em window} & \\
+\hline
+{\em client} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00224}{224}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_isUsed)}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ client.\mbox{\hyperlink{classClient_a840e519ca781888cbd54181572ebe3a7}{\string~Client}}();}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ scene.\mbox{\hyperlink{classSceneManager_a7db297e7071ad9d4a1339cfb8b53f186}{loadScene}}(scene.\mbox{\hyperlink{classSceneManager_a91c156c0d769cdcd25fbee4689cdbacd}{getHistoryIndex}}());}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ scene.\mbox{\hyperlink{classSceneManager_ab409fda341fc74885c0d769482f827f5}{setHistoryIndex}}();}
+\DoxyCodeLine{00229\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_1_1Event_a40e58e526242f93dfd485c95b82d8a1f}\label{classSceneManager_1_1Event_a40e58e526242f93dfd485c95b82d8a1f}} 
+\index{SceneManager::Event@{SceneManager::Event}!create@{create}}
+\index{create@{create}!SceneManager::Event@{SceneManager::Event}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::\+Event\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&}]{scene,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classClient}{Client}} \&}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+loads the create scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em window} & \\
+\hline
+{\em client} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00155}{155}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}CREATE"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ client.\mbox{\hyperlink{classClient_af8e601dd957b47139ad921a509c842fd}{Write}}(\textcolor{stringliteral}{"{}create"{}});}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ std::string\ response\ =\ client.\mbox{\hyperlink{classClient_afb1e52684f9e8e052f66353156a982b8}{Read}}();}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Response:\ "{}}\ <<\ response\ <<\ endl;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ std::smatch\ matches;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::regex\_search(response,\ matches,\ \_pattern)\ \&\&\ client.command\_.count(matches[1])\ >\ 0)\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ matches[1]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ matches[2]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ matches[3]\ <<\ std::endl;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (matches[2].length()\ >\ 0)\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (client.*(client.command\_[matches[1]]))(std::stoi(matches[2]));}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ client.playerID\ =\ std::stoi(matches[3]);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (client.*(client.command\_[matches[1]]))(0);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Flag\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_1_1Event_ad040ddc244ac893c43bd1e04d8304f14}\label{classSceneManager_1_1Event_ad040ddc244ac893c43bd1e04d8304f14}} 
+\index{SceneManager::Event@{SceneManager::Event}!join@{join}}
+\index{join@{join}!SceneManager::Event@{SceneManager::Event}}
+\doxysubsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::\+Event\+::join (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&}]{scene,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classClient}{Client}} \&}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+loads the join scene scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em window} & \\
+\hline
+{\em client} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00131}{131}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ client.\mbox{\hyperlink{classClient_af8e601dd957b47139ad921a509c842fd}{Write}}(\textcolor{stringliteral}{"{}join\ 0"{}});}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ std::string\ response\ =\ client.\mbox{\hyperlink{classClient_afb1e52684f9e8e052f66353156a982b8}{Read}}();}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ std::smatch\ matches;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::regex\_search(response,\ matches,\ \_pattern)\ \&\&\ client.command\_.count(matches[1])\ >\ 0)\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ matches[1]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ matches[2]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ matches[3]\ <<\ std::endl;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (matches[2].length()\ >\ 0)\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (client.*(client.command\_[matches[1]]))(std::stoi(matches[2]));}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ client.playerID\ =\ std::stoi(matches[3]);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (client.*(client.command\_[matches[1]]))(0);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Flag\ not\ found"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ scene.\mbox{\hyperlink{classSceneManager_a7db297e7071ad9d4a1339cfb8b53f186}{loadScene}}(5);}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_1_1Event_acb863a49c225f4b198415826a18e7091}\label{classSceneManager_1_1Event_acb863a49c225f4b198415826a18e7091}} 
+\index{SceneManager::Event@{SceneManager::Event}!menu@{menu}}
+\index{menu@{menu}!SceneManager::Event@{SceneManager::Event}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::\+Event\+::menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&}]{scene,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classClient}{Client}} \&}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+loads menu scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em window} & \\
+\hline
+{\em client} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00118}{118}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_isUsed)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ client.\mbox{\hyperlink{classClient_a840e519ca781888cbd54181572ebe3a7}{\string~Client}}();}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ scene.\mbox{\hyperlink{classSceneManager_a7db297e7071ad9d4a1339cfb8b53f186}{loadScene}}(0);}
+\DoxyCodeLine{00122\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_1_1Event_a2b3e79d8b06b8f40d3e13a02db688767}\label{classSceneManager_1_1Event_a2b3e79d8b06b8f40d3e13a02db688767}} 
+\index{SceneManager::Event@{SceneManager::Event}!quit@{quit}}
+\index{quit@{quit}!SceneManager::Event@{SceneManager::Event}}
+\doxysubsubsection{\texorpdfstring{quit()}{quit()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::\+Event\+::quit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&}]{scene,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classClient}{Client}} \&}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+closes the window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em window} & \\
+\hline
+{\em client} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00213}{213}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ window.\mbox{\hyperlink{classWindow_a35055c04498121d39741bfcd5082705b}{close}}();}
+\DoxyCodeLine{00215\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_1_1Event_a5ec8fbe4345f3d9df7c3feec74072f61}\label{classSceneManager_1_1Event_a5ec8fbe4345f3d9df7c3feec74072f61}} 
+\index{SceneManager::Event@{SceneManager::Event}!settings@{settings}}
+\index{settings@{settings}!SceneManager::Event@{SceneManager::Event}}
+\doxysubsubsection{\texorpdfstring{settings()}{settings()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::\+Event\+::settings (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&}]{scene,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classClient}{Client}} \&}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+loads the settings scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em window} & \\
+\hline
+{\em client} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00202}{202}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ scene.\mbox{\hyperlink{classSceneManager_a7db297e7071ad9d4a1339cfb8b53f186}{loadScene}}(4);}
+\DoxyCodeLine{00204\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_1_1Event_a86caaecce17e00772f2a0f8037585cb6}\label{classSceneManager_1_1Event_a86caaecce17e00772f2a0f8037585cb6}} 
+\index{SceneManager::Event@{SceneManager::Event}!startMultiplayer@{startMultiplayer}}
+\index{startMultiplayer@{startMultiplayer}!SceneManager::Event@{SceneManager::Event}}
+\doxysubsubsection{\texorpdfstring{startMultiplayer()}{startMultiplayer()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::\+Event\+::start\+Multiplayer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&}]{scene,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classClient}{Client}} \&}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+loads the multiplayer scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em window} & \\
+\hline
+{\em client} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00191}{191}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ client.startGame(0);}
+\DoxyCodeLine{00193\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_1_1Event_a7bec26425ecd8810d1612ced414e9626}\label{classSceneManager_1_1Event_a7bec26425ecd8810d1612ced414e9626}} 
+\index{SceneManager::Event@{SceneManager::Event}!startSinglePlayer@{startSinglePlayer}}
+\index{startSinglePlayer@{startSinglePlayer}!SceneManager::Event@{SceneManager::Event}}
+\doxysubsubsection{\texorpdfstring{startSinglePlayer()}{startSinglePlayer()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::\+Event\+::start\+Single\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&}]{scene,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classClient}{Client}} \&}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+loads the single player scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em window} & \\
+\hline
+{\em client} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00180}{180}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ scene.\mbox{\hyperlink{classSceneManager_a7db297e7071ad9d4a1339cfb8b53f186}{loadScene}}(3);}
+\DoxyCodeLine{00182\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_1_1Event_ade1d67898d45f48dc8b8c98456ada53f}\label{classSceneManager_1_1Event_ade1d67898d45f48dc8b8c98456ada53f}} 
+\index{SceneManager::Event@{SceneManager::Event}!type1@{type1}}
+\index{type1@{type1}!SceneManager::Event@{SceneManager::Event}}
+\doxysubsubsection{\texorpdfstring{type1()}{type1()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::\+Event\+::type1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&}]{scene,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classClient}{Client}} \&}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+sends a type 1 message 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em window} & \\
+\hline
+{\em client} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00238}{238}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ client.\mbox{\hyperlink{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}{UDPSend}}(\textcolor{stringliteral}{"{}Type\ 1"{}});}
+\DoxyCodeLine{00240\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSceneManager_1_1Event_aa04fb965630e376846453e094b59970e}\label{classSceneManager_1_1Event_aa04fb965630e376846453e094b59970e}} 
+\index{SceneManager::Event@{SceneManager::Event}!type2@{type2}}
+\index{type2@{type2}!SceneManager::Event@{SceneManager::Event}}
+\doxysubsubsection{\texorpdfstring{type2()}{type2()}}
+{\footnotesize\ttfamily void Scene\+Manager\+::\+Event\+::type2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSceneManager}{Scene\+Manager}} \&}]{scene,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classClient}{Client}} \&}]{client }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+sends a type 2 message 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em window} & \\
+\hline
+{\em client} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00249}{249}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ client.\mbox{\hyperlink{classClient_acc2d13c58936de4ca8112b9ec9efe6b2}{UDPSend}}(\textcolor{stringliteral}{"{}Type\ 2"{}});}
+\DoxyCodeLine{00251\ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSceneManager_1_1Event_a9b8525edfb5e52ede31ae7cc07b9a190}\label{classSceneManager_1_1Event_a9b8525edfb5e52ede31ae7cc07b9a190}} 
+\index{SceneManager::Event@{SceneManager::Event}!\_functionPointer@{\_functionPointer}}
+\index{\_functionPointer@{\_functionPointer}!SceneManager::Event@{SceneManager::Event}}
+\doxysubsubsection{\texorpdfstring{\_functionPointer}{\_functionPointer}}
+{\footnotesize\ttfamily std\+::map$<$states, void (Event\+::$\ast$)(\mbox{\hyperlink{classSceneManager}{Scene\+Manager}}\&, \mbox{\hyperlink{classWindow}{Window}}\&, \mbox{\hyperlink{classClient}{Client}}\&)$>$ Scene\+Manager\+::\+Event\+::\+\_\+function\+Pointer}
+
+
+
+Definition at line \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source_l00252}{252}} of file \mbox{\hyperlink{Client_2include_2sceneManager_8hpp_source}{scene\+Manager.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/scene\+Manager.\+hpp\end{DoxyCompactItemize}

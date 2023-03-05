@@ -1,0 +1,53 @@
+\hypertarget{POC_2include_2client_8hpp_source}{}\doxysection{client.\+hpp}
+\label{POC_2include_2client_8hpp_source}\index{POC/include/client.hpp@{POC/include/client.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2022}}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00003}00003\ \textcolor{comment}{**\ Untitled\ (Workspace)}}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00005}00005\ \textcolor{comment}{**\ client}}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <asio.hpp>}}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}data.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00012}00012\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00013}00013\ \textcolor{keyword}{using\ }asio::ip::tcp;}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00014}00014\ \textcolor{keyword}{using\ }asio::ip::udp;}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#ifndef\ CLIENT\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#define\ CLIENT\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00020}00020\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdata__s}{data\_s}}\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ *data;}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00022}00022\ \}\ \mbox{\hyperlink{structdata__s}{data\_t}};}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00024}\mbox{\hyperlink{classUDPClient}{00024}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUDPClient}{UDPClient}}\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUDPClient}{UDPClient}}(asio::io\_context\ \&ioService,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&host,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&port);}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ send(\mbox{\hyperlink{structMyData}{MyData}}\ \&data);}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ listen();}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ asio::ip::udp::socket\ socket\_;}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ asio::ip::udp::resolver\ resolver\_;}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ asio::ip::udp::endpoint\ \_endpoint;}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ std::array<char,\ 16>\ \_recvBuffer;}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ std::vector<MyData>\ \_data\_client;}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00035}00035\ \};}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00037}00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classClient}{Client}}\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classClient}{Client}}(asio::io\_context\&\ ioc,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ host,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ port);}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classClient_afb1e52684f9e8e052f66353156a982b8}{Read}}();}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClient_af8e601dd957b47139ad921a509c842fd}{Write}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ message);}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ tcp::socket\ socket\_;}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ tcp::resolver\ resolver\_;}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00045}00045\ \};}
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{POC_2include_2client_8hpp_source_l00047}00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !CLIENT\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

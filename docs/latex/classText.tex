@@ -1,0 +1,152 @@
+\hypertarget{classText}{}\doxysection{Text Class Reference}
+\label{classText}\index{Text@{Text}}
+
+
+class \doxylink{classText}{Text}  
+
+
+
+
+{\ttfamily \#include $<$user\+Interface.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classText_ab3e26143fccc52699bcc5149cae852bc}{Text}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classText}{Text} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classText_a72e169338b38fe278a1a68a72b42da9d}{set\+Text}} (const std\+::string \&config\+File, const std\+::pair$<$ float, float $>$ \&dimensions)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{classText}{Text} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classText_a820f51d1ef58aa6ffadc10cc0e6ce479}{draw}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class \doxylink{classText}{Text} 
+
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00439}{439}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classText_ab3e26143fccc52699bcc5149cae852bc}\label{classText_ab3e26143fccc52699bcc5149cae852bc}} 
+\index{Text@{Text}!Text@{Text}}
+\index{Text@{Text}!Text@{Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}}
+{\footnotesize\ttfamily Text\+::\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{classText}{Text} object. 
+
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00445}{445}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00445\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classText_a820f51d1ef58aa6ffadc10cc0e6ce479}\label{classText_a820f51d1ef58aa6ffadc10cc0e6ce479}} 
+\index{Text@{Text}!draw@{draw}}
+\index{draw@{draw}!Text@{Text}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Text\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxylink{classDraw}{Draw} the text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00501}{501}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ window.draw(\_textObj);}
+\DoxyCodeLine{00503\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classText_a72e169338b38fe278a1a68a72b42da9d}\label{classText_a72e169338b38fe278a1a68a72b42da9d}} 
+\index{Text@{Text}!setText@{setText}}
+\index{setText@{setText}!Text@{Text}}
+\doxysubsubsection{\texorpdfstring{setText()}{setText()}}
+{\footnotesize\ttfamily void Text\+::set\+Text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{config\+File,  }\item[{const std\+::pair$<$ float, float $>$ \&}]{dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the \doxylink{classText}{Text} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config\+File} & \\
+\hline
+{\em dimensions} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00453}{453}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ std::ifstream\ file(configFile);}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ opening\ config\ file}}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ nlohmann::json\ config;}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ file\ >>\ config;}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ button\ properties\ from\ JSON\ object}}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ textObj\ =\ config[\textcolor{stringliteral}{"{}text"{}}];}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (textObj.empty())\ \{}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Error\ reading\ button\ properties\ from\ JSON\ object}}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ button\ properties}}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \_x\ =\ (dimensions.first\ /\ 100)\ *\ textObj[\textcolor{stringliteral}{"{}x"{}}].get<float>();}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \_y\ =\ (dimensions.second\ /\ 100)\ *\ textObj[\textcolor{stringliteral}{"{}y"{}}].get<float>();}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \_width\ =\ (dimensions.first\ /\ 100)\ *\ textObj[\textcolor{stringliteral}{"{}width"{}}].get<float>();}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \_height\ =\ (dimensions.second\ /\ 100)\ *\ textObj[\textcolor{stringliteral}{"{}height"{}}].get<float>();}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \_text\ =\ textObj[\textcolor{stringliteral}{"{}text"{}}].get<std::string>();}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ textColorObj\ =\ textObj[\textcolor{stringliteral}{"{}text\_color"{}}];}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \_textColor.r\ =\ textColorObj[0].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \_textColor.g\ =\ textColorObj[1].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \_textColor.b\ =\ textColorObj[2].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \_fontFile\ =\ textObj[\textcolor{stringliteral}{"{}font"{}}].get<std::string>();}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \_fontSize\ =\ textObj[\textcolor{stringliteral}{"{}font\_size"{}}].get<\textcolor{keywordtype}{int}>();}
+\DoxyCodeLine{00482\ }
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Load\ font}}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_font.loadFromFile(findFile(\_fontFile)))\ \{}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \_textObj.setFont(\_font);}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ text}}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \_textObj.setFont(\_font);}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \_textObj.setCharacterSize(\_fontSize);}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \_textObj.setString(\_text);}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \_textObj.setFillColor(\_textColor);}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \_textObj.setPosition(sf::Vector2f(\_x,\ \_y));}
+\DoxyCodeLine{00494\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/user\+Interface.\+hpp\end{DoxyCompactItemize}

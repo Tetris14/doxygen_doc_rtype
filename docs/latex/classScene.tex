@@ -1,0 +1,194 @@
+\hypertarget{classScene}{}\doxysection{Scene Class Reference}
+\label{classScene}\index{Scene@{Scene}}
+
+
+Class that handle scenes it\textquotesingle{}s used to be inherited.  
+
+
+
+
+{\ttfamily \#include $<$scene.\+hpp$>$}
+
+Inheritance diagram for Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.458333cm]{classScene}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em loads a \doxylink{classScene}{Scene} \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em Unloads a \doxylink{classScene}{Scene}. \end{DoxyCompactList}\item 
+virtual states \mbox{\hyperlink{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}{handle\+Event}} (sf\+::\+Event event, \mbox{\hyperlink{classWindow}{Window}} \&window)=0
+\begin{DoxyCompactList}\small\item\em Handle events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock)=0
+\begin{DoxyCompactList}\small\item\em Update the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScene_a2381795c9a1eca1a398609bd27d28a45}{load}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a69cf3be30940f2c31989ec8e3e2233d8}{unload}} (\mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\item 
+\mbox{\Hypertarget{classScene_a6d44d0f4b3ceb248ed0b6d137e6bd37f}\label{classScene_a6d44d0f4b3ceb248ed0b6d137e6bd37f}} 
+virtual void {\bfseries handle\+Event} (sf\+::\+Event event)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a680521cf9d645a2e366e755af79710dd}{update}} (\mbox{\hyperlink{classClock}{Clock}} \&clock)=0
+\item 
+virtual void \mbox{\hyperlink{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}{draw}} (\mbox{\hyperlink{classWindow}{Window}} \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that handle scenes it\textquotesingle{}s used to be inherited. 
+
+Definition at line \mbox{\hyperlink{Client_2include_2scene_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{Client_2include_2scene_8hpp_source}{scene.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}\label{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}} 
+\index{Scene@{Scene}!draw@{draw}}
+\index{draw@{draw}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Scene\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\doxylink{classDraw}{Draw} the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classConnectScene_ae45f3cf9b083eb46a76fd5b1e98171cc}{Connect\+Scene}}, \mbox{\hyperlink{classGameScene_a5df345ca968bbf3cff1ede138f71948f}{Game\+Scene}}, \mbox{\hyperlink{classJoinScene_a4374640df1777804ad02898eeed3839d}{Join\+Scene}}, \mbox{\hyperlink{classMenuScene_a6448f4df0e4c11a43e8cc87b9ac909a4}{Menu\+Scene}}, \mbox{\hyperlink{classSettingsScene_ab749e09b35df3fe59f66c8c7f6fc97c1}{Settings\+Scene}}, \mbox{\hyperlink{classSinglePlayerScene_a9bc8e08313bf1b72bc4d9730c3d93cf5}{Single\+Player\+Scene}}, \mbox{\hyperlink{classGameScene_a5df345ca968bbf3cff1ede138f71948f}{Game\+Scene}}, and \mbox{\hyperlink{classMenuScene_a6448f4df0e4c11a43e8cc87b9ac909a4}{Menu\+Scene}}.
+
+\mbox{\Hypertarget{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}\label{classScene_a62c7e9fa2aa39b6f9cdaac062ed23cb9}} 
+\index{Scene@{Scene}!draw@{draw}}
+\index{draw@{draw}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Scene\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window,  }\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classConnectScene_ae45f3cf9b083eb46a76fd5b1e98171cc}{Connect\+Scene}}, \mbox{\hyperlink{classGameScene_a5df345ca968bbf3cff1ede138f71948f}{Game\+Scene}}, \mbox{\hyperlink{classJoinScene_a4374640df1777804ad02898eeed3839d}{Join\+Scene}}, \mbox{\hyperlink{classMenuScene_a6448f4df0e4c11a43e8cc87b9ac909a4}{Menu\+Scene}}, \mbox{\hyperlink{classSettingsScene_ab749e09b35df3fe59f66c8c7f6fc97c1}{Settings\+Scene}}, \mbox{\hyperlink{classSinglePlayerScene_a9bc8e08313bf1b72bc4d9730c3d93cf5}{Single\+Player\+Scene}}, \mbox{\hyperlink{classGameScene_a5df345ca968bbf3cff1ede138f71948f}{Game\+Scene}}, and \mbox{\hyperlink{classMenuScene_a6448f4df0e4c11a43e8cc87b9ac909a4}{Menu\+Scene}}.
+
+\mbox{\Hypertarget{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}\label{classScene_a74b43a90dcd2ce7e271538e9f41e7a4b}} 
+\index{Scene@{Scene}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}}
+{\footnotesize\ttfamily virtual states Scene\+::handle\+Event (\begin{DoxyParamCaption}\item[{sf\+::\+Event}]{event,  }\item[{\mbox{\hyperlink{classWindow}{Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Handle events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classConnectScene_a49b006389047c91959401ac244343998}{Connect\+Scene}}, \mbox{\hyperlink{classGameScene_ac043981068ab91b57eef466ca0501883}{Game\+Scene}}, \mbox{\hyperlink{classJoinScene_a8731c684c74e31524e56a19b97e3e981}{Join\+Scene}}, \mbox{\hyperlink{classMenuScene_aa621ddd7862a779962e7805c92a6da14}{Menu\+Scene}}, \mbox{\hyperlink{classSettingsScene_acf857102a6cf3996f85b6b04dd3b4533}{Settings\+Scene}}, and \mbox{\hyperlink{classSinglePlayerScene_a51918c21b75a6ef31ee3d6c53f4e07c2}{Single\+Player\+Scene}}.
+
+\mbox{\Hypertarget{classScene_a2381795c9a1eca1a398609bd27d28a45}\label{classScene_a2381795c9a1eca1a398609bd27d28a45}} 
+\index{Scene@{Scene}!load@{load}}
+\index{load@{load}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Scene\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+loads a \doxylink{classScene}{Scene} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classConnectScene_a5b045535ebe3f18661f8bc4edf3f374e}{Connect\+Scene}}, \mbox{\hyperlink{classGameScene_ac15838bd307cdabe041b2795028d0f44}{Game\+Scene}}, \mbox{\hyperlink{classJoinScene_ace824d42e82dbf39aa2e46a62831b63d}{Join\+Scene}}, \mbox{\hyperlink{classMenuScene_a2bd97ff77fcb7bf11af7cf2aef82eed6}{Menu\+Scene}}, \mbox{\hyperlink{classSettingsScene_a37796870c783c35c69025aa4dfd76ba0}{Settings\+Scene}}, \mbox{\hyperlink{classSinglePlayerScene_a03c30329a48033dcedb6107d169c34d2}{Single\+Player\+Scene}}, \mbox{\hyperlink{classGameScene_ac15838bd307cdabe041b2795028d0f44}{Game\+Scene}}, and \mbox{\hyperlink{classMenuScene_a2bd97ff77fcb7bf11af7cf2aef82eed6}{Menu\+Scene}}.
+
+\mbox{\Hypertarget{classScene_a2381795c9a1eca1a398609bd27d28a45}\label{classScene_a2381795c9a1eca1a398609bd27d28a45}} 
+\index{Scene@{Scene}!load@{load}}
+\index{load@{load}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Scene\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classConnectScene_a5b045535ebe3f18661f8bc4edf3f374e}{Connect\+Scene}}, \mbox{\hyperlink{classGameScene_ac15838bd307cdabe041b2795028d0f44}{Game\+Scene}}, \mbox{\hyperlink{classJoinScene_ace824d42e82dbf39aa2e46a62831b63d}{Join\+Scene}}, \mbox{\hyperlink{classMenuScene_a2bd97ff77fcb7bf11af7cf2aef82eed6}{Menu\+Scene}}, \mbox{\hyperlink{classSettingsScene_a37796870c783c35c69025aa4dfd76ba0}{Settings\+Scene}}, \mbox{\hyperlink{classSinglePlayerScene_a03c30329a48033dcedb6107d169c34d2}{Single\+Player\+Scene}}, \mbox{\hyperlink{classGameScene_ac15838bd307cdabe041b2795028d0f44}{Game\+Scene}}, and \mbox{\hyperlink{classMenuScene_a2bd97ff77fcb7bf11af7cf2aef82eed6}{Menu\+Scene}}.
+
+\mbox{\Hypertarget{classScene_a69cf3be30940f2c31989ec8e3e2233d8}\label{classScene_a69cf3be30940f2c31989ec8e3e2233d8}} 
+\index{Scene@{Scene}!unload@{unload}}
+\index{unload@{unload}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{unload()}{unload()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Scene\+::unload (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Unloads a \doxylink{classScene}{Scene}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classConnectScene_a5c7e2180219b73556b6b326099db63f3}{Connect\+Scene}}, \mbox{\hyperlink{classGameScene_a3d995b01062050275ef5351ab53507cf}{Game\+Scene}}, \mbox{\hyperlink{classJoinScene_adcc206dd83b5404569696664a4c4b118}{Join\+Scene}}, \mbox{\hyperlink{classMenuScene_a3a218e9482bee0d11254ca9f3d20d1d5}{Menu\+Scene}}, \mbox{\hyperlink{classSettingsScene_a7e79ee8cbd29d6d75ccbb9dd63e5f45f}{Settings\+Scene}}, \mbox{\hyperlink{classSinglePlayerScene_a9fd2ef37db58b1750f87a7d4b7fcde5d}{Single\+Player\+Scene}}, \mbox{\hyperlink{classGameScene_a3d995b01062050275ef5351ab53507cf}{Game\+Scene}}, and \mbox{\hyperlink{classMenuScene_a3a218e9482bee0d11254ca9f3d20d1d5}{Menu\+Scene}}.
+
+\mbox{\Hypertarget{classScene_a69cf3be30940f2c31989ec8e3e2233d8}\label{classScene_a69cf3be30940f2c31989ec8e3e2233d8}} 
+\index{Scene@{Scene}!unload@{unload}}
+\index{unload@{unload}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{unload()}{unload()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Scene\+::unload (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classConnectScene_a5c7e2180219b73556b6b326099db63f3}{Connect\+Scene}}, \mbox{\hyperlink{classGameScene_a3d995b01062050275ef5351ab53507cf}{Game\+Scene}}, \mbox{\hyperlink{classJoinScene_adcc206dd83b5404569696664a4c4b118}{Join\+Scene}}, \mbox{\hyperlink{classMenuScene_a3a218e9482bee0d11254ca9f3d20d1d5}{Menu\+Scene}}, \mbox{\hyperlink{classSettingsScene_a7e79ee8cbd29d6d75ccbb9dd63e5f45f}{Settings\+Scene}}, \mbox{\hyperlink{classSinglePlayerScene_a9fd2ef37db58b1750f87a7d4b7fcde5d}{Single\+Player\+Scene}}, \mbox{\hyperlink{classGameScene_a3d995b01062050275ef5351ab53507cf}{Game\+Scene}}, and \mbox{\hyperlink{classMenuScene_a3a218e9482bee0d11254ca9f3d20d1d5}{Menu\+Scene}}.
+
+\mbox{\Hypertarget{classScene_a680521cf9d645a2e366e755af79710dd}\label{classScene_a680521cf9d645a2e366e755af79710dd}} 
+\index{Scene@{Scene}!update@{update}}
+\index{update@{update}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Scene\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClock}{Clock}} \&}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Update the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classConnectScene_a2f9cc5cb4f8d1b3eca89030f272d6184}{Connect\+Scene}}, \mbox{\hyperlink{classGameScene_a4b467f352aa0743726d33e77afdee2e0}{Game\+Scene}}, \mbox{\hyperlink{classJoinScene_ab20e48f67b96e2699942e416ba45eff3}{Join\+Scene}}, \mbox{\hyperlink{classMenuScene_adb1f8ad1eabcd12c23927517f4574022}{Menu\+Scene}}, \mbox{\hyperlink{classSettingsScene_ad8aae77c197e4f75c71f2197bf4b9487}{Settings\+Scene}}, \mbox{\hyperlink{classSinglePlayerScene_afec0b6d9f3b5a8ecc110e0b4cc39cdb8}{Single\+Player\+Scene}}, \mbox{\hyperlink{classGameScene_a4b467f352aa0743726d33e77afdee2e0}{Game\+Scene}}, and \mbox{\hyperlink{classMenuScene_adb1f8ad1eabcd12c23927517f4574022}{Menu\+Scene}}.
+
+\mbox{\Hypertarget{classScene_a680521cf9d645a2e366e755af79710dd}\label{classScene_a680521cf9d645a2e366e755af79710dd}} 
+\index{Scene@{Scene}!update@{update}}
+\index{update@{update}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Scene\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClock}{Clock}} \&}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classConnectScene_a2f9cc5cb4f8d1b3eca89030f272d6184}{Connect\+Scene}}, \mbox{\hyperlink{classGameScene_a4b467f352aa0743726d33e77afdee2e0}{Game\+Scene}}, \mbox{\hyperlink{classJoinScene_ab20e48f67b96e2699942e416ba45eff3}{Join\+Scene}}, \mbox{\hyperlink{classMenuScene_adb1f8ad1eabcd12c23927517f4574022}{Menu\+Scene}}, \mbox{\hyperlink{classSettingsScene_ad8aae77c197e4f75c71f2197bf4b9487}{Settings\+Scene}}, \mbox{\hyperlink{classSinglePlayerScene_afec0b6d9f3b5a8ecc110e0b4cc39cdb8}{Single\+Player\+Scene}}, \mbox{\hyperlink{classGameScene_a4b467f352aa0743726d33e77afdee2e0}{Game\+Scene}}, and \mbox{\hyperlink{classMenuScene_adb1f8ad1eabcd12c23927517f4574022}{Menu\+Scene}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/scene.\+hpp\item 
+POC/includes/scene.\+hpp\end{DoxyCompactItemize}

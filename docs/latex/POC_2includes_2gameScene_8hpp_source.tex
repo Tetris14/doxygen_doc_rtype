@@ -1,0 +1,38 @@
+\hypertarget{POC_2includes_2gameScene_8hpp_source}{}\doxysection{game\+Scene.\+hpp}
+\label{POC_2includes_2gameScene_8hpp_source}\index{POC/includes/gameScene.hpp@{POC/includes/gameScene.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/tristan.gory}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00005}00005\ \textcolor{comment}{**\ gameScene}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ GAMESCENE\_HPP}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#define\ GAMESCENE\_HPP}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}audio.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}scene.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}background.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00015}00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGameScene}{GameScene}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classScene}{Scene}}}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00017}00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00018}00018\ \ \ \mbox{\hyperlink{classDraw}{Draw}}\ \_draw;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00019}00019\ \ \ \mbox{\hyperlink{classMusic}{Music}}\ \_music;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00020}00020\ \ \ \mbox{\hyperlink{classBackground}{Background}}\ \_background;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00021}00021\ \ \ std::vector<EntityID>\ \_entity;}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00022}00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{classGameScene}{GameScene}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&screenWidth,\ \textcolor{keyword}{const}\ std::string\ \&music);}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{classGameScene_add5bc48c372aaa7f526c02558a8adf00}{\string~GameScene}}();}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00025}\mbox{\hyperlink{classGameScene_ac15838bd307cdabe041b2795028d0f44}{00025}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_ac15838bd307cdabe041b2795028d0f44}{load}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00026}\mbox{\hyperlink{classGameScene_a3d995b01062050275ef5351ab53507cf}{00026}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a3d995b01062050275ef5351ab53507cf}{unload}}(\mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_ac043981068ab91b57eef466ca0501883}{handleEvent}}(sf::Event\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00028}\mbox{\hyperlink{classGameScene_a4b467f352aa0743726d33e77afdee2e0}{00028}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a4b467f352aa0743726d33e77afdee2e0}{update}}(\mbox{\hyperlink{classClock}{Clock}}\ \&clock)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00029}\mbox{\hyperlink{classGameScene_a5df345ca968bbf3cff1ede138f71948f}{00029}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameScene_a5df345ca968bbf3cff1ede138f71948f}{draw}}(\mbox{\hyperlink{classWindow}{Window}}\ \&window,\ \mbox{\hyperlink{classECS}{ECS}}\ \&ecs)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00030}00030\ \};}
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{POC_2includes_2gameScene_8hpp_source_l00032}00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !GAMESCENE\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

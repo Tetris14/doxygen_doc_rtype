@@ -1,0 +1,210 @@
+\hypertarget{classChatBox}{}\doxysection{Chat\+Box Class Reference}
+\label{classChatBox}\index{ChatBox@{ChatBox}}
+
+
+class chat box  
+
+
+
+
+{\ttfamily \#include $<$user\+Interface.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classChatBox_aecc62babdf6e4f5de7a112feae453132}{Chat\+Box}} (const std\+::string \&label, std\+::string \&text)
+\begin{DoxyCompactList}\small\item\em Construct a new Chat Box object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChatBox_a71f8c430270633d432959b0527594864}{draw}} (sf\+::\+Render\+Window \&window, \mbox{\hyperlink{classECS}{ECS}} \&ecs)
+\begin{DoxyCompactList}\small\item\em \doxylink{classDraw}{Draw} the console. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classChatBox_ab09c4b48cdb370fa603367844ccdc169}{get\+Chats}} ()
+\begin{DoxyCompactList}\small\item\em Get the Chats object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChatBox_a48751f1a62028d5cfbc6ac866f97bba2}{add\+Chat}} (std\+::string chat)
+\begin{DoxyCompactList}\small\item\em Get the Print Chats object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChatBox_a80018277bfdbc0897220eb4ccb21b70b}{remove\+Chat}} ()
+\begin{DoxyCompactList}\small\item\em Remove the Chat object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class chat box 
+
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00256}{256}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classChatBox_aecc62babdf6e4f5de7a112feae453132}\label{classChatBox_aecc62babdf6e4f5de7a112feae453132}} 
+\index{ChatBox@{ChatBox}!ChatBox@{ChatBox}}
+\index{ChatBox@{ChatBox}!ChatBox@{ChatBox}}
+\doxysubsubsection{\texorpdfstring{ChatBox()}{ChatBox()}}
+{\footnotesize\ttfamily Chat\+Box\+::\+Chat\+Box (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{label,  }\item[{std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Chat Box object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & \\
+\hline
+{\em text} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00264}{264}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ :\ m\_label(label)}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ ,\ m\_text(text) }
+\DoxyCodeLine{00267\ \ \ \ \ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ initial\ text\ value}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ m\_buffer.resize(m\_text.size()\ +\ 1);}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ std::copy(m\_text.begin(),\ m\_text.end(),\ m\_buffer.begin());}
+\DoxyCodeLine{00271\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classChatBox_a48751f1a62028d5cfbc6ac866f97bba2}\label{classChatBox_a48751f1a62028d5cfbc6ac866f97bba2}} 
+\index{ChatBox@{ChatBox}!addChat@{addChat}}
+\index{addChat@{addChat}!ChatBox@{ChatBox}}
+\doxysubsubsection{\texorpdfstring{addChat()}{addChat()}}
+{\footnotesize\ttfamily void Chat\+Box\+::add\+Chat (\begin{DoxyParamCaption}\item[{std\+::string}]{chat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Print Chats object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chat} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00333}{333}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \_printChats.push\_back(chat);}
+\DoxyCodeLine{00335\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classChatBox_a71f8c430270633d432959b0527594864}\label{classChatBox_a71f8c430270633d432959b0527594864}} 
+\index{ChatBox@{ChatBox}!draw@{draw}}
+\index{draw@{draw}!ChatBox@{ChatBox}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Chat\+Box\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{\mbox{\hyperlink{classECS}{ECS}} \&}]{ecs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxylink{classDraw}{Draw} the console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+{\em ecs} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00279}{279}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00280\ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \_entities\ =\ ecs.\mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{getEntitiesWithComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>();}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ inputText[256]\ =\ \textcolor{stringliteral}{"{}message\(\backslash\)0"{}};}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ ImGui::SetNextWindowPos(ImVec2(0,\ 680));}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ ImGui::SetNextWindowSize(ImVec2(400,\ 200));}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ ImGui::Begin(m\_label.c\_str(),\ NULL,\ ImGuiWindowFlags\_NoResize\ |\ ImGuiWindowFlags\_NoMove);}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ ImGui::BeginChild(\textcolor{stringliteral}{"{}MessagesScroll"{}},\ ImVec2(0,\ -\/ImGui::GetTextLineHeightWithSpacing()),\ \textcolor{keyword}{false},\ ImGuiWindowFlags\_HorizontalScrollbar);}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ message\ :\ \_printChats)}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::TextWrapped(\textcolor{stringliteral}{"{}\%s"{}},\ message.c\_str());}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ImGui::GetScrollY()\ >=\ ImGui::GetScrollMaxY())}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::SetScrollHereY(1.0f);}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ ImGui::EndChild();}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ ImGui::InputText(\textcolor{stringliteral}{"{}Saisir\ un\ message"{}},\ inputText,\ 256,\ ImGuiInputTextFlags\_EnterReturnsTrue);}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ImGui::IsItemActivated()\ ||\ ImGui::IsItemFocused())}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ ImGui::SetKeyboardFocusHere(-\/1);\ \textcolor{comment}{//\ Mettre\ le\ focus\ sur\ le\ champ\ de\ saisie}}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ImGui::IsItemDeactivatedAfterEdit())}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<EntityID>\ entities\ =\ ecs.\mbox{\hyperlink{classECS_a5660a7b56e17ccb1c19b26c1c35b82b0}{getEntitiesWithComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>();}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ cmd;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}inputText:\ "{}}\ <<\ inputText\ <<\ std::endl;}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ entity\ :\ entities)}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structCollider}{Collider}}>(entity).tag\ ==\ \textcolor{stringliteral}{"{}player"{}})}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cmd\ =\ ecs.\mbox{\hyperlink{classECS_a24b0bbc4a7bafb57c675620d28de7188}{getComponent}}<\mbox{\hyperlink{structPseudo}{Pseudo}}>(entity).pseudo\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ inputText;}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \_chats.push\_back(cmd);}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ inputText[0]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ ImGui::End();}
+\DoxyCodeLine{00317\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classChatBox_ab09c4b48cdb370fa603367844ccdc169}\label{classChatBox_ab09c4b48cdb370fa603367844ccdc169}} 
+\index{ChatBox@{ChatBox}!getChats@{getChats}}
+\index{getChats@{getChats}!ChatBox@{ChatBox}}
+\doxysubsubsection{\texorpdfstring{getChats()}{getChats()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Chat\+Box\+::get\+Chats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Chats object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00324}{324}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_chats;}
+\DoxyCodeLine{00326\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classChatBox_a80018277bfdbc0897220eb4ccb21b70b}\label{classChatBox_a80018277bfdbc0897220eb4ccb21b70b}} 
+\index{ChatBox@{ChatBox}!removeChat@{removeChat}}
+\index{removeChat@{removeChat}!ChatBox@{ChatBox}}
+\doxysubsubsection{\texorpdfstring{removeChat()}{removeChat()}}
+{\footnotesize\ttfamily void Chat\+Box\+::remove\+Chat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove the Chat object. 
+
+
+
+Definition at line \mbox{\hyperlink{userInterface_8hpp_source_l00341}{341}} of file \mbox{\hyperlink{userInterface_8hpp_source}{user\+Interface.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \_chats.clear();}
+\DoxyCodeLine{00343\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/include/user\+Interface.\+hpp\end{DoxyCompactItemize}
